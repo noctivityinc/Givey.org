@@ -1,0 +1,210 @@
+/* line 14, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+/* line 19, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 21, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 23, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 25, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: "" "";
+}
+/* line 96, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+}
+
+/* line 27, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 5, ../../../app/stylesheets/_base.sass */
+.wf-inactive h3 {
+  font-family: serif;
+}
+
+/* line 8, ../../../app/stylesheets/_base.sass */
+.wf-active h1.yanone {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 36px;
+}
+
+/* line 12, ../../../app/stylesheets/_base.sass */
+.wf-active .cabin {
+  font-family: "Cabin";
+  font-size: 18px;
+}
+
+/* line 3, ../../../app/stylesheets/application.sass */
+html, body {
+  height: 100%;
+}
+
+/* line 6, ../../../app/stylesheets/application.sass */
+body {
+  background-color: white;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+/* line 12, ../../../app/stylesheets/application.sass */
+a {
+  color: blue;
+}
+/* line 14, ../../../app/stylesheets/application.sass */
+a img {
+  border: none;
+}
+
+/* line 17, ../../../app/stylesheets/application.sass */
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 22, ../../../app/stylesheets/application.sass */
+#header, #body {
+  width: 100%;
+  background: white;
+}
+
+/* line 26, ../../../app/stylesheets/application.sass */
+#container {
+  width: 75%;
+  margin: 0 auto;
+  background: white;
+  padding: 20px 40px;
+  margin-top: 20px;
+}
+
+/* line 33, ../../../app/stylesheets/application.sass */
+#footer {
+  padding-top: 125px;
+  width: 100%;
+  position: relative;
+  bottom: -200px;
+  background: black;
+  min-height: 175px;
+  background-image: url(/images/bg_footer.png);
+  text-align: center;
+  family: "Lucinda Grande";
+}
+/* line 44, ../../../app/stylesheets/application.sass */
+#footer a {
+  color: #333333;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+/* line 49, ../../../app/stylesheets/application.sass */
+#footer a:hover {
+  color: red;
+}
+/* line 52, ../../../app/stylesheets/application.sass */
+#footer .nav {
+  display: inline;
+  padding-right: 15px;
+}
+/* line 56, ../../../app/stylesheets/application.sass */
+#footer #copyright {
+  clear: both;
+  padding-top: 2em;
+  color: #333333;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+/* line 64, ../../../app/stylesheets/application.sass */
+#flash_notice,
+#flash_error,
+#flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+/* line 70, ../../../app/stylesheets/application.sass */
+#flash_notice {
+  background-color: #ccffcc;
+  border: solid 1px #66cc66;
+}
+
+/* line 74, ../../../app/stylesheets/application.sass */
+#flash_error,
+#flash_alert {
+  background-color: #ffcccc;
+  border: solid 1px #cc6666;
+}
+
+/* line 79, ../../../app/stylesheets/application.sass */
+.fieldWithErrors {
+  display: inline;
+}
+
+/* line 82, ../../../app/stylesheets/application.sass */
+.error_messages {
+  width: 400px;
+  border: 2px solid #cf0000;
+  padding: 0;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+/* line 91, ../../../app/stylesheets/application.sass */
+.error_messages h2 {
+  text-align: left;
+  padding: 5px 5px 5px 15px;
+  margin: 0;
+  font-weight: bold;
+  font-size: 12px;
+  background-color: #cc0000;
+  color: white;
+}
+/* line 100, ../../../app/stylesheets/application.sass */
+.error_messages p {
+  margin: 8px 10px;
+}
+/* line 102, ../../../app/stylesheets/application.sass */
+.error_messages ul {
+  margin: 0;
+}

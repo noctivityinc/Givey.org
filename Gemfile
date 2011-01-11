@@ -16,6 +16,8 @@ group :default do
   gem 'annotate'
   gem 'omniauth'
   gem 'jquery-rails', '>= 0.2.6'
+  gem "haml-rails"
+  gem 'mini_fb'
   
 end
 

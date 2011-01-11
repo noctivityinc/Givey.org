@@ -1,0 +1,36 @@
+- title "Npo"
+
+%p
+  %strong Name:
+  = @npo.name
+%p
+  %strong Website:
+  = @npo.website
+%p
+  %strong Email:
+  = @npo.email
+%p
+  %strong Description:
+  = @npo.description
+%p
+  %strong Category:
+  = @npo.category_id
+%p
+  %strong Feature:
+  = @npo.feature
+%p
+  %strong Num Featured:
+  = @npo.num_featured
+%p
+  %strong Active:
+  = @npo.active
+%p
+  %strong Summary:
+  = @npo.summary
+
+%p
+  = link_to "Edit", edit_npo_path(@npo)
+  |
+  = link_to "Destroy", @npo, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", npos_path

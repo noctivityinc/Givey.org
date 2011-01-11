@@ -1,1 +1,103 @@
 @import 'base'
+
+html, body
+  height: 100%
+
+body
+  background-color: $primary_color
+  font:
+    family: Verdana, Helvetica, Arial
+    size: 14px
+
+a
+  color: blue
+  img
+    border: none
+
+.clear
+  clear: both
+  height: 0
+  overflow: hidden
+
+#header, #body
+  width: 100%
+  background: white
+
+#container
+  width: 75%
+  margin: 0 auto
+  background: white
+  padding: 20px 40px
+  margin-top: 20px
+
+#footer
+  padding-top: 125px
+  width: 100%
+  position: relative
+  bottom: -200px
+  background: black
+  min-height: 175px
+  background-image: url(/images/bg_footer.png)
+  text-align: center
+  family: 'Lucinda Grande'
+  
+  a
+    color: #333
+    text-transform: uppercase
+    font-size: .90em
+    
+    &:hover
+      color: red
+  
+  .nav
+    display: inline
+    padding-right: 15px
+    
+  #copyright
+    clear: both
+    padding-top: 2em
+    color: #333
+    font-size: .80em
+    text-transform: uppercase
+    
+
+#flash_notice,
+#flash_error,
+#flash_alert
+  padding: 5px 8px
+  margin: 10px 0
+
+#flash_notice
+  background-color: #ccffcc
+  border: solid 1px #66cc66
+
+#flash_error,
+#flash_alert
+  background-color: #ffcccc
+  border: solid 1px #cc6666
+
+.fieldWithErrors
+  display: inline
+
+.error_messages
+  width: 400px
+  border: 2px solid #cf0000
+  padding: 0
+  padding-bottom: 12px
+  margin-bottom: 20px
+  background-color: #f0f0f0
+  font:
+    size: 12px
+  h2
+    text-align: left
+    padding: 5px 5px 5px 15px
+    margin: 0
+    font:
+      weight: bold
+      size: 12px
+    background-color: #cc0000
+    color: white
+  p
+    margin: 8px 10px
+  ul
+    margin: 0

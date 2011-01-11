@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: campaigns
+#
+#  id              :integer         not null, primary key
+#  user_id         :integer
+#  slots_available :integer
+#  slot_value      :integer
+#  video_guid      :string(255)
+#  completed_at    :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
+one:
+  user_id: 1
+  slots_available: 1
+  slot_value: 1
+  video_guid: MyString
+  completed_at: 1
+
+two:
+  user_id: 1
+  slots_available: 1
+  slot_value: 1
+  video_guid: MyString
+  completed_at: 1

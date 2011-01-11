@@ -1,0 +1,39 @@
+# == Schema Information
+#
+# Table name: npos
+#
+#  id           :integer         not null, primary key
+#  name         :string(255)
+#  website      :string(255)
+#  email        :string(255)
+#  description  :text
+#  category_id  :integer
+#  feature      :boolean
+#  num_featured :integer
+#  active       :boolean
+#  summary      :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+one:
+  name: MyString
+  website: MyString
+  email: MyString
+  description: MyText
+  category_id: 1
+  feature: false
+  num_featured: 1
+  active: false
+  summary: MyString
+
+two:
+  name: MyString
+  website: MyString
+  email: MyString
+  description: MyText
+  category_id: 1
+  feature: false
+  num_featured: 1
+  active: false
+  summary: MyString

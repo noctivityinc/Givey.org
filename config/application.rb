@@ -34,12 +34,6 @@ module Givey
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     config.action_view.javascript_expansions[:defaults] = %w(jquery.min rails)
     
-    config.generators do |g|
-      g.template_engine :haml
-      g.fixture_replacement :factory_girl
-    end
-    
-
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 

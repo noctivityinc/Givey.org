@@ -1,0 +1,9 @@
+- title "NPO Categories"
+
+#admin
+  #categories
+    #index
+      = table_for @categories do |t|
+        = t.data :actions => :all, :action_prefix => :admin 
+        
+      #actions= link_to "New NPO Category", new_admin_category_path

@@ -9,13 +9,15 @@ group :default do
   gem "haml"
   gem "compass"
   gem "mail"
-  gem 'nifty-generators'
+  gem 'nifty-generators', :git => 'git://github.com/DouglasMeyer/nifty-generators.git'
   gem 'paperclip'
   gem 'formtastic', '~> 1.1.0'
+  gem 'tabletastic'
   gem 'mocha'
   gem 'annotate'
-  gem 'omniauth'
   gem 'jquery-rails', '>= 0.2.6'
+  gem "haml-rails"
+  gem 'mini_fb'
   
 end
 

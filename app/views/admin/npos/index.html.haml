@@ -1,0 +1,12 @@
+- title "Non Profit Organizations (NPO)"
+#admin
+  #npo
+    #new
+      = table_for(@npos) do |t|
+        = t.data :actions => :all, :action_prefix => :admin do 
+          = t.cell(:logo) {|p| image_tag(p.logo.url(:thumb))}
+          = t.cell(:category)
+          = t.cell(:name)
+          
+
+      #actions= link_to "+ New Non Profit Organization (NPO)", new_admin_npo_path

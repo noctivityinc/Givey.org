@@ -1,5 +1,9 @@
 development:
   domain: localhost:3000
+  facebook:
+    app_id: '176745529032044'
+    api_key: '3cc8c8db3c869419f97c737eb262c3e1'
+    app_secret: 'd9281c1aace16a61b9e90785042c9ac5'
 
 test:
   domain: test.host

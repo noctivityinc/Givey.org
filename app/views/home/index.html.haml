@@ -1,0 +1,16 @@
+#home
+  #index
+    #copy
+      %h1.yanone If you gave your friends $5 to give to a charity or keep for themselves, what would they do?
+
+      %h1.yanone Care to find out?
+
+    #facebook
+      - if current_user 
+        = "Welcome #{current_user.name}!"
+        =  image_tag @fb.me.metadata.connections['picture']
+      - else 
+        = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
+      
+    #logo
+      = image_tag "givey_logo.png", :title => "Givey.org"

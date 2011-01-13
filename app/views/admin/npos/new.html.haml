@@ -1,0 +1,11 @@
+- title "New NPO"
+
+#admin
+  #npo
+    #new
+      = render 'form'
+
+      #actions
+        = link_to "<< Back to List", admin_npos_path
+        |
+        = link_to "New NPO Category", new_admin_category_path

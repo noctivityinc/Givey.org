@@ -1,4 +1,20 @@
 Givey::Application.routes.draw do
+
+  resources :npos
+  resources :campaigns
+
+  match "/auth/:provider/callback" => "sessions#create"
+  match 'access_denied', :to => "sessions#access_denied", :as => "access_denied"
+  match "/signout" => "sessions#destroy", :as => :signout
+
+  resources :admin, :only => :index
+  namespace :admin do
+    resources :npos
+    resources :categories
+  end
+
+  get "home/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +64,7 @@ Givey::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,19 @@
+- title "New NPO Category"
+- content_for :head do
+  :javascript
+    $(document).ready(function() {
+      $('#category_name').focus()
+    });
+    
+#admin
+  #category
+    #new
+      = render 'form'
+      
+      %h3 Existing Categories
+      - @categories.each do |c|
+        .category
+          = c.name
+          = link_to "[X]", admin_category_path(c), :confirm => 'Are you sure?', :method => :delete
+
+      #actions= link_to "<< Back to List", admin_categories_path

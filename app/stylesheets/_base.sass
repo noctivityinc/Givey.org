@@ -1,12 +1,82 @@
-@import "compass/reset"
+$primary_color: #f1f1f1
 
-.wf-inactive h3
-  font-family: serif
-
-.wf-active h1.yanone
+.wf-active h1
   font-family: 'Yanone Kaffeesatz'
   font-size: 36px  
+
+.wf-active h2
+  font-family: 'Yanone Kaffeesatz'
+  font-size: 30px  
+  
+.wf-active h3
+  font-family: 'Yanone Kaffeesatz'
+  font-size: 24px  
 
 .wf-active .cabin
   font-family: 'Cabin'
   font-size: 18px
+
+.margin_top_1
+  margin-top: 2em
+
+.margin_top_2
+  margin-top: 2em
+  
+=debug_border
+  border: 1px dotted red
+
+=left
+  :text-align left
+
+=right
+  :text-align right
+
+=middle
+  vertical-align: middle
+
+=center
+  text-align: center    
+    
+=border 
+  border: solid 1px gray
+
+=alt
+  :font-family "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif
+  :font-style italic  
+  font-size: 1.15em
+
+=fancy
+  :font-family "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif
+
+=black-alt
+  :color black
+  :font-weight bolder
+  :font-size 1.2em
+  +alt
+  
+=formatted_table
+  +border
+  background-color: #fff
+  width: 750px
+  tr
+    background-color: #fff
+    th
+      background-color: #CCCCCC
+      +black-alt
+    th, td
+      +left
+      vertical-align: top
+      padding: .25em
+
+    td
+      border-bottom: solid 1px #CCCCCC
+
+.row
+  overflow: hidden
+  width: 100%
+
+  .fleft
+    float: left
+
+  .fright
+    float: right

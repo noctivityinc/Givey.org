@@ -1,0 +1,9 @@
+- title "Our Awesome Non-Profits"
+
+#npos
+  #index
+    #copy
+      %h1 Amazing Non-Profits We Givey With.
+    
+      - @npos.each do |npo|
+        = npo.name

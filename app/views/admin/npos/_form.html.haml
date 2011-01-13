@@ -1,0 +1,28 @@
+- semantic_form_for([:admin, @npo], :html => { :multipart => true }) do |f|
+  - f.inputs :name => 'General Info' do 
+    = f.input :name
+    = f.input :website
+    = f.input :category, :as => :select,  :collection => Category.active
+    = f.input :tax_id
+    = f.input :paypal_email
+    = f.input :logo, :as => :file
+  - f.inputs :name => 'Overview' do 
+    = f.input :summary, :hint => "Keep it short and sweet.  Displayed on selection page" 
+    = f.input :description
+  - f.inputs :name => 'Status' do 
+    = f.input :active, :as => :boolean
+    = f.input :feature, :as => :boolean
+  - f.inputs :name => 'Contact' do 
+    = f.input :attention, :hint => "Who should the checks be made out to?" 
+    = f.input :email
+    = f.input :address_1
+    = f.input :address_2
+    = f.input :city
+    = f.input :state
+    = f.input :zip_code
+  - f.inputs :name => 'Links' do 
+    = f.input :twitter_name
+    = f.input :facebook_url
+    = f.input :guidestar_url
+  
+  = f.buttons

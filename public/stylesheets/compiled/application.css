@@ -58,94 +58,339 @@ a img {
   border: none;
 }
 
-/* line 5, ../../../app/stylesheets/_base.sass */
-.wf-inactive h3 {
-  font-family: serif;
-}
-
-/* line 8, ../../../app/stylesheets/_base.sass */
-.wf-active h1.yanone {
+/* line 3, ../../../app/stylesheets/_base.sass */
+.wf-active h1 {
   font-family: "Yanone Kaffeesatz";
   font-size: 36px;
 }
 
-/* line 12, ../../../app/stylesheets/_base.sass */
+/* line 7, ../../../app/stylesheets/_base.sass */
+.wf-active h2 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 30px;
+}
+
+/* line 11, ../../../app/stylesheets/_base.sass */
+.wf-active h3 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 24px;
+}
+
+/* line 15, ../../../app/stylesheets/_base.sass */
 .wf-active .cabin {
   font-family: "Cabin";
   font-size: 18px;
 }
 
-/* line 3, ../../../app/stylesheets/application.sass */
-html, body {
-  height: 100%;
+/* line 19, ../../../app/stylesheets/_base.sass */
+.margin_top_1 {
+  margin-top: 2em;
 }
 
-/* line 6, ../../../app/stylesheets/application.sass */
-body {
+/* line 22, ../../../app/stylesheets/_base.sass */
+.margin_top_2 {
+  margin-top: 2em;
+}
+
+/* line 74, ../../../app/stylesheets/_base.sass */
+.row {
+  overflow: hidden;
+  width: 100%;
+}
+/* line 78, ../../../app/stylesheets/_base.sass */
+.row .fleft {
+  float: left;
+}
+/* line 81, ../../../app/stylesheets/_base.sass */
+.row .fright {
+  float: right;
+}
+
+/* line 13, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset.buttons {
+  text-align: center;
+}
+/* line 17, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset.buttons li.commit input[type=submit] {
+  margin: 10pt 10px;
+  padding: 5px;
+  font-size: 1.2em;
+  text-align: right;
+}
+
+/* line 24, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset legend {
+  padding: 0.75em 0em;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+/* line 29, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol {
+  padding-left: 1.5em;
+}
+/* line 31, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li {
+  margin-bottom: 0.5em;
+  clear: both;
+}
+/* line 35, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li label {
+  display: block;
+  width: 25%;
+  float: left;
+  padding-top: 0.2em;
+  font-weight: bold;
+}
+/* line 42, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.error {
+  background: #ffffcc;
+  padding: 8px 0px 3px 6px;
+  border-top: 1px dashed #ffcc66;
+  border-bottom: 1px dashed #ffcc66;
+}
+/* line 48, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.error .inline-errors {
+  color: #660000;
+}
+/* line 52, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string fieldset, form.formtastic fieldset ol li.password fieldset, form.formtastic fieldset ol li.numeric fieldset {
+  padding: 1.4em;
+  margin: 0 0 1.5em 0;
+}
+/* line 55, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string legend, form.formtastic fieldset ol li.password legend, form.formtastic fieldset ol li.numeric legend {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* line 58, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string input, form.formtastic fieldset ol li.password input, form.formtastic fieldset ol li.numeric input {
+  width: 400px;
+}
+/* line 60, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string input.text, form.formtastic fieldset ol li.string input.title, form.formtastic fieldset ol li.string input[type=text], form.formtastic fieldset ol li.string input[type=password], form.formtastic fieldset ol li.string input.password, form.formtastic fieldset ol li.password input.text, form.formtastic fieldset ol li.password input.title, form.formtastic fieldset ol li.password input[type=text], form.formtastic fieldset ol li.password input[type=password], form.formtastic fieldset ol li.password input.password, form.formtastic fieldset ol li.numeric input.text, form.formtastic fieldset ol li.numeric input.title, form.formtastic fieldset ol li.numeric input[type=text], form.formtastic fieldset ol li.numeric input[type=password], form.formtastic fieldset ol li.numeric input.password {
+  border: 1px solid gray;
+  margin: 0em 0;
   background-color: white;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+  padding: 5px;
+  font-size: 1.2em;
+}
+/* line 66, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string input.title, form.formtastic fieldset ol li.password input.title, form.formtastic fieldset ol li.numeric input.title {
+  font-size: 1.5em;
+}
+/* line 68, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string input[type=checkbox], form.formtastic fieldset ol li.string input.checkbox, form.formtastic fieldset ol li.string input[type=radio], form.formtastic fieldset ol li.string input.radio, form.formtastic fieldset ol li.password input[type=checkbox], form.formtastic fieldset ol li.password input.checkbox, form.formtastic fieldset ol li.password input[type=radio], form.formtastic fieldset ol li.password input.radio, form.formtastic fieldset ol li.numeric input[type=checkbox], form.formtastic fieldset ol li.numeric input.checkbox, form.formtastic fieldset ol li.numeric input[type=radio], form.formtastic fieldset ol li.numeric input.radio {
+  position: relative;
+  top: 0em;
+}
+/* line 72, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string input[type=submit], form.formtastic fieldset ol li.password input[type=submit], form.formtastic fieldset ol li.numeric input[type=submit] {
+  margin: 10pt 10px;
+  padding: 5px;
+  font-size: 1.3em;
+  padding: 5px 10px;
+  background: green;
+  color: white;
+}
+/* line 79, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string select, form.formtastic fieldset ol li.password select, form.formtastic fieldset ol li.numeric select {
+  margin: 0em 0;
+  font-size: 1.2em;
+}
+/* line 83, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string .inline-hints, form.formtastic fieldset ol li.password .inline-hints, form.formtastic fieldset ol li.numeric .inline-hints {
+  width: 400px;
+  padding-left: 25%;
+  font-size: 0.8em;
+  color: #666666;
+  margin-top: 0.25em;
+}
+/* line 91, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.text textarea {
+  width: 400px;
+  height: 5em;
+  margin: 0em 0;
+  padding: 5px;
+}
+/* line 98, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.boolean label {
+  padding-left: 25%;
+}
+/* line 100, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.boolean p.inline-hints {
+  color: #666666;
+  margin: 0.5em 0 0 25%;
+  clear: both;
 }
 
-/* line 12, ../../../app/stylesheets/application.sass */
+/* line 5, ../../../app/stylesheets/application.sass */
+html, body {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 9, ../../../app/stylesheets/application.sass */
+body {
+  background-color: #f1f1f1;
+  font-family: "Myriad Pro", Arial, Helvetica, Tahoma, sans-serif;
+}
+/* line 13, ../../../app/stylesheets/application.sass */
+body #main {
+  background-color: white;
+  min-height: 700px;
+  border: 1px solid white;
+}
+
+/* line 18, ../../../app/stylesheets/application.sass */
 a {
   color: blue;
 }
-/* line 14, ../../../app/stylesheets/application.sass */
+/* line 20, ../../../app/stylesheets/application.sass */
 a img {
   border: none;
 }
 
-/* line 17, ../../../app/stylesheets/application.sass */
+/* line 23, ../../../app/stylesheets/application.sass */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 22, ../../../app/stylesheets/application.sass */
-#header, #body {
+/* line 28, ../../../app/stylesheets/application.sass */
+#flash {
+  display: none;
   width: 100%;
-  background: white;
+  padding: 15px;
+  border-bottom: 2px solid gray;
+  text-align: center;
+  background-color: #e0a733;
+  -moz-box-shadow: 3px 3px 4px black;
+  -webkit-box-shadow: 3px 3px 4px black;
+  box-shadow: 3px 3px 4px black;
+  z-index: 2;
+  position: absolute;
 }
 
-/* line 26, ../../../app/stylesheets/application.sass */
+/* line 41, ../../../app/stylesheets/application.sass */
+#header {
+  width: 98%;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 0.85em;
+}
+/* line 47, ../../../app/stylesheets/application.sass */
+#header img {
+  height: 24px;
+  widght: 24px;
+  margin-right: 5px;
+  vertical-align: baseline;
+}
+
+/* line 53, ../../../app/stylesheets/application.sass */
 #container {
-  width: 75%;
+  width: 960px;
   margin: 0 auto;
   background: white;
   padding: 20px 40px;
   margin-top: 20px;
 }
+/* line 60, ../../../app/stylesheets/application.sass */
+#container h1 {
+  margin-bottom: 1em;
+}
+/* line 63, ../../../app/stylesheets/application.sass */
+#container h2 {
+  margin-bottom: 2em;
+}
+/* line 66, ../../../app/stylesheets/application.sass */
+#container h3 {
+  margin: 1.25em auto;
+}
+/* line 69, ../../../app/stylesheets/application.sass */
+#container #copy {
+  margin: 2em auto;
+  text-align: center;
+}
+/* line 73, ../../../app/stylesheets/application.sass */
+#container #copy h1 {
+  text-align: center;
+}
+/* line 76, ../../../app/stylesheets/application.sass */
+#container #copy h2 {
+  text-align: center;
+}
+/* line 79, ../../../app/stylesheets/application.sass */
+#container #copy h3 {
+  text-align: left;
+  width: 650px;
+}
+/* line 83, ../../../app/stylesheets/application.sass */
+#container #copy p {
+  font-size: 12pt;
+  width: 650px;
+  margin: 1em auto;
+  text-align: center;
+  line-height: 1.25em;
+  color: #666666;
+}
+/* line 91, ../../../app/stylesheets/application.sass */
+#container #copy #call_to_action {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #666666;
+}
+/* line 96, ../../../app/stylesheets/application.sass */
+#container #copy #call_to_action select {
+  font-size: 20px;
+  padding: 0px 10px;
+}
+/* line 100, ../../../app/stylesheets/application.sass */
+#container #copy #call_to_action input[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+}
+/* line 104, ../../../app/stylesheets/application.sass */
+#container #facebook {
+  width: 175px;
+  margin: 5em auto;
+  text-align: center;
+}
+/* line 109, ../../../app/stylesheets/application.sass */
+#container #logo {
+  width: 200px;
+  margin: 0 auto;
+  padding-top: 5em;
+}
 
-/* line 33, ../../../app/stylesheets/application.sass */
+/* line 115, ../../../app/stylesheets/application.sass */
 #footer {
   padding-top: 125px;
   width: 100%;
   position: relative;
-  bottom: -200px;
   background: black;
   min-height: 175px;
   background-image: url(/images/bg_footer.png);
   text-align: center;
   family: "Lucinda Grande";
 }
-/* line 44, ../../../app/stylesheets/application.sass */
+/* line 125, ../../../app/stylesheets/application.sass */
 #footer a {
   color: #333333;
   text-transform: uppercase;
   font-size: 0.9em;
 }
-/* line 49, ../../../app/stylesheets/application.sass */
+/* line 130, ../../../app/stylesheets/application.sass */
 #footer a:hover {
   color: red;
 }
-/* line 52, ../../../app/stylesheets/application.sass */
-#footer .nav {
+/* line 134, ../../../app/stylesheets/application.sass */
+#footer #navs .nav {
   display: inline;
   padding-right: 15px;
 }
-/* line 56, ../../../app/stylesheets/application.sass */
+/* line 138, ../../../app/stylesheets/application.sass */
 #footer #copyright {
   clear: both;
   padding-top: 2em;
@@ -154,33 +399,23 @@ a img {
   text-transform: uppercase;
 }
 
-/* line 64, ../../../app/stylesheets/application.sass */
-#flash_notice,
-#flash_error,
-#flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0;
-}
-
-/* line 70, ../../../app/stylesheets/application.sass */
+/* line 146, ../../../app/stylesheets/application.sass */
 #flash_notice {
-  background-color: #ccffcc;
-  border: solid 1px #66cc66;
+  color: black;
 }
 
-/* line 74, ../../../app/stylesheets/application.sass */
+/* line 149, ../../../app/stylesheets/application.sass */
 #flash_error,
 #flash_alert {
-  background-color: #ffcccc;
-  border: solid 1px #cc6666;
+  color: #cc0000;
 }
 
-/* line 79, ../../../app/stylesheets/application.sass */
+/* line 153, ../../../app/stylesheets/application.sass */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 82, ../../../app/stylesheets/application.sass */
+/* line 156, ../../../app/stylesheets/application.sass */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -190,7 +425,7 @@ a img {
   background-color: #f0f0f0;
   font-size: 12px;
 }
-/* line 91, ../../../app/stylesheets/application.sass */
+/* line 165, ../../../app/stylesheets/application.sass */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -200,11 +435,11 @@ a img {
   background-color: #cc0000;
   color: white;
 }
-/* line 100, ../../../app/stylesheets/application.sass */
+/* line 174, ../../../app/stylesheets/application.sass */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 102, ../../../app/stylesheets/application.sass */
+/* line 176, ../../../app/stylesheets/application.sass */
 .error_messages ul {
   margin: 0;
 }

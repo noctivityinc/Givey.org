@@ -1,0 +1,61 @@
+#sessions
+  #access_denied
+    #copy
+      %h1.yanone You denied Facebook access? 
+
+      %h2.yanone Let us explain...
+      
+      %p
+        We ask permission for four things from your Facebook account - 
+        %b access your basic information, send your email, post to your wall 
+        and the scary one, 
+        %b access your data at any time.
+        
+      %p 
+        Let us explain EXACTLY what we do with each permission to make you comfortable.  We ARE trying to 
+        change the world here :)
+        
+      %h3
+        = image_tag "icons/fb_givey_pic.png"
+        Access My Basic Information
+        
+      %p
+        This allows us to access your basic info, such as current name, profile pic, etc. This is 
+        displayed to visitors so they see who is running a campaign to donate money.
+
+      %h3
+        = image_tag "icons/fb_send_email.png"
+        Send Me Email
+        
+      %p
+        We send you an email when a friend decides what to do with your money.  We also 
+        send you an email when a campaign you are running ends.  That's it.
+
+      %h3
+        = image_tag "icons/fb_post_wall.png"
+        Post to My Wall
+        
+      %p
+        We obviously need to be able to post the invite for the campaign to donate to your 
+        wall or know one will know about it :)  Giving us permission to do it for you just 
+        makes it quicker and easier for you.
+
+      %h3
+        = image_tag "icons/fb_access_anytime.png"
+        Access My Data At Any Time
+        
+      %p
+        Yes we know this is scary sounding, but the ONLY thing that we do with this permission 
+        is post an update to your wall every few donations to let your friends know 
+        that their is still money left to be donated.  This keeps your campaign 
+        %em fresh 
+        without you having to constantly post a new status message.
+
+      %h2.margin_top_2 Feel better?  Then let's go...
+
+    #facebook
+      = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
+    
+    #logo
+      = image_tag "givey_logo.png", :title => "Givey.org"
+      = link_to "Not #{current_user.name}? Sign Out", signout_path if current_user

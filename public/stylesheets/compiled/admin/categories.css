@@ -1,0 +1,5 @@
+/* line 3, ../../../../app/stylesheets/admin/categories.sass */
+#admin #category .category {
+  display: inline;
+  padding-right: 0.5em;
+}

@@ -1,0 +1,11 @@
+- title "Edit #{@category.name}"
+
+#admin
+  #category
+    #edit
+      = render 'form'
+
+      #actions
+        = link_to "Show", [ :admin, @category ]
+        |
+        = link_to "View All", admin_categories_path

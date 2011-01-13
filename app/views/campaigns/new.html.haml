@@ -1,5 +1,40 @@
-- title "New Campaign"
+- title "#{current_user.name}'s Campaign", false
 
-= render 'form'
-
-%p= link_to "Back to List", campaigns_path
+#campaign
+  #new
+    #copy
+      %h1= "Okay #{current_user.first_name},"
+      %h2 Let's make this quick, painless and game changing
+      
+      %p
+        The goal here is to make donating to innovative 
+        non-profits
+        %b "interesting."
+        
+      %p
+        So here's the deal - you're going to give your friends 
+        a choice; either donate the funds you give them to one of 
+        the 
+        = link_to "amazing non-profits", '#'
+        that we work with 
+        %b or
+        keep the money for themselves.
+        
+      %h2.margin_top_2 Umm, Why?
+      
+      %p
+        Because let's face it, donating is boring so might as well 
+        make it interesting.
+        
+      %h2.margin_top_2 Ok, let's do this
+      
+      #call_to_action
+        I want to give 
+        = select_tag 'amount', options_for_select(%w{$1 $2 $5 $10 $15 $20 $25},'$5')
+        to         
+        = select_tag 'num_slots', options_for_select(1.upto(20),5)
+        friends.
+      
+        %br
+        %br
+        = submit_tag 'Next >>'

@@ -1,13 +1,19 @@
 Givey::Application.routes.draw do
 
   resources :npos
-
   resources :campaigns
 
-  get "home/index"
   match "/auth/:provider/callback" => "sessions#create"
+  match 'access_denied', :to => "sessions#access_denied", :as => "access_denied"
   match "/signout" => "sessions#destroy", :as => :signout
 
+  resources :admin, :only => :index
+  namespace :admin do
+    resources :npos
+    resources :categories
+  end
+
+  get "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

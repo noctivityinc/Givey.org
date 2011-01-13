@@ -10,8 +10,7 @@
         = "Welcome #{current_user.name}!"
         =  image_tag @fb.me.metadata.connections['picture']
       - else 
-        = link_to image_tag("buttons/facebook_login.png"), "/auth/facebook"
+        = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
       
     #logo
       = image_tag "givey_logo.png", :title => "Givey.org"
-      = link_to "Not #{current_user.name}? Sign Out", signout_path if current_user

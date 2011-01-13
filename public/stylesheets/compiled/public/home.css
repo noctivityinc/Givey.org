@@ -1,31 +1,5 @@
 /* line 3, ../../../../app/stylesheets/public/home.sass */
-#home #index #copy {
-  margin: 2em auto;
-  text-align: center;
-  width: 650px;
-}
-/* line 8, ../../../../app/stylesheets/public/home.sass */
-#home #index #copy h1 {
-  margin-bottom: 1em;
-}
-/* line 11, ../../../../app/stylesheets/public/home.sass */
-#home #index #facebook {
-  width: 175px;
-  margin: 5em auto;
-  text-align: center;
-}
-/* line 17, ../../../../app/stylesheets/public/home.sass */
-#home #index #logo {
-  width: 200px;
-  margin: 0 auto;
-  padding-top: 5em;
-}
-/* line 22, ../../../../app/stylesheets/public/home.sass */
-#home #index p {
-  font-size: 14pt;
-}
-/* line 25, ../../../../app/stylesheets/public/home.sass */
-#home #index p select {
-  font-size: 20px;
-  padding: 0px 10px;
+#home #index h1 {
+  width: 600px;
+  margin: 1em auto;
 }

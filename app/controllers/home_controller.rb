@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     if current_user
-      @fb = MiniFB::OAuthSession.new(current_user.token, 'es_ES')
+      @fb = MiniFB::OAuthSession.new(current_user.token)
       begin
         @res = @fb.fql("SELECT uid, name, pic_square FROM user WHERE uid = me() OR uid IN (SELECT uid2 FROM friend WHERE uid1 = me())")
       rescue Exception => e

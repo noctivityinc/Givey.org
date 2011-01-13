@@ -1,11 +1,5 @@
 class CampaignsController < ApplicationController
-  def index
-    @campaigns = Campaign.all
-  end
-
-  def show
-    @campaign = Campaign.find(params[:id])
-  end
+  before_filter :login_user
 
   def new
     @campaign = Campaign.new
@@ -40,5 +34,22 @@ class CampaignsController < ApplicationController
     @campaign.destroy
     flash[:notice] = "Successfully destroyed campaign."
     redirect_to campaigns_url
+  end
+  
+  private
+  
+  def login_user
+    if current_user
+      @fb = MiniFB::OAuthSession.new(current_user.token)
+      begin
+        @res = @fb.me
+      rescue Exception => e
+        cookies[:user_id] = {:value => nil}
+        redirect_to root_url, :notice => "You must be logged into facebook to create a campaign."
+      end
+    else
+      redirect_to root_url, :notice => "You must be logged into facebook to create a campaign."
+    end
+    
   end
 end

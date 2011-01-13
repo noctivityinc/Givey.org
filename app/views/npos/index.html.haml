@@ -1,29 +1,9 @@
-- title "Npos"
+- title "Our Awesome Non-Profits"
 
-%table
-  %tr
-    %th Name
-    %th Website
-    %th Email
-    %th Description
-    %th Category
-    %th Feature
-    %th Num featured
-    %th Active
-    %th Summary
-  - for npo in @npos
-    %tr
-      %td= npo.name
-      %td= npo.website
-      %td= npo.email
-      %td= npo.description
-      %td= npo.category_id
-      %td= npo.feature
-      %td= npo.num_featured
-      %td= npo.active
-      %td= npo.summary
-      %td= link_to 'Show', npo
-      %td= link_to 'Edit', edit_npo_path(npo)
-      %td= link_to 'Destroy', npo, :confirm => 'Are you sure?', :method => :delete
-
-%p= link_to "New Npo", new_npo_path
+#npos
+  #index
+    #copy
+      %h1 Amazing Non-Profits We Givey With.
+    
+      - @npos.each do |npo|
+        = npo.name

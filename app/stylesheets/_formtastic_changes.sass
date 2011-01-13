@@ -1,0 +1,103 @@
+//
+  /* -------------------------------------------------------------------------------------------------
+
+  Load this stylesheet after formtastic.css in your layouts to override the CSS to suit your needs.
+  This will allow you to update formtastic.css with new releases without clobbering your own changes.
+
+  For example, to make the inline hint paragraphs a little darker in color than the standard #666:
+
+  form.formtastic fieldset ol li p.inline-hints { color:#333; }
+
+  --------------------------------------------------------------------------------------------------*/
+
+form.formtastic fieldset.buttons 
+  text-align: center
+  li.commit
+    input
+      &[type=submit]
+        :margin 10pt 10px
+        :padding 5px
+        font-size: 1.2em
+        :text-align right
+
+form.formtastic fieldset 
+  legend
+    padding: .75em 0em
+    font-weight: bold
+    font-size: 1.25em
+
+form.formtastic fieldset ol 
+  padding-left: 1.5em
+  li
+    margin-bottom: .5em
+    clear: both
+
+  li label
+    display: block
+    width: 25%
+    float: left
+    padding-top: .2em
+    font-weight: bold
+  
+  li.error
+    background: #FFFFCC
+    padding: 8px 0px 3px 6px
+    border-top: 1px dashed #FFCC66
+    border-bottom: 1px dashed #FFCC66
+    
+    .inline-errors
+      color: #600
+    
+  li.string, li.password, li.numeric
+    fieldset
+      :padding 1.4em
+      :margin 0 0 1.5em 0
+    legend
+      :font-weight bold
+      :font-size 1.2em
+    input
+      :width 400px
+      &.text, &.title, &[type=text], &[type=password], &.password
+        border: 1px solid gray
+        :margin 0em 0
+        :background-color #fff
+        :padding 5px
+        :font-size 1.2em
+      &.title  
+        :font-size 1.5em
+      &[type=checkbox], &.checkbox,
+      &[type=radio], &.radio
+        :position relative
+        :top 0em
+      &[type=submit]
+        :margin 10pt 10px
+        :padding 5px
+        font-size: 1.3em
+        padding: 5px 10px
+        background: green
+        color: white
+    select
+      :margin 0em 0
+      :font-size 1.2em    
+      
+    .inline-hints
+      :width 400px
+      padding-left: 25%
+      font-size: .80em
+      color: #666
+      margin-top: .25em
+        
+  li.text
+    textarea
+      :width 400px
+      :height 5em
+      :margin 0em 0
+      :padding 5px    
+
+  li.boolean
+    label
+      padding-left: 25%
+    p.inline-hints
+      color: #666
+      margin: 0.5em 0 0 25%
+      clear: both

@@ -1,4 +1,79 @@
-/* line 5, ../../../../app/stylesheets/public/campaigns.sass */
-#campaign #new h2 {
+/* line 3, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #new .tip_for_givey {
+  font-size: 10pt;
+  font-weight: normal;
+  margin-top: 0.5em;
+}
+/* line 8, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #new #call_to_action {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #666666;
+}
+/* line 13, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #new #call_to_action select {
+  font-size: 20px;
+  padding: 0px 10px;
+}
+/* line 17, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #new #call_to_action input[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+}
+/* line 22, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #friends #copy {
+  width: 600px;
+}
+/* line 25, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #friends .remove_msg {
+  font-size: 10pt;
+  margin-bottom: 2em;
+}
+/* line 29, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #friends h2 {
   margin-bottom: 1em;
+}
+/* line 32, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #friends #imageSearch {
+  width: 400px;
+  padding: 5px;
+  font-size: 1.2em;
+  border: 1px solid gray;
+  background: url("/images/icons/search.png") no-repeat right top;
+}
+/* line 39, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #friends #action {
+  margin-top: 3em;
+}
+/* line 41, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #friends #action input[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* line 46, ../../../../app/stylesheets/public/campaigns.sass */
+ul.ui-autocomplete {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* line 51, ../../../../app/stylesheets/public/campaigns.sass */
+ul.ui-autocomplete .profile_pic {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+/* line 55, ../../../../app/stylesheets/public/campaigns.sass */
+ul.ui-autocomplete .friend_name {
+  font-size: 1.2em;
+  font-family: "Myriad Pro", Arial, Helvetica, Tahoma, sans-serif;
+}
+/* line 59, ../../../../app/stylesheets/public/campaigns.sass */
+ul.ui-autocomplete .selected {
+  color: gray;
+}
+/* line 62, ../../../../app/stylesheets/public/campaigns.sass */
+ul.ui-autocomplete .selected .in_list_msg {
+  color: black;
+  font-size: 0.8em;
+  padding-left: 10px;
 }

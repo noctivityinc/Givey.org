@@ -11,6 +11,14 @@ module LayoutHelper
   def show_title?
     @show_title
   end
+  
+  def hide_login_info
+    @hide_login_info = true
+  end
+  
+  def hide_login_info?
+    @hide_login_info
+  end
 
   def stylesheet(*args)
     content_for(:head) { stylesheet_link_tag(*args) }

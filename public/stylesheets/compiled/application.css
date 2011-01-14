@@ -329,42 +329,27 @@ a img {
 /* line 83, ../../../app/stylesheets/application.sass */
 #container #copy p {
   font-size: 12pt;
-  width: 650px;
+  width: 650pxx;
   margin: 1em auto;
   text-align: center;
   line-height: 1.25em;
+  display: block;
   color: #666666;
 }
-/* line 91, ../../../app/stylesheets/application.sass */
-#container #copy #call_to_action {
-  font-size: 1.25em;
-  font-weight: bold;
-  color: #666666;
-}
-/* line 96, ../../../app/stylesheets/application.sass */
-#container #copy #call_to_action select {
-  font-size: 20px;
-  padding: 0px 10px;
-}
-/* line 100, ../../../app/stylesheets/application.sass */
-#container #copy #call_to_action input[type="submit"] {
-  padding: 10px;
-  font-size: 16px;
-}
-/* line 104, ../../../app/stylesheets/application.sass */
+/* line 93, ../../../app/stylesheets/application.sass */
 #container #facebook {
   width: 175px;
   margin: 5em auto;
   text-align: center;
 }
-/* line 109, ../../../app/stylesheets/application.sass */
+/* line 98, ../../../app/stylesheets/application.sass */
 #container #logo {
   width: 200px;
   margin: 0 auto;
   padding-top: 5em;
 }
 
-/* line 115, ../../../app/stylesheets/application.sass */
+/* line 104, ../../../app/stylesheets/application.sass */
 #footer {
   padding-top: 125px;
   width: 100%;
@@ -375,22 +360,22 @@ a img {
   text-align: center;
   family: "Lucinda Grande";
 }
-/* line 125, ../../../app/stylesheets/application.sass */
+/* line 114, ../../../app/stylesheets/application.sass */
 #footer a {
   color: #333333;
   text-transform: uppercase;
   font-size: 0.9em;
 }
-/* line 130, ../../../app/stylesheets/application.sass */
+/* line 119, ../../../app/stylesheets/application.sass */
 #footer a:hover {
   color: red;
 }
-/* line 134, ../../../app/stylesheets/application.sass */
+/* line 123, ../../../app/stylesheets/application.sass */
 #footer #navs .nav {
   display: inline;
   padding-right: 15px;
 }
-/* line 138, ../../../app/stylesheets/application.sass */
+/* line 127, ../../../app/stylesheets/application.sass */
 #footer #copyright {
   clear: both;
   padding-top: 2em;
@@ -399,23 +384,23 @@ a img {
   text-transform: uppercase;
 }
 
-/* line 146, ../../../app/stylesheets/application.sass */
+/* line 135, ../../../app/stylesheets/application.sass */
 #flash_notice {
   color: black;
 }
 
-/* line 149, ../../../app/stylesheets/application.sass */
+/* line 138, ../../../app/stylesheets/application.sass */
 #flash_error,
 #flash_alert {
   color: #cc0000;
 }
 
-/* line 153, ../../../app/stylesheets/application.sass */
+/* line 142, ../../../app/stylesheets/application.sass */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 156, ../../../app/stylesheets/application.sass */
+/* line 145, ../../../app/stylesheets/application.sass */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -425,7 +410,7 @@ a img {
   background-color: #f0f0f0;
   font-size: 12px;
 }
-/* line 165, ../../../app/stylesheets/application.sass */
+/* line 154, ../../../app/stylesheets/application.sass */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -435,11 +420,11 @@ a img {
   background-color: #cc0000;
   color: white;
 }
-/* line 174, ../../../app/stylesheets/application.sass */
+/* line 163, ../../../app/stylesheets/application.sass */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 176, ../../../app/stylesheets/application.sass */
+/* line 165, ../../../app/stylesheets/application.sass */
 .error_messages ul {
   margin: 0;
 }

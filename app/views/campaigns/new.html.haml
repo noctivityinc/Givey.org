@@ -29,12 +29,17 @@
       %h2.margin_top_2 Ok, let's do this
       
       #call_to_action
-        I want to give 
-        = select_tag 'amount', options_for_select(%w{$1 $2 $5 $10 $15 $20 $25},'$5')
-        to         
-        = select_tag 'num_slots', options_for_select(1.upto(20),5)
-        friends.
-      
-        %br
-        %br
-        = submit_tag 'Next >>'
+        = form_for @campaign do |f|
+          I want to give 
+          = f.select :slot_value, options_for_select([['$1',1],['$2',2],['$5',5],['$10',10],['$15',15],['$20',20],['$25',25]],5)
+          to         
+          = f.select :slots_available, options_for_select(1.upto(20),5)
+          friends.
+        
+          .tip_for_givey
+            = f.check_box :givey_tip
+            = f.label :givey_tip, "Please include an equal share for Givey.org to help support projects like this."
+        
+          %br
+          %br
+          = submit_tag 'Next >>'

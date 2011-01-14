@@ -5,6 +5,7 @@ group :default do
   gem "bundler"
 
   gem "pg", "0.10.0"
+  gem "ruby-debug19"
 
   gem "haml"
   gem "compass"
@@ -18,6 +19,7 @@ group :default do
   gem 'jquery-rails', '>= 0.2.6'
   gem "haml-rails"
   gem 'mini_fb'
+  gem 'hirb'
   
 end
 

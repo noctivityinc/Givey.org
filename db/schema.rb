@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110112222642) do
+ActiveRecord::Schema.define(:version => 20110114040748) do
 
   create_table "campaigns", :force => true do |t|
     t.integer  "user_id"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(:version => 20110112222642) do
     t.integer  "completed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "givey_tip"
+    t.integer  "tip_amount"
+    t.datetime "payment_completed_at"
+    t.text     "friends_hash"
   end
 
   create_table "categories", :force => true do |t|
@@ -56,6 +60,15 @@ ActiveRecord::Schema.define(:version => 20110112222642) do
     t.datetime "logo_updated_at"
     t.string   "paypal_email"
     t.string   "tax_id"
+  end
+
+  create_table "payment_notifications", :force => true do |t|
+    t.text     "params"
+    t.string   "status"
+    t.string   "transaction_id"
+    t.integer  "campaign_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "slots", :force => true do |t|

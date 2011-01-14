@@ -33,7 +33,7 @@
           I want to give 
           = f.select :slot_value, options_for_select([['$1',1],['$2',2],['$5',5],['$10',10],['$15',15],['$20',20],['$25',25]],5)
           to         
-          = f.select :slots_available, options_for_select(1.upto(20),5)
+          = f.select :slots_available, options_for_slots_available
           friends.
         
           .tip_for_givey

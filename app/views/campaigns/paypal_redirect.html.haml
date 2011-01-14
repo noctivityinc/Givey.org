@@ -14,7 +14,7 @@
       
     = form_tag APP_CONFIG[:paypal]['url'], :id => 'paypal_form' do
       = hidden_field_tag :cmd, "_s-xclick"
-      = hidden_field_tag :encrypted, @campaign.paypal_encrypted(record_video_campaign_url(@campaign), payment_notifications_url(:secret => APP_CONFIG[:paypal]['secret']), new_campaign_url(@campaign))
+      = hidden_field_tag :encrypted, @campaign.paypal_encrypted(share_campaign_path(@campaign), payment_notifications_url(:secret => APP_CONFIG[:paypal]['secret']), new_campaign_url(@campaign))
 
 :javascript
   $(function(){

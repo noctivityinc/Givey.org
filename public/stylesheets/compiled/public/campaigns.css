@@ -50,28 +50,32 @@
   padding: 10px;
   font-size: 16px;
 }
-
 /* line 46, ../../../../app/stylesheets/public/campaigns.sass */
+#campaign #share #fb-root {
+  margin-top: 20px;
+}
+
+/* line 50, ../../../../app/stylesheets/public/campaigns.sass */
 ul.ui-autocomplete {
   max-height: 200px;
   overflow-y: auto;
   overflow-x: hidden;
 }
-/* line 51, ../../../../app/stylesheets/public/campaigns.sass */
+/* line 55, ../../../../app/stylesheets/public/campaigns.sass */
 ul.ui-autocomplete .profile_pic {
   margin-right: 10px;
   vertical-align: middle;
 }
-/* line 55, ../../../../app/stylesheets/public/campaigns.sass */
+/* line 59, ../../../../app/stylesheets/public/campaigns.sass */
 ul.ui-autocomplete .friend_name {
   font-size: 1.2em;
   font-family: "Myriad Pro", Arial, Helvetica, Tahoma, sans-serif;
 }
-/* line 59, ../../../../app/stylesheets/public/campaigns.sass */
+/* line 63, ../../../../app/stylesheets/public/campaigns.sass */
 ul.ui-autocomplete .selected {
   color: gray;
 }
-/* line 62, ../../../../app/stylesheets/public/campaigns.sass */
+/* line 66, ../../../../app/stylesheets/public/campaigns.sass */
 ul.ui-autocomplete .selected .in_list_msg {
   color: black;
   font-size: 0.8em;

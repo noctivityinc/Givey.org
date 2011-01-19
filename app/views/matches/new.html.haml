@@ -1,0 +1,31 @@
+- title "#{current_user.name}'s Trusted Friends Match", false
+
+- content_for :head do
+  :javascript
+    $(document).ready(function() {
+       url = $('#new').attr('givey:url');
+       $.post(url, function(data) {
+          if (data.status == 'complete') {
+            location.href = data.url
+          } 
+        });
+    });
+    
+#match
+  #new{'givey:url' => "#{campaign_matches_path(@campaign)}"}
+    #copy
+      %h1 Please Wait...
+      
+      %h2 We're Generating Your Trust Match...
+      
+      %p
+        Our people are talking to Facebook's people to get a random group of 
+        your people to determine, well, whose going to change the world.
+        
+      %p
+        This should only take about a minute or so :)
+        
+      .spinner
+        = image_tag "spinner.gif", :title => "Spinner"
+              
+      

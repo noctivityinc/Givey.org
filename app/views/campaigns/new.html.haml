@@ -1,45 +1,25 @@
-- title "#{current_user.name}'s Campaign", false
+- title "New Game Changing Campaign"
 
 #campaign
   #new
     #copy
-      %h1= "Okay #{current_user.first_name},"
-      %h2 Let's make this quick, painless and game changing
+      %h1 What To Expect
       
       %p
-        The goal here is to make donating to innovative 
-        non-profits
-        %b "interesting."
+        We're going to select a bunch of random friends 
+        from your Facebook account.
         
       %p
-        So here's the deal - you're going to give your friends 
-        a choice; either donate the funds you give them to one of 
-        the 
-        = link_to "amazing non-profits", '#'
-        that we work with 
-        %b or
-        keep the money for themselves.
+        Then you're going to "pit" them against each other 
+        to try to figure out who you truly think could save 
+        the world if given just $5.
         
-      %h2.margin_top_2 Umm, Why?
-      
       %p
-        Because let's face it, donating is boring so might as well 
-        make it interesting.
+        And then we're going to find out if you're right.
         
-      %h2.margin_top_2 Ok, let's do this
+      %h2 Ready?
       
-      #call_to_action
-        = form_for @campaign do |f|
-          I want to give 
-          = f.select :slot_value, options_for_select([['$1',1],['$2',2],['$5',5],['$10',10],['$15',15],['$20',20],['$25',25]],5)
-          to         
-          = f.select :slots_available, options_for_slots_available
-          friends.
-        
-          .tip_for_givey
-            = f.check_box :givey_tip
-            = f.label :givey_tip, "Please include an equal share for Givey.org to help support projects like this."
-        
-          %br
-          %br
-          = submit_tag 'Next >>'
+      #actions
+        =button_to "Let's begin", campaigns_path
+      
+      

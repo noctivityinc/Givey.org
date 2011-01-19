@@ -16,11 +16,14 @@
 #  first_name  :string(255)
 #  last_name   :string(255)
 #  admin       :boolean
+#  all_friends :text
 #
 
 class User < ActiveRecord::Base
-  has_many :campaigns
-  has_many :slots
+  serialize :all_friends
+  
+  has_many :campaigns, :dependent => :destroy 
+  has_many :matches
   
   def admin?
     self.admin
@@ -44,9 +47,9 @@ class User < ActiveRecord::Base
     self.first_name = auth["user_info"]["first_name"]
     self.last_name = auth["user_info"]["last_name"]
     self.name = auth["user_info"]["name"]
-    self.email = auth["extra"]["user_hash"]["email"]
-    self.gender = auth["extra"]["user_hash"]["gender"]
-    self.locale = auth["extra"]["user_hash"]["locale"]
+    self.email = auth["extra"]["user_hash"]["email"] rescue nil
+    self.gender = auth["extra"]["user_hash"]["gender"] rescue nil
+    self.locale = auth["extra"]["user_hash"]["locale"] rescue nil
     self.token = auth["credentials"]["token"]
     save!
   end
@@ -55,10 +58,10 @@ class User < ActiveRecord::Base
     self.first_name = fb.first_name
     self.last_name = fb.last_name
     self.name = fb.name
-    self.email = fb.email
-    self.gender = fb.gender
-    self.locale = fb.locale
-    self.profile_pic = profile_pic
+    self.email = fb.email rescue nil
+    self.gender = fb.gender rescue nil
+    self.locale = fb.locale rescue nil
+    self.profile_pic = profile_pic rescue nil
     self.token = access_token
     save!
   end

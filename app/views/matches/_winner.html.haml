@@ -1,0 +1,25 @@
+#winner
+  .card
+    .frame
+      .box{'givey:uid' => "#{winner.uid}"}
+        .top
+          .profile_pic= image_tag winner.pic_square
+          .name= winner.name
+
+        - if stuff_to_display(winner)
+          .sc_menu_wrapper
+            .header
+              RANDOM FACTOIDS
+            .photos
+              - random_photos(winner).each do |p|
+                = image_tag p.src, :alt => p.caption 
+            .stats
+              .items
+                - winner.keys.each_with_index do |k,ndx|
+                  - unless dont_include(winner, k)
+                    .item(class="#{(ndx % 2 == 1) ? 'even' : 'odd'}")
+                      .label=k.humanize
+                      .value= winner.send(k)
+        - else
+          .nothing.sc_menu_wrapper
+            .pic= image_tag winner.pic_big ? winner.pic_big : winner.pic

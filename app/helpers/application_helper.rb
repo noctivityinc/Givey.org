@@ -2,7 +2,9 @@ module ApplicationHelper
   
   def facebook_oauth_url
      MiniFB.oauth_url(APP_CONFIG[:facebook]['api_key'],facebook_oauth_callback_url, 
-                                  :scope=>"publish_stream,email,offline_access")
+                                  :scope=>"publish_stream,email,offline_access,friends_about_me,
+                                  friends_birthday,friends_interests,friends_activities,
+                                  friends_relationships,friends_status,friends_photos,friends_relationship_details")
   end
   
   def show_row(label, attribute)

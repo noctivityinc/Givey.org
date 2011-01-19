@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: duels
+#
+#  id              :integer         not null, primary key
+#  challenger_uids :text
+#  round           :integer
+#  winner_uid      :string(255)
+#  match_id        :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  uid_1: 1
+  uid_2: 1
+  uid_2: 1
+  round: 1
+  winner: 1
+  campaign_id: 1
+
+two:
+  uid_1: 1
+  uid_2: 1
+  uid_2: 1
+  round: 1
+  winner: 1
+  campaign_id: 1

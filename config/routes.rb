@@ -1,19 +1,20 @@
 Givey::Application.routes.draw do
 
   resources :npos
-  resources :campaigns do
+  resources :campaigns, :shallow => true do
+    resources 'matches'  do
+      post :duel
+      get :winners
+    end
+    
     member do
       post :paypal_redirect
-      get :record_video
-      get :friends
-      post :add_friend
-      get :remove_friend
-      get :friend_search
+      get :in_progress
       get :share
     end
   end
-  resource :payment_notifications, :only => :create 
-  
+  resource :payment_notifications, :only => :create
+
   match "/auth/:provider/callback" => "sessions#create"
   match 'access_denied', :to => "sessions#access_denied", :as => "access_denied"
   match "/signout" => "sessions#destroy", :as => :signout

@@ -224,21 +224,131 @@ form.formtastic fieldset ol li.boolean p.inline-hints {
   clear: both;
 }
 
-/* line 5, ../../../app/stylesheets/application.sass */
+/* CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them. */
+/* line 7, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 11, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspPane {
+  position: absolute;
+}
+
+/* line 14, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+}
+
+/* line 21, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+}
+
+/* line 28, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspVerticalBar *, .jspHorizontalBar * {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 32, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspCap {
+  display: none;
+}
+
+/* line 35, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspHorizontalBar .jspCap {
+  float: left;
+}
+
+/* line 38, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspTrack {
+  position: relative;
+}
+
+/* line 41, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspDrag {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+/* line 48, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspHorizontalBar .jspTrack, .jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%;
+}
+
+/* line 52, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+}
+/* line 57, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d;
+}
+
+/* line 61, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspVerticalBar .jspArrow {
+  height: 16px;
+}
+
+/* line 64, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+
+/* line 69, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspVerticalBar .jspArrow:focus {
+  outline: none;
+}
+
+/* line 72, ../../../app/stylesheets/_jquery.scroll.sass */
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+/* line 79, ../../../app/stylesheets/_jquery.scroll.sass */
+* html .jspCorner {
+  margin: 0 -3px 0 0;
+}
+
+/* line 6, ../../../app/stylesheets/application.sass */
 html, body {
   padding: 0px;
   margin: 0px;
 }
 
-/* line 9, ../../../app/stylesheets/application.sass */
+/* line 10, ../../../app/stylesheets/application.sass */
 body {
   background-color: #f1f1f1;
   font-family: "Myriad Pro", Arial, Helvetica, Tahoma, sans-serif;
 }
-/* line 13, ../../../app/stylesheets/application.sass */
+/* line 14, ../../../app/stylesheets/application.sass */
 body #main {
   background-color: white;
-  min-height: 700px;
   border: 1px solid white;
 }
 

@@ -16,6 +16,7 @@
 #  first_name  :string(255)
 #  last_name   :string(255)
 #  admin       :boolean
+#  all_friends :text
 #
 
 require 'test_helper'

@@ -1,0 +1,200 @@
+/* line 1, ../../../../app/stylesheets/public/matches.sass */
+.ui-effects-transfer {
+  border: 2px dotted gray;
+}
+
+/* line 7, ../../../../app/stylesheets/public/matches.sass */
+#match #show {
+  position: relative;
+}
+/* line 10, ../../../../app/stylesheets/public/matches.sass */
+#match #show #winners {
+  text-align: left;
+  position: relative;
+}
+/* line 17, ../../../../app/stylesheets/public/matches.sass */
+#match #show #winners #winner_list .winner, #match #show #winners #winner_list #winner_last {
+  display: inline-block;
+}
+/* line 20, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field {
+  text-align: center;
+  height: 450px;
+  border: 1px dotted red;
+}
+/* line 25, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card {
+  margin: 0 10px;
+  display: inline-block;
+}
+/* line 29, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame {
+  width: 260px;
+  height: 350px;
+  padding: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 3px 3px 4px black;
+  -webkit-box-shadow: 3px 3px 4px black;
+  box-shadow: 3px 3px 4px black;
+  border: 2px solid #666666;
+  text-align: left;
+  font-family: helvetica, verdana, "arial sans-serif";
+  font-size: 13px;
+}
+/* line 43, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box {
+  border: 2px solid white;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px;
+  font-size: 0.85em;
+  height: 340px;
+}
+/* line 51, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .top {
+  background: url("/images/header_bar.png");
+  color: white;
+  font-weight: bold;
+  padding: 4px;
+  min-height: 34px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 250px;
+  overflow: hidden;
+}
+/* line 62, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .top .name, #match #show #playing_field .card .frame .box .top .profile_pic {
+  float: left;
+}
+/* line 65, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .top .name {
+  font-size: 18px;
+  line-height: 1em;
+  width: 200px;
+}
+/* line 70, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .top .profile_pic {
+  width: 40px;
+}
+/* line 72, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .top .profile_pic img {
+  border: 1px solid white;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+}
+/* line 79, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .sc_menu_wrapper {
+  height: 300px;
+  width: 250px;
+  overflow: auto;
+}
+/* line 84, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .sc_menu_wrapper .header {
+  background: #f38630;
+  text-transform: uppercase;
+  color: white;
+  padding: 5px;
+  text-align: left;
+  margin: 4px 0px;
+  font-size: 1.1em;
+}
+/* line 93, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .sc_menu_wrapper .stats {
+  text-align: left;
+}
+/* line 96, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .sc_menu_wrapper .stats .even {
+  background: #fcfef5;
+}
+/* line 99, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .sc_menu_wrapper .stats .odd {
+  background: #fafbe3;
+}
+/* line 103, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item {
+  padding: 5px;
+  border-bottom: 1px solid #cdcfb7;
+  color: black;
+}
+/* line 108, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item .label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-bottom: 2px;
+}
+/* line 114, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .sc_menu_wrapper .photos {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px 0px;
+}
+/* line 118, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .sc_menu_wrapper .photos img {
+  height: 68px;
+  max-width: 80px;
+}
+/* line 122, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .sc_menu_wrapper .status {
+  height: 200px;
+  vertical-align: absmiddle;
+  text-align: center;
+  padding: 10px;
+}
+/* line 128, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .nothing {
+  text-align: center;
+}
+/* line 131, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box .nothing img {
+  border: 2px solid #edf2e6;
+  margin: 15px;
+  max-height: 275px;
+}
+/* line 137, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box.highlight {
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px;
+  box-shadow: 0 0 5px blue;
+  -webkit-box-shadow: 0 0 5px blue;
+  -moz-box-shadow: 0 0 5px blue;
+}
+/* line 145, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box.highlight .top {
+  background: url("/images/header_bar_on.png");
+}
+/* line 148, ../../../../app/stylesheets/public/matches.sass */
+#match #show #playing_field .card .frame .box.highlight .header {
+  background: #ff6600;
+}
+
+/* line 151, ../../../../app/stylesheets/public/matches.sass */
+ul.ui-autocomplete {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* line 156, ../../../../app/stylesheets/public/matches.sass */
+ul.ui-autocomplete .profile_pic {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+/* line 160, ../../../../app/stylesheets/public/matches.sass */
+ul.ui-autocomplete .friend_name {
+  font-size: 1.2em;
+  font-family: "Myriad Pro", Arial, Helvetica, Tahoma, sans-serif;
+}
+/* line 164, ../../../../app/stylesheets/public/matches.sass */
+ul.ui-autocomplete .selected {
+  color: gray;
+}
+/* line 167, ../../../../app/stylesheets/public/matches.sass */
+ul.ui-autocomplete .selected .in_list_msg {
+  color: black;
+  font-size: 0.8em;
+  padding-left: 10px;
+}

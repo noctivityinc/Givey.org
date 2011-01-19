@@ -2,26 +2,17 @@
 #
 # Table name: campaigns
 #
-#  id                   :integer         not null, primary key
-#  user_id              :integer
-#  slots_available      :integer
-#  slot_value           :integer
-#  video_guid           :string(255)
-#  completed_at         :integer
-#  created_at           :datetime
-#  updated_at           :datetime
-#  givey_tip            :boolean
-#  tip_amount           :integer
-#  payment_completed_at :datetime
-#  friends_hash         :text
+#  id                :integer         not null, primary key
+#  user_id           :integer
+#  completed_at      :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#  current_pot_value :integer
 #
 
 class Campaign < ActiveRecord::Base
-  before_save :set_tip_amount
-  serialize :friends_hash
-
-  has_many :slots
   belongs_to :user
+  has_many :matches, :dependent => :destroy 
 
   def paypal_encrypted(return_url, notify_url, cancel_return_url)
     values = {
@@ -41,19 +32,4 @@ class Campaign < ActiveRecord::Base
     Paypal.encrypt(values)
   end
 
-  def set_tip_amount
-    self.tip_amount = self.slot_value if self.givey_tip
-  end
-
-  def slot_total
-    (slots_available*slot_value).to_f
-  end
-
-  def tip
-    givey_tip ? tip_amount.to_f : 0.00
-  end
-
-  def donation_amount
-    return slot_total + tip
-  end
 end

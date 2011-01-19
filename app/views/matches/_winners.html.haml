@@ -1,0 +1,11 @@
+%h3{:style => "display: #{@match.duels.played.empty? ? 'none' : 'block'}"} 
+  = "World Changing Contenders"
+
+#winner_list
+  - @winners_hash[:current_round].downto(1) do |round|
+    .round
+      - @winners_hash[round.to_s].each do |winner|
+        .winner
+          = image_tag winner.pic_square, :title => winner.name, :alt => winner.name  
+
+        .winner

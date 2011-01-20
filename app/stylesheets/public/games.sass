@@ -1,0 +1,77 @@
+@import 'card'
+@import 'fancy-buttons'
+
+.ui-effects-transfer
+  border: 2px solid gray
+  background: #D0DCFD
+  filter: alpha(opacity=50)
+  -moz-opacity: 0.5
+  -khtml-opacity: 0.5
+  opacity: 0.5
+
+#game
+  #new
+ 
+  #show
+    position: relative
+
+    #winners
+      text-align: left
+      position: relative
+
+      #winner_list
+        .round
+      
+        .winner, #winner_last
+          display: inline-block
+
+    #playing_field
+      text-align: center
+      height: 450px
+      +card
+  
+    #winner
+      #overlay
+        display: none
+        width: 750px
+        border: 10px solid #666
+        padding: 10px
+        text-align: left
+        position: relative
+
+        border: 10px solid rgba(82, 82, 82, 0.698)
+        -moz-border-radius: 8px
+        -webkit-border-radius: 8px
+
+        background: #fff
+      
+        #card
+          +card
+          width: 325px
+          
+        #pitch
+          width: 425px
+          font-size: 13px
+          
+          h2
+            padding-bottom: 15px
+            margin-bottom: 0px
+            
+          #checkboxes
+            margin-top: 25px
+            .cb
+              margin: 5px 0px
+              padding-left: 20px
+              text-align: left
+            
+          #actions
+            position: absolute
+            width: 400px
+            bottom: 20px
+            vertical-align: bottom
+            
+            .back
+              padding-top: 20px
+              
+            .button
+              +fancy-button(darken(#57b42c, 8))

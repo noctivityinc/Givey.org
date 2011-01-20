@@ -17,29 +17,36 @@
 #  last_name   :string(255)
 #  admin       :boolean
 #  all_friends :text
+#  location    :text
 #
 
 class User < ActiveRecord::Base
   serialize :all_friends
+  serialize :location
   
-  has_many :campaigns, :dependent => :destroy 
-  has_many :matches
+  has_many :games, :dependent => :destroy 
   
   def admin?
     self.admin
   end
+  
+  def completed_an_official_game
+    !games.complete.official.empty?
+  end
 
-  def self.create_with_omniauth(auth)
+  def self.create_with_omniauth(auth, location)
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
+      user.location = location
     end
   end
 
-  def self.create_with_mini_fb(fb)
+  def self.create_with_mini_fb(fb, location)
     create! do |user|
       user.provider = 'facebook'
       user.uid = fb.id
+      user.location = location
     end
   end
 

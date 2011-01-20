@@ -1,0 +1,10 @@
+%h1.title Of these friends, whose more likely to save the world?
+      
+%h2.subtitle
+  - if @total_duels > 1
+    = "Round #{@game.duels.played.size+1} of #{total_number_of_duels}."
+      
+#playing_field= render(:partial => "challenger", :collection => @challengers)
+#winners
+  .winner
+  = render :partial => "winners"

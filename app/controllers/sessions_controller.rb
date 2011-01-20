@@ -33,7 +33,8 @@ class SessionsController < ApplicationController
       fb = MiniFB::OAuthSession.new(access_token)
       profile_pic = fb.fql("SELECT pic_square FROM user WHERE uid = me()").first.pic_square
 
-      @user = User.find_by_provider_and_uid('facebook',fb.me.id) || User.create_with_mini_fb(fb.me)
+      # TODO - GeoLocation.find(request.ip)
+      @user = User.find_by_provider_and_uid('facebook',fb.me.id) || User.create_with_mini_fb(fb.me, nil)
       @user.update_with_mini_fb(fb.me, profile_pic, access_token) # => updates to make sure we have latest session key and profile info
       set_user_cookie
     end
@@ -47,6 +48,6 @@ class SessionsController < ApplicationController
 
     def set_user_cookie
       cookies[:user_id] = {:value => @user.id, :expires => 24.hours.from_now }
-      redirect_to new_campaign_path
+      redirect_to new_game_path
     end
 end

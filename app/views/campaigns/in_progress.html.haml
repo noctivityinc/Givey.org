@@ -1,9 +1,0 @@
-#campaign
-  #in_progress
-    #copy
-      %h1= "Hey #{current_user.name}, you forget something?"
-      
-      %h2 You're in the middle of finding out who is going to save the world, remember?
-      
-      =button_to "Click here to continue...", match_path(current_user.matches.incomplete.first)
-    

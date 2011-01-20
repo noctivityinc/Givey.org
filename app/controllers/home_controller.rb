@@ -7,6 +7,10 @@ class HomeController < ApplicationController
       rescue Exception => e
         cookies[:user_id] = {:value => nil}
       end
+      
+      if current_user.completed_an_official_game
+        redirect_to complete_game_path(current_user.games.official.complete.first)
+      end  
 
       # @fb.post('me', :type => :feed, :params => {
       #   :message => "This is me from MiniFB at #{Time.now.to_s}"

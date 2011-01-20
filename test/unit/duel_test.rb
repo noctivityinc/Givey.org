@@ -6,7 +6,7 @@
 #  challenger_uids :text
 #  round           :integer
 #  winner_uid      :string(255)
-#  match_id        :integer
+#  game_id         :integer
 #  created_at      :datetime
 #  updated_at      :datetime
 #

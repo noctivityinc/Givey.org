@@ -1,16 +1,15 @@
 Givey::Application.routes.draw do
 
   resources :npos
-  resources :campaigns, :shallow => true do
-    resources 'matches'  do
-      post :duel
-      get :winners
-    end
-    
+  resources :games do
     member do
       post :paypal_redirect
       get :in_progress
       get :share
+      post :duel
+      get :winners
+      get :complete
+      get :redo
     end
   end
   resource :payment_notifications, :only => :create

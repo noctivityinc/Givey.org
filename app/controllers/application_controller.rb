@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   after_filter :record_previous_page
 
-  helper_method :current_user, :facebook_oauth_callback_url
+  helper_method :current_user, :facebook_oauth_callback_url, :unfinished_games?
 
   def facebook_oauth_callback_url
     return "http://#{request.host_with_port}/auth/facebook/callback"
@@ -20,5 +20,9 @@ class ApplicationController < ActionController::Base
 
     def record_previous_page
       session[:previous_page] = request.url
+    end
+    
+    def unfinished_games?
+      !current_user.games.incomplete.empty?
     end
 end

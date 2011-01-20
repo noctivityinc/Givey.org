@@ -1,0 +1,24 @@
+%h1.title Winner
+#playing_field= render :partial => 'winner', :locals => {:winner => @game.winner}
+#overlay
+  .row
+    #card.fleft= render :partial => 'winner', :locals => {:winner => @game.winner}
+    #pitch.fleft
+      %h1= "So you think that #{@game.winner.name} can save the world?"
+      %h2 What do they think?
+      #faces.row
+        - @game.friends_hash.values.sort_by{rand}[0..7].each do |f|
+          .face.fleft= image_tag f.pic_square
+      #checkboxes
+        .cb
+          = check_box_tag 'post', 'yes', true
+          = label_tag 'post', 'Share this with your friends on Facebook to find out'
+        .cb
+          = check_box_tag 'tell', 'yes', true
+          = label_tag 'tell', "Let #{first_name} know that the're your candidate for goodliness"
+        
+      #actions.row
+        .fleft
+          .back= link_to "Keep going,  #{first_name} might not be the one.", '#', :confirm => "If you're not sure if #{first_name} can save the world, you can redo the game pitting Lisa against some new friends.  Only do this if you really don't trust #{@game.winner.name}."
+        .fright
+          = link_to "Next >>", '#', :class => "button" 

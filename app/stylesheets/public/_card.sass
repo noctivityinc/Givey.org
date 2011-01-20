@@ -1,0 +1,126 @@
+=card
+  .card, #winner
+    margin: 0 10px
+    display: inline-block
+
+    .frame  
+      width: 260px
+      height: 350px
+      padding: 5px
+      -moz-border-radius: 5px
+      border-radius: 5px
+      -moz-box-shadow: 3px 3px 4px #000
+      -webkit-box-shadow: 3px 3px 4px #000
+      box-shadow: 3px 3px 4px #000
+      border: 2px solid #666
+      text-align: left
+      font-family: helvetica, verdana, 'arial sans-serif'
+      font-size: 13px
+
+      .box
+        border: 2px solid #FFF
+        -moz-border-radius: 3px
+        border-radius: 3px
+        padding: 2px
+        font-size: .85em
+        height: 340px
+
+        .top
+          background: url('/images/header_bar.png')
+          color: white
+          font-weight: bold
+          padding: 4px
+          min-height: 34px
+          -moz-border-radius: 3px
+          border-radius: 3px
+          width: 250px
+          overflow: hidden
+
+          .name, .profile_pic
+            float: left
+    
+          .name
+            font-size: 18px
+            line-height: 1em
+            width: 200px
+  
+          .profile_pic
+            width: 40px
+            img
+              border: 1px solid white
+              -moz-border-radius: 2px
+              border-radius: 2px
+              width: 30px
+              height: 30px    
+
+        .sc_menu_wrapper
+          height: 300px
+          width: 250px
+          overflow: auto      
+
+          .header
+            background: #F38630
+            text-transform: uppercase
+            color: white 
+            padding: 5px
+            text-align: left
+            margin: 4px 0px
+            font-size: 1.1em
+
+          .stats
+            text-align: left
+
+            .even
+              background: #FCFEF5
+
+            .odd
+              background: #FAFBE3
+  
+            .items
+              .item
+                padding: 5px
+                border-bottom: 1px solid #CDCFB7
+                color: black
+
+                .label
+                  text-transform: uppercase
+                  font-weight: bold
+                  font-size: .80em
+                  margin-bottom: 2px
+
+          .photos
+            text-align: center
+            vertical-align: middle
+            padding: 5px 0px
+            img
+              height: 68px
+              max-width: 80px
+
+          .status
+            height: 200px
+            vertical-align: absmiddle
+            text-align: center
+            padding: 10px
+
+        .nothing
+          text-align: center
+
+          img
+            border: 2px solid #EDF2E6
+            margin: 15px
+            max-height: 275px
+  
+
+        &.highlight
+          -moz-border-radius: 3px
+          border-radius: 3px
+          padding: 2px
+          box-shadow: 0 0 5px rgba(0, 0, 255, 1)
+          -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, 1)
+          -moz-box-shadow: 0 0 5px rgba(0, 0, 255, 1)
+
+          .top
+            background: url('/images/header_bar_on.png')
+  
+          .header
+            background: #FF6600  

@@ -20,6 +20,8 @@ group :default do
   gem "haml-rails"
   gem 'mini_fb'
   gem 'hirb'
+  gem 'fancy-buttons'
+  gem 'geo_location'
   
 end
 

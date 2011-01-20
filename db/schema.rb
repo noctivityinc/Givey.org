@@ -10,15 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117211011) do
-
-  create_table "campaigns", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "completed_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "current_pot_value"
-  end
+ActiveRecord::Schema.define(:version => 20110120142519) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -31,21 +23,22 @@ ActiveRecord::Schema.define(:version => 20110117211011) do
     t.text     "challenger_uids"
     t.integer  "round"
     t.string   "winner_uid"
-    t.integer  "match_id"
+    t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "matches", :force => true do |t|
+  create_table "games", :force => true do |t|
     t.integer  "campaign_id"
     t.integer  "user_id"
     t.string   "winner_uid"
     t.datetime "completed_at"
-    t.integer  "total_rounds"
     t.text     "friends_hash"
-    t.integer  "previous_match_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "token"
+    t.integer  "referring_game_id"
+    t.boolean  "official",          :default => true
   end
 
   create_table "npos", :force => true do |t|
@@ -77,23 +70,6 @@ ActiveRecord::Schema.define(:version => 20110117211011) do
     t.string   "tax_id"
   end
 
-  create_table "participants", :force => true do |t|
-    t.integer  "campaign_id"
-    t.integer  "user_id"
-    t.integer  "amount"
-    t.datetime "payment_at"
-    t.boolean  "givey_tip"
-    t.decimal  "tip_amount",         :precision => 8, :scale => 2
-    t.integer  "trusted_friend_uid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "participants", ["campaign_id"], :name => "index_participants_on_campaign_id"
-  add_index "participants", ["trusted_friend_uid"], :name => "index_participants_on_trusted_friend_uid"
-  add_index "participants", ["user_id", "campaign_id"], :name => "ndx_user_campaign"
-  add_index "participants", ["user_id"], :name => "index_participants_on_user_id"
-
   create_table "payment_notifications", :force => true do |t|
     t.text     "params"
     t.string   "status"
@@ -118,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20110117211011) do
     t.string   "last_name"
     t.boolean  "admin"
     t.text     "all_friends"
+    t.text     "location"
   end
 
 end

@@ -4,7 +4,7 @@ group :default do
   gem "rails", "3.0.3"
   gem "bundler"
 
-  gem "pg", "0.10.0"
+  gem "pg", ">= 0.10.0"
   gem "ruby-debug19"
 
   gem "haml"
@@ -29,6 +29,15 @@ end
 group :production do
   gem "unicorn", ">=3.1.0"
 end
+
+group :beta do
+  gem "unicorn", ">=3.1.0"
+end
+
+group :staging do
+  gem "unicorn", ">=3.1.0"
+end
+
 
 group :test do
   gem 'shoulda'

@@ -20,8 +20,9 @@ class Background < ActiveRecord::Base
 
   before_create :randomize_file_name
   
+  validates_presence_of :photo
   validates_attachment_content_type :photo, :content_type => [ 'image/jpg', 'image/jpeg', 'image/gif', 'image/png' ]
-  validates_attachment_size :photo, :less_than => 1.megabytes
+  validates_attachment_size :photo, :less_than => 3.megabytes
   
   scope :active, where(:active => true)
 

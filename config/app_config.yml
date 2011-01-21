@@ -9,10 +9,22 @@ development:
     email: Seller_1294884489_biz@givey.org
     secret: givegetfun
     url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
-    
 
 test:
   domain: test.host
 
+staging:
+  domain: staging.givey.org
+  facebook:
+    app_id: '176745529032044'
+    api_key: '3cc8c8db3c869419f97c737eb262c3e1'
+    app_secret: 'd9281c1aace16a61b9e90785042c9ac5'
+  paypal:
+    cert_id: ZTXAERWAJF26N
+    email: Seller_1294884489_biz@givey.org
+    secret: givegetfun
+    url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+
+
 production:
-  domain: example.com
+  domain: givey.org

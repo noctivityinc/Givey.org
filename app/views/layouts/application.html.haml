@@ -3,15 +3,16 @@
   %head
     %title
       = yield(:title) || "Givey.org Admin System"
-    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
     = stylesheet_link_tag 'compiled/application', 'jquery/flick/jquery-ui', "compiled/public/#{controller.controller_name}", 'supersized'
-    = javascript_include_tag :defaults, 'http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', 'jquery-ui.min.js', 'jquery.tools.min', 'jquery.mousewheel', 'jquery.jscrollpane.min', 'supersized.3.0.core.js', :cache => true
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'
+    = javascript_include_tag :defaults, 'jquery-ui.min.js', 'jquery.tools.min',  'jquery.mousewheel', 'jquery.jscrollpane.min', 'supersized.3.0.core.js', :cache => true
     = javascript_include_tag "controllers/#{controller.controller_name}"
     = javascript_include_flash
     = csrf_meta_tag
     = yield(:head)
     :javascript
-      randomSlide = [{image : '#{Background.pick.photo(:normal)}'}]
+      randomSlide = [{image : '#{Background.pick.photo(:normal) if Background.exists?}'}]
 
   %body
     #content-wrapper

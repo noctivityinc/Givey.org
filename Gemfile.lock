@@ -76,7 +76,7 @@ GEM
     paperclip (2.3.8)
       activerecord
       activesupport
-    pg (0.10.0)
+    pg (0.8.0)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -141,7 +141,7 @@ DEPENDENCIES
   nifty-generators
   nokogiri
   paperclip
-  pg (= 0.10.0)
+  pg (= 0.8.0)
   rails (= 3.0.3)
   ruby-debug19
   shoulda

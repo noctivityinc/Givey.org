@@ -4,7 +4,7 @@ group :default do
   gem "rails", "3.0.3"
   gem "bundler"
 
-  gem "pg", ">= 0.10.0"
+  gem "pg", "0.8.0"
   gem "ruby-debug19"
 
   gem "haml"

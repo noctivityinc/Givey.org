@@ -1,14 +1,17 @@
 class GameCreation < ActiveRecord::Migration
   def self.up
-    drop_table :campaigns
-    rename_table :matches, :games
-    rename_column :duels, :match_id, :game_id
-    drop_table :participants
-    add_column :games, :token, :string
-    add_column :games, :referring_game_id, :integer
-    remove_column :games, :previous_match_id
-    remove_column :games, :total_rounds
-    add_column :games, :official, :boolean, {:default => true}
+    begin
+      drop_table :campaigns
+      rename_table :matches, :games
+      rename_column :duels, :match_id, :game_id
+      add_column :games, :token, :string
+      add_column :games, :referring_game_id, :integer
+      remove_column :games, :previous_match_id
+      remove_column :games, :total_rounds
+      add_column :games, :official, :boolean, {:default => true}
+    rescue Exception => e
+
+    end
   end
 
   def self.down

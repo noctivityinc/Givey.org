@@ -76,7 +76,18 @@ fieldset.showtastic ol li .value {
   margin-left: 25%;
 }
 
-/* line 5, ../../../../app/stylesheets/admin/admin.sass */
+/* line 3, ../../../../app/stylesheets/admin/categories.sass */
+#admin #category .category {
+  display: inline;
+  padding-right: 0.5em;
+}
+
+/* line 6, ../../../../app/stylesheets/admin/admin.sass */
+body, html {
+  background: white;
+}
+
+/* line 11, ../../../../app/stylesheets/admin/admin.sass */
 #admin table {
   border: solid 1px gray;
   background-color: white;
@@ -106,7 +117,24 @@ fieldset.showtastic ol li .value {
 #admin table tr td {
   border-bottom: solid 1px #cccccc;
 }
-/* line 8, ../../../../app/stylesheets/admin/admin.sass */
+/* line 14, ../../../../app/stylesheets/admin/admin.sass */
 #admin #actions {
   margin-top: 3em;
+}
+/* line 17, ../../../../app/stylesheets/admin/admin.sass */
+#admin .trans {
+  padding: 10px;
+  background: white;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+/* line 28, ../../../../app/stylesheets/admin/admin.sass */
+#admin .trans a {
+  color: #000066;
+  text-decoration: underline;
 }

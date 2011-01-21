@@ -1,5 +1,7 @@
 Givey::Application.routes.draw do
 
+
+  resources :donations
   resources :npos
   resources :games do
     member do
@@ -11,6 +13,7 @@ Givey::Application.routes.draw do
       get :complete
       get :redo
     end
+    get :needs_friends, :on => :collection
   end
   resource :payment_notifications, :only => :create
 
@@ -22,6 +25,7 @@ Givey::Application.routes.draw do
   namespace :admin do
     resources :npos
     resources :categories
+    resources :backgrounds
   end
 
   get "home/index"

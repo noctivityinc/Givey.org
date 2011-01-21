@@ -1,0 +1,15 @@
+- title "Edit Admin/Background"
+
+#background
+  #edit
+    #show
+      = semantic_form_for [:admin, @background], :html => { :multipart => true } do |f|
+        = f.error_messages
+        = f.inputs do 
+          = f.input :active
+        = f.buttons
+
+      %p
+        = link_to "Show", [ :admin, @background ]
+        |
+        = link_to "View All", admin_backgrounds_path

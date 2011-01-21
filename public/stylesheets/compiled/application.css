@@ -335,47 +335,80 @@ form.formtastic fieldset ol li.boolean p.inline-hints {
   margin: 0 -3px 0 0;
 }
 
-/* line 6, ../../../app/stylesheets/application.sass */
+/* incase an inverted custom gradient isn't specified */
+/* line 176, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+.fancy-button-reset-base-class, #container #copy .button {
+  font-family: "Lucida Grande", Lucida, Arial, sans-serif;
+  background: url('/images/button_bg.png') repeat-x bottom left;
+  margin: 0;
+  width: auto;
+  overflow: visible;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-style: solid;
+  font-weight: bold;
+}
+/* line 165, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+.fancy-button-reset-base-class::-moz-focus-inner, #container #copy .button::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+/* line 168, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+.fancy-button-reset-base-class:focus, #container #copy .button:focus {
+  outline: none;
+}
+
+/* line 7, ../../../app/stylesheets/application.sass */
 html, body {
   padding: 0px;
   margin: 0px;
+  height: 100%;
 }
 
-/* line 10, ../../../app/stylesheets/application.sass */
+/* line 12, ../../../app/stylesheets/application.sass */
 body {
   background-color: #f1f1f1;
   font-family: "Myriad Pro", Arial, Helvetica, Tahoma, sans-serif;
 }
-/* line 14, ../../../app/stylesheets/application.sass */
+/* line 16, ../../../app/stylesheets/application.sass */
 body #main {
-  background-color: white;
-  border: 1px solid white;
+  z-index: 50;
+  padding-bottom: 100px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -100px;
+}
+/* line 24, ../../../app/stylesheets/application.sass */
+body #main .push {
+  clear: both;
 }
 
-/* line 18, ../../../app/stylesheets/application.sass */
+/* line 26, ../../../app/stylesheets/application.sass */
 a {
   color: blue;
 }
-/* line 20, ../../../app/stylesheets/application.sass */
+/* line 28, ../../../app/stylesheets/application.sass */
 a img {
   border: none;
 }
 
-/* line 23, ../../../app/stylesheets/application.sass */
+/* line 31, ../../../app/stylesheets/application.sass */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 28, ../../../app/stylesheets/application.sass */
+/* line 36, ../../../app/stylesheets/application.sass */
 #flash {
   display: none;
   width: 98%;
   padding: 15px;
   border-bottom: 2px solid gray;
   text-align: center;
-  background-color: #f7da73;
+  background-color: #f8faf0;
   -moz-box-shadow: 3px 3px 4px black;
   -webkit-box-shadow: 3px 3px 4px black;
   box-shadow: 3px 3px 4px black;
@@ -383,52 +416,87 @@ a img {
   position: absolute;
 }
 
-/* line 41, ../../../app/stylesheets/application.sass */
+/* line 49, ../../../app/stylesheets/application.sass */
 #header {
-  background-color: #f1f1f1;
   width: 98%;
   height: 30px;
   padding: 5px 10px;
   font-size: 0.85em;
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  background: black;
+  color: white;
 }
-/* line 48, ../../../app/stylesheets/application.sass */
-#header img {
+/* line 61, ../../../app/stylesheets/application.sass */
+#header a {
+  color: white;
+}
+/* line 64, ../../../app/stylesheets/application.sass */
+#header img.profile_pic {
   height: 24px;
   widght: 24px;
   margin-right: 5px;
   vertical-align: baseline;
+  border: 2px solid white;
 }
 
-/* line 54, ../../../app/stylesheets/application.sass */
+/* line 71, ../../../app/stylesheets/application.sass */
 #container {
   width: 960px;
   margin: 0 auto;
-  background: white;
+  margin-bottom: 100px;
   padding: 5px 10px;
 }
-/* line 60, ../../../app/stylesheets/application.sass */
-#container h1, #container h2, #container h3 {
+/* line 77, ../../../app/stylesheets/application.sass */
+#container h1, #container h2, #container h3, #container p {
   margin-bottom: 0.75em;
 }
-/* line 63, ../../../app/stylesheets/application.sass */
+/* line 80, ../../../app/stylesheets/application.sass */
+#container .trans {
+  padding: 10px;
+  background: white;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+/* line 91, ../../../app/stylesheets/application.sass */
+#container .trans a {
+  color: #000066;
+  text-decoration: underline;
+}
+/* line 95, ../../../app/stylesheets/application.sass */
 #container #copy {
   margin: 0.25em auto;
   text-align: center;
+  min-height: 400px;
 }
-/* line 67, ../../../app/stylesheets/application.sass */
+/* line 100, ../../../app/stylesheets/application.sass */
+#container #copy.boxit {
+  padding: 15px;
+  background: white;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 106, ../../../app/stylesheets/application.sass */
 #container #copy h1 {
   text-align: center;
 }
-/* line 70, ../../../app/stylesheets/application.sass */
+/* line 109, ../../../app/stylesheets/application.sass */
 #container #copy h2 {
   text-align: center;
 }
-/* line 73, ../../../app/stylesheets/application.sass */
+/* line 112, ../../../app/stylesheets/application.sass */
 #container #copy h3 {
   text-align: left;
   width: 650px;
 }
-/* line 77, ../../../app/stylesheets/application.sass */
+/* line 116, ../../../app/stylesheets/application.sass */
 #container #copy p {
   font-size: 12pt;
   width: 650px;
@@ -436,35 +504,95 @@ a img {
   text-align: center;
   line-height: 1.25em;
   display: block;
-  color: #666666;
+}
+/* line 124, ../../../app/stylesheets/application.sass */
+#container #copy .button {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1.2em;
+  padding: 0.3em 1em;
+  border-width: 1px;
+  background-color: #3ab700;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #9ee080), color-stop(10%, #66ce36), color-stop(50%, #418721), color-stop(50%, #3b7b1e), color-stop(100%, #4fa428));
+  background-image: -moz-linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
+  background-image: linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
+  border-color: #295615;
+  text-shadow: #123800 0px 1px 1px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -o-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -khtml-background-clip: padding-box;
+  background-clip: padding-box;
+}
+/* line 116, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#container #copy .button, #container #copy .button:visited {
+  color: white;
+}
+/* line 31, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#container #copy .button:hover, #container #copy .button:focus {
+  background-color: #35a800;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #95dd73), color-stop(10%, #5fc430), color-stop(50%, #3b7b1e), color-stop(50%, #356e1b), color-stop(100%, #499725));
+  background-image: -moz-linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
+  background-image: linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
+  border-color: #234912;
+  text-shadow: #0d2800 0px 1px 1px;
+}
+/* line 116, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#container #copy .button:hover, #container #copy .button:hover:visited, #container #copy .button:focus, #container #copy .button:focus:visited {
+  color: white;
+}
+/* line 36, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#container #copy .button:active {
+  background-color: #309900;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #3b7b1e), color-stop(30%, #3f8320), color-stop(50%, #37721c), color-stop(50%, #316619), color-stop(100%, #4b9b26));
+  background-image: -moz-linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
+  background-image: linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
+  border-color: #1e3d0f;
+  text-shadow: #081900 0px -1px -1px;
+  -moz-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  -webkit-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  -o-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  box-shadow: #295615 0 0.08em 0.1em 1px inset;
+}
+/* line 116, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#container #copy .button:active, #container #copy .button:active:visited {
+  color: white;
 }
 
-/* line 86, ../../../app/stylesheets/application.sass */
+/* line 127, ../../../app/stylesheets/application.sass */
 #footer {
-  padding-top: 125px;
-  position: relative;
-  background: black;
-  min-height: 175px;
-  background-image: url(/images/bg_footer.png);
+  padding-top: 25px;
+  height: 100px;
+  background: #f0f0f0 url("/images/bg_footer.png") repeat-x;
   text-align: center;
   family: "Lucinda Grande";
 }
-/* line 95, ../../../app/stylesheets/application.sass */
+/* line 134, ../../../app/stylesheets/application.sass */
 #footer a {
   color: #333333;
   text-transform: uppercase;
   font-size: 0.9em;
 }
-/* line 100, ../../../app/stylesheets/application.sass */
+/* line 139, ../../../app/stylesheets/application.sass */
 #footer a:hover {
   color: red;
 }
-/* line 104, ../../../app/stylesheets/application.sass */
+/* line 143, ../../../app/stylesheets/application.sass */
 #footer #navs .nav {
   display: inline;
   padding-right: 15px;
 }
-/* line 108, ../../../app/stylesheets/application.sass */
+/* line 147, ../../../app/stylesheets/application.sass */
 #footer #copyright {
   clear: both;
   padding-top: 2em;
@@ -473,23 +601,23 @@ a img {
   text-transform: uppercase;
 }
 
-/* line 116, ../../../app/stylesheets/application.sass */
+/* line 155, ../../../app/stylesheets/application.sass */
 #flash_notice {
   color: black;
 }
 
-/* line 119, ../../../app/stylesheets/application.sass */
+/* line 158, ../../../app/stylesheets/application.sass */
 #flash_error,
 #flash_alert {
   color: #cc0000;
 }
 
-/* line 123, ../../../app/stylesheets/application.sass */
+/* line 162, ../../../app/stylesheets/application.sass */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 126, ../../../app/stylesheets/application.sass */
+/* line 165, ../../../app/stylesheets/application.sass */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -499,7 +627,7 @@ a img {
   background-color: #f0f0f0;
   font-size: 12px;
 }
-/* line 135, ../../../app/stylesheets/application.sass */
+/* line 174, ../../../app/stylesheets/application.sass */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -509,11 +637,11 @@ a img {
   background-color: #cc0000;
   color: white;
 }
-/* line 144, ../../../app/stylesheets/application.sass */
+/* line 183, ../../../app/stylesheets/application.sass */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 146, ../../../app/stylesheets/application.sass */
+/* line 185, ../../../app/stylesheets/application.sass */
 .error_messages ul {
   margin: 0;
 }

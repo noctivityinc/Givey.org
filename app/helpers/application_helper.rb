@@ -1,5 +1,11 @@
 module ApplicationHelper
   
+  def javascript_include_flash
+    if flash.detect {|name, msg| !msg.blank?}        
+      return javascript_include_tag 'flash'
+    end
+  end
+  
   def facebook_oauth_url
      MiniFB.oauth_url(APP_CONFIG[:facebook]['api_key'],facebook_oauth_callback_url, 
                                   :scope=>"publish_stream,email,offline_access,friends_about_me,

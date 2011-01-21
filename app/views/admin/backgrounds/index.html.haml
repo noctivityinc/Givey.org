@@ -1,0 +1,12 @@
+- title "Admin/Backgrounds"
+
+#admin
+  #backgrounds
+    #index
+      = table_for @backgrounds do |t|
+        = t.data :actions => :all, :action_prefix => :admin do 
+          = t.cell(:photo) {|p| image_tag(p.photo.url(:thumb))}
+          = t.cell(:active)
+          = t.cell(:photo_file_size)
+        
+      #actions= link_to "Upload New Background", new_admin_background_path

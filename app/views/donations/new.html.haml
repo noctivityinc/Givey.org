@@ -1,0 +1,21 @@
+- title "Donate To The Cause"
+
+#donation
+  #new
+    #copy.trans
+      %h1= "So you think that #{@game.winner.name} might save the world?"
+      
+      %h1 Please help us find out how.
+      
+      %h2
+        Together, we're raising $25,000 to give to  
+        = @game.winner.name.split(/\s/)[0] 
+        to split among some amazing causes.*
+        
+      %h2
+        We're only asking for $5 from each player, and have
+        already raised $XXXX from Givey players just like you.
+        
+      #actions
+        = button_to 'Contribute Now', '#', :class => "button"
+        

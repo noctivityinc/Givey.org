@@ -14,18 +14,19 @@
 #game
   #new{'givey:url' => "#{games_path(@campaign)}"}
     #copy
-      %h1 Please Wait...
+      .trans
+        %h1 Please Wait...
       
-      %h2 We're Generating Your Game...
+        %h2 We're Generating Your Game...
       
-      %p
-        Our people are talking to Facebook's people to get a random group of 
-        your people to determine, well, whose going to change the world.
+        %p
+          Our people are talking to Facebook's people to get a random group of 
+          your people to determine, well, whose going to change the world.
         
-      %p
-        This should only take about a minute or so :)
+        %p
+          This should only take about a minute or so :)
         
-      .spinner
-        = image_tag "spinner.gif", :title => "Spinner"
+        .spinner
+          = image_tag "spinner.gif", :title => "Spinner"
               
       

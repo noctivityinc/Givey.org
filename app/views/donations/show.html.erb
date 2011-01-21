@@ -1,0 +1,36 @@
+<% title "Donation" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @donation.user_id %>
+</p>
+<p>
+  <strong>Game:</strong>
+  <%= @donation.game_id %>
+</p>
+<p>
+  <strong>Amount:</strong>
+  <%= @donation.amount %>
+</p>
+<p>
+  <strong>Donated At:</strong>
+  <%= @donation.donated_at %>
+</p>
+<p>
+  <strong>Wepay:</strong>
+  <%= @donation.wepay_id %>
+</p>
+<p>
+  <strong>Transaction:</strong>
+  <%= @donation.transaction_id %>
+</p>
+<p>
+  <strong>Event:</strong>
+  <%= @donation.event %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_donation_path(@donation) %> |
+  <%= link_to "Destroy", @donation, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", donations_path %>
+</p>

@@ -10,11 +10,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110120142519) do
+ActiveRecord::Schema.define(:version => 20110121143943) do
+
+  create_table "backgrounds", :force => true do |t|
+    t.boolean  "active",             :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "donations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.decimal  "amount"
+    t.datetime "donated_at"
+    t.string   "wepay_id"
+    t.string   "transaction_id"
+    t.string   "event"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,7 +60,9 @@ ActiveRecord::Schema.define(:version => 20110120142519) do
     t.datetime "updated_at"
     t.string   "token"
     t.integer  "referring_game_id"
-    t.boolean  "official",          :default => true
+    t.boolean  "official",           :default => true
+    t.boolean  "shared_on_facebook"
+    t.boolean  "shared_with_winner"
   end
 
   create_table "npos", :force => true do |t|

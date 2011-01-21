@@ -1,5 +1,9 @@
 - title "#{current_user.name}'s \"Who Will Save The World\"", false
 
+- content_for :head do
+  :javascript
+    var finals = #{finals? ? true : false};
+    
 - if @game.winner
   - content_for :feet do
     :javascript

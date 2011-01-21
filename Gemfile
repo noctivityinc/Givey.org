@@ -21,7 +21,8 @@ group :default do
   gem 'mini_fb'
   gem 'hirb'
   gem 'fancy-buttons'
-  gem 'geo_location'
+  gem 'nokogiri'
+  gem 'geo_location', :git => 'git://github.com/chrisyour/geo_location.git'
   
 end
 

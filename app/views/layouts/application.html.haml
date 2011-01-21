@@ -4,8 +4,8 @@
     %title
       = yield(:title) || "Givey.org Admin System"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
-    = stylesheet_link_tag 'compiled/application', 'jquery/flick/jquery-ui', "compiled/public/#{controller.controller_name}"
-    = javascript_include_tag :defaults, 'http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', 'jquery-ui.min.js', 'jquery.tools.min', 'jquery.mousewheel', 'jquery.jscrollpane.min', :cache => true
+    = stylesheet_link_tag 'compiled/application', 'jquery/flick/jquery-ui', "compiled/public/#{controller.controller_name}", 'supersized'
+    = javascript_include_tag :defaults, 'http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js', 'jquery-ui.min.js', 'jquery.tools.min', 'jquery.mousewheel', 'jquery.jscrollpane.min', 'supersized.3.0.core.js', :cache => true
     = javascript_include_tag "controllers/#{controller.controller_name}"
     = csrf_meta_tag
     = yield(:head)
@@ -25,40 +25,44 @@
         }
 
   %body
-    #main
-      #flash
-        - flash.each do |name, msg|
-          = content_tag :div, msg, :id => "flash_#{name}"
+    #content-wrapper
+      #main
+        #flash
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}"
 
-      #header.row
-        .fleft
-          - if current_user && !hide_login_info?
-            = image_tag current_user.profile_pic
-            = "Hi #{current_user.name}."
-            = link_to "Not #{current_user.first_name}?", signout_path, :id => "log_out" 
-        .fright
-          = image_tag "givey_logo.png", :title => "Givey.org"
+        - unless controller.controller_name == 'home'
+          #header.row
+            .fleft
+              - if current_user && !hide_login_info?
+                = image_tag current_user.profile_pic, :class => "profile_pic"
+                = "Hi #{current_user.name}."
+                = link_to "Not #{current_user.first_name}?", signout_path, :id => "log_out" 
+            .fright
+              = image_tag "givey_logo.png", :title => "Givey.org"
       
-      #container
-        = yield
+        #container
+          = yield
     
-    #footer
-      #navs
-        .nav
-          = link_to "About Givey.org", '#'
-        .nav
-          = link_to "Terms & Conditions", '#'
-        .nav
-          = link_to "Privacy Policy", '#'
-        .nav
-          = link_to "Non Profits", npos_path
-      
-        - if current_user && current_user.admin?
+      #footer
+        #navs
           .nav
-            = link_to "Admin Facility", admin_index_path
+            = link_to "About Givey.org", '#'
+          .nav
+            = link_to "Terms & Conditions", '#'
+          .nav
+            = link_to "Privacy Policy", '#'
+          .nav
+            = link_to "Non Profits", npos_path
+      
+          - if current_user && current_user.admin?
+            .nav
+              = link_to "Admin Facility", admin_index_path
           
-      #copyright
-        (c) Givey.org 2011
+        #copyright
+          (c) Givey.org 2011
+    
+    #supersized
     
     #fb-root
     :javascript

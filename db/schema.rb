@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110120142519) do
+ActiveRecord::Schema.define(:version => 20110120164242) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(:version => 20110120142519) do
     t.datetime "updated_at"
     t.string   "token"
     t.integer  "referring_game_id"
-    t.boolean  "official",          :default => true
+    t.boolean  "official",           :default => true
+    t.boolean  "shared_on_facebook"
+    t.boolean  "shared_with_winner"
   end
 
   create_table "npos", :force => true do |t|

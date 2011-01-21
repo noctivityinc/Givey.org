@@ -12,8 +12,12 @@ body
   font-family: "Myriad Pro", Arial, Helvetica, Tahoma, sans-serif
 
   #main
-    background-color: white
-    border: 1px solid white
+    top: 0
+    left: 0
+    z-index: 50
+    padding-bottom: 100px
+    width: 100%
+    min-height: 500px
 
 a
   color: blue
@@ -31,7 +35,7 @@ a
   padding: 15px
   border-bottom: 2px solid gray
   text-align: center
-  background-color: #F7DA73
+  background-color: #F8FAF0
   -moz-box-shadow: 3px 3px 4px #000
   -webkit-box-shadow: 3px 3px 4px #000
   box-shadow: 3px 3px 4px #000
@@ -39,31 +43,62 @@ a
   position: absolute
 
 #header
-  background-color: $primary_color
   width: 98%
   height: 30px
   padding: 5px 10px
   font-size: .85em
+  filter: alpha(opacity=80)
+  -moz-opacity: 0.8
+  -khtml-opacity: 0.8
+  opacity: 0.8
+  background: black
+  color: white
   
-  img
+  a
+    color: white
+  
+  img.profile_pic
     height: 24px
     widght: 24px
     margin-right: 5px
     vertical-align: baseline
+    border: 2px solid white
 
 #container
   width: 960px
   margin: 0 auto
-  background: white
+  margin-bottom: 100px
   padding: 5px 10px
   
-  h1, h2, h3
+  h1, h2, h3, p
     margin-bottom: .75em
+  
+  .trans
+    padding: 10px
+    background: white
+    -moz-border-radius: 5px
+    border-radius: 5px
+    filter: alpha(opacity=80)
+    -moz-opacity: 0.8
+    -khtml-opacity: 0.8
+    opacity: 0.8
+    margin-bottom: 10px
+    
+    a
+      color: #006
+      text-decoration: underline
       
   #copy
     margin: .25em auto
     text-align: center
+    min-height: 400px
     
+    &.boxit
+      padding: 15px
+      background: white
+      -moz-border-radius: 5px
+      border-radius: 5px
+      
     h1
       text-align: center
       
@@ -82,13 +117,13 @@ a
       line-height: 1.25em
       display: block
       color: #666
+      
 
 #footer
-  padding-top: 125px
+  padding-top: 25px
   position: relative
-  background: black
   min-height: 175px
-  background-image: url(/images/bg_footer.png)
+  background: #f0f0f0 url(/images/bg_footer.png) repeat-x
   text-align: center
   family: 'Lucinda Grande'
   

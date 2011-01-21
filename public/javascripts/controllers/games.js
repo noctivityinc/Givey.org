@@ -1,7 +1,6 @@
 $(document).ready(function() {
   $('.sc_menu_wrapper').jScrollPane();
   
-  var finals = false;
   $('.card .box').live("mouseover",function(e){
     $(this).addClass('highlight')
   }).live("mouseout",function(e){
@@ -16,6 +15,7 @@ $(document).ready(function() {
       postWinner(card, url, uid, duel)
     } else {
       options = { to: ".winner:first", className: "ui-effects-transfer"};
+      $('.round:first').prepend("<div class='trans winner' style='background: #ffffff;width:50px;'>&nbsp;</div>")
       card.effect('transfer', options, 350, loadDuel(url, uid, duel));
     }
     
@@ -48,7 +48,7 @@ $(document).ready(function() {
         })
         $('#winner').load(url, {'uid':uid, 'duel':duel}, function(resp){
           $('#battle').hide();
-          window.setTimeout(function(){activate_overlay()},2000);
+          window.setTimeout(function(){activate_overlay()},1000);
         })
     }
     

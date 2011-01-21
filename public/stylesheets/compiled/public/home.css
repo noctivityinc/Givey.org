@@ -3,28 +3,28 @@
   margin-top: 30px;
 }
 /* line 6, ../../../../app/stylesheets/public/home.sass */
-#home #index #copy #header {
-  display: none;
-}
-/* line 8, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy h1 {
   width: 600px;
   margin: 0em auto;
   margin-bottom: 0.75em;
 }
-/* line 13, ../../../../app/stylesheets/public/home.sass */
+/* line 11, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #choose {
   padding-top: 20px;
 }
-/* line 16, ../../../../app/stylesheets/public/home.sass */
+/* line 14, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #facebook {
   width: 300px;
   margin: 5em auto;
   text-align: center;
 }
-/* line 21, ../../../../app/stylesheets/public/home.sass */
+/* line 19, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #logo {
-  width: 200px;
+  width: 400px;
   margin: 0 auto;
   padding-top: 5em;
+}
+/* line 24, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy #logo img {
+  width: 350px;
 }

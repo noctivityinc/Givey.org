@@ -2,37 +2,38 @@
 #home
   #index
     #copy
-      - if current_user && unfinished_games?
-        %h1= "Welcome Back #{current_user.name}!"
+      .trans
+        - if current_user && unfinished_games?
+          %h1= "Welcome Back #{current_user.name}!"
 
-        %h2 Still up for finding out who will change the world?
+          %h2 Still up for finding out who will change the world?
         
-        #choose
-          %p= link_to "Let's finish the game I started", game_path(unfinished_game)
+          #choose
+            %p= link_to "Let's finish the game I started", game_path(unfinished_game)
         
-          %p= link_to "I want a new game with new friends", new_game_path({:wipe => 1}), :confirm => "Are you sure?  If you do this it will invalidate your existing game." 
+            %p= link_to "I want a new game with new friends", new_game_path({:wipe => 1}), :confirm => "Are you sure?  If you do this it will invalidate your existing game." 
       
-      - elsif current_user && !unfinished_games?
-        %h1= "Welcome Back #{current_user.name}!"
+        - elsif current_user && !unfinished_games?
+          %h1= "Welcome Back #{current_user.name}!"
 
-        %h2 Still up for finding out who will change the world?
+          %h2 Still up for finding out who will change the world?
       
-        #choose
-          %p= link_to "Let's play", new_game_path()
+          #choose
+            %p= link_to "Let's play", new_game_path()
       
-      - else
-        %h1.yanone 
-          On January 18th a quest began to find the single person on Facebook 
-          most likely to change the world.  
+        - else
+          %h1.yanone 
+            On January 18th a quest began to find the single person on Facebook 
+            most likely to change the world.  
         
-        %h2 The "chosen one" will be given $10,000 to donate as they see fit.
+          %h2 The "chosen one" will be given $10,000 to donate as they see fit.
                 
-        %h2
-          Do you think your friends can change the world?      
+          %h2
+            Do you think your friends can change the world?      
 
-        #facebook
-          - unless current_user 
-            = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
+          #facebook
+            - unless current_user 
+              = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
       
-    #logo
-      = image_tag "givey_logo.png", :title => "Givey.org"
+      #logo
+        = image_tag "givey_logo_large.png", :title => "Givey.org"

@@ -2,17 +2,19 @@
 #
 # Table name: games
 #
-#  id                :integer         not null, primary key
-#  campaign_id       :integer
-#  user_id           :integer
-#  winner_uid        :string(255)
-#  completed_at      :datetime
-#  friends_hash      :text
-#  created_at        :datetime
-#  updated_at        :datetime
-#  token             :string(255)
-#  referring_game_id :integer
-#  official          :boolean         default(TRUE)
+#  id                 :integer         not null, primary key
+#  campaign_id        :integer
+#  user_id            :integer
+#  winner_uid         :string(255)
+#  completed_at       :datetime
+#  friends_hash       :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#  token              :string(255)
+#  referring_game_id  :integer
+#  official           :boolean         default(TRUE)
+#  shared_on_facebook :boolean
+#  shared_with_winner :boolean
 #
 
 class Game < ActiveRecord::Base

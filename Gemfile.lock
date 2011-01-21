@@ -4,6 +4,12 @@ GIT
   specs:
     nifty-generators (0.4.2)
 
+GIT
+  remote: git://github.com/chrisyour/geo_location.git
+  revision: 9b67a3d677d828eedd8906587b9d7f7b1cee5282
+  specs:
+    geo_location (0.4.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -50,7 +56,6 @@ GEM
       actionpack (>= 2.3.0)
       activesupport (>= 2.3.0)
       i18n (>= 0.4.0)
-    geo_location (0.4.0)
     haml (3.0.25)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -77,6 +82,7 @@ GEM
       rest-client
     mocha (0.9.10)
       rake
+    nokogiri (1.4.4)
     paperclip (2.3.8)
       activerecord
       activesupport
@@ -134,7 +140,7 @@ DEPENDENCIES
   factory_girl
   fancy-buttons
   formtastic (~> 1.1.0)
-  geo_location
+  geo_location!
   haml
   haml-rails
   hirb
@@ -143,6 +149,7 @@ DEPENDENCIES
   mini_fb
   mocha
   nifty-generators!
+  nokogiri
   paperclip
   pg (= 0.10.0)
   rails (= 3.0.3)

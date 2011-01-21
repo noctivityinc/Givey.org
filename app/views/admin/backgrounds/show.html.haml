@@ -1,0 +1,18 @@
+- title "Admin/Background"
+
+- content_for :head do
+  :javascript
+    randomSlide = [{image : '#{@background.photo(:normal)}'}]
+  
+#admin
+  #background
+    #show.trans
+      = fieldset_for @background, 'Details', :photo_file_name, :photo_file_size, :active
+
+      #actions
+        = link_to "Edit", edit_admin_background_path(@background)
+        |
+        = link_to "Destroy", [ :admin, @background ], :confirm => 'Are you sure?', :method => :delete
+        |
+        = link_to "View All", admin_backgrounds_path
+      

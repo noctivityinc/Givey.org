@@ -23,4 +23,4 @@
         .fleft
           .back= link_to "Keep going,  #{first_name} might not be the one.", redo_game_path(@game), :confirm => "If you're not sure if #{first_name} can save the world, you can redo the game pitting Lisa against some new friends.  Only do this if you really don't trust #{@game.winner.name}."
         .fright
-          = link_to "Next >>", '#', :class => "button" 
+          = link_to "Next >>", new_donation_path(:gid => @game.id), :class => "button" 

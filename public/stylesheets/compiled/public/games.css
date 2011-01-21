@@ -1,28 +1,4 @@
-/* incase an inverted custom gradient isn't specified */
-/* line 176, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class, #game #show #winner #overlay #pitch #actions .button {
-  font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png') repeat-x bottom left;
-  margin: 0;
-  width: auto;
-  overflow: visible;
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  border-style: solid;
-  font-weight: bold;
-}
-/* line 165, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class::-moz-focus-inner, #game #show #winner #overlay #pitch #actions .button::-moz-focus-inner {
-  border: none;
-  padding: 0;
-}
-/* line 168, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class:focus, #game #show #winner #overlay #pitch #actions .button:focus {
-  outline: none;
-}
-
-/* line 4, ../../../../app/stylesheets/public/games.sass */
+/* line 3, ../../../../app/stylesheets/public/games.sass */
 .ui-effects-transfer {
   border: 2px solid gray;
   background: #d0dcfd;
@@ -32,20 +8,20 @@
   opacity: 0.5;
 }
 
-/* line 15, ../../../../app/stylesheets/public/games.sass */
+/* line 14, ../../../../app/stylesheets/public/games.sass */
 #game #show {
   position: relative;
 }
-/* line 18, ../../../../app/stylesheets/public/games.sass */
+/* line 17, ../../../../app/stylesheets/public/games.sass */
 #game #show #winners {
   text-align: left;
   position: relative;
 }
-/* line 25, ../../../../app/stylesheets/public/games.sass */
+/* line 24, ../../../../app/stylesheets/public/games.sass */
 #game #show #winners #winner_list .winner, #game #show #winners #winner_list #winner_last {
   display: inline-block;
 }
-/* line 28, ../../../../app/stylesheets/public/games.sass */
+/* line 27, ../../../../app/stylesheets/public/games.sass */
 #game #show #playing_field {
   text-align: center;
   height: 450px;
@@ -204,8 +180,9 @@
 #game #show #playing_field .card .frame .box.highlight .header, #game #show #playing_field #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 34, ../../../../app/stylesheets/public/games.sass */
+/* line 33, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay {
+  z-index: 200;
   display: none;
   width: 750px;
   border: 10px solid #666666;
@@ -406,66 +383,9 @@
 #game #show #winner #overlay #pitch #actions .back {
   padding-top: 20px;
 }
-/* line 76, ../../../../app/stylesheets/public/games.sass */
-#game #show #winner #overlay #pitch #actions .button {
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -o-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -khtml-border-radius: 6px;
-  border-radius: 6px;
-  font-size: 18px;
-  line-height: 1.2em;
-  padding: 0.3em 1em;
-  border-width: 1px;
-  background-color: #3ab700;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #9ee080), color-stop(10%, #66ce36), color-stop(50%, #418721), color-stop(50%, #3b7b1e), color-stop(100%, #4fa428));
-  background-image: -moz-linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
-  background-image: linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
-  border-color: #295615;
-  text-shadow: #123800 0px 1px 1px;
-  -moz-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
-  -o-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
-  box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding;
-  -o-background-clip: padding-box;
-  -ms-background-clip: padding-box;
-  -khtml-background-clip: padding-box;
-  background-clip: padding-box;
-}
-/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#game #show #winner #overlay #pitch #actions .button, #game #show #winner #overlay #pitch #actions .button:visited {
-  color: white;
-}
-/* line 31, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#game #show #winner #overlay #pitch #actions .button:hover, #game #show #winner #overlay #pitch #actions .button:focus {
-  background-color: #35a800;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #95dd73), color-stop(10%, #5fc430), color-stop(50%, #3b7b1e), color-stop(50%, #356e1b), color-stop(100%, #499725));
-  background-image: -moz-linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
-  background-image: linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
-  border-color: #234912;
-  text-shadow: #0d2800 0px 1px 1px;
-}
-/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#game #show #winner #overlay #pitch #actions .button:hover, #game #show #winner #overlay #pitch #actions .button:hover:visited, #game #show #winner #overlay #pitch #actions .button:focus, #game #show #winner #overlay #pitch #actions .button:focus:visited {
-  color: white;
-}
-/* line 36, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#game #show #winner #overlay #pitch #actions .button:active {
-  background-color: #309900;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #3b7b1e), color-stop(30%, #3f8320), color-stop(50%, #37721c), color-stop(50%, #316619), color-stop(100%, #4b9b26));
-  background-image: -moz-linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
-  background-image: linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
-  border-color: #1e3d0f;
-  text-shadow: #081900 0px -1px -1px;
-  -moz-box-shadow: #295615 0 0.08em 0.1em 1px inset;
-  -webkit-box-shadow: #295615 0 0.08em 0.1em 1px inset;
-  -o-box-shadow: #295615 0 0.08em 0.1em 1px inset;
-  box-shadow: #295615 0 0.08em 0.1em 1px inset;
-}
-/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#game #show #winner #overlay #pitch #actions .button:active, #game #show #winner #overlay #pitch #actions .button:active:visited {
-  color: white;
+
+/* line 77, ../../../../app/stylesheets/public/games.sass */
+#exposeMask {
+  background: black !important;
+  z-index: 100;
 }

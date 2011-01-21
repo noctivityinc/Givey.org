@@ -3,9 +3,9 @@ class GamesController < ApplicationController
   before_filter :check_for_wipe, :check_for_existing_game, :check_for_official_completed_game, :only => [:new]
   before_filter :get_game, :validate_game_user, :except => [:create, :new, :index, :needs_friends]
   before_filter :get_all_friends, :only => [:create]
-  before_filter :winner?, :only => [:show]
+  before_filter :winner?, :only => [:show, :duel]
 
-  helper_method :total_number_of_duels
+  helper_method :total_number_of_duels, :finals?
 
   def new
   end
@@ -41,11 +41,15 @@ class GamesController < ApplicationController
     if @duel
       @challengers = @duel.challenger_uids.inject([]) {|r,x| r << @game.friends_hash[x]}
       current_round = @game.duels.maximum('round')
-      render :json => {:status => 'duel', :html => render_to_string(:partial => "challenger", :collection => @challengers), :round => current_round, :total_duels => total_number_of_duels, :duel_count => @game.duels.played.size+1, :finals => (total_number_of_duels - 1 == @game.duels.played.size) || (total_number_of_duels.to_i == 1)}
+      render :json => {:status => 'duel', :html => render_to_string(:partial => "challenger", :collection => @challengers), :round => current_round, :total_duels => total_number_of_duels, :duel_count => @game.duels.played.size+1, :finals => finals?}
     else
       @game.update_attribute(:winner_uid, params[:uid])
-      render :partial => "winner_overlay"
+      render :json => {:status => 'winner', :html => render_to_string(:partial => "winner_overlay")}
     end
+  end
+
+  def finals?
+    (total_number_of_duels - 1 == @game.duels.played.size) || (total_number_of_duels.to_i == 1)
   end
 
   def get_next_duel
@@ -110,7 +114,7 @@ class GamesController < ApplicationController
         begin
           @all_friends =  @fb.fql("SELECT uid, name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
                 current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
-                FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY rand()")
+                FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY rand() LIMIT 8")
           process_exclude_list
         rescue Exception => e
           cookies[:user_id] = {:value => nil}
@@ -155,6 +159,7 @@ class GamesController < ApplicationController
       if @game.winner && @game.official
         # TODO change this to redirect to winner page or share
         # redirect_to complete_game_url, :notice => 'duels complete'
+        # render :json => {:status => 'winner', :html => render_to_string(:partial => "winner_overlay")}
       end
     end
 

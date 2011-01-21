@@ -10,7 +10,7 @@ group :default do
   gem "haml"
   gem "compass"
   gem "mail"
-  gem 'nifty-generators', :git => 'git://github.com/DouglasMeyer/nifty-generators.git'
+  gem 'nifty-generators' # , :git => 'git://github.com/DouglasMeyer/nifty-generators.git'
   gem 'paperclip'
   gem 'formtastic', '~> 1.1.0'
   gem 'tabletastic'
@@ -22,7 +22,7 @@ group :default do
   gem 'hirb'
   gem 'fancy-buttons'
   gem 'nokogiri'
-  gem 'geo_location', :git => 'git://github.com/chrisyour/geo_location.git'
+  gem 'geo_location' #, :git => 'git://github.com/chrisyour/geo_location.git'
   
 end
 

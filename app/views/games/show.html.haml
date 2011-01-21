@@ -2,7 +2,7 @@
 
 - content_for :head do
   :javascript
-    var finals = #{@total_duels == 1 ? true : false};
+    var finals = #{finals? ? true : false};
     
 - if @game.winner
   - content_for :feet do

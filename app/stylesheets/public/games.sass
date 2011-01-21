@@ -1,5 +1,4 @@
 @import 'card'
-@import 'fancy-buttons'
 
 .ui-effects-transfer
   border: 2px solid gray
@@ -32,6 +31,7 @@
   
     #winner
       #overlay
+        z-index: 200
         display: none
         width: 750px
         border: 10px solid #666
@@ -72,6 +72,8 @@
             
             .back
               padding-top: 20px
+
               
-            .button
-              +fancy-button(darken(#57b42c, 8))
+#exposeMask 
+  background: #000000 !important
+  z-index: 100

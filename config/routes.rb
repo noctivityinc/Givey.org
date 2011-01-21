@@ -1,7 +1,7 @@
 Givey::Application.routes.draw do
 
-  resources :donations
 
+  resources :donations
   resources :npos
   resources :games do
     member do
@@ -25,6 +25,7 @@ Givey::Application.routes.draw do
   namespace :admin do
     resources :npos
     resources :categories
+    resources :backgrounds
   end
 
   get "home/index"

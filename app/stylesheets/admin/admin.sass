@@ -1,9 +1,31 @@
 @import 'base'
 @import 'showtastic'
+@import 'backgrounds'
+@import 'categories'
+
+body, html
+  background: white
 
 #admin
+
   table
     +formatted_table
     
   #actions
     margin-top: 3em
+    
+  .trans
+    padding: 10px
+    background: white
+    -moz-border-radius: 5px
+    border-radius: 5px
+    filter: alpha(opacity=80)
+    -moz-opacity: 0.8
+    -khtml-opacity: 0.8
+    opacity: 0.8
+    margin-bottom: 10px
+
+    a
+      color: #006
+      text-decoration: underline    
+  

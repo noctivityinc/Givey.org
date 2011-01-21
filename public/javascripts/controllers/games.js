@@ -8,52 +8,57 @@ $(document).ready(function() {
   }).live("click",function(){
     url = $('#show').attr('rel');
     card = $(this).closest('.card');
-    duel = card.attr('givey:duel');
-    uid = card.attr('givey:uid');
+    data = {'uid':card.attr('givey:uid'), 'duel':card.attr('givey:duel')}
     
     if(finals == true) {
-      postWinner(card, url, uid, duel)
+      postWinner(card, url, data)
     } else {
       options = { to: ".winner:first", className: "ui-effects-transfer"};
       $('.round:first').prepend("<div class='trans winner' style='background: #ffffff;width:50px;'>&nbsp;</div>")
-      card.effect('transfer', options, 350, loadDuel(url, uid, duel));
+      card.effect('transfer', options, 250, postDuel(url, data));
     }
     
     return false;
   })
   
-  function loadDuel(url, uid, duel) {
+  function postDuel(url, data) {
     $('.card').css('visibility', 'hidden')
-    $.ajax({
-      url: url,
-      data: {'uid':uid, 'duel':duel},
-      type: 'POST',
-      success: function(resp) {
-      console.log(resp)
-          if (resp.status == 'duel') {
-            finals = resp.finals
-            loadWinners();
-            $('#playing_field').html(resp.html)
-            $('.sc_menu_wrapper').jScrollPane();
-            changeStats(resp);
-          } 
-       }
-      })
+    $.post(url, data, function(r) {handleDuelResponse(r)})
+  }
+  
+  function handleDuelResponse(resp) {
+      switch(resp.status) {
+      case 'duel':
+        showDuel(resp);
+        break;
+      case 'winner':
+        showWinner(resp);
+        break;
+      }
+   }
+    
+    function showDuel (r) {
+      finals = r.finals
+      loadWinners();
+      changeStats(r);
+      $('#playing_field').html(r.html);
+      $('.sc_menu_wrapper').jScrollPane();
     }
     
-    function postWinner(card, url, uid, duel) {
-      $('.card').each(function() {
-          if ($(this).attr('givey:uid')!=uid) 
-            $(this).effect('explode')
-        })
-        $('#winner').load(url, {'uid':uid, 'duel':duel}, function(resp){
-          $('#battle').hide();
-          window.setTimeout(function(){activate_overlay()},1000);
-        })
+    function postWinner(card, url, data) {
+      uid = card.attr('givey:uid');
+      $('.card').each(function() { if ($(this).attr('givey:uid')!=uid)  $(this).effect('explode')})
+      $.post(url, data, function(resp) {showWinner(resp)})
+    }
+    
+    function showWinner (r) {
+      $('#battle').hide();
+      $('#winner').html(r.html)
+      window.setTimeout(function(){activate_overlay()},1000);
     }
     
     function changeStats(resp) {
-      if ((resp.duel_count) < resp.total_duels) 
+      if (!finals) 
         $('.subtitle').text("Round " + resp.duel_count + " of " + resp.total_duels)
       else
         $('.subtitle').text("The Finals!")
@@ -68,18 +73,6 @@ function activate_overlay () {
   $("#overlay").overlay({
 
   	top: 160,
-  	effect: 'apple',
-  	mask: {
-
-  		// you might also consider a "transparent" color for the mask
-  		color: '#ccc',
-
-  		// load mask a little faster
-  		loadSpeed: 200,
-
-  		// very transparent
-  		opacity: .75
-  	},
 
   	// disable this for modal dialog-type of overlays
   	closeOnClick: false,

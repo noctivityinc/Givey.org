@@ -2,7 +2,9 @@
   %h1.title Of these friends, who's more likely to save the world?
       
   %h2.subtitle
-    - if @total_duels > 1
+    - if finals?
+      Finals!
+    - else 
       = "Round #{@game.duels.played.size+1} of #{total_number_of_duels}."
       
 #playing_field= render(:partial => "challenger", :collection => @challengers)

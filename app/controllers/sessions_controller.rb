@@ -36,6 +36,7 @@ class SessionsController < ApplicationController
       @user = User.find_by_provider_and_uid('facebook',fb.me.id) || User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip))
       @user.update_with_mini_fb(fb.me, profile_pic, access_token) # => updates to make sure we have latest session key and profile info
       set_user_cookie
+      @user.games.destroy_all if Rails.env == 'staging'
     end
 
     def omniauth_create

@@ -114,7 +114,7 @@ class GamesController < ApplicationController
         begin
           @all_friends =  @fb.fql("SELECT uid, name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
                 current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
-                FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY rand() LIMIT 8")
+                FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY rand()")
           process_exclude_list
         rescue Exception => e
           cookies[:user_id] = {:value => nil}

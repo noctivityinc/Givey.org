@@ -1,0 +1,2 @@
+rm -rf "$stage_path/certs" ; ln -nfs "$shared_path/app/certs" "$stage_path/certs"
+rm -rf "$stage_path/public/images/backgrounds" ; ln -nfs "$shared_path/app/backgrounds" "$stage_path/public/images/backgrounds"

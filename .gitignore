@@ -4,5 +4,6 @@ log/*.log
 tmp/**/*
 public/images/backgrounds/*
 config/*.yml
+certs/*
 .redcar/
 .DS_Store

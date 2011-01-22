@@ -1,5 +1,27 @@
 - title "Donate To The Cause"
 
+- content_for :head do
+  :javascript
+    $(document).ready(function() {
+      $('#donate_btn').click(function(e) {
+        $.getJSON({url: 'http://stage.wepay.com/sp/create',
+                data: {
+                  format: 'jsonp',
+                  token: "6a0380dcbd", 
+                  group_id: "30563",
+                  buyer_email: "#{current_user.email}",
+                  amount: "5.00",
+                  reason: "In honor of #{@game.winner.name}, who will save the world.",
+                  rd: "http://progphp.com/info.php"
+                  },
+                  success: function(data) {
+                    // window.location.href=data.result;
+               }});
+        return false;
+      });
+    });
+    
+
 #donation
   #new
     #copy.trans
@@ -17,5 +39,5 @@
         already raised $XXXX from Givey players just like you.
         
       #actions
-        = button_to 'Contribute Now', '#', :class => "button"
+        = button_to 'Contribute Now', '#', :id => 'donate_btn', :class => "button"
         

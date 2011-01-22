@@ -6,8 +6,19 @@
        url = $('#new').attr('givey:url');
        $.post(url, function(data) {
           if (data.status == 'complete') {
-            location.href = data.url
+            $('.wait').fadeOut();
+            $('#next_btn').attr('rel',data.url).fadeIn();
+            $('.title').text("We're Ready For You!").css('color','red')
           } 
+        });
+        
+        $('#wait_btn').click(function() {
+          return false;
+        });
+        
+        $('#next_btn').click(function() {
+          location.href = $(this).attr('rel')
+          return false;
         });
     });
     
@@ -15,18 +26,27 @@
   #new{'givey:url' => "#{games_path(@campaign)}"}
     #copy
       .trans
-        %h1 Please Wait...
+        %h1.title Please Wait. We're Creating Your Game...
       
-        %h2 We're Generating Your Game...
-      
-        %p
-          Our people are talking to Facebook's people to get a random group of 
-          your people to determine, well, whose going to change the world.
+        %h2 But let's not forget why we're here.
         
-        %p
-          This should only take about a minute or so :)
+        %h2 Together we need to raise $25,000.
         
-        .spinner
+        %h2 And when we do, the #1 most likely person to save the world will decide what to do with it.  
+        
+        %h2 But we need your help.  After your game, please donate as little as $5.
+        
+        %h2 Together we can change the world.  
+          
+        
+        %p.wait
+          Your game should be ready in a minute or so
+        
+        .spinner.wait
           = image_tag "spinner.gif", :title => "Spinner"
+          
+        #actions
+          = button_to "Please Wait...", '#', :id => "wait_btn", :disabled => true, :class => "wait"
+          = button_to "Ready?  Let's Play >>", '#', :id => "next_btn", :class => "button", :rel => "" 
               
       

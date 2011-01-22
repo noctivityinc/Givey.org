@@ -456,47 +456,43 @@ a img {
 /* line 80, ../../../app/stylesheets/application.sass */
 #container .trans {
   padding: 10px;
-  background: white;
+  margin-bottom: 10px;
+  background: url(/images/white_trans.png);
   -moz-border-radius: 5px;
   border-radius: 5px;
-  filter: alpha(opacity=80);
-  -moz-opacity: 0.8;
-  -khtml-opacity: 0.8;
-  opacity: 0.8;
-  margin-bottom: 10px;
 }
-/* line 91, ../../../app/stylesheets/application.sass */
+/* line 87, ../../../app/stylesheets/application.sass */
 #container .trans a {
   color: #000066;
   text-decoration: underline;
 }
-/* line 95, ../../../app/stylesheets/application.sass */
+/* line 91, ../../../app/stylesheets/application.sass */
 #container #copy {
   margin: 0.25em auto;
   text-align: center;
   min-height: 400px;
 }
-/* line 100, ../../../app/stylesheets/application.sass */
+/* line 96, ../../../app/stylesheets/application.sass */
 #container #copy.boxit {
   padding: 15px;
   background: white;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 106, ../../../app/stylesheets/application.sass */
+/* line 102, ../../../app/stylesheets/application.sass */
 #container #copy h1 {
   text-align: center;
 }
-/* line 109, ../../../app/stylesheets/application.sass */
+/* line 105, ../../../app/stylesheets/application.sass */
 #container #copy h2 {
   text-align: center;
 }
-/* line 112, ../../../app/stylesheets/application.sass */
+/* line 108, ../../../app/stylesheets/application.sass */
 #container #copy h3 {
   text-align: left;
   width: 650px;
 }
-/* line 116, ../../../app/stylesheets/application.sass */
+/* line 112, ../../../app/stylesheets/application.sass */
 #container #copy p {
   font-size: 12pt;
   width: 650px;
@@ -505,7 +501,7 @@ a img {
   line-height: 1.25em;
   display: block;
 }
-/* line 124, ../../../app/stylesheets/application.sass */
+/* line 120, ../../../app/stylesheets/application.sass */
 #container #copy .button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -569,7 +565,7 @@ a img {
   color: white;
 }
 
-/* line 127, ../../../app/stylesheets/application.sass */
+/* line 124, ../../../app/stylesheets/application.sass */
 #footer {
   padding-top: 25px;
   height: 100px;
@@ -577,22 +573,22 @@ a img {
   text-align: center;
   family: "Lucinda Grande";
 }
-/* line 134, ../../../app/stylesheets/application.sass */
+/* line 131, ../../../app/stylesheets/application.sass */
 #footer a {
   color: #333333;
   text-transform: uppercase;
   font-size: 0.9em;
 }
-/* line 139, ../../../app/stylesheets/application.sass */
+/* line 136, ../../../app/stylesheets/application.sass */
 #footer a:hover {
   color: red;
 }
-/* line 143, ../../../app/stylesheets/application.sass */
+/* line 140, ../../../app/stylesheets/application.sass */
 #footer #navs .nav {
   display: inline;
   padding-right: 15px;
 }
-/* line 147, ../../../app/stylesheets/application.sass */
+/* line 144, ../../../app/stylesheets/application.sass */
 #footer #copyright {
   clear: both;
   padding-top: 2em;
@@ -601,23 +597,23 @@ a img {
   text-transform: uppercase;
 }
 
-/* line 155, ../../../app/stylesheets/application.sass */
+/* line 152, ../../../app/stylesheets/application.sass */
 #flash_notice {
   color: black;
 }
 
-/* line 158, ../../../app/stylesheets/application.sass */
+/* line 155, ../../../app/stylesheets/application.sass */
 #flash_error,
 #flash_alert {
   color: #cc0000;
 }
 
-/* line 162, ../../../app/stylesheets/application.sass */
+/* line 159, ../../../app/stylesheets/application.sass */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 165, ../../../app/stylesheets/application.sass */
+/* line 162, ../../../app/stylesheets/application.sass */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -627,7 +623,7 @@ a img {
   background-color: #f0f0f0;
   font-size: 12px;
 }
-/* line 174, ../../../app/stylesheets/application.sass */
+/* line 171, ../../../app/stylesheets/application.sass */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -637,11 +633,11 @@ a img {
   background-color: #cc0000;
   color: white;
 }
-/* line 183, ../../../app/stylesheets/application.sass */
+/* line 180, ../../../app/stylesheets/application.sass */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 185, ../../../app/stylesheets/application.sass */
+/* line 182, ../../../app/stylesheets/application.sass */
 .error_messages ul {
   margin: 0;
 }

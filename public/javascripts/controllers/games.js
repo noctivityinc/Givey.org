@@ -22,10 +22,11 @@ $(document).ready(function() {
   })
   
   $('#replace_cards').click(function() {
+    if(confirm('We give you ONE skip just in case you find yourself staring at three people and truly have no idea who any of them are.  Are you SURE you want to use it now?')) {
     url = $('#show').attr('rel');
     card = $('.card:first');
     data = {'sub':'true', 'duel':card.attr('givey:duel')}
-    postDuel(url, data);
+    postDuel(url, data); }
     return false;
   });
   

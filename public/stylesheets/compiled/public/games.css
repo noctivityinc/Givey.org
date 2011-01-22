@@ -8,21 +8,35 @@
   opacity: 0.5;
 }
 
-/* line 14, ../../../../app/stylesheets/public/games.sass */
+/* line 13, ../../../../app/stylesheets/public/games.sass */
+#game #new #actions {
+  margin-top: 2em;
+}
+/* line 15, ../../../../app/stylesheets/public/games.sass */
+#game #new #actions #wait_btn {
+  font-size: 16px;
+  padding: 10px;
+  width: 150px;
+}
+/* line 19, ../../../../app/stylesheets/public/games.sass */
+#game #new #actions #next_btn {
+  display: none;
+}
+/* line 22, ../../../../app/stylesheets/public/games.sass */
 #game #show {
   position: relative;
 }
-/* line 17, ../../../../app/stylesheets/public/games.sass */
+/* line 25, ../../../../app/stylesheets/public/games.sass */
 #game #show #winners {
   text-align: left;
   position: relative;
   margin-top: 2em;
 }
-/* line 25, ../../../../app/stylesheets/public/games.sass */
+/* line 33, ../../../../app/stylesheets/public/games.sass */
 #game #show #winners #winner_list .winner, #game #show #winners #winner_list #winner_last {
   display: inline-block;
 }
-/* line 28, ../../../../app/stylesheets/public/games.sass */
+/* line 36, ../../../../app/stylesheets/public/games.sass */
 #game #show #playing_field {
   text-align: center;
   height: 400px;
@@ -181,7 +195,7 @@
 #game #show #playing_field .card .frame .box.highlight .header, #game #show #playing_field #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 33, ../../../../app/stylesheets/public/games.sass */
+/* line 41, ../../../../app/stylesheets/public/games.sass */
 #game #show #skip {
   display: none;
   background: white;
@@ -189,15 +203,15 @@
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border: 1px solid gray;
-  width: 300px;
+  width: 150px;
   margin: 0 auto;
 }
-/* line 42, ../../../../app/stylesheets/public/games.sass */
+/* line 50, ../../../../app/stylesheets/public/games.sass */
 #game #show #skip a {
   text-decoration: none;
   color: gray;
 }
-/* line 47, ../../../../app/stylesheets/public/games.sass */
+/* line 55, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay {
   z-index: 200;
   display: none;
@@ -211,7 +225,7 @@
   -webkit-border-radius: 8px;
   background: white;
 }
-/* line 62, ../../../../app/stylesheets/public/games.sass */
+/* line 70, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #card {
   width: 325px;
 }
@@ -369,39 +383,39 @@
 #game #show #winner #overlay #card .card .frame .box.highlight .header, #game #show #winner #overlay #card #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 66, ../../../../app/stylesheets/public/games.sass */
+/* line 74, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch {
   width: 425px;
   font-size: 13px;
 }
-/* line 70, ../../../../app/stylesheets/public/games.sass */
+/* line 78, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch h2 {
   padding-bottom: 15px;
   margin-bottom: 0px;
 }
-/* line 74, ../../../../app/stylesheets/public/games.sass */
+/* line 82, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #checkboxes {
   margin-top: 25px;
 }
-/* line 76, ../../../../app/stylesheets/public/games.sass */
+/* line 84, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #checkboxes .cb {
   margin: 5px 0px;
   padding-left: 20px;
   text-align: left;
 }
-/* line 81, ../../../../app/stylesheets/public/games.sass */
+/* line 89, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #actions {
   position: absolute;
   width: 400px;
   bottom: 20px;
   vertical-align: bottom;
 }
-/* line 87, ../../../../app/stylesheets/public/games.sass */
+/* line 95, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #actions .back {
   padding-top: 20px;
 }
 
-/* line 91, ../../../../app/stylesheets/public/games.sass */
+/* line 99, ../../../../app/stylesheets/public/games.sass */
 #exposeMask {
   background: black !important;
   z-index: 100;

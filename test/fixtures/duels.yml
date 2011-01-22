@@ -9,6 +9,8 @@
 #  game_id         :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  is_sub          :boolean
+#  active          :boolean
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

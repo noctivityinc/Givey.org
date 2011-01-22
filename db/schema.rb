@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110121143943) do
+ActiveRecord::Schema.define(:version => 20110122032629) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(:version => 20110121143943) do
     t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_sub"
+    t.boolean  "active"
   end
 
   create_table "games", :force => true do |t|
@@ -63,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20110121143943) do
     t.boolean  "official",           :default => true
     t.boolean  "shared_on_facebook"
     t.boolean  "shared_with_winner"
+    t.integer  "total_candidates"
   end
 
   create_table "npos", :force => true do |t|

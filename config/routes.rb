@@ -10,6 +10,7 @@ Givey::Application.routes.draw do
       get :winners
       get :complete
       get :redo
+      get :sub
     end
     get :needs_friends, :on => :collection
   end

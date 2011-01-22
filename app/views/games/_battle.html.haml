@@ -5,9 +5,13 @@
     - if finals?
       Finals!
     - else 
-      = "Round #{@game.duels.played.size+1} of #{total_number_of_duels}."
+      = "Round #{@game.duels.played.size+1} of #{total_battles}."
       
 #playing_field= render(:partial => "challenger", :collection => @challengers)
+
+- if @game.duels.maximum('round') == 1
+  #sub
+    = link_to "Skip (I don't know them well enought)", '#', :id => "replace_cards" 
 
 #winners
   .winner

@@ -9,6 +9,8 @@
 #  game_id         :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  is_sub          :boolean
+#  active          :boolean
 #
 
 class Duel < ActiveRecord::Base
@@ -16,6 +18,10 @@ class Duel < ActiveRecord::Base
   serialize :challenger_uids
   belongs_to :game
   
-  scope :unplayed, where(:winner_uid => nil)
+  default_scope where(:active => true)
+  scope :subs, where(:is_sub => true)
+  scope :players, where("is_sub IS NULL OR is_sub = false")
+  scope :unplayed, lambda {players.where(:winner_uid => nil)}
   scope :played, where("winner_uid IS NOT NULL")
+  scope :inactive, where("active IS NULL OR active = false")
 end

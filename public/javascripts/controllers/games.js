@@ -21,6 +21,14 @@ $(document).ready(function() {
     return false;
   })
   
+  $('#replace_cards').click(function() {
+    url = $('#show').attr('rel');
+    card = $('.card:first');
+    data = {'sub':'true', 'duel':card.attr('givey:duel')}
+    postDuel(url, data);
+    return false;
+  });
+  
   function postDuel(url, data) {
     $('.card').css('visibility', 'hidden')
     $.post(url, data, function(r) {handleDuelResponse(r)})
@@ -59,7 +67,7 @@ $(document).ready(function() {
     
     function changeStats(resp) {
       if (!finals) 
-        $('.subtitle').text("Round " + resp.duel_count + " of " + resp.total_duels)
+        $('.subtitle').text("Round " + resp.duel_count + " of " + resp.total_battles)
       else
         $('.subtitle').text("The Finals!")
     }

@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   before_filter :get_all_friends, :only => [:create]
   before_filter :winner?, :only => [:show, :duel]
 
-  helper_method :total_number_of_duels, :finals?
+  helper_method :total_battles, :finals?
 
   def new
   end
@@ -14,10 +14,12 @@ class GamesController < ApplicationController
     if unfinished_games?
       render :json => {:status => 'complete', :url => url_for(current_user.games.incomplete.first)} # => do this in case back button selected
     else
-      friends_hash = create_friends_hash
-      if friends_hash
-        game = current_user.games.create!({:friends_hash => friends_hash})
+      num_friends_needed = get_total_candidates[0]
+      debugger
+      if num_friends_needed > 0
+        game = current_user.games.create!({:total_candidates => num_friends_needed, :friends_hash => create_friends_hash(num_friends_needed)})
         create_duels(game, game.friends_hash.keys, 1)
+        select_subs(game)
         render :json => {:status => 'complete', :url => url_for(game)}
       else
         render :json => {:status => 'complete', :url => needs_friends_games_url}
@@ -29,19 +31,24 @@ class GamesController < ApplicationController
     unless @game.winner
       @duel = @game.duels.unplayed.first
       @challengers = @duel.challenger_uids.inject([]) {|r,x| r << @game.friends_hash[x]}
-      @total_duels = total_number_of_duels
       get_winners_hash
     end
   end
 
   def duel
-    Duel.update(params[:duel], :winner_uid => params[:uid])
+    if params[:sub]
+      Duel.update(params[:duel], :active => false)
+      @game.duels.replace_sub
+    else
+      Duel.update(params[:duel], :winner_uid => params[:uid])
+    end
+
     @duel = get_next_duel
 
     if @duel
       @challengers = @duel.challenger_uids.inject([]) {|r,x| r << @game.friends_hash[x]}
       current_round = @game.duels.maximum('round')
-      render :json => {:status => 'duel', :html => render_to_string(:partial => "challenger", :collection => @challengers), :round => current_round, :total_duels => total_number_of_duels, :duel_count => @game.duels.played.size+1, :finals => finals?}
+      render :json => {:status => 'duel', :html => render_to_string(:partial => "challenger", :collection => @challengers), :round => current_round, :total_battles => total_battles, :duel_count => @game.duels.played.size+1, :finals => finals?}
     else
       @game.update_attribute(:winner_uid, params[:uid])
       render :json => {:status => 'winner', :html => render_to_string(:partial => "winner_overlay")}
@@ -49,7 +56,7 @@ class GamesController < ApplicationController
   end
 
   def finals?
-    (total_number_of_duels - 1 == @game.duels.played.size) || (total_number_of_duels.to_i == 1)
+    (total_battles - 1 == @game.duels.played.size) || (total_battles.to_i == 1)
   end
 
   def get_next_duel
@@ -71,7 +78,7 @@ class GamesController < ApplicationController
     session[:previous_game_id] = @game.id
     redirect_to :action => :new
   end
-  
+
   def needs_friends
   end
 
@@ -137,21 +144,32 @@ class GamesController < ApplicationController
       end
     end
 
-    def create_friends_hash
-      num_friends_to_select = total_duelers(@all_friends.size)[0]
-      if num_friends_to_select > 0
-        friend_list = @all_friends.sort_by{rand}[0..(num_friends_to_select-1)]
-        unless @must_include.blank?
-          friend_list.pop
-          friend_list.push(@must_include)
-          friend_list.shuffle!
-        end
-        friend_list_ids = friend_list.map {|x| x.uid}
-        friend_pics = @fb.fql("SELECT owner, src, caption, link FROM photo WHERE aid IN (SELECT aid FROM album WHERE owner IN (#{friend_list_ids.join(',')}) AND (type = 'profile' OR type = 'wall'))")
-        friend_list.each { |f| f.photos = friend_pics.select {|x| (x.owner.to_s == f.uid.to_s)}}
-        friends_hash = friend_list.inject({}) {|r,x| r.merge!({x.uid.to_s => x})}
+    def create_friends_hash(num_friends_to_select)
+      friend_list = get_friend_list(num_friends_to_select+total_subs(num_friends_to_select))
+      friend_list_ids = friend_list.map {|x| x.uid}
+
+      friend_pics = @fb.fql("SELECT owner, src, caption, link FROM photo WHERE aid IN (SELECT aid FROM album WHERE owner IN (#{friend_list_ids.join(',')}) AND (type = 'profile' OR type = 'wall'))")
+      friend_list.each { |f| f.photos = friend_pics.select {|x| (x.owner.to_s == f.uid.to_s)}}
+      friends_hash = friend_list.inject({}) {|r,x| r.merge!({x.uid.to_s => x})}
+      friends_hash
+    end
+
+    def get_friend_list(num_to_select)
+      friend_list = @all_friends.sort_by{rand}[0..(num_to_select-1)]
+      unless @must_include.blank?
+        friend_list.pop
+        friend_list.push(@must_include)
+      end
+      friend_list
+    end
+
+    def total_subs(num_friends_selected)
+      if  (@all_friends.size - num_friends_selected) > num_friends_selected
+        num_friends_selected
+      elsif @all_friends.size - num_friends_selected > 0
+        @all_friends.size - num_friends_selected
       else
-        nil
+        0
       end
     end
 
@@ -163,16 +181,16 @@ class GamesController < ApplicationController
       end
     end
 
-    def total_duelers(all_friends_size)
-      if all_friends_size > 1
-        Duel::DUEL_SIZES.detect {|x|  all_friends_size >= x[0]}
+    def get_total_candidates()
+      if @all_friends.size > 1
+        Duel::DUEL_SIZES.detect {|x| @all_friends.size >= x[0]}
       else
         return 0
       end
     end
 
-    def total_number_of_duels
-      Duel::DUEL_SIZES.detect {|x| x[0] == @game.friends_hash.size}[1]
+    def total_battles()
+      Duel::DUEL_SIZES.detect {|x| x[0] == @game.total_candidates}[1]
     end
 
     def create_duels(game, friend_list, round)
@@ -192,9 +210,38 @@ class GamesController < ApplicationController
       end
     end
 
+    def first_round_battles(game)
+      list_size = game.friends_hash.size
+      [6,4,3].each {|x|
+        return first_round_battle_compute(list_size, x) if first_round_battle_compute(list_size, x)
+      }
+
+      if (list_size > 3) && (list_size % 3) == 2 then
+        first = list_size / 3
+        second = (list_size % 3 / 2)
+        return (first + second)
+      elsif list_size % 2 == 0 then
+        return first_round_battle_compute(list_size,2)
+      else
+        return 0
+      end
+    end
+
+    def first_round_battle_compute(list_size, denominator)
+      return (list_size / denominator) if list_size % denominator == 0
+    end
+
     def create_duel(game, friend_list, round, group_size)
-      friend_list.in_groups_of(group_size).each { |x| game.duels.create(:round => round, :challenger_uids => x.compact) }
+      friend_list.in_groups_of(group_size).each { |x| game.duels.create(:round => round, :challenger_uids => x.compact, :is_sub => true, :active  => true) }
       return true
+    end
+
+    def select_subs(game)
+      # => reverse since a must include would be at the end
+      game.duels.reverse[0..first_round_battles(game)-1].each do |x|
+        x.is_sub = false
+        x.save!
+      end
     end
 
     def get_winners_hash

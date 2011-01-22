@@ -15,27 +15,36 @@
 #  official           :boolean         default(TRUE)
 #  shared_on_facebook :boolean
 #  shared_with_winner :boolean
+#  total_candidates   :integer
 #
 
 class Game < ActiveRecord::Base
   serialize :friends_hash
-  
+
   belongs_to :user
 
-  has_many :duels, :dependent => :destroy  do 
+  has_many :duels, :dependent => :destroy  do
     def winners_for_round(round)
       played.where(:round => round).map {|x| x.winner_uid}
+    end
+
+    def replace_sub
+      a_sub = subs.first
+      if a_sub
+        a_sub.is_sub = false
+        a_sub.save!
+      end
     end
   end
 
   validates_presence_of :user_id
-  
+
   scope :incomplete, where('winner_uid IS NULL')
   scope :complete, where('winner_uid IS NOT NULL')
   scope :official, where(:official => true)
-  
+
   def winner
     friends_hash[self.winner_uid]
   end
-  
+
 end

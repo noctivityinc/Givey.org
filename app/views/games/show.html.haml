@@ -3,6 +3,9 @@
 - content_for :head do
   :javascript
     var finals = #{finals? ? true : false};
+    $(document).ready(function() {
+      if (#{allow_skip?}) $('#skip').show()
+    });
     
 - if @game.winner
   - content_for :feet do

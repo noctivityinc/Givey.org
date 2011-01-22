@@ -9,9 +9,9 @@
       
 #playing_field= render(:partial => "challenger", :collection => @challengers)
 
-- if @game.duels.maximum('round') == 1
-  #sub
-    = link_to "Skip (I don't know them well enought)", '#', :id => "replace_cards" 
+- if allow_skip?
+  #skip
+    = link_to "Skip (I don't know ANY of these candidates)", '#', :id => "replace_cards", :confirm => "We give you ONE skip just in case you find yourself staring at three people and truly have no idea who any of them are.  Are you SURE you want to use it now?"  
 
 #winners
   .winner

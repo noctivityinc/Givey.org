@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   before_filter :get_all_friends, :only => [:create]
   before_filter :winner?, :only => [:show, :duel]
 
-  helper_method :total_battles, :finals?
+  helper_method :total_battles, :finals?, :allow_skip?
 
   def new
   end
@@ -15,7 +15,6 @@ class GamesController < ApplicationController
       render :json => {:status => 'complete', :url => url_for(current_user.games.incomplete.first)} # => do this in case back button selected
     else
       num_friends_needed = get_total_candidates[0]
-      debugger
       if num_friends_needed > 0
         game = current_user.games.create!({:total_candidates => num_friends_needed, :friends_hash => create_friends_hash(num_friends_needed)})
         create_duels(game, game.friends_hash.keys, 1)
@@ -48,7 +47,7 @@ class GamesController < ApplicationController
     if @duel
       @challengers = @duel.challenger_uids.inject([]) {|r,x| r << @game.friends_hash[x]}
       current_round = @game.duels.maximum('round')
-      render :json => {:status => 'duel', :html => render_to_string(:partial => "challenger", :collection => @challengers), :round => current_round, :total_battles => total_battles, :duel_count => @game.duels.played.size+1, :finals => finals?}
+      render :json => {:status => 'duel', :html => render_to_string(:partial => "challenger", :collection => @challengers), :round => current_round, :total_battles => total_battles, :duel_count => @game.duels.played.size+1, :finals => finals?, :allow_skip => allow_skip?}
     else
       @game.update_attribute(:winner_uid, params[:uid])
       render :json => {:status => 'winner', :html => render_to_string(:partial => "winner_overlay")}
@@ -145,7 +144,7 @@ class GamesController < ApplicationController
     end
 
     def create_friends_hash(num_friends_to_select)
-      friend_list = get_friend_list(num_friends_to_select+total_subs(num_friends_to_select))
+      friend_list = get_friend_list(num_friends_to_select+total_subs)
       friend_list_ids = friend_list.map {|x| x.uid}
 
       friend_pics = @fb.fql("SELECT owner, src, caption, link FROM photo WHERE aid IN (SELECT aid FROM album WHERE owner IN (#{friend_list_ids.join(',')}) AND (type = 'profile' OR type = 'wall'))")
@@ -163,14 +162,8 @@ class GamesController < ApplicationController
       friend_list
     end
 
-    def total_subs(num_friends_selected)
-      if  (@all_friends.size - num_friends_selected) > num_friends_selected
-        num_friends_selected
-      elsif @all_friends.size - num_friends_selected > 0
-        @all_friends.size - num_friends_selected
-      else
-        0
-      end
+    def total_subs()
+      @all_friends.size >= 39 ? 3 : 0
     end
 
     def winner?
@@ -210,38 +203,18 @@ class GamesController < ApplicationController
       end
     end
 
-    def first_round_battles(game)
-      list_size = game.friends_hash.size
-      [6,4,3].each {|x|
-        return first_round_battle_compute(list_size, x) if first_round_battle_compute(list_size, x)
-      }
-
-      if (list_size > 3) && (list_size % 3) == 2 then
-        first = list_size / 3
-        second = (list_size % 3 / 2)
-        return (first + second)
-      elsif list_size % 2 == 0 then
-        return first_round_battle_compute(list_size,2)
-      else
-        return 0
-      end
-    end
-
-    def first_round_battle_compute(list_size, denominator)
-      return (list_size / denominator) if list_size % denominator == 0
-    end
-
     def create_duel(game, friend_list, round, group_size)
-      friend_list.in_groups_of(group_size).each { |x| game.duels.create(:round => round, :challenger_uids => x.compact, :is_sub => true, :active  => true) }
+      friend_list.in_groups_of(group_size).each { |x| game.duels.create!(:round => round, :challenger_uids => x.compact, :is_sub => false, :active  => true) }
       return true
     end
 
     def select_subs(game)
       # => reverse since a must include would be at the end
-      game.duels.reverse[0..first_round_battles(game)-1].each do |x|
-        x.is_sub = false
-        x.save!
-      end
+      game.duels.first.update_attribute(:is_sub, true) if game.total_candidates == 36
+    end
+    
+    def allow_skip?
+      @game.duels.subs.exists? && @game.duels.maximum('round') == 1
     end
 
     def get_winners_hash

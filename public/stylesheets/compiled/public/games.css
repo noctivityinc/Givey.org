@@ -182,7 +182,8 @@
   background: #ff6600;
 }
 /* line 33, ../../../../app/stylesheets/public/games.sass */
-#game #show #sub {
+#game #show #skip {
+  display: none;
   background: white;
   padding: 5px;
   -moz-border-radius: 8px;
@@ -191,12 +192,12 @@
   width: 300px;
   margin: 0 auto;
 }
-/* line 41, ../../../../app/stylesheets/public/games.sass */
-#game #show #sub a {
+/* line 42, ../../../../app/stylesheets/public/games.sass */
+#game #show #skip a {
   text-decoration: none;
   color: gray;
 }
-/* line 46, ../../../../app/stylesheets/public/games.sass */
+/* line 47, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay {
   z-index: 200;
   display: none;
@@ -210,7 +211,7 @@
   -webkit-border-radius: 8px;
   background: white;
 }
-/* line 61, ../../../../app/stylesheets/public/games.sass */
+/* line 62, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #card {
   width: 325px;
 }
@@ -368,39 +369,39 @@
 #game #show #winner #overlay #card .card .frame .box.highlight .header, #game #show #winner #overlay #card #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 65, ../../../../app/stylesheets/public/games.sass */
+/* line 66, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch {
   width: 425px;
   font-size: 13px;
 }
-/* line 69, ../../../../app/stylesheets/public/games.sass */
+/* line 70, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch h2 {
   padding-bottom: 15px;
   margin-bottom: 0px;
 }
-/* line 73, ../../../../app/stylesheets/public/games.sass */
+/* line 74, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #checkboxes {
   margin-top: 25px;
 }
-/* line 75, ../../../../app/stylesheets/public/games.sass */
+/* line 76, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #checkboxes .cb {
   margin: 5px 0px;
   padding-left: 20px;
   text-align: left;
 }
-/* line 80, ../../../../app/stylesheets/public/games.sass */
+/* line 81, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #actions {
   position: absolute;
   width: 400px;
   bottom: 20px;
   vertical-align: bottom;
 }
-/* line 86, ../../../../app/stylesheets/public/games.sass */
+/* line 87, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #actions .back {
   padding-top: 20px;
 }
 
-/* line 90, ../../../../app/stylesheets/public/games.sass */
+/* line 91, ../../../../app/stylesheets/public/games.sass */
 #exposeMask {
   background: black !important;
   z-index: 100;

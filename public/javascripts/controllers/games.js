@@ -49,6 +49,7 @@ $(document).ready(function() {
       finals = r.finals
       loadWinners();
       changeStats(r);
+      toggleSkip(r)
       $('#playing_field').html(r.html);
       $('.sc_menu_wrapper').jScrollPane();
     }
@@ -72,9 +73,22 @@ $(document).ready(function() {
         $('.subtitle').text("The Finals!")
     }
     
+    function toggleSkip(r) {
+      // error checking since #skip might not exist
+      try {        
+        if (r.allow_skip == true) 
+          $('#skip').show() 
+        else
+          $('#skip').hide() 
+        }
+      catch(err) {}
+    }
+    
     function loadWinners() {
       $('#winners').load($('#show').attr('givey:winners'));
     }
+    
+    
 });
 
 function activate_overlay () {

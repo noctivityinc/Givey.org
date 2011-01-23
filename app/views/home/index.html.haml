@@ -23,7 +23,7 @@
       
         - else
           %h1.yanone 
-            On February 10th a quest began to find the single person on Facebook 
+            On February 10th a quest will begin to find the single person on Facebook 
             most likely to change the world.  
         
           %h2 The "chosen one" will be given $25,000 to donate as they see fit.
@@ -31,9 +31,10 @@
           %h2
             Do you think your friends can change the world?      
 
-          #facebook
-            - unless current_user 
-              = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
+          - unless Rails.env == 'production'
+            #facebook
+              - unless current_user 
+                = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
       
       #logo
         = image_tag "givey_logo_large.png", :title => "Givey.org"

@@ -23,7 +23,7 @@ group :default do
   gem 'fancy-buttons'
   gem 'nokogiri'
   gem 'geo_location' #, :git => 'git://github.com/chrisyour/geo_location.git'
-  
+  gem 'hoptoad_notifier'
 end
 
 group :production do

@@ -53,6 +53,9 @@ GEM
       railties (~> 3.0)
     hashie (0.4.0)
     hirb (0.3.6)
+    hoptoad_notifier (2.4.2)
+      activesupport
+      builder
     i18n (0.5.0)
     jquery-rails (0.2.6)
       rails (~> 3.0)
@@ -134,6 +137,7 @@ DEPENDENCIES
   haml
   haml-rails
   hirb
+  hoptoad_notifier
   jquery-rails (>= 0.2.6)
   mail
   mini_fb

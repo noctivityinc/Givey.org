@@ -45,7 +45,7 @@ class DonationsController < ApplicationController
   end
   
   private
-  
+
   def get_game
     if params[:gid]
       @game = Game.find(params[:gid])

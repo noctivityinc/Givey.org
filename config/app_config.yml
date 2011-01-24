@@ -9,6 +9,10 @@ development:
     email: Seller_1294884489_biz@givey.org
     secret: givegetfun
     url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  givey:
+    post_url: 'http://stage.wepay.com'
+    token: e3079fae0f
+    group_id: 95508
 
 test:
   domain: test.host

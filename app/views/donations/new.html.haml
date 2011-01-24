@@ -4,19 +4,16 @@
   :javascript
     $(document).ready(function() {
       $('#donate_btn').click(function(e) {
-        $.getJSON({url: 'http://stage.wepay.com/sp/create',
-                data: {
-                  format: 'jsonp',
-                  token: "6a0380dcbd", 
-                  group_id: "30563",
-                  buyer_email: "#{current_user.email}",
-                  amount: "5.00",
-                  reason: "In honor of #{@game.winner.name}, who will save the world.",
-                  rd: "http://progphp.com/info.php"
-                  },
-                  success: function(data) {
-                    // window.location.href=data.result;
-               }});
+      console.log($(this).attr('rel'))
+      $.getJSON("#{APP_CONFIG[:givey]['post_url']}/sp/create?format=jsonp&callback=?",
+               {  token: "#{APP_CONFIG[:givey]['token']}", 
+                  group_id: "#{APP_CONFIG[:givey]['group_id']}",
+                  buyer_email: '#{current_user.email rescue ""}',
+                  amount: '5.00',
+                  reason: $(this).attr('rel')
+               } ,function(data) {
+                  window.location.href=data.result;
+               });
         return false;
       });
     });
@@ -25,19 +22,35 @@
 #donation
   #new
     #copy.trans
-      %h1= "So you think that #{@game.winner.name} might save the world?"
+      - if @game && @game.winner
+        %h1= "So you think that #{@game.winner.name} might save the world?"
       
-      %h1 Please help us find out how.
+        %h1 Please help us find out how.
       
-      %h2
-        Together, we're raising $25,000 to give to  
-        = @game.winner.name.split(/\s/)[0] 
-        to split among some amazing causes.*
+        %h2
+          Together, we're raising $25,000 to give to  
+          = @game.winner.name.split(/\s/)[0] 
+          to split among some amazing causes.*
         
-      %h2
-        We're only asking for $5 from each player, and have
-        already raised $XXXX from Givey players just like you.
+        %h2
+          We're only asking for $5 from each player, and have
+          already raised $XXXX from Givey players just like you.
         
-      #actions
-        = button_to 'Contribute Now', '#', :id => 'donate_btn', :class => "button"
+        #actions
+          = button_to 'Contribute Now', '#', :id => 'donate_btn', :class => "button", :rel => "In honor of #{@game.winner}, who's going to change the world."
+      
+      - else
+        %h1= "Looking to help us change the world??"
+      
+        %h2
+          Together, we're raising $25,000 for   
+          the most trusted person on Facebook
+          to split amount some amazing causes.
+        
+        %h2
+          We're only asking for $5 from each player, and have
+          already raised $XXXX from Givey players just like you.
+        
+        #actions
+          = button_to 'Contribute Now', '#', :id => 'donate_btn', :class => "button", :rel => "To help us make a difference."
         

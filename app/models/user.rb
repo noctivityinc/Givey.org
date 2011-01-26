@@ -2,29 +2,39 @@
 #
 # Table name: users
 #
-#  id          :integer         not null, primary key
-#  provider    :string(255)
-#  uid         :string(255)
-#  email       :string(255)
-#  name        :string(255)
-#  gender      :string(255)
-#  locale      :string(255)
-#  profile_pic :string(255)
-#  token       :string(255)
-#  created_at  :datetime
-#  updated_at  :datetime
-#  first_name  :string(255)
-#  last_name   :string(255)
-#  admin       :boolean
-#  all_friends :text
-#  location    :text
+#  id                           :integer         not null, primary key
+#  provider                     :string(255)
+#  uid                          :string(255)
+#  email                        :string(255)
+#  name                         :string(255)
+#  gender                       :string(255)
+#  locale                       :string(255)
+#  profile_pic                  :string(255)
+#  token                        :string(255)
+#  created_at                   :datetime
+#  updated_at                   :datetime
+#  first_name                   :string(255)
+#  last_name                    :string(255)
+#  admin                        :boolean
+#  all_friends                  :text
+#  location                     :text
+#  givey_token                  :string(255)
+#  referring_id                 :integer
+#  candidate                    :boolean
+#  candidates_story             :text
+#  candidate_post_story_to_wall :boolean
 #
 
 class User < ActiveRecord::Base
   serialize :all_friends
   serialize :location
   
+  before_create :generate_givey_token
+  
   has_many :games, :dependent => :destroy 
+  belongs_to :referring_friend, :class_name => "User", :foreign_key => "referring_id"
+  
+  scope :candidates, where(:candidate => true)
   
   def admin?
     self.admin
@@ -34,19 +44,21 @@ class User < ActiveRecord::Base
     !games.complete.official.empty?
   end
 
-  def self.create_with_omniauth(auth, location)
+  def self.create_with_omniauth(auth, location, referring_id)
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.location = location
+      user.referring_id = referring_id
     end
   end
 
-  def self.create_with_mini_fb(fb, location)
+  def self.create_with_mini_fb(fb, location, referring_id)
     create! do |user|
       user.provider = 'facebook'
       user.uid = fb.id
       user.location = location
+      user.referring_id = referring_id
     end
   end
 
@@ -74,7 +86,15 @@ class User < ActiveRecord::Base
   end
   
   def log_out!
-    self.token = nil
-    save!
+    # self.token = nil
+    # save!
   end
+  
+  private
+  
+  def generate_givey_token
+    self.givey_token = rand(36**8).to_s(36)
+  end
+  
+  
 end

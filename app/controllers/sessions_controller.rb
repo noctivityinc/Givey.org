@@ -33,9 +33,10 @@ class SessionsController < ApplicationController
       fb = MiniFB::OAuthSession.new(access_token)
       profile_pic = fb.fql("SELECT pic_square FROM user WHERE uid = me()").first.pic_square
 
-      @user = User.find_by_provider_and_uid('facebook',fb.me.id) || User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip))
+      @user = User.find_by_provider_and_uid('facebook',fb.me.id) || User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
       @user.update_with_mini_fb(fb.me, profile_pic, access_token) # => updates to make sure we have latest session key and profile info
       set_user_cookie
+      session[:referring_id] = nil
       @user.games.destroy_all if Rails.env == 'staging'
     end
 
@@ -48,6 +49,6 @@ class SessionsController < ApplicationController
 
     def set_user_cookie
       cookies[:user_id] = {:value => @user.id, :expires => 24.hours.from_now }
-      redirect_to new_game_path
+      redirect_back(new_game_path)
     end
 end

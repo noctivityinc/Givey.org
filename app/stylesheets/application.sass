@@ -81,9 +81,8 @@ a
     padding: 10px
     margin-bottom: 10px
     background: url(/images/white_trans.png)
-    -moz-border-radius: 5px
-    border-radius: 5px
-
+    +rounded-borders
+    
     a
       color: #006
       text-decoration: underline
@@ -119,6 +118,9 @@ a
 
     .button
       +fancy-button(darken(#57b42c, 8))      
+
+    .gray-button
+      +fancy-button(lighten(#CCC, 8))      
       
 
 #footer

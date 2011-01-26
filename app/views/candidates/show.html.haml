@@ -1,0 +1,75 @@
+- title "You're Going To Change The World"
+
+- content_for :head do
+  = javascript_include_tag 'zero_clipboard'
+  %meta{:content => "#{@candidate.name} Givey.org Profile", :property => "og:title"}/
+  %meta{:content => candidate_url(@candidate, :only_path => false), :property => "og:url"}/
+  %meta{:content => "http://#{APP_CONFIG[:domain]}/#{image_path('givey_logo')}", :property => "og:image"}/
+  %meta{:content => "DESCRIPTION", :property => "og:description"}/
+  %meta{:content => "Givey.org", :property => "og:site_name"}/
+  %meta{:content => "#{@candidate.name} Givey.org Profile", :property => "og:type"}/
+  %meta{:content => APP_CONFIG[:facebook]['api_id'], :property => "fb:app_id"}/
+
+  :javascript
+    $(document).ready(function() {
+      clipIt();
+    });
+
+#candidate
+  #show
+    #copy.trans
+      .row
+        .fleft.sidebar
+          .candidate
+            .card
+              .frame
+                .box
+                  .top
+                    .profile_pic= image_tag @candidate.profile_pic
+                    .name.cabin= @candidate.name
+
+                  .sc_menu_wrapper
+                    .header
+                      = "#{@candidate.first_name}'s STORY"
+                    .story
+                      = @candidate.candidates_story
+          
+              .fb_like        
+                %fb:like{:href => "#{candidate_url(@candidate, :only_path => false)}", :layout => "button_count", :show_faces => "false", :width => "50"}
+            
+        .fleft.copy
+          %h1 Become A Finalist. Change The World
+          
+          %p
+            The more of your friends who think you will change the world, the better your odds of getting that chance.
+            
+          .url
+            %h3 
+              Share your unique referral link
+
+            = text_field_tag 'url', candidate_link
+            
+            #buttons.row
+              .btn.fleft
+                = link_to image_tag("icons/twitter.png", :title => "Twitter"), "http://twitter.com/share?url=#{candidate_link}&text=I%20was%20just%20nominated%20as%20the%20most%20philanthropic%20person%20on%20Facebook.%20%20Who's%20your%20most%20philanthropic%20friend"
+                = link_to "Tweet it", "http://twitter.com/share?url=#{candidate_link}&text=I%20was%20just%20nominated%20as%20the%20most%20philanthropic%20person%20on%20Facebook.%20%20Who's%20your%20most%20philanthropic%20friend"
+              .btn.fleft
+                = link_to image_tag('icons/email.png'), "mailto:?body=I%20was%20just%20nominated%20as%20the%20most%20trusted%20person%20on%20Facebook.%20%20Who's%20your%20most%20philanthropic%20friend?%20Check%20out%20#{candidate_link}%20to%20find%20out&subject=Am%20I%20your%20most%20philanthropic%20friend?"
+                = link_to "Email it", "mailto:?body=I%20was%20just%20nominated%20as%20the%20most%20trusted%20person%20on%20Facebook.%20%20Who's%20your%20most%20philanthropic%20friend?%20Check%20out%20#{candidate_link}%20to%20find%20out&subject=Am%20I%20your%20most%20philanthropic%20friend?"
+              .btn.fleft
+                .clipit{:rel => candidate_link}
+                  = image_tag "buttons/button_up.png"
+                  .text Copy to clipboard
+          
+          
+          .play_game
+            %h2 Which of YOUR friends is most likely to change the world?
+          
+            = link_to "Play The Game >>", root_url, :class => "button"
+            
+            #friends.row
+              - @friends.each do |f|
+                .friend.fleft
+                  = image_tag f.pic_square, :title => f.name
+          
+            

@@ -2,15 +2,26 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   after_filter :record_previous_page
 
-  helper_method :current_user, :facebook_oauth_callback_url, :unfinished_games?
+  helper_method :current_user, :facebook_oauth_callback_url, :unfinished_games?, :production?
 
   def facebook_oauth_callback_url
     return "http://#{request.host_with_port}/auth/facebook/callback"
   end
 
-  def redirect_back
-    redirect_to session[:previous_page]
+  def redirect_back(default_url=nil)
+    session_page = session[:previous_page]
+    session[:previous_page] = nil
+    redirect_to (session_page || default_url)
   end
+  
+  def production?
+    Rails.env == 'production'
+  end
+
+  def require_user
+    redirect_to root_url, :notice => "Please log in to continue." unless current_user
+  end
+
 
   private
 

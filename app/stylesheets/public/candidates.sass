@@ -1,0 +1,117 @@
+@import 'base'
+@import 'card'
+
+#candidate
+  #copy
+    .sidebar
+      width: 320px
+      background: white
+      +rounded-borders(10px)
+      padding: 5px
+      text-align: left
+      min-height: 500px
+  
+    .copy
+      width: 580px
+      padding-left: 30px
+    
+      p
+        text-align: left
+        width: 100%
+    
+  
+  #new
+    .accept
+      border: 1px solid gray
+      background: #FFC
+      padding: 8px
+      
+  #story
+    .sidebar
+      .header
+        text-align: center
+        width: 100%
+        
+        h1
+          font-size: 1.30em
+          margin: 10px 0px 0px 0px
+          color: #666
+          
+        img
+          margin: 0 auto
+          
+      .details
+        margin-top: 1.5em
+        clear: both
+        
+        h2
+          font-size: 1.2em
+        
+        p
+          font-size: 12px
+          width: 100%
+          
+    .copy
+      textarea
+        width: 500px
+        height: 150px
+        
+      .share
+        margin: .5em 0em
+        
+      #actions
+        margin-top: 1.5em
+        
+      p
+        text-align: left
+        width: 100%
+        
+#candidates, #candidate
+  #index, #show
+    .clippy
+      display: inline
+    
+    .candidate
+      margin: 0px 10px
+      width: 275px
+      +card
+      
+      .card > .frame > .box > .top
+        background: url('/images/candidate_bar.png')
+        color: #fff
+        width: 242px
+        text-shadow: #666 2px 2px 2px        
+
+      .card > .frame > .box > .sc_menu_wrapper > .header
+        background: #2E133F
+        
+      .fb_like
+        width: 260px
+        text-align: center
+        padding: 15px
+        
+    .url
+      input
+        width: 400px
+        font-size: 16px
+        
+      #buttons
+        width: 400px
+        margin: 10px auto
+        img
+          vertical-align: middle
+          width: 24px
+        a
+          text-decoration: none
+        .btn
+          margin-right: 20px
+          
+          .clipit
+            .text
+              display: inline
+    
+    .play_game    
+      margin-top: 3em
+      
+      #friends
+        margin-top: 30px

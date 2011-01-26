@@ -1,4 +1,12 @@
 - title "Givey.org - Can you change the world?  Let's play."
+
+- unless current_user
+  - content_for :head do
+    :javascript
+      $(document).ready(function() {
+        window.setTimeout(function(){FB.logout()},1000)
+      });
+
 #home
   #index
     #copy
@@ -31,7 +39,7 @@
           %h2
             Do you think your friends can change the world?      
 
-          - unless Rails.env == 'production'
+          - unless production?
             #facebook
               - unless current_user 
                 = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url

@@ -32,14 +32,29 @@
 #
 
 class Npo < ActiveRecord::Base
-  has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :logo, :styles => { :medium => "200X200>", :thumb => "100x100>" },
+    :url => '/images/npos/:basename_:style.:extension', 
+    :path => ":rails_root/public/images/npos/:basename_:style.:extension"
+    
+  before_create :randomize_file_name
 
   has_many :slots
   has_many :campaigns, :through => :slots
   belongs_to :category
   
-  validates_presence_of :name, :website, :description, :summary
+  validates_presence_of :name, :website, :description, :summary, :category
+
+  def self.pick
+    all.sort_by{rand}.first
+  end
   
-  # TODO - add logo image
-  # TODO - add address form and attention 
+  private
+  
+  def randomize_file_name
+    return if photo_file_name.nil?
+    extension = File.extname(photo_file_name).downcase
+    if photo_file_name_changed?
+      self.photo.instance_write(:file_name, "#{ActiveSupport::SecureRandom.hex(16)}#{extension}")
+    end
+  end
 end

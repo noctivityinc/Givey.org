@@ -1,5 +1,5 @@
 development:
-  domain: localhost:8080
+  domain: dev.givey.org:3000
   facebook:
     app_id: '176745529032044'
     api_key: '3cc8c8db3c869419f97c737eb262c3e1'

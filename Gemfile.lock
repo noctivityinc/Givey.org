@@ -122,6 +122,7 @@ GEM
     unicorn (3.3.1)
       kgio (~> 2.1)
       rack
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
@@ -151,3 +152,4 @@ DEPENDENCIES
   shoulda
   tabletastic
   unicorn (>= 3.1.0)
+  will_paginate (~> 3.0.beta)

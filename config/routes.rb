@@ -3,18 +3,23 @@ Givey::Application.routes.draw do
   resources :npos
   resources :games do
     member do
-      post :paypal_redirect
       get :in_progress
-      get :share
+      put :share
       post :duel
       get :winners
       get :complete
       get :redo
-      get :sub
     end
     get :needs_friends, :on => :collection
   end
-  resource :payment_notifications, :only => :create
+  
+  resources :candidates do
+    collection do
+      get :story
+      put :submit_story
+    end
+  end
+  match "/c/:token"  => "candidates#new"
 
   match "/auth/:provider/callback" => "sessions#create"
   match 'access_denied', :to => "sessions#access_denied", :as => "access_denied"
@@ -29,4 +34,7 @@ Givey::Application.routes.draw do
 
   get "home/index"
   root :to => "home#index"
+  match "/:token", :to => "home#show" 
+
+
 end

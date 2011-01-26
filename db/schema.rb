@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110122032629) do
+ActiveRecord::Schema.define(:version => 20110125171520) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(:version => 20110122032629) do
     t.boolean  "shared_on_facebook"
     t.boolean  "shared_with_winner"
     t.integer  "total_candidates"
+    t.boolean  "posted_to_wall"
+    t.boolean  "notified_winner"
   end
 
   create_table "npos", :force => true do |t|
@@ -122,6 +124,11 @@ ActiveRecord::Schema.define(:version => 20110122032629) do
     t.boolean  "admin"
     t.text     "all_friends"
     t.text     "location"
+    t.string   "givey_token"
+    t.integer  "referring_id"
+    t.boolean  "candidate"
+    t.text     "candidates_story"
+    t.boolean  "candidate_post_story_to_wall"
   end
 
 end

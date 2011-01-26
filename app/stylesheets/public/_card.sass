@@ -8,13 +8,11 @@
     -khtml-opacity: 1
     opacity: 1
     
-
     .frame  
       width: 260px
       height: 350px
       padding: 5px
-      -moz-border-radius: 5px
-      border-radius: 5px
+      +rounded-borders
       -moz-box-shadow: 3px 3px 4px #000
       -webkit-box-shadow: 3px 3px 4px #000
       box-shadow: 3px 3px 4px #000
@@ -107,6 +105,10 @@
             vertical-align: absmiddle
             text-align: center
             padding: 10px
+            
+          .story
+            font-size: 1.25em
+            line-height: 1.25em
 
         .nothing
           text-align: center
@@ -130,3 +132,5 @@
   
           .header
             background: #FF6600  
+            
+      

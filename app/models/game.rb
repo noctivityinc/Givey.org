@@ -16,10 +16,13 @@
 #  shared_on_facebook :boolean
 #  shared_with_winner :boolean
 #  total_candidates   :integer
+#  posted_to_wall     :boolean
+#  notified_winner    :boolean
 #
 
 class Game < ActiveRecord::Base
   serialize :friends_hash
+  before_create :generate_token
 
   belongs_to :user
 
@@ -46,5 +49,12 @@ class Game < ActiveRecord::Base
   def winner
     friends_hash[self.winner_uid]
   end
+  
+  private
+  
+  def generate_token
+    self.token = rand(36**8).to_s(36)
+  end
+  
 
 end

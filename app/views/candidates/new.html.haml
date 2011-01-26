@@ -1,0 +1,35 @@
+- title 'Do You Accept Your Responsibility To Save The World?'
+
+
+#candidate
+  #new
+    #copy.trans
+      %h1= "#{@game.user.name} thinks that you might change the world."
+      
+      %h2 Are you up for the challenge?  
+      
+      %p
+        = "On #{@game.created_at.strftime('%B %d, %Y')}, your friend #{@game.user.first_name} "
+        was asked a simple question - "Which of your friends is most likely to change the world." 
+        = "They compared #{@game.total_candidates} total candidates and at the end of the day "
+        guess who was picked?  You.
+       
+      %p
+        = "If more of your friends feel the way #{@game.user.first_name} feels, you will have "
+        \$25,000 to split among whatever causes you desire*, 
+        hopefully helping some very deserving people along the way.
+        
+      %p
+        Please don't take this responsibility lightly.  
+        = "#{@game.user.first_name} believes in you and so do we."
+        
+      %h2
+        Do you accept this nomination?
+        
+      %p.accept
+        = check_box_tag 'accept'
+        = label_tag 'accept', 'I agree to the "Candidate Terms and Conditions" and Accept the Vote of Confidence'
+        
+      #action
+        = link_to 'Next >>', facebook_oauth_url, :id => "next_btn", :class => "gray-button"
+        

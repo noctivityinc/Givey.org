@@ -1,4 +1,52 @@
-/* line 3, ../../../../app/stylesheets/public/games.sass */
+/* line 3, ../../../../app/stylesheets/_base.sass */
+.wf-active h1 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 36px;
+}
+
+/* line 7, ../../../../app/stylesheets/_base.sass */
+.wf-active h2 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 30px;
+}
+
+/* line 11, ../../../../app/stylesheets/_base.sass */
+.wf-active h3 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 24px;
+}
+
+/* line 15, ../../../../app/stylesheets/_base.sass */
+.wf-active .cabin {
+  font-family: "Cabin";
+  font-size: 18px;
+}
+
+/* line 19, ../../../../app/stylesheets/_base.sass */
+.margin_top_1 {
+  margin-top: 2em;
+}
+
+/* line 22, ../../../../app/stylesheets/_base.sass */
+.margin_top_2 {
+  margin-top: 2em;
+}
+
+/* line 78, ../../../../app/stylesheets/_base.sass */
+.row {
+  overflow: hidden;
+  width: 100%;
+}
+/* line 82, ../../../../app/stylesheets/_base.sass */
+.row .fleft {
+  float: left;
+}
+/* line 85, ../../../../app/stylesheets/_base.sass */
+.row .fright {
+  float: right;
+}
+
+/* line 5, ../../../../app/stylesheets/public/games.sass */
 .ui-effects-transfer {
   border: 2px solid gray;
   background: #d0dcfd;
@@ -8,35 +56,35 @@
   opacity: 0.5;
 }
 
-/* line 13, ../../../../app/stylesheets/public/games.sass */
+/* line 15, ../../../../app/stylesheets/public/games.sass */
 #game #new #actions {
   margin-top: 2em;
 }
-/* line 15, ../../../../app/stylesheets/public/games.sass */
+/* line 17, ../../../../app/stylesheets/public/games.sass */
 #game #new #actions #wait_btn {
   font-size: 16px;
   padding: 10px;
   width: 150px;
 }
-/* line 19, ../../../../app/stylesheets/public/games.sass */
+/* line 21, ../../../../app/stylesheets/public/games.sass */
 #game #new #actions #next_btn {
   display: none;
 }
-/* line 22, ../../../../app/stylesheets/public/games.sass */
+/* line 24, ../../../../app/stylesheets/public/games.sass */
 #game #show {
   position: relative;
 }
-/* line 25, ../../../../app/stylesheets/public/games.sass */
+/* line 27, ../../../../app/stylesheets/public/games.sass */
 #game #show #winners {
   text-align: left;
   position: relative;
   margin-top: 2em;
 }
-/* line 33, ../../../../app/stylesheets/public/games.sass */
+/* line 35, ../../../../app/stylesheets/public/games.sass */
 #game #show #winners #winner_list .winner, #game #show #winners #winner_list #winner_last {
   display: inline-block;
 }
-/* line 36, ../../../../app/stylesheets/public/games.sass */
+/* line 38, ../../../../app/stylesheets/public/games.sass */
 #game #show #playing_field {
   text-align: center;
   height: 400px;
@@ -51,7 +99,7 @@
   -khtml-opacity: 1;
   opacity: 1;
 }
-/* line 12, ../../../../app/stylesheets/public/_card.sass */
+/* line 11, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame, #game #show #playing_field #winner .frame {
   width: 260px;
   height: 350px;
@@ -66,7 +114,7 @@
   font-family: helvetica, verdana, "arial sans-serif";
   font-size: 13px;
 }
-/* line 26, ../../../../app/stylesheets/public/_card.sass */
+/* line 24, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box, #game #show #playing_field #winner .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
@@ -75,7 +123,7 @@
   font-size: 0.85em;
   height: 340px;
 }
-/* line 34, ../../../../app/stylesheets/public/_card.sass */
+/* line 32, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .top, #game #show #playing_field #winner .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
@@ -87,21 +135,21 @@
   width: 250px;
   overflow: hidden;
 }
-/* line 45, ../../../../app/stylesheets/public/_card.sass */
+/* line 43, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .top .name, #game #show #playing_field .card .frame .box .top .profile_pic, #game #show #playing_field #winner .frame .box .top .name, #game #show #playing_field #winner .frame .box .top .profile_pic {
   float: left;
 }
-/* line 48, ../../../../app/stylesheets/public/_card.sass */
+/* line 46, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .top .name, #game #show #playing_field #winner .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
-/* line 53, ../../../../app/stylesheets/public/_card.sass */
+/* line 51, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .top .profile_pic, #game #show #playing_field #winner .frame .box .top .profile_pic {
   width: 40px;
 }
-/* line 55, ../../../../app/stylesheets/public/_card.sass */
+/* line 53, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .top .profile_pic img, #game #show #playing_field #winner .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
@@ -109,13 +157,13 @@
   width: 30px;
   height: 30px;
 }
-/* line 62, ../../../../app/stylesheets/public/_card.sass */
+/* line 60, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper, #game #show #playing_field #winner .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
-/* line 67, ../../../../app/stylesheets/public/_card.sass */
+/* line 65, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper .header, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
@@ -125,60 +173,65 @@
   margin: 4px 0px;
   font-size: 1.1em;
 }
-/* line 76, ../../../../app/stylesheets/public/_card.sass */
+/* line 74, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper .stats, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
-/* line 79, ../../../../app/stylesheets/public/_card.sass */
+/* line 77, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .even, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
-/* line 82, ../../../../app/stylesheets/public/_card.sass */
+/* line 80, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .odd, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
-/* line 86, ../../../../app/stylesheets/public/_card.sass */
+/* line 84, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
-/* line 91, ../../../../app/stylesheets/public/_card.sass */
+/* line 89, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item .label, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
-/* line 97, ../../../../app/stylesheets/public/_card.sass */
+/* line 95, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper .photos, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
-/* line 101, ../../../../app/stylesheets/public/_card.sass */
+/* line 99, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper .photos img, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
-/* line 105, ../../../../app/stylesheets/public/_card.sass */
+/* line 103, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper .status, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
-/* line 111, ../../../../app/stylesheets/public/_card.sass */
+/* line 109, ../../../../app/stylesheets/public/_card.sass */
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .story, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .story {
+  font-size: 1.25em;
+  line-height: 1.25em;
+}
+/* line 113, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .nothing, #game #show #playing_field #winner .frame .box .nothing {
   text-align: center;
 }
-/* line 114, ../../../../app/stylesheets/public/_card.sass */
+/* line 116, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .nothing img, #game #show #playing_field #winner .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
-/* line 120, ../../../../app/stylesheets/public/_card.sass */
+/* line 122, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box.highlight, #game #show #playing_field #winner .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -187,15 +240,15 @@
   -webkit-box-shadow: 0 0 5px blue;
   -moz-box-shadow: 0 0 5px blue;
 }
-/* line 128, ../../../../app/stylesheets/public/_card.sass */
+/* line 130, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box.highlight .top, #game #show #playing_field #winner .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
-/* line 131, ../../../../app/stylesheets/public/_card.sass */
+/* line 133, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box.highlight .header, #game #show #playing_field #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 41, ../../../../app/stylesheets/public/games.sass */
+/* line 43, ../../../../app/stylesheets/public/games.sass */
 #game #show #skip {
   display: none;
   background: white;
@@ -206,12 +259,12 @@
   width: 150px;
   margin: 0 auto;
 }
-/* line 50, ../../../../app/stylesheets/public/games.sass */
+/* line 52, ../../../../app/stylesheets/public/games.sass */
 #game #show #skip a {
   text-decoration: none;
   color: gray;
 }
-/* line 55, ../../../../app/stylesheets/public/games.sass */
+/* line 57, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay {
   z-index: 200;
   display: none;
@@ -225,7 +278,7 @@
   -webkit-border-radius: 8px;
   background: white;
 }
-/* line 70, ../../../../app/stylesheets/public/games.sass */
+/* line 72, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #card {
   width: 325px;
 }
@@ -239,7 +292,7 @@
   -khtml-opacity: 1;
   opacity: 1;
 }
-/* line 12, ../../../../app/stylesheets/public/_card.sass */
+/* line 11, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame, #game #show #winner #overlay #card #winner .frame {
   width: 260px;
   height: 350px;
@@ -254,7 +307,7 @@
   font-family: helvetica, verdana, "arial sans-serif";
   font-size: 13px;
 }
-/* line 26, ../../../../app/stylesheets/public/_card.sass */
+/* line 24, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box, #game #show #winner #overlay #card #winner .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
@@ -263,7 +316,7 @@
   font-size: 0.85em;
   height: 340px;
 }
-/* line 34, ../../../../app/stylesheets/public/_card.sass */
+/* line 32, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .top, #game #show #winner #overlay #card #winner .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
@@ -275,21 +328,21 @@
   width: 250px;
   overflow: hidden;
 }
-/* line 45, ../../../../app/stylesheets/public/_card.sass */
+/* line 43, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .top .name, #game #show #winner #overlay #card .card .frame .box .top .profile_pic, #game #show #winner #overlay #card #winner .frame .box .top .name, #game #show #winner #overlay #card #winner .frame .box .top .profile_pic {
   float: left;
 }
-/* line 48, ../../../../app/stylesheets/public/_card.sass */
+/* line 46, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .top .name, #game #show #winner #overlay #card #winner .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
-/* line 53, ../../../../app/stylesheets/public/_card.sass */
+/* line 51, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .top .profile_pic, #game #show #winner #overlay #card #winner .frame .box .top .profile_pic {
   width: 40px;
 }
-/* line 55, ../../../../app/stylesheets/public/_card.sass */
+/* line 53, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .top .profile_pic img, #game #show #winner #overlay #card #winner .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
@@ -297,13 +350,13 @@
   width: 30px;
   height: 30px;
 }
-/* line 62, ../../../../app/stylesheets/public/_card.sass */
+/* line 60, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
-/* line 67, ../../../../app/stylesheets/public/_card.sass */
+/* line 65, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper .header, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
@@ -313,60 +366,65 @@
   margin: 4px 0px;
   font-size: 1.1em;
 }
-/* line 76, ../../../../app/stylesheets/public/_card.sass */
+/* line 74, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper .stats, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
-/* line 79, ../../../../app/stylesheets/public/_card.sass */
+/* line 77, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper .stats .even, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
-/* line 82, ../../../../app/stylesheets/public/_card.sass */
+/* line 80, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper .stats .odd, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
-/* line 86, ../../../../app/stylesheets/public/_card.sass */
+/* line 84, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper .stats .items .item, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
-/* line 91, ../../../../app/stylesheets/public/_card.sass */
+/* line 89, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper .stats .items .item .label, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
-/* line 97, ../../../../app/stylesheets/public/_card.sass */
+/* line 95, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper .photos, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
-/* line 101, ../../../../app/stylesheets/public/_card.sass */
+/* line 99, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper .photos img, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
-/* line 105, ../../../../app/stylesheets/public/_card.sass */
+/* line 103, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper .status, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
-/* line 111, ../../../../app/stylesheets/public/_card.sass */
+/* line 109, ../../../../app/stylesheets/public/_card.sass */
+#game #show #winner #overlay #card .card .frame .box .sc_menu_wrapper .story, #game #show #winner #overlay #card #winner .frame .box .sc_menu_wrapper .story {
+  font-size: 1.25em;
+  line-height: 1.25em;
+}
+/* line 113, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .nothing, #game #show #winner #overlay #card #winner .frame .box .nothing {
   text-align: center;
 }
-/* line 114, ../../../../app/stylesheets/public/_card.sass */
+/* line 116, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box .nothing img, #game #show #winner #overlay #card #winner .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
-/* line 120, ../../../../app/stylesheets/public/_card.sass */
+/* line 122, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box.highlight, #game #show #winner #overlay #card #winner .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -375,47 +433,47 @@
   -webkit-box-shadow: 0 0 5px blue;
   -moz-box-shadow: 0 0 5px blue;
 }
-/* line 128, ../../../../app/stylesheets/public/_card.sass */
+/* line 130, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box.highlight .top, #game #show #winner #overlay #card #winner .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
-/* line 131, ../../../../app/stylesheets/public/_card.sass */
+/* line 133, ../../../../app/stylesheets/public/_card.sass */
 #game #show #winner #overlay #card .card .frame .box.highlight .header, #game #show #winner #overlay #card #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 74, ../../../../app/stylesheets/public/games.sass */
+/* line 76, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch {
   width: 425px;
   font-size: 13px;
 }
-/* line 78, ../../../../app/stylesheets/public/games.sass */
+/* line 80, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch h2 {
   padding-bottom: 15px;
   margin-bottom: 0px;
 }
-/* line 82, ../../../../app/stylesheets/public/games.sass */
+/* line 84, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #checkboxes {
   margin-top: 25px;
 }
-/* line 84, ../../../../app/stylesheets/public/games.sass */
+/* line 86, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #checkboxes .cb {
   margin: 5px 0px;
   padding-left: 20px;
   text-align: left;
 }
-/* line 89, ../../../../app/stylesheets/public/games.sass */
+/* line 91, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #actions {
   position: absolute;
   width: 400px;
   bottom: 20px;
   vertical-align: bottom;
 }
-/* line 95, ../../../../app/stylesheets/public/games.sass */
+/* line 97, ../../../../app/stylesheets/public/games.sass */
 #game #show #winner #overlay #pitch #actions .back {
   padding-top: 20px;
 }
 
-/* line 99, ../../../../app/stylesheets/public/games.sass */
+/* line 101, ../../../../app/stylesheets/public/games.sass */
 #exposeMask {
   background: black !important;
   z-index: 100;

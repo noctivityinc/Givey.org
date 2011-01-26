@@ -37,7 +37,6 @@
         %h2 But we need your help.  After your game, please donate as little as $5.
         
         %h2 Together we can change the world.  
-          
         
         %p.wait
           Your game should be ready in a minute or so
@@ -50,3 +49,5 @@
           = button_to "Ready?  Let's Play >>", '#', :id => "next_btn", :class => "button", :rel => "" 
               
       
+        - Npo.all.each do |n|
+          = image_tag n.logo.url(:thumb)

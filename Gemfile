@@ -24,6 +24,8 @@ group :default do
   gem 'nokogiri'
   gem 'geo_location' #, :git => 'git://github.com/chrisyour/geo_location.git'
   gem 'hoptoad_notifier'
+  gem 'will_paginate', '~> 3.0.beta'
+  
 end
 
 group :production do

@@ -78,14 +78,19 @@ class GamesController < ApplicationController
     redirect_to :action => :new
   end
 
-  def needs_friends
+  def share
+    if (current_user.email == 'give@givey.org') || production?
+      begin
+        @fb ||= MiniFB::OAuthSession.new(current_user.token)
+        post_to_wall
+        notify_winner_via_wall
+      rescue Exception => e
+      end
+    end
+    redirect_to new_donation_path(:gid => @game.id)
   end
 
   private
-
-    def require_user
-      redirect_to root_url, :notice => "You must be logged into facebook to create a game." unless current_user
-    end
 
     def validate_game_user
       redirect_to root_url, :notice => "Why not start your own experiment!?" unless @game.user == current_user
@@ -212,7 +217,7 @@ class GamesController < ApplicationController
       # => reverse since a must include would be at the end
       game.duels.first.update_attribute(:is_sub, true) if game.total_candidates == 36
     end
-    
+
     def allow_skip?
       @game.duels.subs.exists? && @game.duels.maximum('round') == 1
     end
@@ -223,6 +228,28 @@ class GamesController < ApplicationController
         res.merge!({round.to_s => @game.duels.winners_for_round(round).reverse.inject([]) {|r,x| r << @game.friends_hash[x]}})
       }
     end
+    
+    def post_to_wall
+      if params[:game][:posted_to_wall] == '1'
+        @fb.post('me', :type => :feed, :params => {
+                   :link => "http://#{APP_CONFIG[:domain]}/#{current_user.givey_token}",
+                   :name => "#{@game.winner} is going to save the world.",
+                   :caption => "I'm pretty sure #{@game.winner} can save the world.",
+                   :description => "I just played Givey.org's game changer.  My money's on #{@game.winner.name} to change the world.  What do you think?",
+                   :message => "Just voted #{@game.winner.name} most likely to change the world out of my Facebook friends on Givey."
+        })
+        @game.update_attribute(:posted_to_wall,true)
+      end
+    end
 
+    def notify_winner_via_wall
+      if params[:game][:notified_winner] == '1'
+        @fb.post(@game.winner_uid, :type => :feed, :params => {
+                   :message => 'I just voted you as my most likely to change the world Facebook friend.  If others agree, you will get $25,000 to split among causes you care about.  You need to accept my nomination by visiting Givey.',
+                   :link => "http://#{APP_CONFIG[:domain]}/c/#{@game.token}"
+        })
+        @game.update_attribute(:notified_winner,true)
+      end
+    end
 
 end

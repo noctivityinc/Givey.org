@@ -6,21 +6,22 @@
   .row
     #card.fleft= render :partial => 'winner', :locals => {:winner => @game.winner}
     #pitch.fleft
-      %h1= "So you think that #{@game.winner.name} can save the world?"
-      %h2 What do they think?
-      #faces.row
-        - @game.friends_hash.values.sort_by{rand}[0..7].each do |f|
-          .face.fleft= image_tag f.pic_square
-      #checkboxes
-        .cb
-          = check_box_tag 'post', 'yes', true
-          = label_tag 'post', 'Share this with your friends on Facebook to find out'
-        .cb
-          = check_box_tag 'tell', 'yes', true
-          = label_tag 'tell', "Let #{first_name} know that the're your candidate for goodliness"
+      = form_for @game, :url => share_game_url(@game) do |f|
+        %h1= "So you think that #{@game.winner.name} can save the world?"
+        %h2 What do they think?
+        #faces.row
+          - @game.friends_hash.values.sort_by{rand}[0..7].each do |f|
+            .face.fleft= image_tag f.pic_square
+        #checkboxes
+          .cb
+            = f.check_box :posted_to_wall, {:checked => "checked"}
+            = f.label :posted_to_wall, 'Share this with your friends on Facebook to find out'
+          .cb
+            = f.check_box :notified_winner, {:checked => "checked"}
+            = f.label :notified_winner, "Let #{first_name} know that the're your candidate for goodliness"
         
-      #actions.row
-        .fleft
-          .back= link_to "Let's try again. I don't think #{first_name} is the one.", redo_game_path(@game), :confirm => "If you're not sure if #{first_name} can save the world, you can redo the game pitting #{first_name} against some new friends.  Only do this if you really don't trust #{@game.winner.name}."
-        .fright
-          = link_to "Next >>", new_donation_path(:gid => @game.id), :class => "button" 
+        #actions.row
+          .fleft
+            .back= link_to "Let's try again. I don't think #{first_name} is the one.", redo_game_path(@game), :confirm => "If you're not sure if #{first_name} can save the world, you can redo the game pitting #{first_name} against some new friends.  Only do this if you really don't trust #{@game.winner.name}."
+          .fright
+            = f.submit "Next >>", :class => "button" 

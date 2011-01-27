@@ -117,7 +117,7 @@ class GamesController < ApplicationController
     end
 
     def check_for_official_completed_game
-      redirect_to complete_game_path(current_user.games.official.complete.first) if current_user.completed_an_official_game && !session[:redo]
+      redirect_to complete_game_path(current_user.games.official.complete.first) if current_user.completed_an_official_game && !session[:redo] && production?
     end
 
     def get_all_friends

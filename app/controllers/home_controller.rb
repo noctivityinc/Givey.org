@@ -1,13 +1,10 @@
 class HomeController < ApplicationController
-  before_filter :check_current_user, :only => :index 
+  before_filter :check_current_user, :only => [:index, :beta_test] 
+  before_filter :require_user, :only => [:beta_test]
 
   def index
   end
   
-  def test
-    render :layout => false 
-  end
-
   def show
     @user = User.find_by_givey_token(params[:token])
     if @user
@@ -31,10 +28,14 @@ class HomeController < ApplicationController
           cookies[:user_id] = {:value => nil}
         end
 
-        if current_user.completed_an_official_game
+        if current_user.completed_an_official_game && production?
           redirect_to complete_game_path(current_user.games.official.complete.first)
         end
       end
+    end
+    
+    def require_user
+      redirect_to '/not_yet' unless current_user
     end
 
 end

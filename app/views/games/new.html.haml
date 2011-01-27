@@ -6,7 +6,7 @@
        url = $('#new').attr('givey:url');
        $.post(url, function(data) {
           if (data.status == 'complete') {
-            $('.wait').fadeOut();
+            $('.wait').hide();
             $('#next_btn').attr('rel',data.url).fadeIn();
             $('.title').text("We're Ready For You!").css('color','red')
           } 

@@ -126,10 +126,6 @@ body, html {
   border-bottom: solid 1px #cccccc;
 }
 /* line 19, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #admin #main #actions {
-  margin-top: 3em;
-}
-/* line 22, ../../../../app/stylesheets/admin/admin.sass */
 #content-wrapper #admin #main .trans {
   padding: 10px;
   background: white;
@@ -141,8 +137,12 @@ body, html {
   opacity: 0.8;
   margin-bottom: 10px;
 }
-/* line 33, ../../../../app/stylesheets/admin/admin.sass */
+/* line 30, ../../../../app/stylesheets/admin/admin.sass */
 #content-wrapper #admin #main .trans a {
   color: #000066;
   text-decoration: underline;
+}
+/* line 34, ../../../../app/stylesheets/admin/admin.sass */
+#content-wrapper #actions {
+  margin-top: 3em;
 }

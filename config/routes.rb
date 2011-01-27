@@ -1,8 +1,4 @@
 Givey::Application.routes.draw do
-  namespace(:admin){ resources :beta_testers }
-
-  namespace(:admin){ resources :beta_tests }
-
   resources :donations
   resources :npos
   resources :games do
@@ -35,9 +31,11 @@ Givey::Application.routes.draw do
     resources :npos
     resources :categories
     resources :backgrounds
+    resources :beta_testers
   end
 
-  match "/test" => "home#test"
+  match "/not_yet" => "home#not_yet"
+  match "/beta_test" => "home#beta_test", :as => "beta_test" 
   get "home/index"
   root :to => "home#index"
   match "/:token", :to => "home#show" 

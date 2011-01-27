@@ -29,6 +29,7 @@
 #  logo_updated_at   :datetime
 #  paypal_email      :string(255)
 #  tax_id            :string(255)
+#  story             :text
 #
 
 one:

@@ -1,20 +1,6 @@
-= form_for [ :admin, beta_tester ] do |f|
+= semantic_form_for [ :admin, @beta_tester ] do |f|
   = f.error_messages
-  %p
-    = f.label :email
-    %br
-    = f.text_field :email
-  %p
-    = f.label :access_count
-    %br
-    = f.text_field :access_count
-  %p
-    = f.label :last_accessed_at
-    %br
-    = f.datetime_select :last_accessed_at
-  %p
-    = f.label :feedback
-    %br
-    = f.text_area :feedback
-  %p
-    = f.submit
+  = f.inputs do 
+    = f.input :email
+    = f.input :active
+  = f.buttons

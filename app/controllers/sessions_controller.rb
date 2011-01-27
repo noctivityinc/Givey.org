@@ -31,13 +31,17 @@ class SessionsController < ApplicationController
       access_token_hash = MiniFB.oauth_access_token(APP_CONFIG[:facebook]['api_key'], facebook_oauth_callback_url, APP_CONFIG[:facebook]['app_secret'], params[:code])
       access_token = access_token_hash["access_token"]
       fb = MiniFB::OAuthSession.new(access_token)
-      profile_pic = fb.fql("SELECT pic_square FROM user WHERE uid = me()").first.pic_square
 
-      @user = User.find_by_provider_and_uid('facebook',fb.me.id) || User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
-      @user.update_with_mini_fb(fb.me, profile_pic, access_token) # => updates to make sure we have latest session key and profile info
-      set_user_cookie
-      session[:referring_id] = nil
-      @user.games.destroy_all if Rails.env == 'staging'
+      if beta_tester_allowed(fb)
+        profile_pic = fb.fql("SELECT pic_square FROM user WHERE uid = me()").first.pic_square
+        @user = User.find_by_provider_and_uid('facebook',fb.me.id) || User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
+        @user.update_with_mini_fb(fb.me, profile_pic, access_token) # => updates to make sure we have latest session key and profile info
+        set_user_cookie
+        session[:referring_id] = nil
+        @user.games.destroy_all if Rails.env == 'staging'
+      else
+        redirect_to '/not_yet'
+      end
     end
 
     def omniauth_create
@@ -49,6 +53,16 @@ class SessionsController < ApplicationController
 
     def set_user_cookie
       cookies[:user_id] = {:value => @user.id, :expires => 24.hours.from_now }
-      redirect_forward_or_to(new_game_path)
+      redirect_forward_or_to(beta_test_path)
+    end
+    
+    def beta_tester_allowed(fb)
+      bt = BetaTester.find_by_email(fb.me.email)
+      if bt
+        bt.increment!(:access_count)
+        bt.update_attribute(:last_accessed_at, Time.now)
+      else
+        nil
+      end
     end
 end

@@ -18,7 +18,7 @@ $(document).ready(function() {
       // $('.card:not(.selected)').fadeOut('fast');
       options = { to: ".winner:first", className: "ui-effects-transfer"};
       $('.round:first').prepend("<div class='trans winner' style='background: #ffffff;width:50px;'>&nbsp;</div>")
-      card.effect('transfer', options, 500, postDuel(url, data))
+      card.effect('transfer', options, 300, postDuel(url, data))
     }
     
     return false;
@@ -111,11 +111,13 @@ function activate_overlay (div_id) {
   	// disable this for modal dialog-type of overlays
   	closeOnClick: false,
   	
+  	closeOnEsc: false,
+  	
   	// some mask tweaks suitable for facebox-looking dialogs
     	mask: {
 
     		// you might also consider a "transparent" color for the mask
-    		color: '#fff',
+    		color: '#666',
 
         zIndex: 50,
 
@@ -123,7 +125,7 @@ function activate_overlay (div_id) {
     		loadSpeed: 200,
 
     		// very transparent
-    		opacity: 0.75
+    		opacity: 0.70
     	},
 
   	// load it immediately after the construction

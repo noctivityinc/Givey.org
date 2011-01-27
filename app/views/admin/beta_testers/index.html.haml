@@ -1,19 +1,9 @@
 - title "Admin/Beta Testers"
 
-%table
-  %tr
-    %th Email
-    %th Access count
-    %th Last accessed at
-    %th Feedback
-  - for beta_tester in @beta_testers
-    %tr
-      %td= beta_tester.email
-      %td= beta_tester.access_count
-      %td= beta_tester.last_accessed_at
-      %td= beta_tester.feedback
-      %td= link_to 'Show', [ :admin, beta_tester ]
-      %td= link_to 'Edit', edit_admin_beta_tester_path(beta_tester)
-      %td= link_to 'Destroy', [ :admin, beta_tester ], :confirm => 'Are you sure?', :method => :delete
-
-%p= link_to "New Admin/Beta Tester", new_admin_beta_tester_path(beta_tester)
+#beta_testers
+  #index
+    #copy
+      = table_for @beta_testers do |t|
+        = t.data :actions => :all, :action_prefix => :admin 
+      
+      #actions= link_to "New Beta Tester", new_admin_beta_tester_path

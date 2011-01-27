@@ -1,4 +1,4 @@
-class Admin::BetaTestersController < ApplicationController
+class Admin::BetaTestersController < AdminController
   def index
     @beta_testers = BetaTester.all
   end
@@ -8,7 +8,7 @@ class Admin::BetaTestersController < ApplicationController
   end
 
   def new
-    @beta_tester = BetaTester.new
+    @beta_tester = BetaTester.new(:active => true)
   end
 
   def create

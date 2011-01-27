@@ -12,6 +12,7 @@
     = yield(:head)
     :javascript
       randomSlide = [{image : '#{Background.pick.photo(:normal) if Background.exists?}'}]
+    = render :partial => '/layouts/get_satisfaction_javascript'
 
   %body
     #content-wrapper

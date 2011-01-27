@@ -34,8 +34,8 @@
 
 class Npo < ActiveRecord::Base
   has_attached_file :logo, :styles => { :medium => "200X200>", :thumb => "100x100>" },
-    :url => '/images/npos/:id/:basename_:style.:extension', 
-    :path => ":rails_root/public/images/npos/:id/:basename_:style.:extension"
+    :url => '/images/npos/:id/:style/:basename.:extension', 
+    :path => ":rails_root/public/images/npos/:id/:style/:basename.:extension"
     
   before_create :randomize_file_name
 

@@ -1,0 +1,21 @@
+- title "Admin/Beta Tester"
+
+%p
+  %strong Email:
+  = @beta_tester.email
+%p
+  %strong Access Count:
+  = @beta_tester.access_count
+%p
+  %strong Last Accessed At:
+  = @beta_tester.last_accessed_at
+%p
+  %strong Feedback:
+  = @beta_tester.feedback
+
+%p
+  = link_to "Edit", edit_admin_beta_tester_path(@beta_tester)
+  |
+  = link_to "Destroy", [ :admin, @beta_tester ], :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", admin_beta_testers_path

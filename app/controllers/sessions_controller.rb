@@ -49,6 +49,6 @@ class SessionsController < ApplicationController
 
     def set_user_cookie
       cookies[:user_id] = {:value => @user.id, :expires => 24.hours.from_now }
-      redirect_back(new_game_path)
+      redirect_forward_or_to(new_game_path)
     end
 end

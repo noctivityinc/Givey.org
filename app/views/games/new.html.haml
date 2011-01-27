@@ -48,6 +48,7 @@
           = button_to "Please Wait...", '#', :id => "wait_btn", :disabled => true, :class => "wait"
           = button_to "Ready?  Let's Play >>", '#', :id => "next_btn", :class => "button", :rel => "" 
               
-      
+
+      #npos
         - Npo.all.each do |n|
-          = image_tag n.logo.url(:thumb)
+          .npo= image_tag n.logo.url(:medium)

@@ -339,7 +339,7 @@ form.formtastic fieldset ol li.boolean p.inline-hints {
 
 /* incase an inverted custom gradient isn't specified */
 /* line 176, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class, #container #copy .button, #container #copy .gray-button {
+.fancy-button-reset-base-class, .button, .gray-button {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
   background: url('/images/button_bg.png') repeat-x bottom left;
   margin: 0;
@@ -352,12 +352,12 @@ form.formtastic fieldset ol li.boolean p.inline-hints {
   font-weight: bold;
 }
 /* line 165, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class::-moz-focus-inner, #container #copy .button::-moz-focus-inner, #container #copy .gray-button::-moz-focus-inner {
+.fancy-button-reset-base-class::-moz-focus-inner, .button::-moz-focus-inner, .gray-button::-moz-focus-inner {
   border: none;
   padding: 0;
 }
 /* line 168, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class:focus, #container #copy .button:focus, #container #copy .gray-button:focus {
+.fancy-button-reset-base-class:focus, .button:focus, .gray-button:focus {
   outline: none;
 }
 
@@ -503,8 +503,9 @@ a img {
   line-height: 1.25em;
   display: block;
 }
+
 /* line 119, ../../../app/stylesheets/application.sass */
-#container #copy .button {
+.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   -o-border-radius: 6px;
@@ -533,11 +534,11 @@ a img {
   background-clip: padding-box;
 }
 /* line 116, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#container #copy .button, #container #copy .button:visited {
+.button, .button:visited {
   color: white;
 }
 /* line 31, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#container #copy .button:hover, #container #copy .button:focus {
+.button:hover, .button:focus {
   background-color: #35a800;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #95dd73), color-stop(10%, #5fc430), color-stop(50%, #3b7b1e), color-stop(50%, #356e1b), color-stop(100%, #499725));
   background-image: -moz-linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
@@ -546,11 +547,11 @@ a img {
   text-shadow: #0d2800 0px 1px 1px;
 }
 /* line 116, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#container #copy .button:hover, #container #copy .button:hover:visited, #container #copy .button:focus, #container #copy .button:focus:visited {
+.button:hover, .button:hover:visited, .button:focus, .button:focus:visited {
   color: white;
 }
 /* line 36, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#container #copy .button:active {
+.button:active {
   background-color: #309900;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #3b7b1e), color-stop(30%, #3f8320), color-stop(50%, #37721c), color-stop(50%, #316619), color-stop(100%, #4b9b26));
   background-image: -moz-linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
@@ -563,11 +564,12 @@ a img {
   box-shadow: #295615 0 0.08em 0.1em 1px inset;
 }
 /* line 116, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#container #copy .button:active, #container #copy .button:active:visited {
+.button:active, .button:active:visited {
   color: white;
 }
+
 /* line 122, ../../../app/stylesheets/application.sass */
-#container #copy .gray-button {
+.gray-button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   -o-border-radius: 6px;
@@ -596,11 +598,11 @@ a img {
   background-clip: padding-box;
 }
 /* line 120, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#container #copy .gray-button, #container #copy .gray-button:visited {
+.gray-button, .gray-button:visited {
   color: #222222;
 }
 /* line 31, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#container #copy .gray-button:hover, #container #copy .gray-button:focus {
+.gray-button:hover, .gray-button:focus {
   background-color: white;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #ffffff), color-stop(10%, #ffffff), color-stop(50%, #d1d1d1), color-stop(50%, #c9c9c9), color-stop(100%, #e3e3e3));
   background-image: -moz-linear-gradient(top, #ffffff 0%, #ffffff 10%, #d1d1d1 50%, #c9c9c9 50%, #e3e3e3 100%);
@@ -609,11 +611,11 @@ a img {
   text-shadow: white 0px 1px 1px;
 }
 /* line 120, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#container #copy .gray-button:hover, #container #copy .gray-button:hover:visited, #container #copy .gray-button:focus, #container #copy .gray-button:focus:visited {
+.gray-button:hover, .gray-button:hover:visited, .gray-button:focus, .gray-button:focus:visited {
   color: #222222;
 }
 /* line 36, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#container #copy .gray-button:active {
+.gray-button:active {
   background-color: white;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #d1d1d1), color-stop(30%, #d6d6d6), color-stop(50%, #cccccc), color-stop(50%, #c4c4c4), color-stop(100%, #e6e6e6));
   background-image: -moz-linear-gradient(top, #d1d1d1 0%, #d6d6d6 30%, #cccccc 50%, #c4c4c4 50%, #e6e6e6 100%);
@@ -626,7 +628,7 @@ a img {
   box-shadow: #bababa 0 0.08em 0.1em 1px inset;
 }
 /* line 120, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#container #copy .gray-button:active, #container #copy .gray-button:active:visited {
+.gray-button:active, .gray-button:active:visited {
   color: #222222;
 }
 

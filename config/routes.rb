@@ -1,4 +1,8 @@
 Givey::Application.routes.draw do
+  namespace(:admin){ resources :beta_testers }
+
+  namespace(:admin){ resources :beta_tests }
+
   resources :donations
   resources :npos
   resources :games do
@@ -17,6 +21,7 @@ Givey::Application.routes.draw do
     collection do
       get :story
       put :submit_story
+      get :not_the_winner
     end
   end
   match "/c/:token"  => "candidates#new"
@@ -32,6 +37,7 @@ Givey::Application.routes.draw do
     resources :backgrounds
   end
 
+  match "/test" => "home#test"
   get "home/index"
   root :to => "home#index"
   match "/:token", :to => "home#show" 

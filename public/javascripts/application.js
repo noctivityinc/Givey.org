@@ -31,6 +31,6 @@ $(document).ready(function() {
 	
 	if(randomSlide!=''){
     $('#supersized').supersized();
-  }  
+  } 
 });
 

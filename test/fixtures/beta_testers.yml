@@ -1,0 +1,11 @@
+one:
+  email: MyString
+  access_count: 1
+  last_accessed_at: 2011-01-27 15:42:33
+  feedback: MyText
+
+two:
+  email: MyString
+  access_count: 1
+  last_accessed_at: 2011-01-27 15:42:33
+  feedback: MyText

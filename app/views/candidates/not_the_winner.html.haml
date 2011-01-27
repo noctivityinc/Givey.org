@@ -1,0 +1,18 @@
+- title "Heh, you didn't win that game!"
+
+#candidates
+  #not_the_winner
+    #copy.trans
+      %h1= "Hey #{current_user.first_name}, you didn't win that game!"
+      
+      %h2= "#{@game.winner.name} was voted most likely to save the world by #{@game.user.name}."
+      
+      
+      %h2 You've got some choices...
+      
+      .play_game
+        %h2 Which of YOUR friends is most likely to change the world?
+      
+        = link_to "Play The Game >>", root_url, :class => "button"
+        
+        #friends.row

@@ -1,17 +1,14 @@
 class CandidatesController < ApplicationController
-  skip_after_filter :record_previous_page, :only => :new 
-  before_filter :require_user, :except => [:new, :index, :show] 
-  
+  before_filter :require_user, :except => [:new, :index, :show]
+  before_filter :get_game, :only => [:new, :story, :not_the_winner]
+  before_filter :verify_current_user_is_winner, :only => [:new, :story]
+
   def new
-    @game = Game.find_by_token(params[:token])
-    redirect_to root_url, :notice => "That link is invalid." unless @game
     session[:game_id] = @game.id
-    session[:previous_page] = story_candidates_path(:gid => @game.id)
+    session[:next_page] = story_candidates_path(:gid => @game.id)
   end
 
   def story
-    @game = Game.find(params[:gid])
-    redirect_to root_url, :alert => "There was a problem.  We've been notified.  Sorry." unless @game
     current_user.update_attribute(:candidate, true)
     @cause = Npo.pick
   end
@@ -26,13 +23,23 @@ class CandidatesController < ApplicationController
   def index
     @candidates = User.candidates.paginate :page => params[:page], :order => 'updated_at DESC', :per_page => 9
   end
-  
+
   def show
     @candidate = User.find_by_id(params[:id])
     # get_friends
   end
 
   private
+
+    def get_game
+      @game = Game.find_by_token(params[:token]) if params[:token]
+      @game ||= Game.find(params[:gid]) if params[:gid]
+      redirect_to root_url, :notice => "That link is invalid." unless @game
+    end
+
+    def verify_current_user_is_winner
+      redirect_to(root_url, :notice => "You're not the winner of that game.  Why not play your own game.") if current_user && (@game.winner_uid != current_user.uid)
+    end
 
     def post_to_candidates_wall
       begin
@@ -49,7 +56,7 @@ class CandidatesController < ApplicationController
       rescue Exception => e
       end
     end
-    
+
     def get_friends
       begin
         @fb ||= MiniFB::OAuthSession.new(current_user.token)

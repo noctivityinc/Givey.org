@@ -31,6 +31,7 @@ class GamesController < ApplicationController
       @duel = @game.duels.unplayed.first
       get_challengers
       get_winners_hash
+      @npo = Npo.pick
     end
   end
 

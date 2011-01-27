@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110127154445) do
+ActiveRecord::Schema.define(:version => 20110127200522) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20110127154445) do
     t.datetime "logo_updated_at"
     t.string   "paypal_email"
     t.string   "tax_id"
+    t.text     "story"
   end
 
   create_table "payment_notifications", :force => true do |t|

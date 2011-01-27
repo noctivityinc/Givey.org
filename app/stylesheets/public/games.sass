@@ -1,15 +1,6 @@
 @import 'card'
 @import 'base'
 
-
-.ui-effects-transfer
-  border: 2px solid gray
-  background: #D0DCFD
-  filter: alpha(opacity=50)
-  -moz-opacity: 0.5
-  -khtml-opacity: 0.5
-  opacity: 0.5
-
 #game
   #new
     #actions
@@ -20,6 +11,17 @@
         width: 150px
       #next_btn
         display: none
+        
+    #npos
+      text-align: center
+      position: relative
+      margin-top: 1.5em
+            
+      .npo
+        display: inline-block
+        background: white
+        +rounded-borders
+        padding: 5px
  
   #show
     position: relative
@@ -30,8 +32,6 @@
       margin-top: 2em
 
       #winner_list
-        .round
-      
         .winner, #winner_last
           display: inline-block
 
@@ -44,60 +44,128 @@
       display: none
       background: white
       padding: 5px
-      -moz-border-radius: 8px
-      -webkit-border-radius: 8px
+      +rounded-borders(8px)
       border: 1px solid gray
       width: 150px
       margin: 0 auto
       a
         text-decoration: none
         color: gray
+
+=overlay
+  display: none
+  width: 750px
+  border: 10px solid #666
+  padding: 10px
+  text-align: left
+
+  border: 10px solid rgba(82, 82, 82, 0.698)
+  +rounded_borders(8px)
+
+  background: #fff
+
+.ui-effects-transfer
+  border: 2px solid gray
+  background: #D0DCFD
+  filter: alpha(opacity=50)
+  -moz-opacity: 0.5
+  -khtml-opacity: 0.5
+  opacity: 0.5
+        
+#why_overlay
+  +overlay
   
-    #winner
-      #overlay
-        z-index: 200
-        display: none
-        width: 750px
-        border: 10px solid #666
-        padding: 10px
-        text-align: left
-        position: relative
+  .sidebar
+    +card
+    width: 325px   
+    
+    .npo
+      .card 
+        .frame
+          .box
+            .top
+              background: url('/images/npo_bar.png')
+              color: #502F0D
+              width: 242px
+              text-shadow: #fff 1px 1px 1px        
 
-        border: 10px solid rgba(82, 82, 82, 0.698)
-        -moz-border-radius: 8px
-        -webkit-border-radius: 8px
-
-        background: #fff
+            .sc_menu_wrapper
+              .header
+                background: #99972D
+                color: #FFF
+    
+    .story
+      text-align: center
       
-        #card
-          +card
-          width: 325px
-          
-        #pitch
-          width: 425px
-          font-size: 13px
-          
-          h2
-            padding-bottom: 15px
-            margin-bottom: 0px
-            
-          #checkboxes
-            margin-top: 25px
-            .cb
-              margin: 5px 0px
-              padding-left: 20px
-              text-align: left
-            
-          #actions
-            position: absolute
-            width: 400px
-            bottom: 20px
-            vertical-align: bottom
-            
-            .back
-              padding-top: 20px
+      .logo
+        margin: 0 auto
+      
+      .summary
+        margin-top: 1em
+        text-align: left
+        font-size: 13px
+        
+      .link
+        text-align: left
+        margin-top: 3em
+        font-size: 12px
+    
+  .main_panel
+    width: 425px
+    font-size: 13px
+    
+    .story
+      margin: 15px 0px
+      padding: 10px
+      width: 410px
+      
+      .open, .close
+        width: 50px
+      .middle
+        width: 300px
+        font-size: 12pt
+        line-height: 1.25em
+        padding: 5px 0px
+      .open
+        vertical-align: top
+      .close
+        vertical-align: bottom
+    
+    #actions
+      position: absolute
+      width: 400px
+      bottom: 20px
+      vertical-align: bottom
+      
 
-              
-#exposeMask 
-  background: #000000 !important
-  z-index: 100
+#winner
+  #winner_overlay
+    +overlay
+  
+    #card
+      +card
+      width: 325px
+      
+    #pitch
+      width: 425px
+      font-size: 13px
+      
+      h2
+        padding-bottom: 15px
+        margin-bottom: 0px
+        
+      #checkboxes
+        margin-top: 25px
+        .cb
+          margin: 5px 0px
+          padding-left: 20px
+          text-align: left
+        
+      #actions
+        position: absolute
+        width: 400px
+        bottom: 20px
+        vertical-align: bottom
+        
+        .back
+          padding-top: 20px

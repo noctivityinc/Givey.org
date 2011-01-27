@@ -20,7 +20,7 @@
           - flash.each do |name, msg|
             = content_tag :div, msg, :id => "flash_#{name}"
 
-        - unless controller.controller_name == 'home'
+        - unless (controller.controller_name == 'home' && !current_user)
           #header.row
             .fleft
               - if current_user && !hide_login_info?

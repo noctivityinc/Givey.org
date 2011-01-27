@@ -1,7 +1,8 @@
 $(document).ready(function() {
   $('.sc_menu_wrapper').jScrollPane();
   
-  $('.card .box').live("mouseover",function(e){
+  var why_overlay_shown = false;
+  $('.card.clickable .box').live("mouseover",function(e){
     $(this).addClass('highlight')
   }).live("mouseout",function(e){
     $(this).removeClass('highlight')
@@ -13,9 +14,11 @@ $(document).ready(function() {
     if(finals == true) {
       postWinner(card, url, data)
     } else {
+      // card.addClass('selected')
+      // $('.card:not(.selected)').fadeOut('fast');
       options = { to: ".winner:first", className: "ui-effects-transfer"};
       $('.round:first').prepend("<div class='trans winner' style='background: #ffffff;width:50px;'>&nbsp;</div>")
-      card.effect('transfer', options, 250, postDuel(url, data));
+      card.effect('transfer', options, 500, postDuel(url, data))
     }
     
     return false;
@@ -30,6 +33,10 @@ $(document).ready(function() {
     return false;
   });
   
+  $('#why_continue_btn').click(function() {
+    $('#why_overlay').fadeOut()
+  });
+  
   function postDuel(url, data) {
     $('.card').css('visibility', 'hidden')
     $.post(url, data, function(r) {handleDuelResponse(r)})
@@ -39,6 +46,11 @@ $(document).ready(function() {
       switch(resp.status) {
       case 'duel':
         showDuel(resp);
+        if(resp.round == '2' && !why_overlay_shown)  {
+          activate_overlay('#why_overlay');
+          $('.card').show();
+          why_overlay_shown = true;
+        }
         break;
       case 'winner':
         showWinner(resp);
@@ -53,6 +65,7 @@ $(document).ready(function() {
       toggleSkip(r)
       $('#playing_field').html(r.html);
       $('.sc_menu_wrapper').jScrollPane();
+      $('.card').css('visibility', '')
     }
     
     function postWinner(card, url, data) {
@@ -62,9 +75,9 @@ $(document).ready(function() {
     }
     
     function showWinner (r) {
-      $('#battle').hide();
+      // $('#battle').hide();
       $('#winner').html(r.html)
-      window.setTimeout(function(){activate_overlay()},1000);
+      window.setTimeout(function(){activate_overlay('#winner_overlay')},1000);
     }
     
     function changeStats(resp) {
@@ -89,19 +102,31 @@ $(document).ready(function() {
       $('#winners').load($('#show').attr('givey:winners'));
     }
     
-    
 });
 
-function activate_overlay () {
-  $("#overlay").overlay({
-
+function activate_overlay (div_id) {
+  $(div_id).overlay({
   	top: 160,
 
   	// disable this for modal dialog-type of overlays
   	closeOnClick: false,
+  	
+  	// some mask tweaks suitable for facebox-looking dialogs
+    	mask: {
+
+    		// you might also consider a "transparent" color for the mask
+    		color: '#fff',
+
+        zIndex: 50,
+
+    		// load mask a little faster
+    		loadSpeed: 200,
+
+    		// very transparent
+    		opacity: 0.75
+    	},
 
   	// load it immediately after the construction
   	load: true
-
   });
 }

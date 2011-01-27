@@ -14,6 +14,12 @@ class ApplicationController < ActionController::Base
     redirect_to (session_page || default_url)
   end
   
+  def redirect_forward_or_to(default_url=nil)
+    session_page = session[:next_page]
+    session[:next_page] = nil
+    redirect_to (session_page || default_url)
+  end
+  
   def production?
     Rails.env == 'production'
   end

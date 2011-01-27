@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125171520) do
+ActiveRecord::Schema.define(:version => 20110127154445) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(:version => 20110125171520) do
     t.datetime "updated_at"
   end
 
+  create_table "challengers", :force => true do |t|
+    t.string   "uid"
+    t.integer  "duel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "challengers", ["uid", "duel_id"], :name => "indx_duel_uid"
+  add_index "challengers", ["uid"], :name => "index_challengers_on_uid"
+
   create_table "donations", :force => true do |t|
     t.integer  "user_id"
     t.integer  "game_id"
@@ -42,7 +52,6 @@ ActiveRecord::Schema.define(:version => 20110125171520) do
   end
 
   create_table "duels", :force => true do |t|
-    t.text     "challenger_uids"
     t.integer  "round"
     t.string   "winner_uid"
     t.integer  "game_id"

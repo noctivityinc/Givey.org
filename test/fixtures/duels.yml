@@ -2,15 +2,14 @@
 #
 # Table name: duels
 #
-#  id              :integer         not null, primary key
-#  challenger_uids :text
-#  round           :integer
-#  winner_uid      :string(255)
-#  game_id         :integer
-#  created_at      :datetime
-#  updated_at      :datetime
-#  is_sub          :boolean
-#  active          :boolean
+#  id         :integer         not null, primary key
+#  round      :integer
+#  winner_uid :string(255)
+#  game_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#  is_sub     :boolean
+#  active     :boolean
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

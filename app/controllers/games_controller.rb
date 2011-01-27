@@ -29,7 +29,7 @@ class GamesController < ApplicationController
   def show
     unless @game.winner
       @duel = @game.duels.unplayed.first
-      @challengers = @duel.challenger_uids.inject([]) {|r,x| r << @game.friends_hash[x]}
+      get_challengers
       get_winners_hash
     end
   end
@@ -45,7 +45,7 @@ class GamesController < ApplicationController
     @duel = get_next_duel
 
     if @duel
-      @challengers = @duel.challenger_uids.inject([]) {|r,x| r << @game.friends_hash[x]}
+      get_challengers
       current_round = @game.duels.maximum('round')
       render :json => {:status => 'duel', :html => render_to_string(:partial => "challenger", :collection => @challengers), :round => current_round, :total_battles => total_battles, :duel_count => @game.duels.played.size+1, :finals => finals?, :allow_skip => allow_skip?}
     else
@@ -171,6 +171,10 @@ class GamesController < ApplicationController
       @all_friends.size >= 39 ? 3 : 0
     end
 
+    def get_challengers
+      @challengers = @duel.challengers.inject([]) {|r,x| r << @game.friends_hash[x.uid]}
+    end
+
     def winner?
       if @game.winner && @game.official
         # TODO change this to redirect to winner page or share
@@ -228,7 +232,7 @@ class GamesController < ApplicationController
         res.merge!({round.to_s => @game.duels.winners_for_round(round).reverse.inject([]) {|r,x| r << @game.friends_hash[x]}})
       }
     end
-    
+
     def post_to_wall
       if params[:game][:posted_to_wall] == '1'
         @fb.post('me', :type => :feed, :params => {

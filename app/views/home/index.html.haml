@@ -1,11 +1,50 @@
 - title "Givey.org - Can you change the world?  Let's play."
 
-- unless current_user
-  - content_for :head do
-    :javascript
-      $(document).ready(function() {
-        window.setTimeout(function(){FB.logout()},1000)
+- content_for :feet do
+  :javascript
+    var intId;
+    function showFriends() {
+      var query = FB.Data.query("SELECT name, pic_square FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY rand() LIMIT 3");
+       query.wait(function(rows) {
+          $('.friend').hide()
+         $.each(rows, function(ndx, row){
+           $(document.createElement("img"))
+               .attr({ src: row.pic_square, title: row.name })
+               .addClass("friend")
+               .appendTo('#friends')
+           })
+       });
+    }
+    
+    function showMe() {
+          FB.api('/me', function(r) {
+            $(document.createElement("a"))
+                .attr({ href: '#', title: r.name })
+                .text('Not '+r.name+'? Click here')
+                .appendTo('#not_user')
+                .click(function(){
+                  window.clearInterval(intId);
+                  FB.logout(function(resp){
+                    $('#not_user').hide();
+                    $('.friend').hide();
+                  });
+                  return false;
+                })
+            })
+      }
+    
+    $(document).ready(function() {
+      FB.getLoginStatus(function(response) {
+        if (response.session) {
+          showMe()
+          showFriends();
+          intId = window.setInterval('showFriends()',3500)
+        } else {
+          console.log('no fb')
+        }
       });
+    });
+
 
 #home
   #index
@@ -37,12 +76,16 @@
           %h2 The "chosen one" will be given $25,000 to donate as they see fit.
                 
           %h2
-            Do you think your friends can change the world?      
+            Which of your friends will change the world?      
+
+          #friends.row
 
           - unless production?
             #facebook
               - unless current_user 
                 = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
+                #not_user
+                
       
       #logo
         = image_tag "givey_logo_large.png", :title => "Givey.org"

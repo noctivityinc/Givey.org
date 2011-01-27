@@ -29,7 +29,7 @@ class CandidatesController < ApplicationController
   
   def show
     @candidate = User.find_by_id(params[:id])
-    get_friends
+    # get_friends
   end
 
   private

@@ -10,9 +10,31 @@
   %meta{:content => "#{@candidate.name} Givey.org Profile", :property => "og:type"}/
   %meta{:content => APP_CONFIG[:facebook]['api_id'], :property => "fb:app_id"}/
 
+- content_for :feet do
   :javascript
     $(document).ready(function() {
       clipIt();
+      
+      function showMain() {
+        var query = FB.Data.query("SELECT name, pic_square FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY rand() LIMIT 22");
+         query.wait(function(rows) {
+           $.each(rows, function(ndx, row){
+           $(document.createElement("img"))
+               .attr({ src: row.pic_square, title: row.name })
+               .addClass("friend")
+               .appendTo('#friends')
+           })
+         });
+      }
+      
+      FB.getLoginStatus(function(response) {
+        if (response.session) {
+          showMain()
+        } else {
+          // no user session available, someone you dont know
+          console.log('no fb')
+        }
+      });
     });
 
 #candidate
@@ -68,8 +90,5 @@
             = link_to "Play The Game >>", root_url, :class => "button"
             
             #friends.row
-              - @friends.each do |f|
-                .friend.fleft
-                  = image_tag f.pic_square, :title => f.name
           
             

@@ -28,7 +28,7 @@
                 = "Hi #{current_user.name}."
                 = link_to "Not #{current_user.first_name}?", signout_path, :id => "log_out" 
             .fright
-              = image_tag "givey_logo.png", :title => "Givey.org"
+              = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
       
         #container
           = yield
@@ -55,17 +55,14 @@
     #supersized
     
     #fb-root
+    %script{:src => "http://connect.facebook.net/en_US/all.js"}
     :javascript
-      window.fbAsyncInit = function() {
-        FB.init({appId: '#{APP_CONFIG[:facebook]['app_id']}', status: true, cookie: true,
-                 xfbml: true});
-      };
-      (function() {
-        var e = document.createElement('script'); e.async = true;
-        e.src = document.location.protocol +
-          '//connect.facebook.net/en_US/all.js';
-        document.getElementById('fb-root').appendChild(e);
-      }());
+      FB.init({
+        appId  : "#{APP_CONFIG[:facebook]['app_id']}",
+        status : true, // check login status
+        cookie : true, // enable cookies to allow the server to access the session
+        xfbml  : true  // parse XFBML
+      });
       
     = yield(:feet)
 

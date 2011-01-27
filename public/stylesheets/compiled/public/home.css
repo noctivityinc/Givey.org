@@ -15,16 +15,26 @@
 /* line 14, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #facebook {
   width: 300px;
-  margin: 5em auto;
+  margin: 1em auto;
   text-align: center;
 }
 /* line 19, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy #not_user {
+  font-size: 12px;
+  margin-top: 5px;
+}
+/* line 23, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy #friends {
+  width: 500px;
+  margin: 20px auto;
+}
+/* line 27, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #logo {
   width: 400px;
   margin: 0 auto;
   padding-top: 5em;
 }
-/* line 24, ../../../../app/stylesheets/public/home.sass */
+/* line 32, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #logo img {
   width: 350px;
 }

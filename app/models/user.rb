@@ -86,7 +86,7 @@ class User < ActiveRecord::Base
     self.last_name = profile.last_name
     self.name = profile.name
     self.email = profile.email rescue nil
-    self.gender = profile.gender rescue nil
+    self.gender = profile.sex rescue nil
     self.locale = profile.locale rescue nil
     self.profile = profile rescue nil
     self.profile_pic = profile.pic_square rescue nil

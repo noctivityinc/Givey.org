@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
       fb = MiniFB::OAuthSession.new(access_token)
 
       if beta_tester_allowed(fb)
-        profile = fb.fql("SELECT uid, name, first_name, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
+        profile = fb.fql("SELECT uid, name, first_name, email, gender, locale, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
               current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
               FROM user WHERE uid = me()").first
         profile.photos = fb.fql("SELECT src, caption, link FROM photo WHERE aid IN (SELECT aid FROM album WHERE owner = me() AND (type = 'profile' OR type = 'wall'))")

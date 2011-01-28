@@ -8,7 +8,7 @@ module GamesHelper
   end
 
   def dont_include(friend, key)
-    %w{pic pic_square photos pic_big uid sex name significant_other_id first_name last_name}.include?(key) || friend.send(key).blank?
+    %w{pic pic_square photos pic_big uid sex name significant_other_id first_name last_name email}.include?(key) || friend.send(key).blank?
   end
 
   def display_value(challenger, k)

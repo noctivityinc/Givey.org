@@ -1,58 +1,296 @@
-/* line 3, ../../../../app/stylesheets/public/home.sass */
+/* line 3, ../../../../app/stylesheets/_base.sass */
+.wf-active h1 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 36px;
+}
+
+/* line 7, ../../../../app/stylesheets/_base.sass */
+.wf-active h2 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 30px;
+}
+
+/* line 11, ../../../../app/stylesheets/_base.sass */
+.wf-active h3 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 24px;
+}
+
+/* line 15, ../../../../app/stylesheets/_base.sass */
+.wf-active h4 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 16px;
+}
+
+/* line 19, ../../../../app/stylesheets/_base.sass */
+.wf-active .cabin {
+  font-family: "Cabin";
+  font-size: 18px;
+}
+
+/* line 23, ../../../../app/stylesheets/_base.sass */
+.margin_top_1 {
+  margin-top: 2em;
+}
+
+/* line 26, ../../../../app/stylesheets/_base.sass */
+.margin_top_2 {
+  margin-top: 2em;
+}
+
+/* line 82, ../../../../app/stylesheets/_base.sass */
+.row {
+  overflow: hidden;
+  width: 100%;
+}
+/* line 86, ../../../../app/stylesheets/_base.sass */
+.row .fleft {
+  float: left;
+}
+/* line 89, ../../../../app/stylesheets/_base.sass */
+.row .fright {
+  float: right;
+}
+
+/* line 6, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy {
   margin-top: 30px;
 }
-/* line 6, ../../../../app/stylesheets/public/home.sass */
+/* line 9, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy h1 {
   width: 600px;
   margin: 0em auto;
   margin-bottom: 0.75em;
 }
-/* line 11, ../../../../app/stylesheets/public/home.sass */
+/* line 14, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #choose {
   padding-top: 20px;
 }
-/* line 14, ../../../../app/stylesheets/public/home.sass */
-#home #index #copy #facebook {
+/* line 2, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card, #home #show #winner {
+  margin: 0 10px;
+  display: inline-block;
+  background: white;
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+}
+/* line 11, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame, #home #show #winner .frame {
+  width: 260px;
+  height: 350px;
+  padding: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 3px 3px 4px black;
+  -webkit-box-shadow: 3px 3px 4px black;
+  box-shadow: 3px 3px 4px black;
+  border: 2px solid #666666;
+  text-align: left;
+  font-size: 13px;
+}
+/* line 23, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box, #home #show #winner .frame .box {
+  border: 2px solid white;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px;
+  font-size: 0.85em;
+  height: 340px;
+}
+/* line 31, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .top, #home #show #winner .frame .box .top {
+  background: url("/images/header_bar.png");
+  color: white;
+  font-weight: bold;
+  padding: 4px;
+  min-height: 34px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 250px;
+  overflow: hidden;
+}
+/* line 42, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .top .name, #home #show .card .frame .box .top .profile_pic, #home #show #winner .frame .box .top .name, #home #show #winner .frame .box .top .profile_pic {
+  float: left;
+}
+/* line 45, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .top .name, #home #show #winner .frame .box .top .name {
+  font-size: 18px;
+  line-height: 1em;
+  width: 200px;
+}
+/* line 50, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .top .profile_pic, #home #show #winner .frame .box .top .profile_pic {
+  width: 40px;
+}
+/* line 52, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .top .profile_pic img, #home #show #winner .frame .box .top .profile_pic img {
+  border: 1px solid white;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+}
+/* line 59, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper, #home #show #winner .frame .box .sc_menu_wrapper {
+  height: 300px;
+  width: 250px;
+  overflow: auto;
+}
+/* line 64, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper .header, #home #show #winner .frame .box .sc_menu_wrapper .header {
+  background: #f38630;
+  text-transform: uppercase;
+  color: white;
+  padding: 5px;
+  text-align: left;
+  margin: 4px 0px;
+  font-size: 1.1em;
+}
+/* line 73, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper .stats, #home #show #winner .frame .box .sc_menu_wrapper .stats {
+  text-align: left;
+}
+/* line 76, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper .stats .even, #home #show #winner .frame .box .sc_menu_wrapper .stats .even {
+  background: #fcfef5;
+}
+/* line 79, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper .stats .odd, #home #show #winner .frame .box .sc_menu_wrapper .stats .odd {
+  background: #fafbe3;
+}
+/* line 83, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper .stats .items .item, #home #show #winner .frame .box .sc_menu_wrapper .stats .items .item {
+  padding: 5px;
+  border-bottom: 1px solid #cdcfb7;
+  color: black;
+}
+/* line 88, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper .stats .items .item .label, #home #show #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-bottom: 2px;
+}
+/* line 94, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper .photos, #home #show #winner .frame .box .sc_menu_wrapper .photos {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px 0px;
+}
+/* line 98, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper .photos img, #home #show #winner .frame .box .sc_menu_wrapper .photos img {
+  height: 68px;
+  max-width: 80px;
+}
+/* line 102, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper .status, #home #show #winner .frame .box .sc_menu_wrapper .status {
+  height: 200px;
+  vertical-align: absmiddle;
+  text-align: center;
+  padding: 10px;
+}
+/* line 108, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .sc_menu_wrapper .story, #home #show #winner .frame .box .sc_menu_wrapper .story {
+  font-size: 1.25em;
+  line-height: 1.25em;
+}
+/* line 112, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .nothing, #home #show #winner .frame .box .nothing {
+  text-align: center;
+}
+/* line 115, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .nothing img, #home #show #winner .frame .box .nothing img {
+  border: 2px solid #edf2e6;
+  margin: 15px;
+  max-height: 275px;
+}
+/* line 121, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box.highlight, #home #show #winner .frame .box.highlight {
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px;
+  box-shadow: 0 0 5px blue;
+  -webkit-box-shadow: 0 0 5px blue;
+  -moz-box-shadow: 0 0 5px blue;
+}
+/* line 129, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box.highlight .top, #home #show #winner .frame .box.highlight .top {
+  background: url("/images/header_bar_on.png");
+}
+/* line 132, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box.highlight .header, #home #show #winner .frame .box.highlight .header {
+  background: #ff6600;
+}
+/* line 20, ../../../../app/stylesheets/public/home.sass */
+#home #show h1, #home #show h2, #home #show h3 {
+  width: 700px;
+  margin: 0.75em auto;
+}
+/* line 24, ../../../../app/stylesheets/public/home.sass */
+#home #show #cards {
+  width: 750px;
+  margin: 0 auto;
+}
+/* line 28, ../../../../app/stylesheets/public/home.sass */
+#home #show #cards .heart {
+  padding: 100px 20px;
+}
+/* line 30, ../../../../app/stylesheets/public/home.sass */
+#home #show #cards .heart img {
+  width: 100px;
+}
+/* line 33, ../../../../app/stylesheets/public/home.sass */
+#home #show #cards .card {
+  margin-bottom: 40px;
+}
+/* line 37, ../../../../app/stylesheets/public/home.sass */
+#home #index #facebook, #home #show #facebook {
   width: 300px;
   margin: 1em auto;
   text-align: center;
 }
-/* line 19, ../../../../app/stylesheets/public/home.sass */
-#home #index #copy #not_user {
+/* line 42, ../../../../app/stylesheets/public/home.sass */
+#home #index #not_user, #home #show #not_user {
   font-size: 12px;
   margin-top: 5px;
 }
-/* line 23, ../../../../app/stylesheets/public/home.sass */
-#home #index #copy #friends {
+/* line 46, ../../../../app/stylesheets/public/home.sass */
+#home #index #friends, #home #show #friends {
   width: 500px;
   margin: 20px auto;
 }
-/* line 27, ../../../../app/stylesheets/public/home.sass */
-#home #index #copy #logo {
+/* line 50, ../../../../app/stylesheets/public/home.sass */
+#home #index #logo, #home #show #logo {
   width: 400px;
   margin: 0 auto;
   padding-top: 5em;
 }
-/* line 32, ../../../../app/stylesheets/public/home.sass */
-#home #index #copy #logo img {
+/* line 55, ../../../../app/stylesheets/public/home.sass */
+#home #index #logo img, #home #show #logo img {
   width: 350px;
 }
-/* line 36, ../../../../app/stylesheets/public/home.sass */
+/* line 60, ../../../../app/stylesheets/public/home.sass */
+#home #not_yet #npos .npo {
+  margin: 10px;
+}
+/* line 64, ../../../../app/stylesheets/public/home.sass */
 #home #beta_test ul {
   margin: 2em 0em;
   text-align: left;
   margin-left: 200px;
   width: 500px;
 }
-/* line 42, ../../../../app/stylesheets/public/home.sass */
+/* line 70, ../../../../app/stylesheets/public/home.sass */
 #home #beta_test ul li {
   list-style: disc;
   text-align: left;
   margin: 1.25em 0em;
   line-height: 1.5em;
 }
-/* line 48, ../../../../app/stylesheets/public/home.sass */
+/* line 76, ../../../../app/stylesheets/public/home.sass */
 #home #beta_test #actions {
   margin-top: 2em;
   text-align: center;

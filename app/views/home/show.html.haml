@@ -1,40 +1,31 @@
 - title "Givey.org - Can you change the world?  Let's play."
+
 #home
-  #index
+  #show
     #copy
       .trans
-        - if current_user && unfinished_games?
-          %h1= "Welcome Back #{current_user.name}!"
-
-          %h2 Still up for finding out who will change the world?
-        
-          #choose
-            %p= link_to "Let's finish the game I started", game_path(unfinished_game)
-        
-            %p= link_to "I want a new game with new friends", new_game_path({:wipe => 1}), :confirm => "Are you sure?  If you do this it will invalidate your existing game." 
+        %h1= "Your friend #{@user.name} voted their friend #{@user.official_game.winner.name} most likely to save the world."
       
-        - elsif current_user && !unfinished_games?
-          %h1= "Welcome Back #{current_user.name}!"
-
-          %h2 Still up for finding out who will change the world?
+        #cards.row
+          .fleft.card
+            = render :partial => '/games/card', :locals => {:challenger => @user.profile}
+          .fleft.heart
+            = image_tag "worldheart.gif"
+          .fleft.card
+            = render :partial => '/games/card', :locals => {:challenger => @user.official_game.winner}
       
-          #choose
-            %p= link_to "Let's play", new_game_path()
-      
-        - else
-          %h1.yanone 
-            On February 10th a quest will begin to find the single person on Facebook 
-            most likely to change the world.  
-        
-          %h2 The "chosen one" will be given $25,000 to donate as they see fit.
-                
-          %h2
-            Do you think your friends can change the world?      
+        %h2= "If others agree with #{@user.name}, #{@user.official_game.winner.first_name} will be given $25,000 to split among whatever causes she sees fit."
+              
+        %h2
+          = "Should we give #{@user.official_game.winner.first_name} the money or do you have someone else in mind?"
+          
+        #friends.row
 
-          - unless Rails.env == 'production'
-            #facebook
-              - unless current_user 
-                = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
+        - unless production?
+          #facebook
+            - unless current_user 
+              = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
+              #not_user
       
       #logo
         = image_tag "givey_logo_large.png", :title => "Givey.org"

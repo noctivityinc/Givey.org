@@ -4,11 +4,12 @@
   = javascript_include_tag 'zero_clipboard'
   %meta{:content => "#{@candidate.name} Givey.org Profile", :property => "og:title"}/
   %meta{:content => candidate_url(@candidate, :only_path => false), :property => "og:url"}/
-  %meta{:content => "http://#{APP_CONFIG[:domain]}/#{image_path('givey_logo')}", :property => "og:image"}/
-  %meta{:content => "DESCRIPTION", :property => "og:description"}/
-  %meta{:content => "Givey.org", :property => "og:site_name"}/
-  %meta{:content => "#{@candidate.name} Givey.org Profile", :property => "og:type"}/
   %meta{:content => APP_CONFIG[:facebook]['api_id'], :property => "fb:app_id"}/
+  %meta{:content => "http://#{APP_CONFIG[:domain]}/#{image_path('givey_logo_black.png')}", :property => "og:image"}/
+  %meta{:content => "Who on Facebook is most likely to change the world?  Do you know which of your friends it might be?", :property => "og:description"}/
+  %meta{:content => "Givey.org", :property => "og:site_name"}/
+  %meta{:content => "website", :property => "og:type"}/
+
 
 - content_for :feet do
   :javascript
@@ -32,7 +33,6 @@
           showMain()
         } else {
           // no user session available, someone you dont know
-          console.log('no fb')
         }
       });
     });

@@ -14,10 +14,10 @@
             = f.label :posted_to_wall, 'Share this with your friends on Facebook to find out'
           .cb
             = f.check_box :notified_winner, {:checked => "checked"}
-            = f.label :notified_winner, "Let #{first_name} know that the're your candidate for goodliness"
+            = f.label :notified_winner, "Let #{@game.winner.first_name} know that the're your candidate for goodliness"
         
         #actions.row
           .fleft
-            .back= link_to "Let's try again. I don't think #{first_name} is the one.", redo_game_path(@game), :confirm => "If you're not sure if #{first_name} can save the world, you can redo the game pitting #{first_name} against some new friends.  Only do this if you really don't trust #{@game.winner.name}."
+            .back= link_to "Let's try again. I don't think #{@game.winner.first_name} is the one.", redo_game_path(@game), :confirm => "If you're not sure if #{@game.winner.first_name} can save the world, you can redo the game pitting #{@game.winner.first_name} against some new friends.  Only do this if you really don't trust #{@game.winner.name}."
           .fright
             = f.submit "Next >>", :class => "button" 

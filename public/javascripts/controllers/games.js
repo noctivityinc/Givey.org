@@ -117,7 +117,7 @@ function activate_overlay (div_id) {
     	mask: {
 
     		// you might also consider a "transparent" color for the mask
-    		color: '#666',
+    		color: '#000',
 
         zIndex: 50,
 
@@ -125,7 +125,7 @@ function activate_overlay (div_id) {
     		loadSpeed: 200,
 
     		// very transparent
-    		opacity: 0.70
+    		opacity: 0.80
     	},
 
   	// load it immediately after the construction

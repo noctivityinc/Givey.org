@@ -33,9 +33,13 @@ class SessionsController < ApplicationController
       fb = MiniFB::OAuthSession.new(access_token)
 
       if beta_tester_allowed(fb)
-        profile_pic = fb.fql("SELECT pic_square FROM user WHERE uid = me()").first.pic_square
+        profile = fb.fql("SELECT uid, name, first_name, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
+              current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
+              FROM user WHERE uid = me()").first
+        profile.photos = fb.fql("SELECT src, caption, link FROM photo WHERE aid IN (SELECT aid FROM album WHERE owner = me() AND (type = 'profile' OR type = 'wall'))")
+
         @user = User.find_by_provider_and_uid('facebook',fb.me.id) || User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
-        @user.update_with_mini_fb(fb.me, profile_pic, access_token) # => updates to make sure we have latest session key and profile info
+        @user.update_with_mini_fb(profile, access_token) # => updates to make sure we have latest session key and profile info
         set_user_cookie
         session[:referring_id] = nil
         @user.games.destroy_all if Rails.env == 'staging'

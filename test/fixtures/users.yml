@@ -16,13 +16,13 @@
 #  first_name                   :string(255)
 #  last_name                    :string(255)
 #  admin                        :boolean
-#  all_friends                  :text
 #  location                     :text
 #  givey_token                  :string(255)
 #  referring_id                 :integer
 #  candidate                    :boolean
 #  candidates_story             :text
 #  candidate_post_story_to_wall :boolean
+#  profile                      :text
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

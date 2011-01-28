@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110127204233) do
+ActiveRecord::Schema.define(:version => 20110128164449) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -151,13 +151,13 @@ ActiveRecord::Schema.define(:version => 20110127204233) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "admin"
-    t.text     "all_friends"
     t.text     "location"
     t.string   "givey_token"
     t.integer  "referring_id"
     t.boolean  "candidate"
     t.text     "candidates_story"
     t.boolean  "candidate_post_story_to_wall"
+    t.text     "profile"
   end
 
 end

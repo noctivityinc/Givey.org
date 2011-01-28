@@ -124,7 +124,7 @@ class GamesController < ApplicationController
       if current_user
         @fb ||= MiniFB::OAuthSession.new(current_user.token)
         begin
-          @all_friends =  @fb.fql("SELECT uid, name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
+          @all_friends =  @fb.fql("SELECT uid, name, first_name, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
                 current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
                 FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY rand()")
           process_exclude_list

@@ -49,12 +49,12 @@ class Game < ActiveRecord::Base
   def winner
     friends_hash[self.winner_uid]
   end
-  
+
   private
-  
-  def generate_token
-    self.token = rand(36**8).to_s(36)
-  end
-  
+
+    def generate_token
+      self.token = rand(36**8).to_s(36)
+    end
+
 
 end

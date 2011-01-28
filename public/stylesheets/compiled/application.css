@@ -77,31 +77,37 @@ a img {
 }
 
 /* line 15, ../../../app/stylesheets/_base.sass */
+.wf-active h4 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 16px;
+}
+
+/* line 19, ../../../app/stylesheets/_base.sass */
 .wf-active .cabin {
   font-family: "Cabin";
   font-size: 18px;
 }
 
-/* line 19, ../../../app/stylesheets/_base.sass */
+/* line 23, ../../../app/stylesheets/_base.sass */
 .margin_top_1 {
   margin-top: 2em;
 }
 
-/* line 22, ../../../app/stylesheets/_base.sass */
+/* line 26, ../../../app/stylesheets/_base.sass */
 .margin_top_2 {
   margin-top: 2em;
 }
 
-/* line 78, ../../../app/stylesheets/_base.sass */
+/* line 82, ../../../app/stylesheets/_base.sass */
 .row {
   overflow: hidden;
   width: 100%;
 }
-/* line 82, ../../../app/stylesheets/_base.sass */
+/* line 86, ../../../app/stylesheets/_base.sass */
 .row .fleft {
   float: left;
 }
-/* line 85, ../../../app/stylesheets/_base.sass */
+/* line 89, ../../../app/stylesheets/_base.sass */
 .row .fright {
   float: right;
 }
@@ -365,19 +371,166 @@ form.formtastic fieldset ol li.boolean input {
   outline: none;
 }
 
-/* line 7, ../../../app/stylesheets/application.sass */
+/* Default Facebook CSS */
+/* line 3, ../../../app/stylesheets/_facebook_styles.sass */
+.fbbody {
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+  font-size: 11px;
+  color: #333333;
+}
+/* line 7, ../../../app/stylesheets/_facebook_styles.sass */
+.fbbody a {
+  color: #3b5998;
+  outline-style: none;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+/* line 15, ../../../app/stylesheets/_facebook_styles.sass */
+.fbbody a:hover {
+  text-decoration: underline;
+}
+/* line 18, ../../../app/stylesheets/_facebook_styles.sass */
+.fbbody p {
+  margin-top: 5px;
+}
+
+/* Default Anchor Style */
+/* Facebook Box Styles */
+/* line 27, ../../../app/stylesheets/_facebook_styles.sass */
+.fbUIBlock {
+  width: 458px;
+  background: white;
+  padding: 10px;
+  line-height: 0.9em;
+  margin-bottom: 20px;
+}
+/* line 35, ../../../app/stylesheets/_facebook_styles.sass */
+.fbUIBlock .fbHeader .arrow {
+  background: transparent url(/images/facebook/fb_sprite.png) -120px -91px no-repeat;
+  display: inline-block;
+  height: 9px;
+  width: 11px;
+}
+/* line 41, ../../../app/stylesheets/_facebook_styles.sass */
+.fbUIBlock .fbProfilePic {
+  width: 65px;
+}
+/* line 43, ../../../app/stylesheets/_facebook_styles.sass */
+.fbUIBlock .fbProfilePic img {
+  width: 50px;
+  height: 50px;
+}
+/* line 47, ../../../app/stylesheets/_facebook_styles.sass */
+.fbUIBlock .fbbody {
+  width: 370px;
+}
+/* line 50, ../../../app/stylesheets/_facebook_styles.sass */
+.fbUIBlock .fbMessageBox {
+  border-left: 2px solid #cccccc;
+  padding-left: 5px;
+  color: gray;
+  margin: 10px 0px;
+  padding-left: 10px;
+}
+/* line 57, ../../../app/stylesheets/_facebook_styles.sass */
+.fbUIBlock .fbMessageBox.withPic {
+  border-left: none;
+}
+/* line 59, ../../../app/stylesheets/_facebook_styles.sass */
+.fbUIBlock .fbMessageBox.withPic .fbbody {
+  width: 300px;
+}
+/* line 62, ../../../app/stylesheets/_facebook_styles.sass */
+.fbUIBlock .fbFooter {
+  background: url(/images/facebook/like_sprite.png) no-repeat;
+  padding-left: 20px;
+  height: 15px;
+  color: gray;
+}
+
+/* line 68, ../../../app/stylesheets/_facebook_styles.sass */
+.fbgreybox {
+  background-color: #f7f7f7;
+  border: 1px solid #cccccc;
+  color: #333333;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* line 76, ../../../app/stylesheets/_facebook_styles.sass */
+.fbbluebox {
+  background-color: #eceff6;
+  border: 1px solid #d4dae8;
+  color: #333333;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* line 84, ../../../app/stylesheets/_facebook_styles.sass */
+.fbinfobox {
+  background-color: #fff9d7;
+  border: 1px solid #e2c822;
+  color: #333333;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* line 92, ../../../app/stylesheets/_facebook_styles.sass */
+.fberrorbox {
+  background-color: #ffebe8;
+  border: 1px solid #dd3c10;
+  color: #333333;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Content Divider on White Background */
+/* line 102, ../../../app/stylesheets/_facebook_styles.sass */
+.fbcontentdivider {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 520px;
+  height: 1px;
+  background-color: #d8dfea;
+}
+
+/* Facebook Tab Style */
+/* line 111, ../../../app/stylesheets/_facebook_styles.sass */
+.fbtab {
+  padding: 8px;
+  background-color: #d8dfea;
+  color: #3b5998;
+  font-weight: bold;
+  float: left;
+  margin-right: 4px;
+  text-decoration: none;
+}
+/* line 119, ../../../app/stylesheets/_facebook_styles.sass */
+.fbtab:hover {
+  background-color: #3b5998;
+  color: white;
+  cursor: hand;
+}
+
+/* line 8, ../../../app/stylesheets/application.sass */
 html, body {
   padding: 0px;
   margin: 0px;
   height: 100%;
 }
 
-/* line 12, ../../../app/stylesheets/application.sass */
+/* line 13, ../../../app/stylesheets/application.sass */
 body {
   background-color: #f1f1f1;
   font-family: "Myriad Pro", Arial, Helvetica, Tahoma, sans-serif;
 }
-/* line 16, ../../../app/stylesheets/application.sass */
+/* line 17, ../../../app/stylesheets/application.sass */
 body #main {
   z-index: 50;
   padding-bottom: 100px;
@@ -386,28 +539,28 @@ body #main {
   height: 100%;
   margin: 0 auto -100px;
 }
-/* line 24, ../../../app/stylesheets/application.sass */
+/* line 25, ../../../app/stylesheets/application.sass */
 body #main .push {
   clear: both;
 }
 
-/* line 26, ../../../app/stylesheets/application.sass */
+/* line 27, ../../../app/stylesheets/application.sass */
 a {
   color: blue;
 }
-/* line 29, ../../../app/stylesheets/application.sass */
+/* line 30, ../../../app/stylesheets/application.sass */
 a img {
   border: none;
 }
 
-/* line 32, ../../../app/stylesheets/application.sass */
+/* line 33, ../../../app/stylesheets/application.sass */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 37, ../../../app/stylesheets/application.sass */
+/* line 38, ../../../app/stylesheets/application.sass */
 #flash {
   display: none;
   width: 98%;
@@ -422,7 +575,7 @@ a img {
   position: absolute;
 }
 
-/* line 50, ../../../app/stylesheets/application.sass */
+/* line 51, ../../../app/stylesheets/application.sass */
 #header {
   width: 98%;
   height: 30px;
@@ -435,11 +588,11 @@ a img {
   background: black;
   color: white;
 }
-/* line 62, ../../../app/stylesheets/application.sass */
+/* line 63, ../../../app/stylesheets/application.sass */
 #header a {
   color: white;
 }
-/* line 65, ../../../app/stylesheets/application.sass */
+/* line 66, ../../../app/stylesheets/application.sass */
 #header img.profile_pic {
   height: 24px;
   widght: 24px;
@@ -448,29 +601,28 @@ a img {
   border: 2px solid white;
 }
 
-/* line 72, ../../../app/stylesheets/application.sass */
+/* line 73, ../../../app/stylesheets/application.sass */
 #container {
   width: 960px;
   margin: 0 auto;
   margin-bottom: 100px;
   padding: 5px 10px;
 }
-/* line 78, ../../../app/stylesheets/application.sass */
-#container h1, #container h2, #container h3, #container p {
+/* line 79, ../../../app/stylesheets/application.sass */
+#container h1, #container h2, #container h3, #container h4, #container p {
   margin-bottom: 0.75em;
 }
-/* line 81, ../../../app/stylesheets/application.sass */
+/* line 82, ../../../app/stylesheets/application.sass */
+#container h1.beta, #container h2.beta, #container h3.beta, #container h4.beta, #container p.beta {
+  color: red;
+}
+/* line 85, ../../../app/stylesheets/application.sass */
 #container .trans {
   padding: 10px;
   margin-bottom: 10px;
   background: url(/images/white_90.png);
   -moz-border-radius: 5px;
   border-radius: 5px;
-}
-/* line 87, ../../../app/stylesheets/application.sass */
-#container .trans a {
-  color: #000066;
-  text-decoration: underline;
 }
 /* line 91, ../../../app/stylesheets/application.sass */
 #container .trans a.button, #container .trans input.button {

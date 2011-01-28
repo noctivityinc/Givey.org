@@ -16,18 +16,18 @@
 #  first_name                   :string(255)
 #  last_name                    :string(255)
 #  admin                        :boolean
-#  all_friends                  :text
 #  location                     :text
 #  givey_token                  :string(255)
 #  referring_id                 :integer
 #  candidate                    :boolean
 #  candidates_story             :text
 #  candidate_post_story_to_wall :boolean
+#  profile                      :text
 #
 
 class User < ActiveRecord::Base
-  serialize :all_friends
   serialize :location
+  serialize :profile
 
   before_create :generate_givey_token
 
@@ -42,6 +42,10 @@ class User < ActiveRecord::Base
 
   def completed_an_official_game
     !games.complete.official.empty?
+  end
+  
+  def official_game
+    games.complete.official.first
   end
 
   def referral_link
@@ -77,14 +81,15 @@ class User < ActiveRecord::Base
     save!
   end
 
-  def update_with_mini_fb(fb,profile_pic,access_token)
-    self.first_name = fb.first_name
-    self.last_name = fb.last_name
-    self.name = fb.name
-    self.email = fb.email rescue nil
-    self.gender = fb.gender rescue nil
-    self.locale = fb.locale rescue nil
-    self.profile_pic = profile_pic rescue nil
+  def update_with_mini_fb(profile,access_token)
+    self.first_name = profile.first_name
+    self.last_name = profile.last_name
+    self.name = profile.name
+    self.email = profile.email rescue nil
+    self.gender = profile.gender rescue nil
+    self.locale = profile.locale rescue nil
+    self.profile = profile rescue nil
+    self.profile_pic = profile.pic_square rescue nil
     self.token = access_token
     save!
   end

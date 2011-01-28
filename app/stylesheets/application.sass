@@ -3,6 +3,7 @@
 @import 'formtastic_changes'
 @import 'jquery.scroll'
 @import 'fancy-buttons'
+@import 'facebook_styles'
 
 html, body
   padding: 0px
@@ -75,19 +76,18 @@ a
   margin-bottom: 100px
   padding: 5px 10px
   
-  h1, h2, h3, p
+  h1, h2, h3, h4, p
     margin-bottom: .75em
+    
+    &.beta
+      color: red
   
   .trans
     padding: 10px
     margin-bottom: 10px
     background: url(/images/white_90.png)
     +rounded-borders
-    
-    a
-      color: #006
-      text-decoration: underline
-      
+          
     a.button, input.button
       +fancy-button(darken(#57b42c, 8))      
       color: #fff

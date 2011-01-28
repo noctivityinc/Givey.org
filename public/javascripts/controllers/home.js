@@ -1,15 +1,27 @@
 var intId;
-function showFriends() {
-  var query = FB.Data.query("SELECT name, pic_square FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY rand() LIMIT 3");
+var allFriends;
+var friendPosition = 1;
+
+function getFriends() {
+  var query = FB.Data.query("SELECT name, pic_square FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY rand()");
    query.wait(function(rows) {
-      $('.friend').hide()
-     $.each(rows, function(ndx, row){
-       $(document.createElement("img"))
-           .attr({ src: row.pic_square, title: row.name })
-           .addClass("friend")
-           .appendTo('#friends')
-       })
+      allFriends = rows;
+      showFriends()
+      intId = window.setInterval('showFriends()',3500)
    });
+}
+
+function showFriends () {
+  $('.friend').hide()
+  for(x = friendPosition;x<friendPosition+3;x++) {
+    row = allFriends[x];
+    $(document.createElement("img"))
+        .attr({ src: row.pic_square, title: row.name })
+        .addClass("friend")
+        .appendTo('#friends')
+  }
+  friendPosition = friendPosition + 3;
+  if(friendPosition>allFriends.length) friendPosition == 1
 }
 
 function showMe() {
@@ -33,10 +45,8 @@ $(document).ready(function() {
   FB.getLoginStatus(function(response) {
     if (response.session) {
       showMe()
-      showFriends();
-      intId = window.setInterval('showFriends()',3500)
+      getFriends();
     } else {
-      console.log('no fb')
     }
   });
 });

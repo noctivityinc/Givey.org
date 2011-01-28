@@ -3,19 +3,7 @@
 - content_for :head do
   :javascript
     $(document).ready(function() {
-      $('#donate_btn').click(function(e) {
-      console.log($(this).attr('rel'))
-      $.getJSON("#{APP_CONFIG[:givey]['post_url']}/sp/create?format=jsonp&callback=?",
-               {  token: "#{APP_CONFIG[:givey]['token']}", 
-                  group_id: "#{APP_CONFIG[:givey]['group_id']}",
-                  buyer_email: '#{current_user.email rescue ""}',
-                  amount: '5.00',
-                  reason: $(this).attr('rel')
-               } ,function(data) {
-                  window.location.href=data.result;
-               });
-        return false;
-      });
+
     });
     
 
@@ -53,4 +41,64 @@
         
         #actions
           = button_to 'Contribute Now', '#', :id => 'donate_btn', :class => "button", :rel => "To help us make a difference."
+        
+    .trans
+      %h3.beta BETA TESTER INFO - In case you're curious, this is what the Facebook posts will look like:
+
+      %p
+        Note: To see what someone would experience if they clicked on one of the links in the Facebook posts, you can 
+        click on 
+        = link_to "this link.", current_user.referral_link
+
+      %h4 Your wall...
+      
+      .fbUIBlock.row
+        .fleft.fbProfilePic
+          = image_tag current_user.profile_pic
+        .fleft.fbbody
+          = link_to current_user.name, '#'
+          %br
+          = "Just voted #{@game.winner.name} most likely to change the world out of my Facebook friends on Givey."
+          
+          .fbMessageBox
+            .name= link_to "#{@game.winner.name} is going to save the world.", current_user.referral_link
+            .caption= "I'm pretty sure #{@game.winner.name} can save the world."
+            %p.description= "I just played Givey.org's game changer.  My money's on #{@game.winner.name} to change the world.  What do you think?"
+          .fbFooter
+            = Time.now.strftime('%A at %I:%M%p')
+            via Givey.org
+            &#183;
+            = link_to "Like", '#'
+            &#183;
+            = link_to "Comment", '#'
+            
+          
+      %h4 Winner's wall...
+
+      .fbUIBlock.row
+        .fleft.fbProfilePic
+          = image_tag current_user.profile_pic
+        .fleft.fbbody
+          .fbHeader
+            = link_to current_user.name, '#'
+            .arrow
+            = link_to @game.winner.name, '#'
+            %br
+            = "#{@game.winner.first_name}, I just voted you as my most likely to change the world Facebook friend.  If others agree, you will get $25,000 to split among causes you care about.  You need to accept my nomination by visiting Givey."
+
+          .fbMessageBox.row.withPic
+            .fleft.fbProfilePic
+              = image_tag "givey_logo_black.png"
+            .fleft.fbbody
+              .name= link_to "Givey.org - Can you change the world? Let's play.", current_user.referral_link
+              .caption= "www.givey.org"
+          .fbFooter
+            = Time.now.strftime('%A at %I:%M%p')
+            via Givey.org
+            &#183;
+            = link_to "Like", '#'
+            &#183;
+            = link_to "Comment", '#'
+
+
         

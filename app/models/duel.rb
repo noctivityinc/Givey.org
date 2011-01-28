@@ -18,7 +18,7 @@ class Duel < ActiveRecord::Base
   after_create :create_challengers
   
   belongs_to :game
-  has_many :challengers, :dependent => :destroy 
+  has_many :challengers, :dependent => :destroy
   
   default_scope where(:active => true)
   scope :subs, where(:is_sub => true)

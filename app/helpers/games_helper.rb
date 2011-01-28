@@ -24,8 +24,4 @@ module GamesHelper
     end
   end
   
-  def first_name
-    @game.winner.name.split(/\s/)[0]
-  end
-  
 end

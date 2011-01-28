@@ -1,5 +1,7 @@
 class DonationsController < ApplicationController
+  before_filter :require_user
   before_filter :get_game
+  
   
   def index
     @donations = Donation.all

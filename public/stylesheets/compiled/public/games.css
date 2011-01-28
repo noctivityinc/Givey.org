@@ -17,56 +17,86 @@
 }
 
 /* line 15, ../../../../app/stylesheets/_base.sass */
+.wf-active h4 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 16px;
+}
+
+/* line 19, ../../../../app/stylesheets/_base.sass */
 .wf-active .cabin {
   font-family: "Cabin";
   font-size: 18px;
 }
 
-/* line 19, ../../../../app/stylesheets/_base.sass */
+/* line 23, ../../../../app/stylesheets/_base.sass */
 .margin_top_1 {
   margin-top: 2em;
 }
 
-/* line 22, ../../../../app/stylesheets/_base.sass */
+/* line 26, ../../../../app/stylesheets/_base.sass */
 .margin_top_2 {
   margin-top: 2em;
 }
 
-/* line 78, ../../../../app/stylesheets/_base.sass */
+/* line 82, ../../../../app/stylesheets/_base.sass */
 .row {
   overflow: hidden;
   width: 100%;
 }
-/* line 82, ../../../../app/stylesheets/_base.sass */
+/* line 86, ../../../../app/stylesheets/_base.sass */
 .row .fleft {
   float: left;
 }
-/* line 85, ../../../../app/stylesheets/_base.sass */
+/* line 89, ../../../../app/stylesheets/_base.sass */
 .row .fright {
   float: right;
 }
 
-/* line 6, ../../../../app/stylesheets/public/games.sass */
+/* incase an inverted custom gradient isn't specified */
+/* line 176, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+.fancy-button-reset-base-class, #why_overlay a.button, #why_overlay input.button, #winner #winner_overlay a.button, #winner #winner_overlay input.button {
+  font-family: "Lucida Grande", Lucida, Arial, sans-serif;
+  background: url('/images/button_bg.png') repeat-x bottom left;
+  margin: 0;
+  width: auto;
+  overflow: visible;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-style: solid;
+  font-weight: bold;
+}
+/* line 165, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+.fancy-button-reset-base-class::-moz-focus-inner, #why_overlay a.button::-moz-focus-inner, #why_overlay input.button::-moz-focus-inner, #winner #winner_overlay a.button::-moz-focus-inner, #winner #winner_overlay input.button::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+/* line 168, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+.fancy-button-reset-base-class:focus, #why_overlay a.button:focus, #why_overlay input.button:focus, #winner #winner_overlay a.button:focus, #winner #winner_overlay input.button:focus {
+  outline: none;
+}
+
+/* line 7, ../../../../app/stylesheets/public/games.sass */
 #game #new #actions {
   margin-top: 2em;
 }
-/* line 8, ../../../../app/stylesheets/public/games.sass */
+/* line 9, ../../../../app/stylesheets/public/games.sass */
 #game #new #actions #wait_btn {
   font-size: 16px;
   padding: 10px;
   width: 150px;
 }
-/* line 12, ../../../../app/stylesheets/public/games.sass */
+/* line 13, ../../../../app/stylesheets/public/games.sass */
 #game #new #actions #next_btn {
   display: none;
 }
-/* line 15, ../../../../app/stylesheets/public/games.sass */
+/* line 16, ../../../../app/stylesheets/public/games.sass */
 #game #new #npos {
   text-align: center;
   position: relative;
   margin-top: 1.5em;
 }
-/* line 20, ../../../../app/stylesheets/public/games.sass */
+/* line 21, ../../../../app/stylesheets/public/games.sass */
 #game #new #npos .npo {
   display: inline-block;
   background: white;
@@ -74,21 +104,21 @@
   border-radius: 5px;
   padding: 5px;
 }
-/* line 26, ../../../../app/stylesheets/public/games.sass */
+/* line 27, ../../../../app/stylesheets/public/games.sass */
 #game #show {
   position: relative;
 }
-/* line 29, ../../../../app/stylesheets/public/games.sass */
+/* line 30, ../../../../app/stylesheets/public/games.sass */
 #game #show #winners {
   text-align: left;
   position: relative;
   margin-top: 2em;
 }
-/* line 35, ../../../../app/stylesheets/public/games.sass */
+/* line 36, ../../../../app/stylesheets/public/games.sass */
 #game #show #winners #winner_list .winner, #game #show #winners #winner_list #winner_last {
   display: inline-block;
 }
-/* line 38, ../../../../app/stylesheets/public/games.sass */
+/* line 39, ../../../../app/stylesheets/public/games.sass */
 #game #show #playing_field {
   text-align: center;
   height: 400px;
@@ -251,7 +281,7 @@
 #game #show #playing_field .card .frame .box.highlight .header, #game #show #playing_field #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 43, ../../../../app/stylesheets/public/games.sass */
+/* line 44, ../../../../app/stylesheets/public/games.sass */
 #game #show #skip {
   display: none;
   background: white;
@@ -262,13 +292,13 @@
   width: 150px;
   margin: 0 auto;
 }
-/* line 51, ../../../../app/stylesheets/public/games.sass */
+/* line 52, ../../../../app/stylesheets/public/games.sass */
 #game #show #skip a {
   text-decoration: none;
   color: gray;
 }
 
-/* line 67, ../../../../app/stylesheets/public/games.sass */
+/* line 74, ../../../../app/stylesheets/public/games.sass */
 .ui-effects-transfer {
   border: 2px solid gray;
   background: #d0dcfd;
@@ -278,7 +308,7 @@
   opacity: 0.5;
 }
 
-/* line 75, ../../../../app/stylesheets/public/games.sass */
+/* line 82, ../../../../app/stylesheets/public/games.sass */
 #why_overlay {
   display: none;
   width: 750px;
@@ -290,7 +320,72 @@
   border-radius: 8px;
   background: white;
 }
-/* line 78, ../../../../app/stylesheets/public/games.sass */
+/* line 68, ../../../../app/stylesheets/public/games.sass */
+#why_overlay a.button, #why_overlay input.button {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1.2em;
+  padding: 0.3em 1em;
+  border-width: 1px;
+  background-color: #3ab700;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #9ee080), color-stop(10%, #66ce36), color-stop(50%, #418721), color-stop(50%, #3b7b1e), color-stop(100%, #4fa428));
+  background-image: -moz-linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
+  background-image: linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
+  border-color: #295615;
+  text-shadow: #123800 0px 1px 1px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -o-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -khtml-background-clip: padding-box;
+  background-clip: padding-box;
+  color: white;
+  text-decoration: none;
+}
+/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#why_overlay a.button, #why_overlay a.button:visited, #why_overlay input.button, #why_overlay input.button:visited {
+  color: white;
+}
+/* line 31, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#why_overlay a.button:hover, #why_overlay a.button:focus, #why_overlay input.button:hover, #why_overlay input.button:focus {
+  background-color: #35a800;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #95dd73), color-stop(10%, #5fc430), color-stop(50%, #3b7b1e), color-stop(50%, #356e1b), color-stop(100%, #499725));
+  background-image: -moz-linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
+  background-image: linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
+  border-color: #234912;
+  text-shadow: #0d2800 0px 1px 1px;
+}
+/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#why_overlay a.button:hover, #why_overlay a.button:hover:visited, #why_overlay a.button:focus, #why_overlay a.button:focus:visited, #why_overlay input.button:hover, #why_overlay input.button:hover:visited, #why_overlay input.button:focus, #why_overlay input.button:focus:visited {
+  color: white;
+}
+/* line 36, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#why_overlay a.button:active, #why_overlay input.button:active {
+  background-color: #309900;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #3b7b1e), color-stop(30%, #3f8320), color-stop(50%, #37721c), color-stop(50%, #316619), color-stop(100%, #4b9b26));
+  background-image: -moz-linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
+  background-image: linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
+  border-color: #1e3d0f;
+  text-shadow: #081900 0px -1px -1px;
+  -moz-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  -webkit-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  -o-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  box-shadow: #295615 0 0.08em 0.1em 1px inset;
+}
+/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#why_overlay a.button:active, #why_overlay a.button:active:visited, #why_overlay input.button:active, #why_overlay input.button:active:visited {
+  color: white;
+}
+/* line 85, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar {
   width: 325px;
 }
@@ -452,69 +547,69 @@
 #why_overlay .sidebar .card .frame .box.highlight .header, #why_overlay .sidebar #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 86, ../../../../app/stylesheets/public/games.sass */
+/* line 93, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .npo .card .frame .box .top {
   background: url("/images/npo_bar.png");
   color: #502f0d;
   width: 242px;
   text-shadow: white 1px 1px 1px;
 }
-/* line 93, ../../../../app/stylesheets/public/games.sass */
+/* line 100, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .npo .card .frame .box .sc_menu_wrapper .header {
   background: #99972d;
   color: white;
 }
-/* line 97, ../../../../app/stylesheets/public/games.sass */
+/* line 104, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .story {
   text-align: center;
 }
-/* line 100, ../../../../app/stylesheets/public/games.sass */
+/* line 107, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .story .logo {
   margin: 0 auto;
 }
-/* line 103, ../../../../app/stylesheets/public/games.sass */
+/* line 110, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .story .summary {
   margin-top: 1em;
   text-align: left;
   font-size: 13px;
 }
-/* line 108, ../../../../app/stylesheets/public/games.sass */
+/* line 115, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .story .link {
   text-align: left;
   margin-top: 3em;
   font-size: 12px;
 }
-/* line 113, ../../../../app/stylesheets/public/games.sass */
+/* line 120, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel {
   width: 425px;
   font-size: 13px;
 }
-/* line 117, ../../../../app/stylesheets/public/games.sass */
+/* line 124, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel .story {
   margin: 15px 0px;
   padding: 10px;
   width: 410px;
 }
-/* line 122, ../../../../app/stylesheets/public/games.sass */
+/* line 129, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel .story .open, #why_overlay .main_panel .story .close {
   width: 50px;
 }
-/* line 124, ../../../../app/stylesheets/public/games.sass */
+/* line 131, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel .story .middle {
   width: 300px;
   font-size: 12pt;
   line-height: 1.25em;
   padding: 5px 0px;
 }
-/* line 129, ../../../../app/stylesheets/public/games.sass */
+/* line 136, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel .story .open {
   vertical-align: top;
 }
-/* line 131, ../../../../app/stylesheets/public/games.sass */
+/* line 138, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel .story .close {
   vertical-align: bottom;
 }
-/* line 134, ../../../../app/stylesheets/public/games.sass */
+/* line 141, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel #actions {
   position: absolute;
   width: 400px;
@@ -522,7 +617,7 @@
   vertical-align: bottom;
 }
 
-/* line 142, ../../../../app/stylesheets/public/games.sass */
+/* line 149, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay {
   display: none;
   width: 750px;
@@ -534,7 +629,72 @@
   border-radius: 8px;
   background: white;
 }
-/* line 145, ../../../../app/stylesheets/public/games.sass */
+/* line 68, ../../../../app/stylesheets/public/games.sass */
+#winner #winner_overlay a.button, #winner #winner_overlay input.button {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1.2em;
+  padding: 0.3em 1em;
+  border-width: 1px;
+  background-color: #3ab700;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #9ee080), color-stop(10%, #66ce36), color-stop(50%, #418721), color-stop(50%, #3b7b1e), color-stop(100%, #4fa428));
+  background-image: -moz-linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
+  background-image: linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
+  border-color: #295615;
+  text-shadow: #123800 0px 1px 1px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -o-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -khtml-background-clip: padding-box;
+  background-clip: padding-box;
+  color: white;
+  text-decoration: none;
+}
+/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#winner #winner_overlay a.button, #winner #winner_overlay a.button:visited, #winner #winner_overlay input.button, #winner #winner_overlay input.button:visited {
+  color: white;
+}
+/* line 31, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#winner #winner_overlay a.button:hover, #winner #winner_overlay a.button:focus, #winner #winner_overlay input.button:hover, #winner #winner_overlay input.button:focus {
+  background-color: #35a800;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #95dd73), color-stop(10%, #5fc430), color-stop(50%, #3b7b1e), color-stop(50%, #356e1b), color-stop(100%, #499725));
+  background-image: -moz-linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
+  background-image: linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
+  border-color: #234912;
+  text-shadow: #0d2800 0px 1px 1px;
+}
+/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#winner #winner_overlay a.button:hover, #winner #winner_overlay a.button:hover:visited, #winner #winner_overlay a.button:focus, #winner #winner_overlay a.button:focus:visited, #winner #winner_overlay input.button:hover, #winner #winner_overlay input.button:hover:visited, #winner #winner_overlay input.button:focus, #winner #winner_overlay input.button:focus:visited {
+  color: white;
+}
+/* line 36, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#winner #winner_overlay a.button:active, #winner #winner_overlay input.button:active {
+  background-color: #309900;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #3b7b1e), color-stop(30%, #3f8320), color-stop(50%, #37721c), color-stop(50%, #316619), color-stop(100%, #4b9b26));
+  background-image: -moz-linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
+  background-image: linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
+  border-color: #1e3d0f;
+  text-shadow: #081900 0px -1px -1px;
+  -moz-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  -webkit-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  -o-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  box-shadow: #295615 0 0.08em 0.1em 1px inset;
+}
+/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#winner #winner_overlay a.button:active, #winner #winner_overlay a.button:active:visited, #winner #winner_overlay input.button:active, #winner #winner_overlay input.button:active:visited {
+  color: white;
+}
+/* line 152, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #card {
   width: 325px;
 }
@@ -696,34 +856,34 @@
 #winner #winner_overlay #card .card .frame .box.highlight .header, #winner #winner_overlay #card #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 149, ../../../../app/stylesheets/public/games.sass */
+/* line 156, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch {
   width: 425px;
   font-size: 13px;
 }
-/* line 153, ../../../../app/stylesheets/public/games.sass */
+/* line 160, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch h2 {
   padding-bottom: 15px;
   margin-bottom: 0px;
 }
-/* line 157, ../../../../app/stylesheets/public/games.sass */
+/* line 164, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch #checkboxes {
   margin-top: 25px;
 }
-/* line 159, ../../../../app/stylesheets/public/games.sass */
+/* line 166, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch #checkboxes .cb {
   margin: 5px 0px;
   padding-left: 20px;
   text-align: left;
 }
-/* line 164, ../../../../app/stylesheets/public/games.sass */
+/* line 171, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch #actions {
   position: absolute;
   width: 400px;
   bottom: 20px;
   vertical-align: bottom;
 }
-/* line 170, ../../../../app/stylesheets/public/games.sass */
+/* line 177, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch #actions .back {
   padding-top: 20px;
 }

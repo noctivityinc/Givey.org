@@ -1,5 +1,6 @@
-@import 'card'
 @import 'base'
+@import 'card'
+@import 'fancy-buttons'
 
 #game
   #new
@@ -63,6 +64,12 @@
   +rounded_borders(8px)
 
   background: #fff
+  
+  a.button, input.button
+    +fancy-button(darken(#57b42c, 8))      
+    color: #fff
+    text-decoration: none
+  
 
 .ui-effects-transfer
   border: 2px solid gray

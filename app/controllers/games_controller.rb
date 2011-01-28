@@ -8,6 +8,10 @@ class GamesController < ApplicationController
   helper_method :total_battles, :finals?, :allow_skip?
 
   def new
+    unless production?
+      # remove any old games they might have tried
+      current_user.games.destroy_all
+    end
   end
 
   def create

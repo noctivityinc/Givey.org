@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  $('.sc_menu_wrapper').jScrollPane();
-  
   var why_overlay_shown = false;
   $('.card.clickable .box').live("mouseover",function(e){
     $(this).addClass('highlight')

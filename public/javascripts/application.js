@@ -32,5 +32,7 @@ $(document).ready(function() {
 	if(randomSlide!=''){
     $('#supersized').supersized();
   } 
+  
+  $('.sc_menu_wrapper').jScrollPane();
 });
 

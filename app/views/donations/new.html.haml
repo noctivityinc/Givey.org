@@ -84,13 +84,13 @@
             .arrow
             = link_to @game.winner.name, '#'
             %br
-            = "#{@game.winner.first_name}, I just voted you as my most likely to change the world Facebook friend.  If others agree, you will get $25,000 to split among causes you care about.  You need to accept my nomination by visiting Givey."
+            = "#{@game.winner.first_name}, I selected you as most likely to change the world if given $25K.  I need you to confirm your nomination.  Can you click the link below please?"
 
           .fbMessageBox.row.withPic
             .fleft.fbProfilePic
               = image_tag "givey_logo_black.png"
             .fleft.fbbody
-              .name= link_to "Givey.org - Can you change the world? Let's play.", current_user.referral_link
+              .name= link_to "Givey.org - Can you change the world? Let's play.", "http://#{APP_CONFIG[:domain]}/c/#{@game.token}"
               .caption= "www.givey.org"
           .fbFooter
             = Time.now.strftime('%A at %I:%M%p')

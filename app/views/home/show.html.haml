@@ -14,7 +14,7 @@
           .fleft.card
             = render :partial => '/games/card', :locals => {:challenger => @user.official_game.winner}
       
-        %h2= "If others agree with #{@user.name}, #{@user.official_game.winner.first_name} will be given $25,000 to split among whatever causes she sees fit."
+        %h2= "If others agree with #{@user.name}, #{@user.official_game.winner.first_name} will be given $25,000 to split among whatever causes they want."
               
         %h2
           = "Should we give #{@user.official_game.winner.first_name} the money or do you have someone else in mind?"
@@ -23,9 +23,8 @@
 
         - unless production?
           #facebook
-            - unless current_user 
-              = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
-              #not_user
+            = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
+            #not_user
       
       #logo
         = image_tag "givey_logo_large.png", :title => "Givey.org"

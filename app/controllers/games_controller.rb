@@ -8,7 +8,7 @@ class GamesController < ApplicationController
   helper_method :total_battles, :finals?, :allow_skip?
 
   def new
-    unless production?
+    unless production? || session[:redo]
       # remove any old games they might have tried
       current_user.games.destroy_all
     end
@@ -18,9 +18,8 @@ class GamesController < ApplicationController
     if unfinished_games?
       render :json => {:status => 'complete', :url => url_for(current_user.games.incomplete.first)} # => do this in case back button selected
     else
-      num_friends_needed = get_total_candidates[0]
-      if num_friends_needed > 0
-        game = current_user.games.create!({:total_candidates => num_friends_needed, :friends_hash => create_friends_hash(num_friends_needed)})
+      if get_total_candidates > 0
+        game = current_user.games.create!({:total_candidates => get_total_candidates, :friends_hash => create_friends_hash(get_total_candidates)})
         create_duels(game, game.friends_hash.keys, 1)
         select_subs(game)
         render :json => {:status => 'complete', :url => url_for(game)}
@@ -128,10 +127,17 @@ class GamesController < ApplicationController
       if current_user
         @fb ||= MiniFB::OAuthSession.new(current_user.token)
         begin
-          @all_friends =  @fb.fql("SELECT uid, name, first_name, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
+          exclude_list = process_exclude_list
+          exclude_sql = exclude_list ? "AND uid2 <> #{exclude_list.join(' AND uid2 <> ')}" : ''
+          all_friends_sql = "SELECT uid, name, first_name, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
                 current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
-                FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) ORDER BY rand()")
-          process_exclude_list
+                FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() #{exclude_sql}) ORDER BY rand() LIMIT 40"
+          @res = @fb.multifql({:all_friends => all_friends_sql, :photos => "SELECT owner, src, caption, link FROM photo 
+                WHERE aid IN (SELECT aid FROM album WHERE owner IN (SELECT uid FROM #all_friends) AND (type = 'profile' OR type = 'wall') LIMIT 9)"})
+          @all_friends = @res.detect {|x| x.name == 'all_friends'}.fql_result_set
+          photos = @res.detect {|x| x.name == 'photos'}.fql_result_set
+          
+          @all_friends.each { |f| f.photos = photos.select {|x| (x.owner.to_s == f.uid.to_s)}}
         rescue Exception => e
           cookies[:user_id] = {:value => nil}
           # redirect_to root_url, :notice => "You must be logged into facebook to create an experiment."
@@ -145,31 +151,20 @@ class GamesController < ApplicationController
     def process_exclude_list
       if session[:redo]
         session[:redo] = nil
-        previous_game = Game.find(session[:previous_game_id])
+        @previous_game = Game.find(session[:previous_game_id])
         session[:previous_game_id] = nil
-
-        @must_include = previous_game.winner
-        @all_friends.reject! {|x| previous_game.friends_hash.keys.include?(x.uid.to_s) && x.uid.to_s != @must_include.uid.to_s}
+        
+        uids_to_exclude = current_user.duels.challenger_uids
       end
     end
 
-    def create_friends_hash(num_friends_to_select)
-      friend_list = get_friend_list(num_friends_to_select+total_subs)
-      friend_list_ids = friend_list.map {|x| x.uid}
-
-      friend_pics = @fb.fql("SELECT owner, src, caption, link FROM photo WHERE aid IN (SELECT aid FROM album WHERE owner IN (#{friend_list_ids.join(',')}) AND (type = 'profile' OR type = 'wall'))")
-      friend_list.each { |f| f.photos = friend_pics.select {|x| (x.owner.to_s == f.uid.to_s)}}
+    def create_friends_hash(total_candidates)
+      total_candidates -= 1 if @previous_game
+      friend_list = @all_friends[0..(total_candidates+total_subs-1)]
+      friend_list.push(@previous_game.winner) if @previous_game 
+      
       friends_hash = friend_list.inject({}) {|r,x| r.merge!({x.uid.to_s => x})}
       friends_hash
-    end
-
-    def get_friend_list(num_to_select)
-      friend_list = @all_friends.sort_by{rand}[0..(num_to_select-1)]
-      unless @must_include.blank?
-        friend_list.pop
-        friend_list.push(@must_include)
-      end
-      friend_list
     end
 
     def total_subs()
@@ -190,7 +185,8 @@ class GamesController < ApplicationController
 
     def get_total_candidates()
       if @all_friends.size > 1
-        Duel::DUEL_SIZES.detect {|x| @all_friends.size >= x[0]}
+        size = Duel::DUEL_SIZES.detect {|x| @all_friends.size >= x[0]}
+        return size[0] if size
       else
         return 0
       end

@@ -76,27 +76,31 @@
   outline: none;
 }
 
-/* line 7, ../../../../app/stylesheets/public/games.sass */
-#game #new #actions {
+/* line 8, ../../../../app/stylesheets/public/games.sass */
+#game #new #please_wait #actions {
   margin-top: 2em;
 }
-/* line 9, ../../../../app/stylesheets/public/games.sass */
-#game #new #actions #wait_btn {
+/* line 10, ../../../../app/stylesheets/public/games.sass */
+#game #new #please_wait #actions #wait_btn {
   font-size: 16px;
   padding: 10px;
   width: 150px;
 }
-/* line 13, ../../../../app/stylesheets/public/games.sass */
-#game #new #actions #next_btn {
+/* line 14, ../../../../app/stylesheets/public/games.sass */
+#game #new #please_wait #actions #next_btn {
   display: none;
 }
-/* line 16, ../../../../app/stylesheets/public/games.sass */
+/* line 17, ../../../../app/stylesheets/public/games.sass */
+#game #new #try_later {
+  display: none;
+}
+/* line 20, ../../../../app/stylesheets/public/games.sass */
 #game #new #npos {
   text-align: center;
   position: relative;
   margin-top: 1.5em;
 }
-/* line 21, ../../../../app/stylesheets/public/games.sass */
+/* line 25, ../../../../app/stylesheets/public/games.sass */
 #game #new #npos .npo {
   display: inline-block;
   background: white;
@@ -105,21 +109,21 @@
   padding: 5px;
   margin-right: 15px;
 }
-/* line 29, ../../../../app/stylesheets/public/games.sass */
+/* line 33, ../../../../app/stylesheets/public/games.sass */
 #game #show {
   position: relative;
 }
-/* line 32, ../../../../app/stylesheets/public/games.sass */
+/* line 36, ../../../../app/stylesheets/public/games.sass */
 #game #show #winners {
   text-align: left;
   position: relative;
   margin-top: 2em;
 }
-/* line 38, ../../../../app/stylesheets/public/games.sass */
+/* line 42, ../../../../app/stylesheets/public/games.sass */
 #game #show #winners #winner_list .winner, #game #show #winners #winner_list #winner_last {
   display: inline-block;
 }
-/* line 41, ../../../../app/stylesheets/public/games.sass */
+/* line 45, ../../../../app/stylesheets/public/games.sass */
 #game #show #playing_field {
   text-align: center;
   height: 400px;
@@ -283,7 +287,7 @@
 #game #show #playing_field .card .frame .box.highlight .header, #game #show #playing_field #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 46, ../../../../app/stylesheets/public/games.sass */
+/* line 50, ../../../../app/stylesheets/public/games.sass */
 #game #show #skip {
   display: none;
   background: white;
@@ -294,13 +298,13 @@
   width: 150px;
   margin: 0 auto;
 }
-/* line 54, ../../../../app/stylesheets/public/games.sass */
+/* line 58, ../../../../app/stylesheets/public/games.sass */
 #game #show #skip a {
   text-decoration: none;
   color: gray;
 }
 
-/* line 76, ../../../../app/stylesheets/public/games.sass */
+/* line 80, ../../../../app/stylesheets/public/games.sass */
 .ui-effects-transfer {
   border: 2px solid gray;
   background: #d0dcfd;
@@ -310,7 +314,7 @@
   opacity: 0.5;
 }
 
-/* line 84, ../../../../app/stylesheets/public/games.sass */
+/* line 88, ../../../../app/stylesheets/public/games.sass */
 #why_overlay {
   display: none;
   width: 750px;
@@ -322,7 +326,7 @@
   border-radius: 8px;
   background: white;
 }
-/* line 70, ../../../../app/stylesheets/public/games.sass */
+/* line 74, ../../../../app/stylesheets/public/games.sass */
 #why_overlay a.button, #why_overlay input.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -387,7 +391,7 @@
 #why_overlay a.button:active, #why_overlay a.button:active:visited, #why_overlay input.button:active, #why_overlay input.button:active:visited {
   color: white;
 }
-/* line 87, ../../../../app/stylesheets/public/games.sass */
+/* line 91, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar {
   width: 325px;
 }
@@ -550,69 +554,69 @@
 #why_overlay .sidebar .card .frame .box.highlight .header, #why_overlay .sidebar #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 95, ../../../../app/stylesheets/public/games.sass */
+/* line 99, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .npo .card .frame .box .top {
   background: url("/images/npo_bar.png");
   color: #502f0d;
   width: 242px;
   text-shadow: white 1px 1px 1px;
 }
-/* line 102, ../../../../app/stylesheets/public/games.sass */
+/* line 106, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .npo .card .frame .box .sc_menu_wrapper .header {
   background: #99972d;
   color: white;
 }
-/* line 106, ../../../../app/stylesheets/public/games.sass */
+/* line 110, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .story {
   text-align: center;
 }
-/* line 109, ../../../../app/stylesheets/public/games.sass */
+/* line 113, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .story .logo {
   margin: 0 auto;
 }
-/* line 112, ../../../../app/stylesheets/public/games.sass */
+/* line 116, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .story .summary {
   margin-top: 1em;
   text-align: left;
   font-size: 13px;
 }
-/* line 117, ../../../../app/stylesheets/public/games.sass */
+/* line 121, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .story .link {
   text-align: left;
   margin-top: 3em;
   font-size: 12px;
 }
-/* line 122, ../../../../app/stylesheets/public/games.sass */
+/* line 126, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel {
   width: 425px;
   font-size: 13px;
 }
-/* line 126, ../../../../app/stylesheets/public/games.sass */
+/* line 130, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel .story {
   margin: 15px 0px;
   padding: 10px;
   width: 410px;
 }
-/* line 131, ../../../../app/stylesheets/public/games.sass */
+/* line 135, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel .story .open, #why_overlay .main_panel .story .close {
   width: 50px;
 }
-/* line 133, ../../../../app/stylesheets/public/games.sass */
+/* line 137, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel .story .middle {
   width: 300px;
   font-size: 12pt;
   line-height: 1.25em;
   padding: 5px 0px;
 }
-/* line 138, ../../../../app/stylesheets/public/games.sass */
+/* line 142, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel .story .open {
   vertical-align: top;
 }
-/* line 140, ../../../../app/stylesheets/public/games.sass */
+/* line 144, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel .story .close {
   vertical-align: bottom;
 }
-/* line 143, ../../../../app/stylesheets/public/games.sass */
+/* line 147, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .main_panel #actions {
   position: absolute;
   width: 400px;
@@ -620,7 +624,7 @@
   vertical-align: bottom;
 }
 
-/* line 151, ../../../../app/stylesheets/public/games.sass */
+/* line 155, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay {
   display: none;
   width: 750px;
@@ -632,7 +636,7 @@
   border-radius: 8px;
   background: white;
 }
-/* line 70, ../../../../app/stylesheets/public/games.sass */
+/* line 74, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay a.button, #winner #winner_overlay input.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -697,7 +701,7 @@
 #winner #winner_overlay a.button:active, #winner #winner_overlay a.button:active:visited, #winner #winner_overlay input.button:active, #winner #winner_overlay input.button:active:visited {
   color: white;
 }
-/* line 154, ../../../../app/stylesheets/public/games.sass */
+/* line 158, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #card {
   width: 325px;
 }
@@ -860,34 +864,34 @@
 #winner #winner_overlay #card .card .frame .box.highlight .header, #winner #winner_overlay #card #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 158, ../../../../app/stylesheets/public/games.sass */
+/* line 162, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch {
   width: 425px;
   font-size: 13px;
 }
-/* line 162, ../../../../app/stylesheets/public/games.sass */
+/* line 166, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch h2 {
   padding-bottom: 15px;
   margin-bottom: 0px;
 }
-/* line 166, ../../../../app/stylesheets/public/games.sass */
+/* line 170, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch #checkboxes {
   margin-top: 25px;
 }
-/* line 168, ../../../../app/stylesheets/public/games.sass */
+/* line 172, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch #checkboxes .cb {
   margin: 5px 0px;
   padding-left: 20px;
   text-align: left;
 }
-/* line 173, ../../../../app/stylesheets/public/games.sass */
+/* line 177, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch #actions {
   position: absolute;
   width: 400px;
   bottom: 20px;
   vertical-align: bottom;
 }
-/* line 179, ../../../../app/stylesheets/public/games.sass */
+/* line 183, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch #actions .back {
   padding-top: 20px;
 }

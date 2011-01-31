@@ -154,26 +154,17 @@ class GamesController < ApplicationController
         @previous_game = Game.find(session[:previous_game_id])
         session[:previous_game_id] = nil
         
-        uids_to_exclude = current_user.duels.challenger_uids # - Array.new.push(@previous_game.winner_uid)    
+        uids_to_exclude = current_user.duels.challenger_uids
       end
     end
 
     def create_friends_hash(total_candidates)
       total_candidates -= 1 if @previous_game
-      friend_list = @all_friends[0..(total_candidates-1)]
+      friend_list = @all_friends[0..(total_candidates+total_subs-1)]
       friend_list.push(@previous_game.winner) if @previous_game 
       
       friends_hash = friend_list.inject({}) {|r,x| r.merge!({x.uid.to_s => x})}
       friends_hash
-    end
-
-    def get_friend_list(num_to_select)
-      friend_list = @all_friends.sort_by{rand}[0..(num_to_select-1)]
-      unless @must_include.blank?
-        friend_list.pop
-        friend_list.push(@must_include)
-      end
-      friend_list
     end
 
     def total_subs()

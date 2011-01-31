@@ -33,6 +33,13 @@ class User < ActiveRecord::Base
 
   has_many :games, :dependent => :destroy
   belongs_to :referring_friend, :class_name => "User", :foreign_key => "referring_id"
+  
+  has_many :duels, :through => :games do 
+    def challenger_uids
+      all.map {|x| x.challengers.map {|y| y.uid}}.flatten
+    end
+  end
+
 
   scope :candidates, where(:candidate => true)
 

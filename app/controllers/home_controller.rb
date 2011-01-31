@@ -28,7 +28,7 @@ class HomeController < ApplicationController
       if current_user
         @fb = MiniFB::OAuthSession.new(current_user.token)
         begin
-          @res = @fb.fql("SELECT uid, name, pic_square FROM user WHERE uid = me() OR uid IN (SELECT uid2 FROM friend WHERE uid1 = me())")
+          @res = @fb.me
         rescue Exception => e
           cookies[:user_id] = {:value => nil}
         end

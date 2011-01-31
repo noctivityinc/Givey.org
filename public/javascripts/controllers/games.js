@@ -58,6 +58,7 @@ $(document).ready(function() {
     
     function showDuel (r) {
       finals = r.finals
+      console.log(finals);
       loadWinners();
       changeStats(r);
       toggleSkip(r)

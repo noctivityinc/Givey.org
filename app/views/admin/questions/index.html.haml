@@ -1,0 +1,9 @@
+- title "Admin/Questions"
+
+#questions
+  #index
+    #copy
+      = table_for @questions do |t|
+        = t.data :actions => :all, :action_prefix => :admin 
+      
+      #actions= link_to "New Question", new_admin_question_path

@@ -124,23 +124,27 @@ form.formtastic fieldset.buttons li.commit input[type=submit] {
   text-align: right;
 }
 
-/* line 24, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 23, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset {
+  text-align: left;
+}
+/* line 25, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset legend {
   padding: 0.75em 0em;
   font-weight: bold;
   font-size: 1.25em;
 }
 
-/* line 29, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 30, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol {
   padding-left: 1.5em;
 }
-/* line 31, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 32, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li {
-  margin-bottom: 0.5em;
+  padding-bottom: 1.5em;
   clear: both;
 }
-/* line 35, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 36, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li label {
   display: block;
   width: 25%;
@@ -148,32 +152,32 @@ form.formtastic fieldset ol li label {
   padding-top: 0.2em;
   font-weight: bold;
 }
-/* line 42, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 43, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.error {
   background: #ffffcc;
   padding: 8px 0px 3px 6px;
   border-top: 1px dashed #ffcc66;
   border-bottom: 1px dashed #ffcc66;
 }
-/* line 48, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 49, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.error .inline-errors {
   color: #660000;
 }
-/* line 52, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 53, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.string fieldset, form.formtastic fieldset ol li.password fieldset, form.formtastic fieldset ol li.numeric fieldset, form.formtastic fieldset ol li.select fieldset {
   padding: 1.4em;
   margin: 0 0 1.5em 0;
 }
-/* line 55, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 56, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.string legend, form.formtastic fieldset ol li.password legend, form.formtastic fieldset ol li.numeric legend, form.formtastic fieldset ol li.select legend {
   font-weight: bold;
   font-size: 1.2em;
 }
-/* line 58, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 59, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.string input, form.formtastic fieldset ol li.password input, form.formtastic fieldset ol li.numeric input, form.formtastic fieldset ol li.select input {
   width: 400px;
 }
-/* line 60, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 61, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.string input.text, form.formtastic fieldset ol li.string input.title, form.formtastic fieldset ol li.string input[type=text], form.formtastic fieldset ol li.string input[type=password], form.formtastic fieldset ol li.string input.password, form.formtastic fieldset ol li.password input.text, form.formtastic fieldset ol li.password input.title, form.formtastic fieldset ol li.password input[type=text], form.formtastic fieldset ol li.password input[type=password], form.formtastic fieldset ol li.password input.password, form.formtastic fieldset ol li.numeric input.text, form.formtastic fieldset ol li.numeric input.title, form.formtastic fieldset ol li.numeric input[type=text], form.formtastic fieldset ol li.numeric input[type=password], form.formtastic fieldset ol li.numeric input.password, form.formtastic fieldset ol li.select input.text, form.formtastic fieldset ol li.select input.title, form.formtastic fieldset ol li.select input[type=text], form.formtastic fieldset ol li.select input[type=password], form.formtastic fieldset ol li.select input.password {
   border: 1px solid gray;
   margin: 0em 0;
@@ -181,16 +185,16 @@ form.formtastic fieldset ol li.string input.text, form.formtastic fieldset ol li
   padding: 5px;
   font-size: 1.2em;
 }
-/* line 66, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 67, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.string input.title, form.formtastic fieldset ol li.password input.title, form.formtastic fieldset ol li.numeric input.title, form.formtastic fieldset ol li.select input.title {
   font-size: 1.5em;
 }
-/* line 68, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 69, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.string input[type=checkbox], form.formtastic fieldset ol li.string input.checkbox, form.formtastic fieldset ol li.string input[type=radio], form.formtastic fieldset ol li.string input.radio, form.formtastic fieldset ol li.password input[type=checkbox], form.formtastic fieldset ol li.password input.checkbox, form.formtastic fieldset ol li.password input[type=radio], form.formtastic fieldset ol li.password input.radio, form.formtastic fieldset ol li.numeric input[type=checkbox], form.formtastic fieldset ol li.numeric input.checkbox, form.formtastic fieldset ol li.numeric input[type=radio], form.formtastic fieldset ol li.numeric input.radio, form.formtastic fieldset ol li.select input[type=checkbox], form.formtastic fieldset ol li.select input.checkbox, form.formtastic fieldset ol li.select input[type=radio], form.formtastic fieldset ol li.select input.radio {
   position: relative;
   top: 0em;
 }
-/* line 72, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 73, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.string input[type=submit], form.formtastic fieldset ol li.password input[type=submit], form.formtastic fieldset ol li.numeric input[type=submit], form.formtastic fieldset ol li.select input[type=submit] {
   margin: 10pt 10px;
   padding: 5px;
@@ -199,14 +203,14 @@ form.formtastic fieldset ol li.string input[type=submit], form.formtastic fields
   background: green;
   color: white;
 }
-/* line 79, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 80, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.string select, form.formtastic fieldset ol li.password select, form.formtastic fieldset ol li.numeric select, form.formtastic fieldset ol li.select select {
   margin: 0em 0;
   background-color: white;
   padding: 5px;
   font-size: 1.2em;
 }
-/* line 85, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 86, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.string .inline-hints, form.formtastic fieldset ol li.password .inline-hints, form.formtastic fieldset ol li.numeric .inline-hints, form.formtastic fieldset ol li.select .inline-hints {
   width: 400px;
   padding-left: 25%;
@@ -214,7 +218,7 @@ form.formtastic fieldset ol li.string .inline-hints, form.formtastic fieldset ol
   color: #666666;
   margin-top: 0.25em;
 }
-/* line 93, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 94, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.text textarea {
   width: 400px;
   height: 5em;
@@ -222,16 +226,54 @@ form.formtastic fieldset ol li.text textarea {
   padding: 5px;
 }
 /* line 100, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.text .inline-hints {
+  width: 400px;
+  padding-left: 25%;
+  font-size: 0.8em;
+  color: #666666;
+  margin-top: 0.25em;
+}
+/* line 109, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.radio fieldset {
+  overflow: hidden;
+  width: 100%;
+  padding-top: 0.2em;
+}
+/* line 114, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.radio fieldset legend {
+  text-align: left;
+  width: 25%;
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  font-size: 1em;
+}
+/* line 122, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.radio fieldset ol {
+  width: 400px;
+  float: left;
+}
+/* line 125, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.radio fieldset ol li {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 129, ../../../app/stylesheets/_formtastic_changes.sass */
+form.formtastic fieldset ol li.radio fieldset ol li label {
+  width: 40px;
+}
+/* line 133, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.boolean label {
   padding-left: 25%;
 }
-/* line 102, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 135, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.boolean p.inline-hints {
   color: #666666;
   margin: 0.5em 0 0 25%;
   clear: both;
 }
-/* line 106, ../../../app/stylesheets/_formtastic_changes.sass */
+/* line 139, ../../../app/stylesheets/_formtastic_changes.sass */
 form.formtastic fieldset ol li.boolean input {
   margin-right: 5px;
 }

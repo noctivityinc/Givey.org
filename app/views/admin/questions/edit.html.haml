@@ -1,0 +1,10 @@
+- title "Edit Admin/Question"
+
+#question
+  #edit
+  = render 'form'
+
+  #actions
+    = link_to "Show", [ :admin, @question ]
+    |
+    = link_to "View All", admin_questions_path

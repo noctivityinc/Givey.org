@@ -21,6 +21,7 @@ form.formtastic fieldset.buttons
         :text-align right
 
 form.formtastic fieldset 
+  text-align: left
   legend
     padding: .75em 0em
     font-weight: bold
@@ -29,7 +30,7 @@ form.formtastic fieldset
 form.formtastic fieldset ol 
   padding-left: 1.5em
   li
-    margin-bottom: .5em
+    padding-bottom: 1.5em
     clear: both
 
   li label
@@ -96,6 +97,38 @@ form.formtastic fieldset ol
       :margin 0em 0
       :padding 5px    
 
+    .inline-hints
+      :width 400px
+      padding-left: 25%
+      font-size: .80em
+      color: #666
+      margin-top: .25em
+
+      
+  li.radio
+    fieldset
+      overflow: hidden
+      width: 100%
+      padding-top: .2em
+
+      legend
+        text-align: left
+        width: 25%
+        float: left
+        padding: 0px
+        margin: 0px
+        font-size: 1em
+      
+      ol
+        width: 400px
+        float: left
+        li
+          display: inline
+          padding: 0px
+          margin: 0px
+          label
+            width: 40px
+          
   li.boolean
     label
       padding-left: 25%

@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: givey_development
+  database: givey_dev_v2
   pool: 5
   timeout: 5000
 

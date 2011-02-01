@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: friends
+#
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  uid        :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  uid: MyString
+
+two:
+  user_id: 1
+  uid: MyString

@@ -1,0 +1,17 @@
+- title "Admin/Question - #{@question.name}"
+
+#beta_tester
+  #show
+    = fieldset_for @question, 'Overview', :name, :value, :active
+    = fieldset_for @question, 'Story (optional)', :story
+
+#actions
+  %p
+    = link_to "Edit", edit_admin_question_path(@question)
+    |
+    = link_to "Destroy", [ :admin, @question ], :confirm => 'Are you sure?', :method => :delete
+    |
+    = link_to "View All", admin_questions_path
+
+  %p
+    = link_to "+ New Question", new_admin_question_path

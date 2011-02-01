@@ -30,29 +30,25 @@ class User < ActiveRecord::Base
   serialize :profile
 
   before_create :generate_givey_token
-
-  has_many :games, :dependent => :destroy
-  belongs_to :referring_friend, :class_name => "User", :foreign_key => "referring_id"
   
-  has_many :duels, :through => :games do 
-    def challenger_uids
-      all.map {|x| x.challengers.map {|y| y.uid}}.flatten
+  has_many :friends do
+    def pick(n=3)
+      self.sort_by{rand}[0..(n-1)]
     end
   end
-
-
-  scope :candidates, where(:candidate => true)
+  
+  has_one :profile, :class_name => "Profile", :foreign_key => "uid", :primary_key => "uid" 
+  has_many :battles 
+  belongs_to :referring_friend, :class_name => "User", :foreign_key => "referring_id"
 
   def admin?
     self.admin
   end
-
-  def completed_an_official_game
-    !games.complete.official.empty?
-  end
   
-  def official_game
-    games.complete.official.first
+  def prepare_a_battle
+    question = Question.active.sort_by{rand}.first
+    battle_friends = self.friends.pick
+    return self.battles.create!(:question => question, :friend_uid_1 => battle_friends[0].uid, :friend_uid_2 => battle_friends[1].uid, :friend_uid_3 => battle_friends[2].uid)
   end
 
   def referral_link
@@ -95,7 +91,7 @@ class User < ActiveRecord::Base
     self.email = profile.email rescue nil
     self.gender = profile.sex rescue nil
     self.locale = profile.locale rescue nil
-    self.profile = profile rescue nil
+    # self.profile = profile rescue nil
     self.profile_pic = profile.pic_square rescue nil
     self.token = access_token
     save!

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110128164449) do
+ActiveRecord::Schema.define(:version => 20110131224748) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -22,21 +22,25 @@ ActiveRecord::Schema.define(:version => 20110128164449) do
     t.datetime "photo_updated_at"
   end
 
+  create_table "battles", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.string   "winner_uid"
+    t.string   "friend_uid_1"
+    t.string   "friend_uid_2"
+    t.string   "friend_uid_3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "battles", ["user_id"], :name => "index_battles_on_user_id"
+
   create_table "beta_testers", :force => true do |t|
     t.string   "email"
     t.integer  "access_count"
     t.datetime "last_accessed_at"
     t.text     "feedback"
     t.boolean  "active"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "beta_tests", :force => true do |t|
-    t.string   "email"
-    t.integer  "access_count"
-    t.datetime "last_accessed_at"
-    t.text     "feedback"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,6 +83,16 @@ ActiveRecord::Schema.define(:version => 20110128164449) do
     t.boolean  "is_sub"
     t.boolean  "active"
   end
+
+  create_table "friends", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "friends", ["uid"], :name => "index_friends_on_uid"
+  add_index "friends", ["user_id", "uid"], :name => "ndx_user_id_and_uid"
 
   create_table "games", :force => true do |t|
     t.integer  "campaign_id"
@@ -133,6 +147,25 @@ ActiveRecord::Schema.define(:version => 20110128164449) do
     t.string   "status"
     t.string   "transaction_id"
     t.integer  "campaign_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "uid"
+    t.text     "details"
+    t.text     "photos"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["uid"], :name => "index_profiles_on_uid"
+
+  create_table "questions", :force => true do |t|
+    t.string   "name"
+    t.integer  "value"
+    t.boolean  "active"
+    t.text     "story"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

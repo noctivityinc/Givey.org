@@ -1,6 +1,8 @@
 Givey::Application.routes.draw do
+
   resources :donations
   resources :npos
+  resources :battles
   resources :games do
     member do
       get :in_progress
@@ -32,6 +34,7 @@ Givey::Application.routes.draw do
     resources :categories
     resources :backgrounds
     resources :beta_testers
+    resources :questions
   end
 
   match "/not_yet" => "home#not_yet"

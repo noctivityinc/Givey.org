@@ -1,0 +1,64 @@
+- title "#{current_user.name}'s Friends", false
+
+- content_for :head do
+  :javascript
+    var retryCount = 0;
+    var t;
+    $(document).ready(function() {
+        create_game();
+
+        $('#wait_btn').click(function() {
+          return false;
+        });
+        
+        $('#next_btn').click(function() {
+          location.href = $(this).attr('rel')
+          return false;
+        });
+    });
+    
+    function create_game() {
+      if (retryCount < 1 ){
+        retryCount += 1;
+        
+        t = window.setTimeout('create_game()',30000);
+        
+        url = $('#new').attr('givey:url');
+        $.post(url, function(data) {
+           if (data.status == 'complete') {
+             clearTimeout(t);
+             $('.wait').hide();
+             $('#next_btn').attr('rel',data.url).fadeIn();
+             $('.title').text("We're Ready For You!").css('color','red')
+           } 
+         }); } else {
+          $('#please_wait').hide();
+          $('#try_later').show();
+       }
+    }
+    
+#game
+  #new{'givey:url' => "#{battles_path(@campaign)}"}
+    #copy
+      #please_wait.trans
+        %h1.title Please Wait. We're mixing it up...
+      
+        %p.wait
+          Your game should be ready in a minute or so
+        
+        .spinner.wait
+          = image_tag "spinner.gif", :title => "Spinner"
+          
+        #actions
+          = button_to "Please Wait...", '#', :id => "wait_btn", :disabled => true, :class => "wait"
+          = button_to "Ready?  Let's Go >>", '#', :id => "next_btn", :class => "button", :rel => "" 
+          
+      #try_later.trans
+        %h1 Sorry, but Facebook seems overloaded with givers right now
+        
+        %p Please give it a few minutes and then refresh this page.  Hopefully the traffic will have died down by then.
+        
+
+      #npos
+        - Npo.all.each do |n|
+          .npo= image_tag n.logo.url(:thumb)

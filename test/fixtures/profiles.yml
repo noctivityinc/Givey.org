@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: profiles
+#
+#  id         :integer         not null, primary key
+#  uid        :string(255)
+#  details    :text
+#  photos     :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  uid: MyString
+  details: MyText
+  photos: MyText
+
+two:
+  uid: MyString
+  details: MyText
+  photos: MyText

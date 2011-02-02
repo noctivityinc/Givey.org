@@ -42,7 +42,6 @@ class SessionsController < ApplicationController
         @user.update_with_mini_fb(profile, access_token) # => updates to make sure we have latest session key and profile info
         set_user_cookie
         session[:referring_id] = nil
-        @user.games.destroy_all if Rails.env == 'staging'
       else
         redirect_to '/not_yet'
       end

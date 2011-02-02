@@ -6,9 +6,9 @@
 #  name       :string(255)
 #  value      :integer
 #  active     :boolean
-#  story      :text
 #  created_at :datetime
 #  updated_at :datetime
+#  phrase     :string(255)
 #
 
 require 'test_helper'

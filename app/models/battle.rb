@@ -3,6 +3,7 @@
 # Table name: battles
 #
 #  id           :integer         not null, primary key
+#  user_id      :integer
 #  question_id  :integer
 #  winner_uid   :string(255)
 #  friend_uid_1 :string(255)

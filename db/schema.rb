@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110131224748) do
+ActiveRecord::Schema.define(:version => 20110202233606) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -165,9 +165,9 @@ ActiveRecord::Schema.define(:version => 20110131224748) do
     t.string   "name"
     t.integer  "value"
     t.boolean  "active"
-    t.text     "story"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phrase"
   end
 
   create_table "users", :force => true do |t|

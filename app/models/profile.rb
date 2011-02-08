@@ -11,4 +11,6 @@
 #
 
 class Profile < ActiveRecord::Base
+  serialize :details
+  serialize :photos
 end

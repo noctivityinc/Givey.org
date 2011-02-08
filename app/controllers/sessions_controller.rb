@@ -33,13 +33,11 @@ class SessionsController < ApplicationController
       fb = MiniFB::OAuthSession.new(access_token)
 
       if beta_tester_allowed(fb)
-        profile = fb.fql("SELECT uid, name, first_name, email, sex, locale, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
-              current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
-              FROM user WHERE uid = me()").first
-        profile.photos = fb.fql("SELECT src, caption, link FROM photo WHERE aid IN (SELECT aid FROM album WHERE owner = me() AND (type = 'profile' OR type = 'wall'))")
-
         @user = User.find_by_provider_and_uid('facebook',fb.me.id) || User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
-        @user.update_with_mini_fb(profile, access_token) # => updates to make sure we have latest session key and profile info
+        @user.update_with_mini_fb(fb, access_token) # => updates to make sure we have latest session key and profile info
+
+        create_profile(fb)
+
         set_user_cookie
         session[:referring_id] = nil
       else
@@ -47,18 +45,33 @@ class SessionsController < ApplicationController
       end
     end
 
-    def omniauth_create
-      auth = request.env["omniauth.auth"]
-      @user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
-      @user.update_with_omniauth(auth) # => updates to make sure we have latest session key and profile info
-      set_user_cookie
+    def create_profile(fb)
+      res = fb.multifql({:bio => bio_fql, :photos => photos_fql})
+      profile = combine_bio_and_photos(res)
+      Profile.create!(:uid => profile.uid, :details => profile.details, :photos => profile.photos)
+    end
+
+    def bio_fql
+      return "SELECT uid, name, first_name, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
+              current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
+              FROM user WHERE uid = me()"
+    end
+
+    def photos_fql
+      return "SELECT owner, src, caption, link FROM photo WHERE aid IN (SELECT aid FROM album WHERE owner = me() AND (type = 'profile' OR type = 'wall') LIMIT 9)"
+    end
+
+    def combine_bio_and_photos(res)
+      bio = res.detect {|x| x.name == 'bio'}.fql_result_set.first rescue nil
+      photos = res.detect {|x| x.name == 'photos'}.fql_result_set
+      return Hashie::Mash.new({:uid => bio.uid, :details => bio, :photos => photos})
     end
 
     def set_user_cookie
       cookies[:user_id] = {:value => @user.id, :expires => 24.hours.from_now }
       redirect_forward_or_to(beta_test_path)
     end
-    
+
     def beta_tester_allowed(fb)
       bt = BetaTester.find_by_email(fb.me.email)
       if bt

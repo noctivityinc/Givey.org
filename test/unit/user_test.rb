@@ -13,8 +13,6 @@
 #  token                        :string(255)
 #  created_at                   :datetime
 #  updated_at                   :datetime
-#  first_name                   :string(255)
-#  last_name                    :string(255)
 #  admin                        :boolean
 #  location                     :text
 #  givey_token                  :string(255)

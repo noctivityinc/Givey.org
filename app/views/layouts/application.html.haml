@@ -25,7 +25,7 @@
           #header.row
             .fleft
               - if current_user && !hide_login_info?
-                = image_tag current_user.profile_pic, :class => "profile_pic"
+                = image_tag current_user.profile.details.pic_square, :class => "profile_pic"
                 = "Hi #{current_user.name}."
                 = link_to "Not #{current_user.first_name}?", signout_path, :id => "log_out" 
             .fright

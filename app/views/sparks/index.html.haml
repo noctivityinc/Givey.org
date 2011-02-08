@@ -1,0 +1,14 @@
+- title "What Say You?", false
+
+#sparks
+  #index
+    #copy
+      .trans
+        %h1.question= @spark.question.name
+
+      #playing_field
+        = render(:partial => "friend", :collection => @spark.friends)
+
+      #skip
+        = link_to "Skip", '#', :id => "replace_cards" 
+

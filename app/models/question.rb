@@ -14,7 +14,7 @@
 class Question < ActiveRecord::Base
     attr_accessible :name, :value, :active, :phrase
     
-    has_many :battles
+    has_many :sparks
     validates_presence_of :name, :value, :phrase
     validates_uniqueness_of :name
     

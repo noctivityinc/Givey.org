@@ -1,0 +1,132 @@
+@import 'base'
+@import 'card'
+@import 'fancy-buttons'
+
+#spark
+  #new
+    #please_wait
+      #actions
+        margin-top: 2em
+        #wait_btn
+          font-size: 16px
+          padding: 10px
+          width: 150px
+        #next_btn
+          display: none
+          
+    #try_later
+      display: none
+      
+
+#sparks
+  #index
+    position: relative
+
+    #playing_field
+      text-align: center
+      height: 400px
+      +card
+
+    #skip
+      display: none
+      background: white
+      padding: 5px
+      +rounded-borders(8px)
+      border: 1px solid gray
+      width: 150px
+      margin: 0 auto
+      a
+        text-decoration: none
+        color: gray
+
+=overlay
+  display: none
+  width: 750px
+  border: 10px solid #666
+  padding: 10px
+  text-align: left
+
+  border: 10px solid rgba(82, 82, 82, 0.698)
+  +rounded_borders(8px)
+
+  background: #fff
+
+  a.button, input.button
+    +fancy-button(darken(#57b42c, 8))      
+    color: #fff
+    text-decoration: none
+
+
+.ui-effects-transfer
+  border: 2px solid gray
+  background: #D0DCFD
+  filter: alpha(opacity=50)
+  -moz-opacity: 0.5
+  -khtml-opacity: 0.5
+  opacity: 0.5
+
+#why_overlay
+  +overlay
+
+  .sidebar
+    +card
+    width: 325px   
+
+    .npo
+      .card 
+        .frame
+          .box
+            .top
+              background: url('/images/npo_bar.png')
+              color: #502F0D
+              width: 242px
+              text-shadow: #fff 1px 1px 1px        
+
+            .sc_menu_wrapper
+              .header
+                background: #99972D
+                color: #FFF
+
+    .story
+      text-align: center
+
+      .logo
+        margin: 0 auto
+
+      .summary
+        margin-top: 1em
+        text-align: left
+        font-size: 13px
+
+      .link
+        text-align: left
+        margin-top: 3em
+        font-size: 12px
+
+  .main_panel
+    width: 425px
+    font-size: 13px
+
+    .story
+      margin: 15px 0px
+      padding: 10px
+      width: 410px
+
+      .open, .close
+        width: 50px
+      .middle
+        width: 300px
+        font-size: 12pt
+        line-height: 1.25em
+        padding: 5px 0px
+      .open
+        vertical-align: top
+      .close
+        vertical-align: bottom
+
+    #actions
+      position: absolute
+      width: 400px
+      bottom: 20px
+      vertical-align: bottom
+

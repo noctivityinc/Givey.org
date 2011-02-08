@@ -2,10 +2,15 @@
 
 - content_for :head do
   :javascript
-    var retryCount = 0;
-    var t;
     $(document).ready(function() {
-        create_game();
+      url = $('#new').attr('givey:url');
+      $.post(url, function(data) {
+         if (data.status == 'complete') {
+           $('.wait').hide();
+           $('#next_btn').attr('rel',data.url).fadeIn();
+           $('.title').text("We're Ready For You!").css('color','red')
+         }
+        })
 
         $('#wait_btn').click(function() {
           return false;
@@ -16,29 +21,10 @@
           return false;
         });
     });
+
     
-    function create_game() {
-      if (retryCount < 1 ){
-        retryCount += 1;
-        
-        t = window.setTimeout('create_game()',30000);
-        
-        url = $('#new').attr('givey:url');
-        $.post(url, function(data) {
-           if (data.status == 'complete') {
-             clearTimeout(t);
-             $('.wait').hide();
-             $('#next_btn').attr('rel',data.url).fadeIn();
-             $('.title').text("We're Ready For You!").css('color','red')
-           } 
-         }); } else {
-          $('#please_wait').hide();
-          $('#try_later').show();
-       }
-    }
-    
-#game
-  #new{'givey:url' => "#{battles_path(@campaign)}"}
+#spark
+  #new{'givey:url' => "#{sparks_path}"}
     #copy
       #please_wait.trans
         %h1.title Please Wait. We're mixing it up...

@@ -1,8 +1,10 @@
 Givey::Application.routes.draw do
 
+
   resources :donations
   resources :npos
-  resources :battles
+
+  resources :sparks
   resources :games do
     member do
       get :in_progress
@@ -14,7 +16,7 @@ Givey::Application.routes.draw do
     end
     get :needs_friends, :on => :collection
   end
-  
+
   resources :candidates do
     collection do
       get :story
@@ -38,10 +40,10 @@ Givey::Application.routes.draw do
   end
 
   match "/not_yet" => "home#not_yet"
-  match "/beta_test" => "home#beta_test", :as => "beta_test" 
+  match "/beta_test" => "home#beta_test", :as => "beta_test"
   get "home/index"
   root :to => "home#index"
-  match "/:token", :to => "home#show" 
+  match "/:token", :to => "home#show"
 
 
 end

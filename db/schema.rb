@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110202233606) do
+ActiveRecord::Schema.define(:version => 20110203014856) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -170,6 +170,17 @@ ActiveRecord::Schema.define(:version => 20110202233606) do
     t.string   "phrase"
   end
 
+  create_table "sparks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.string   "winner_uid"
+    t.string   "friend_uid_1"
+    t.string   "friend_uid_2"
+    t.string   "friend_uid_3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
@@ -181,8 +192,6 @@ ActiveRecord::Schema.define(:version => 20110202233606) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name"
-    t.string   "last_name"
     t.boolean  "admin"
     t.text     "location"
     t.string   "givey_token"

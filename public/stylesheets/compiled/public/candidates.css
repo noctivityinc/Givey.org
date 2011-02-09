@@ -136,7 +136,7 @@
   width: 275px;
 }
 /* line 2, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card, #candidates #index .candidate #winner, #candidates #show .candidate .card, #candidates #show .candidate #winner, #candidate #index .candidate .card, #candidate #index .candidate #winner, #candidate #show .candidate .card, #candidate #show .candidate #winner {
+#candidates #index .candidate .card, #candidates #show .candidate .card, #candidate #index .candidate .card, #candidate #show .candidate .card {
   margin: 0 10px;
   float: left;
   background: white;
@@ -146,7 +146,7 @@
   opacity: 1;
 }
 /* line 11, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame, #candidates #index .candidate #winner .frame, #candidates #show .candidate .card .frame, #candidates #show .candidate #winner .frame, #candidate #index .candidate .card .frame, #candidate #index .candidate #winner .frame, #candidate #show .candidate .card .frame, #candidate #show .candidate #winner .frame {
+#candidates #index .candidate .card .frame, #candidates #show .candidate .card .frame, #candidate #index .candidate .card .frame, #candidate #show .candidate .card .frame {
   width: 260px;
   height: 350px;
   padding: 5px;
@@ -160,7 +160,7 @@
   font-size: 13px;
 }
 /* line 23, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box, #candidates #index .candidate #winner .frame .box, #candidates #show .candidate .card .frame .box, #candidates #show .candidate #winner .frame .box, #candidate #index .candidate .card .frame .box, #candidate #index .candidate #winner .frame .box, #candidate #show .candidate .card .frame .box, #candidate #show .candidate #winner .frame .box {
+#candidates #index .candidate .card .frame .box, #candidates #show .candidate .card .frame .box, #candidate #index .candidate .card .frame .box, #candidate #show .candidate .card .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -169,7 +169,7 @@
   height: 340px;
 }
 /* line 31, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .top, #candidates #index .candidate #winner .frame .box .top, #candidates #show .candidate .card .frame .box .top, #candidates #show .candidate #winner .frame .box .top, #candidate #index .candidate .card .frame .box .top, #candidate #index .candidate #winner .frame .box .top, #candidate #show .candidate .card .frame .box .top, #candidate #show .candidate #winner .frame .box .top {
+#candidates #index .candidate .card .frame .box .top, #candidates #show .candidate .card .frame .box .top, #candidate #index .candidate .card .frame .box .top, #candidate #show .candidate .card .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
   font-weight: bold;
@@ -181,21 +181,21 @@
   overflow: hidden;
 }
 /* line 42, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .top .name, #candidates #index .candidate .card .frame .box .top .profile_pic, #candidates #index .candidate #winner .frame .box .top .name, #candidates #index .candidate #winner .frame .box .top .profile_pic, #candidates #show .candidate .card .frame .box .top .name, #candidates #show .candidate .card .frame .box .top .profile_pic, #candidates #show .candidate #winner .frame .box .top .name, #candidates #show .candidate #winner .frame .box .top .profile_pic, #candidate #index .candidate .card .frame .box .top .name, #candidate #index .candidate .card .frame .box .top .profile_pic, #candidate #index .candidate #winner .frame .box .top .name, #candidate #index .candidate #winner .frame .box .top .profile_pic, #candidate #show .candidate .card .frame .box .top .name, #candidate #show .candidate .card .frame .box .top .profile_pic, #candidate #show .candidate #winner .frame .box .top .name, #candidate #show .candidate #winner .frame .box .top .profile_pic {
+#candidates #index .candidate .card .frame .box .top .name, #candidates #index .candidate .card .frame .box .top .profile_pic, #candidates #show .candidate .card .frame .box .top .name, #candidates #show .candidate .card .frame .box .top .profile_pic, #candidate #index .candidate .card .frame .box .top .name, #candidate #index .candidate .card .frame .box .top .profile_pic, #candidate #show .candidate .card .frame .box .top .name, #candidate #show .candidate .card .frame .box .top .profile_pic {
   float: left;
 }
 /* line 45, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .top .name, #candidates #index .candidate #winner .frame .box .top .name, #candidates #show .candidate .card .frame .box .top .name, #candidates #show .candidate #winner .frame .box .top .name, #candidate #index .candidate .card .frame .box .top .name, #candidate #index .candidate #winner .frame .box .top .name, #candidate #show .candidate .card .frame .box .top .name, #candidate #show .candidate #winner .frame .box .top .name {
+#candidates #index .candidate .card .frame .box .top .name, #candidates #show .candidate .card .frame .box .top .name, #candidate #index .candidate .card .frame .box .top .name, #candidate #show .candidate .card .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
 /* line 50, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .top .profile_pic, #candidates #index .candidate #winner .frame .box .top .profile_pic, #candidates #show .candidate .card .frame .box .top .profile_pic, #candidates #show .candidate #winner .frame .box .top .profile_pic, #candidate #index .candidate .card .frame .box .top .profile_pic, #candidate #index .candidate #winner .frame .box .top .profile_pic, #candidate #show .candidate .card .frame .box .top .profile_pic, #candidate #show .candidate #winner .frame .box .top .profile_pic {
+#candidates #index .candidate .card .frame .box .top .profile_pic, #candidates #show .candidate .card .frame .box .top .profile_pic, #candidate #index .candidate .card .frame .box .top .profile_pic, #candidate #show .candidate .card .frame .box .top .profile_pic {
   width: 40px;
 }
 /* line 52, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .top .profile_pic img, #candidates #index .candidate #winner .frame .box .top .profile_pic img, #candidates #show .candidate .card .frame .box .top .profile_pic img, #candidates #show .candidate #winner .frame .box .top .profile_pic img, #candidate #index .candidate .card .frame .box .top .profile_pic img, #candidate #index .candidate #winner .frame .box .top .profile_pic img, #candidate #show .candidate .card .frame .box .top .profile_pic img, #candidate #show .candidate #winner .frame .box .top .profile_pic img {
+#candidates #index .candidate .card .frame .box .top .profile_pic img, #candidates #show .candidate .card .frame .box .top .profile_pic img, #candidate #index .candidate .card .frame .box .top .profile_pic img, #candidate #show .candidate .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -203,13 +203,13 @@
   height: 30px;
 }
 /* line 59, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper, #candidates #show .candidate .card .frame .box .sc_menu_wrapper, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper, #candidate #index .candidate .card .frame .box .sc_menu_wrapper, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper, #candidate #show .candidate .card .frame .box .sc_menu_wrapper, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper, #candidates #show .candidate .card .frame .box .sc_menu_wrapper, #candidate #index .candidate .card .frame .box .sc_menu_wrapper, #candidate #show .candidate .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
 /* line 64, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper .header, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper .header, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .header, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper .header, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .header, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper .header, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .header, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper .header {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper .header, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .header, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .header, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
   color: white;
@@ -219,65 +219,65 @@
   font-size: 1.1em;
 }
 /* line 73, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper .stats, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper .stats, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .stats, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper .stats, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .stats, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper .stats, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .stats, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper .stats {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper .stats, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .stats, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .stats, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
 /* line 76, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper .stats .even, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper .stats .even, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .stats .even, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper .stats .even, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .stats .even, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper .stats .even, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .stats .even, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper .stats .even {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper .stats .even, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .stats .even, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .stats .even, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
 /* line 79, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper .stats .odd, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper .stats .odd, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .stats .odd, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper .stats .odd, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .stats .odd, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper .stats .odd, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .stats .odd, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper .stats .odd {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper .stats .odd, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .stats .odd, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .stats .odd, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
 /* line 83, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper .stats .items .item, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper .stats .items .item, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .stats .items .item, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper .stats .items .item, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .stats .items .item, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper .stats .items .item, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .stats .items .item, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper .stats .items .item {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper .stats .items .item, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .stats .items .item, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .stats .items .item, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
 /* line 88, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper .stats .items .item .label, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper .stats .items .item .label, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .stats .items .item .label, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper .stats .items .item .label, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .stats .items .item .label, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper .stats .items .item .label, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .stats .items .item .label, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper .stats .items .item .label, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .stats .items .item .label, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .stats .items .item .label, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
 /* line 94, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper .photos, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper .photos, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .photos, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper .photos, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .photos, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper .photos, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .photos, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper .photos {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper .photos, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .photos, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .photos, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
 /* line 98, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper .photos img, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper .photos img, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .photos img, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper .photos img, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .photos img, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper .photos img, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .photos img, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper .photos img {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper .photos img, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .photos img, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .photos img, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
 /* line 102, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper .status, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper .status, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .status, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper .status, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .status, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper .status, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .status, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper .status {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper .status, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .status, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .status, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
 /* line 108, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .sc_menu_wrapper .story, #candidates #index .candidate #winner .frame .box .sc_menu_wrapper .story, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .story, #candidates #show .candidate #winner .frame .box .sc_menu_wrapper .story, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .story, #candidate #index .candidate #winner .frame .box .sc_menu_wrapper .story, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .story, #candidate #show .candidate #winner .frame .box .sc_menu_wrapper .story {
+#candidates #index .candidate .card .frame .box .sc_menu_wrapper .story, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .story, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .story, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .story {
   font-size: 1.25em;
   line-height: 1.25em;
 }
 /* line 112, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .nothing, #candidates #index .candidate #winner .frame .box .nothing, #candidates #show .candidate .card .frame .box .nothing, #candidates #show .candidate #winner .frame .box .nothing, #candidate #index .candidate .card .frame .box .nothing, #candidate #index .candidate #winner .frame .box .nothing, #candidate #show .candidate .card .frame .box .nothing, #candidate #show .candidate #winner .frame .box .nothing {
+#candidates #index .candidate .card .frame .box .nothing, #candidates #show .candidate .card .frame .box .nothing, #candidate #index .candidate .card .frame .box .nothing, #candidate #show .candidate .card .frame .box .nothing {
   text-align: center;
 }
 /* line 115, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box .nothing img, #candidates #index .candidate #winner .frame .box .nothing img, #candidates #show .candidate .card .frame .box .nothing img, #candidates #show .candidate #winner .frame .box .nothing img, #candidate #index .candidate .card .frame .box .nothing img, #candidate #index .candidate #winner .frame .box .nothing img, #candidate #show .candidate .card .frame .box .nothing img, #candidate #show .candidate #winner .frame .box .nothing img {
+#candidates #index .candidate .card .frame .box .nothing img, #candidates #show .candidate .card .frame .box .nothing img, #candidate #index .candidate .card .frame .box .nothing img, #candidate #show .candidate .card .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
 /* line 121, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box.highlight, #candidates #index .candidate #winner .frame .box.highlight, #candidates #show .candidate .card .frame .box.highlight, #candidates #show .candidate #winner .frame .box.highlight, #candidate #index .candidate .card .frame .box.highlight, #candidate #index .candidate #winner .frame .box.highlight, #candidate #show .candidate .card .frame .box.highlight, #candidate #show .candidate #winner .frame .box.highlight {
+#candidates #index .candidate .card .frame .box.highlight, #candidates #show .candidate .card .frame .box.highlight, #candidate #index .candidate .card .frame .box.highlight, #candidate #show .candidate .card .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
   padding: 2px;
@@ -286,11 +286,11 @@
   -moz-box-shadow: 0 0 5px blue;
 }
 /* line 129, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box.highlight .top, #candidates #index .candidate #winner .frame .box.highlight .top, #candidates #show .candidate .card .frame .box.highlight .top, #candidates #show .candidate #winner .frame .box.highlight .top, #candidate #index .candidate .card .frame .box.highlight .top, #candidate #index .candidate #winner .frame .box.highlight .top, #candidate #show .candidate .card .frame .box.highlight .top, #candidate #show .candidate #winner .frame .box.highlight .top {
+#candidates #index .candidate .card .frame .box.highlight .top, #candidates #show .candidate .card .frame .box.highlight .top, #candidate #index .candidate .card .frame .box.highlight .top, #candidate #show .candidate .card .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
 /* line 132, ../../../../app/stylesheets/public/_card.sass */
-#candidates #index .candidate .card .frame .box.highlight .header, #candidates #index .candidate #winner .frame .box.highlight .header, #candidates #show .candidate .card .frame .box.highlight .header, #candidates #show .candidate #winner .frame .box.highlight .header, #candidate #index .candidate .card .frame .box.highlight .header, #candidate #index .candidate #winner .frame .box.highlight .header, #candidate #show .candidate .card .frame .box.highlight .header, #candidate #show .candidate #winner .frame .box.highlight .header {
+#candidates #index .candidate .card .frame .box.highlight .header, #candidates #show .candidate .card .frame .box.highlight .header, #candidate #index .candidate .card .frame .box.highlight .header, #candidate #show .candidate .card .frame .box.highlight .header {
   background: #ff6600;
 }
 /* line 79, ../../../../app/stylesheets/public/candidates.sass */

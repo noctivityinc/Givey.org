@@ -21,6 +21,7 @@
 #  candidates_story             :text
 #  candidate_post_story_to_wall :boolean
 #  profile                      :text
+#  candidates_npo_id            :integer
 #
 
 class User < ActiveRecord::Base
@@ -51,6 +52,10 @@ class User < ActiveRecord::Base
       end
     end
   end
+  
+  has_one :candidates_npo, :class_name => "Npo", :foreign_key => "candidates_npo_id"
+  
+  scope :candidates, where(:candidate => true)
 
   def admin?
     self.admin
@@ -81,6 +86,7 @@ class User < ActiveRecord::Base
       user.uid = fb.id
       user.location = location
       user.referring_id = referring_id
+      user.candidate_post_story_to_wall = true # set to true.  let them uncheck
     end
   end
 

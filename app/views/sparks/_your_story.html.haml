@@ -1,0 +1,20 @@
+#your_story.row
+  .sidebar.fleft
+    = render :partial => 'profile', :object => current_user.profile
+  .main_panel.fleft
+    = form_for current_user, :remote => true, :html => {:id => 'user_story'} do |f|
+      %h1 What would you do with $5,000?
+      %h2 You could decide what happens
+      .row
+        .fleft.label What's your favorite cause?
+        .fleft= f.select :candidates_npo_id, Npo.all.map {|x| [x.name, x.id]}
+      .row
+        .label Why does this cause matters to you (in 255 words or less):
+      .row
+        = f.text_area :candidates_story
+      .row
+        .fleft.label Share my story on my wall
+        .fleft= f.check_box :candidate_post_story_to_wall, 
+      #actions.row
+        .fright
+          = f.submit "Next >>", :class => "button"

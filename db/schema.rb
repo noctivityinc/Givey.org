@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110209191037) do
+ActiveRecord::Schema.define(:version => 20110209211804) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -201,6 +201,7 @@ ActiveRecord::Schema.define(:version => 20110209191037) do
     t.text     "candidates_story"
     t.boolean  "candidate_post_story_to_wall"
     t.text     "profile"
+    t.integer  "candidates_npo_id"
   end
 
 end

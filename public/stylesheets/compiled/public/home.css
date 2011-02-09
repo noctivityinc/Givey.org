@@ -67,7 +67,7 @@
   padding-top: 20px;
 }
 /* line 2, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card, #home #show #winner {
+#home #show .card {
   margin: 0 10px;
   float: left;
   background: white;
@@ -77,7 +77,7 @@
   opacity: 1;
 }
 /* line 11, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame, #home #show #winner .frame {
+#home #show .card .frame {
   width: 260px;
   height: 350px;
   padding: 5px;
@@ -91,7 +91,7 @@
   font-size: 13px;
 }
 /* line 23, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box, #home #show #winner .frame .box {
+#home #show .card .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -100,7 +100,7 @@
   height: 340px;
 }
 /* line 31, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .top, #home #show #winner .frame .box .top {
+#home #show .card .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
   font-weight: bold;
@@ -112,21 +112,21 @@
   overflow: hidden;
 }
 /* line 42, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .top .name, #home #show .card .frame .box .top .profile_pic, #home #show #winner .frame .box .top .name, #home #show #winner .frame .box .top .profile_pic {
+#home #show .card .frame .box .top .name, #home #show .card .frame .box .top .profile_pic {
   float: left;
 }
 /* line 45, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .top .name, #home #show #winner .frame .box .top .name {
+#home #show .card .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
 /* line 50, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .top .profile_pic, #home #show #winner .frame .box .top .profile_pic {
+#home #show .card .frame .box .top .profile_pic {
   width: 40px;
 }
 /* line 52, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .top .profile_pic img, #home #show #winner .frame .box .top .profile_pic img {
+#home #show .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -134,13 +134,13 @@
   height: 30px;
 }
 /* line 59, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper, #home #show #winner .frame .box .sc_menu_wrapper {
+#home #show .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
 /* line 64, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper .header, #home #show #winner .frame .box .sc_menu_wrapper .header {
+#home #show .card .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
   color: white;
@@ -150,65 +150,65 @@
   font-size: 1.1em;
 }
 /* line 73, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper .stats, #home #show #winner .frame .box .sc_menu_wrapper .stats {
+#home #show .card .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
 /* line 76, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper .stats .even, #home #show #winner .frame .box .sc_menu_wrapper .stats .even {
+#home #show .card .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
 /* line 79, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper .stats .odd, #home #show #winner .frame .box .sc_menu_wrapper .stats .odd {
+#home #show .card .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
 /* line 83, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper .stats .items .item, #home #show #winner .frame .box .sc_menu_wrapper .stats .items .item {
+#home #show .card .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
 /* line 88, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper .stats .items .item .label, #home #show #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
+#home #show .card .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
 /* line 94, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper .photos, #home #show #winner .frame .box .sc_menu_wrapper .photos {
+#home #show .card .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
 /* line 98, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper .photos img, #home #show #winner .frame .box .sc_menu_wrapper .photos img {
+#home #show .card .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
 /* line 102, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper .status, #home #show #winner .frame .box .sc_menu_wrapper .status {
+#home #show .card .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
 /* line 108, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .sc_menu_wrapper .story, #home #show #winner .frame .box .sc_menu_wrapper .story {
+#home #show .card .frame .box .sc_menu_wrapper .story {
   font-size: 1.25em;
   line-height: 1.25em;
 }
 /* line 112, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .nothing, #home #show #winner .frame .box .nothing {
+#home #show .card .frame .box .nothing {
   text-align: center;
 }
 /* line 115, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box .nothing img, #home #show #winner .frame .box .nothing img {
+#home #show .card .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
 /* line 121, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box.highlight, #home #show #winner .frame .box.highlight {
+#home #show .card .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
   padding: 2px;
@@ -217,11 +217,11 @@
   -moz-box-shadow: 0 0 5px blue;
 }
 /* line 129, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box.highlight .top, #home #show #winner .frame .box.highlight .top {
+#home #show .card .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
 /* line 132, ../../../../app/stylesheets/public/_card.sass */
-#home #show .card .frame .box.highlight .header, #home #show #winner .frame .box.highlight .header {
+#home #show .card .frame .box.highlight .header {
   background: #ff6600;
 }
 /* line 20, ../../../../app/stylesheets/public/home.sass */

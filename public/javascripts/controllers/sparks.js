@@ -24,16 +24,26 @@ jQuery(document).ready(function($) {
     
     url = card.attr('givey:spark_url')
     data = {'uid':card.attr('givey:uid')}
-    $.put(url, data, function(r) {handleSelectedResponse(r)})
+    $.put(url, data, function(resp) {timedResponse(resp)})
+  }
+  
+  function timedResponse(resp) {
+    window.setTimeout(function(){handleSelectedResponse(resp)},1500)
   }
   
   function handleSelectedResponse(resp) {
       switch(resp.status) {
       case 'spark':
         $('.card').fadeOut();
-        
         $('.question').text('next question!').css('color','black')
-        window.setTimeout(function() {moveQuestion(resp)},1500);
+        window.setTimeout(function() {moveQuestion(resp)},1000);
+        break;
+      case 'overlay':
+        $('#overlay').html(resp.html)
+        activate_overlay('#overlay')
+        break;
+      default:
+        console.log(resp)
         break;
       }
    }
@@ -46,35 +56,50 @@ jQuery(document).ready(function($) {
      })
    }
    
-   function showScoreboard(){
-     $('#score_board').fadeIn('slow')
-   }
-   
-   function showSpark (r) {
-     changeStats(r);
-     reloadSelectedList(r)
-     loadBackground(r)
-     $('#playing_field').html(r.html).show();
-     window.setTimeout(function() {showScoreboard()},1500);
+   function showFieldAndBoard(resp){
+     $('#playing_field').html(resp.html).show();
+     $('#score_board').fadeIn('slow');
      $('.sc_menu_wrapper').jScrollPane();
    }
    
-   function changeQuestion(r) {
-    $('.question').text(r.question);
+   function showSpark (resp) {
+     changeStats(resp);
+     reloadSelectedList(resp)
+     loadBackground(resp)
+     window.setTimeout(function() {showFieldAndBoard(resp)},1500);
    }
    
-   function changeStats(r) {
-    $('#counts').text(r.counts)
+   function changeQuestion(resp) {
+    $('.question').text(resp.question);
    }
    
-   function loadBackground (r) {
+   function changeStats(resp) {
+    $('#counts').text(resp.counts)
+   }
+   
+   function loadBackground (resp) {
      $("#supersized img").remove();
-		 $("<img/>").attr("src", r.background).appendTo("#supersized");
+		 $("<img/>").attr("src", resp.background).appendTo("#supersized");
      $('#supersized').resizenow(); 
    }
    
-   function reloadSelectedList(r) {
-     $('#selected').html(r.selected_list)
+   function reloadSelectedList(resp) {
+     $('#selected').html(resp.selected_list)
    }
   
 });
+
+function activate_overlay (div_id) {
+  $(div_id).overlay({
+  	top: 160,
+  	closeOnClick: false,
+  	closeOnEsc: false,
+    	mask: {
+    		color: '#000',
+        zIndex: 50,
+    		loadSpeed: 200,
+    		opacity: 0.80
+    	},
+  	load: true
+  });
+}

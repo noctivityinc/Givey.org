@@ -3,6 +3,7 @@ Givey::Application.routes.draw do
 
   resources :donations
   resources :npos
+  resources :users
 
   resources :sparks
   resources :games do

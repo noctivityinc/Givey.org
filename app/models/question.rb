@@ -14,8 +14,8 @@
 class Question < ActiveRecord::Base
     # attr_accessible :name, :value, :active, :phrase, :background
     
-    has_many :sparks
-    has_many :backgrounds do
+    has_many :sparks, :dependent => :destroy 
+    has_many :backgrounds, :dependent => :destroy do
       def pick
         self.active.sort_by{rand}.first
       end

@@ -106,28 +106,14 @@ $(document).ready(function() {
 function activate_overlay (div_id) {
   $(div_id).overlay({
   	top: 160,
-
-  	// disable this for modal dialog-type of overlays
   	closeOnClick: false,
-  	
   	closeOnEsc: false,
-  	
-  	// some mask tweaks suitable for facebox-looking dialogs
     	mask: {
-
-    		// you might also consider a "transparent" color for the mask
     		color: '#000',
-
         zIndex: 50,
-
-    		// load mask a little faster
     		loadSpeed: 200,
-
-    		// very transparent
     		opacity: 0.80
     	},
-
-  	// load it immediately after the construction
   	load: true
   });
 }

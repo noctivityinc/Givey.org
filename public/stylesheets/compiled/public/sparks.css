@@ -54,7 +54,7 @@
 
 /* incase an inverted custom gradient isn't specified */
 /* line 176, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class, #why_overlay a.button, #why_overlay input.button {
+.fancy-button-reset-base-class, #overlay a.button, #overlay input.button {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
   background: url('/images/button_bg.png') repeat-x bottom left;
   margin: 0;
@@ -67,12 +67,12 @@
   font-weight: bold;
 }
 /* line 165, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class::-moz-focus-inner, #why_overlay a.button::-moz-focus-inner, #why_overlay input.button::-moz-focus-inner {
+.fancy-button-reset-base-class::-moz-focus-inner, #overlay a.button::-moz-focus-inner, #overlay input.button::-moz-focus-inner {
   border: none;
   padding: 0;
 }
 /* line 168, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class:focus, #why_overlay a.button:focus, #why_overlay input.button:focus {
+.fancy-button-reset-base-class:focus, #overlay a.button:focus, #overlay input.button:focus {
   outline: none;
 }
 
@@ -101,13 +101,11 @@
 }
 /* line 24, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #playing_field {
-  position: absolute;
-  top: 125px;
-  left: 25px;
   height: 400px;
+  padding-left: 25px;
 }
 /* line 2, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card, #sparks #index #playing_field #winner {
+#sparks #index #playing_field .card {
   margin: 0 10px;
   float: left;
   background: white;
@@ -117,7 +115,7 @@
   opacity: 1;
 }
 /* line 11, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame, #sparks #index #playing_field #winner .frame {
+#sparks #index #playing_field .card .frame {
   width: 260px;
   height: 350px;
   padding: 5px;
@@ -131,7 +129,7 @@
   font-size: 13px;
 }
 /* line 23, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box, #sparks #index #playing_field #winner .frame .box {
+#sparks #index #playing_field .card .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -140,7 +138,7 @@
   height: 340px;
 }
 /* line 31, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .top, #sparks #index #playing_field #winner .frame .box .top {
+#sparks #index #playing_field .card .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
   font-weight: bold;
@@ -152,21 +150,21 @@
   overflow: hidden;
 }
 /* line 42, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .top .name, #sparks #index #playing_field .card .frame .box .top .profile_pic, #sparks #index #playing_field #winner .frame .box .top .name, #sparks #index #playing_field #winner .frame .box .top .profile_pic {
+#sparks #index #playing_field .card .frame .box .top .name, #sparks #index #playing_field .card .frame .box .top .profile_pic {
   float: left;
 }
 /* line 45, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .top .name, #sparks #index #playing_field #winner .frame .box .top .name {
+#sparks #index #playing_field .card .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
 /* line 50, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .top .profile_pic, #sparks #index #playing_field #winner .frame .box .top .profile_pic {
+#sparks #index #playing_field .card .frame .box .top .profile_pic {
   width: 40px;
 }
 /* line 52, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .top .profile_pic img, #sparks #index #playing_field #winner .frame .box .top .profile_pic img {
+#sparks #index #playing_field .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -174,13 +172,13 @@
   height: 30px;
 }
 /* line 59, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
 /* line 64, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .header, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .header {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
   color: white;
@@ -190,65 +188,65 @@
   font-size: 1.1em;
 }
 /* line 73, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .stats {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
 /* line 76, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .even, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .stats .even {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
 /* line 79, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .odd, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .stats .odd {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
 /* line 83, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .stats .items .item {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
 /* line 88, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item .label, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
 /* line 94, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .photos, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .photos {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
 /* line 98, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .photos img, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .photos img {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
 /* line 102, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .status, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .status {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
 /* line 108, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .story, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .story {
+#sparks #index #playing_field .card .frame .box .sc_menu_wrapper .story {
   font-size: 1.25em;
   line-height: 1.25em;
 }
 /* line 112, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .nothing, #sparks #index #playing_field #winner .frame .box .nothing {
+#sparks #index #playing_field .card .frame .box .nothing {
   text-align: center;
 }
 /* line 115, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box .nothing img, #sparks #index #playing_field #winner .frame .box .nothing img {
+#sparks #index #playing_field .card .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
 /* line 121, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box.highlight, #sparks #index #playing_field #winner .frame .box.highlight {
+#sparks #index #playing_field .card .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
   padding: 2px;
@@ -257,50 +255,49 @@
   -moz-box-shadow: 0 0 5px blue;
 }
 /* line 129, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box.highlight .top, #sparks #index #playing_field #winner .frame .box.highlight .top {
+#sparks #index #playing_field .card .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
 /* line 132, ../../../../app/stylesheets/public/_card.sass */
-#sparks #index #playing_field .card .frame .box.highlight .header, #sparks #index #playing_field #winner .frame .box.highlight .header {
+#sparks #index #playing_field .card .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 31, ../../../../app/stylesheets/public/sparks.sass */
+/* line 29, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board {
   clear: both;
-  margin-top: 525px;
   margin-bottom: 2em;
 }
-/* line 36, ../../../../app/stylesheets/public/sparks.sass */
+/* line 33, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected {
   width: 600px;
   font-size: 12px;
 }
-/* line 39, ../../../../app/stylesheets/public/sparks.sass */
+/* line 36, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected .pic {
   width: 30px;
   margin-right: 10px;
 }
-/* line 41, ../../../../app/stylesheets/public/sparks.sass */
+/* line 38, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected .pic img {
   width: 24px;
   height: 24px;
   vertical-align: middle;
 }
-/* line 47, ../../../../app/stylesheets/public/sparks.sass */
+/* line 44, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected .text {
   width: 560px;
   text-align: left;
 }
-/* line 50, ../../../../app/stylesheets/public/sparks.sass */
+/* line 47, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected .text .name {
   color: #1a8922;
   font-weight: bold;
 }
-/* line 53, ../../../../app/stylesheets/public/sparks.sass */
+/* line 50, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected .text .not_selected_name {
   color: #990000;
 }
-/* line 57, ../../../../app/stylesheets/public/sparks.sass */
+/* line 54, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts {
   filter: alpha(opacity=80);
   -moz-opacity: 0.8;
@@ -313,12 +310,12 @@
   padding: 10px;
   width: 200px;
 }
-/* line 62, ../../../../app/stylesheets/public/sparks.sass */
+/* line 59, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts h1 {
   color: white;
   text-shadow: #333333 2px 2px 2px;
 }
-/* line 66, ../../../../app/stylesheets/public/sparks.sass */
+/* line 63, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question {
   position: relative;
   top: 10px;
@@ -328,35 +325,26 @@
   box-shadow: 3px 3px 4px black;
   border: 2px solid #666666;
 }
-/* line 75, ../../../../app/stylesheets/public/sparks.sass */
+/* line 72, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question.recording {
   float: right;
 }
 
-/* line 96, ../../../../app/stylesheets/public/sparks.sass */
-.ui-effects-transfer {
-  border: 2px solid gray;
-  background: #d0dcfd;
-  filter: alpha(opacity=50);
-  -moz-opacity: 0.5;
-  -khtml-opacity: 0.5;
-  opacity: 0.5;
-}
-
-/* line 104, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay {
+/* line 93, ../../../../app/stylesheets/public/sparks.sass */
+#overlay {
   display: none;
   width: 750px;
   border: 10px solid #666666;
   padding: 10px;
   text-align: left;
+  z-index: 100;
   border: 10px solid rgba(82, 82, 82, 0.698);
   -moz-border-radius: 8px;
   border-radius: 8px;
   background: white;
 }
-/* line 90, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay a.button, #why_overlay input.button {
+/* line 88, ../../../../app/stylesheets/public/sparks.sass */
+#overlay a.button, #overlay input.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   -o-border-radius: 6px;
@@ -387,11 +375,11 @@
   text-decoration: none;
 }
 /* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#why_overlay a.button, #why_overlay a.button:visited, #why_overlay input.button, #why_overlay input.button:visited {
+#overlay a.button, #overlay a.button:visited, #overlay input.button, #overlay input.button:visited {
   color: white;
 }
 /* line 31, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#why_overlay a.button:hover, #why_overlay a.button:focus, #why_overlay input.button:hover, #why_overlay input.button:focus {
+#overlay a.button:hover, #overlay a.button:focus, #overlay input.button:hover, #overlay input.button:focus {
   background-color: #35a800;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #95dd73), color-stop(10%, #5fc430), color-stop(50%, #3b7b1e), color-stop(50%, #356e1b), color-stop(100%, #499725));
   background-image: -moz-linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
@@ -400,11 +388,11 @@
   text-shadow: #0d2800 0px 1px 1px;
 }
 /* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#why_overlay a.button:hover, #why_overlay a.button:hover:visited, #why_overlay a.button:focus, #why_overlay a.button:focus:visited, #why_overlay input.button:hover, #why_overlay input.button:hover:visited, #why_overlay input.button:focus, #why_overlay input.button:focus:visited {
+#overlay a.button:hover, #overlay a.button:hover:visited, #overlay a.button:focus, #overlay a.button:focus:visited, #overlay input.button:hover, #overlay input.button:hover:visited, #overlay input.button:focus, #overlay input.button:focus:visited {
   color: white;
 }
 /* line 36, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#why_overlay a.button:active, #why_overlay input.button:active {
+#overlay a.button:active, #overlay input.button:active {
   background-color: #309900;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #3b7b1e), color-stop(30%, #3f8320), color-stop(50%, #37721c), color-stop(50%, #316619), color-stop(100%, #4b9b26));
   background-image: -moz-linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
@@ -417,15 +405,15 @@
   box-shadow: #295615 0 0.08em 0.1em 1px inset;
 }
 /* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#why_overlay a.button:active, #why_overlay a.button:active:visited, #why_overlay input.button:active, #why_overlay input.button:active:visited {
+#overlay a.button:active, #overlay a.button:active:visited, #overlay input.button:active, #overlay input.button:active:visited {
   color: white;
 }
-/* line 107, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .sidebar {
+/* line 96, ../../../../app/stylesheets/public/sparks.sass */
+#overlay .sidebar {
   width: 325px;
 }
 /* line 2, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card, #why_overlay .sidebar #winner {
+#overlay .sidebar .card {
   margin: 0 10px;
   float: left;
   background: white;
@@ -435,7 +423,7 @@
   opacity: 1;
 }
 /* line 11, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame, #why_overlay .sidebar #winner .frame {
+#overlay .sidebar .card .frame {
   width: 260px;
   height: 350px;
   padding: 5px;
@@ -449,7 +437,7 @@
   font-size: 13px;
 }
 /* line 23, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box, #why_overlay .sidebar #winner .frame .box {
+#overlay .sidebar .card .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -458,7 +446,7 @@
   height: 340px;
 }
 /* line 31, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .top, #why_overlay .sidebar #winner .frame .box .top {
+#overlay .sidebar .card .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
   font-weight: bold;
@@ -470,21 +458,21 @@
   overflow: hidden;
 }
 /* line 42, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .top .name, #why_overlay .sidebar .card .frame .box .top .profile_pic, #why_overlay .sidebar #winner .frame .box .top .name, #why_overlay .sidebar #winner .frame .box .top .profile_pic {
+#overlay .sidebar .card .frame .box .top .name, #overlay .sidebar .card .frame .box .top .profile_pic {
   float: left;
 }
 /* line 45, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .top .name, #why_overlay .sidebar #winner .frame .box .top .name {
+#overlay .sidebar .card .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
 /* line 50, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .top .profile_pic, #why_overlay .sidebar #winner .frame .box .top .profile_pic {
+#overlay .sidebar .card .frame .box .top .profile_pic {
   width: 40px;
 }
 /* line 52, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .top .profile_pic img, #why_overlay .sidebar #winner .frame .box .top .profile_pic img {
+#overlay .sidebar .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -492,13 +480,13 @@
   height: 30px;
 }
 /* line 59, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
 /* line 64, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .header, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .header {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
   color: white;
@@ -508,65 +496,65 @@
   font-size: 1.1em;
 }
 /* line 73, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
 /* line 76, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .even, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .even {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
 /* line 79, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .odd, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .odd {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
 /* line 83, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .items .item {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
 /* line 88, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item .label, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
 /* line 94, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .photos, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .photos {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
 /* line 98, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .photos img, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .photos img {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
 /* line 102, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .status, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .status {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
 /* line 108, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .story, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .story {
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .story {
   font-size: 1.25em;
   line-height: 1.25em;
 }
 /* line 112, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .nothing, #why_overlay .sidebar #winner .frame .box .nothing {
+#overlay .sidebar .card .frame .box .nothing {
   text-align: center;
 }
 /* line 115, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .nothing img, #why_overlay .sidebar #winner .frame .box .nothing img {
+#overlay .sidebar .card .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
 /* line 121, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box.highlight, #why_overlay .sidebar #winner .frame .box.highlight {
+#overlay .sidebar .card .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
   padding: 2px;
@@ -575,79 +563,41 @@
   -moz-box-shadow: 0 0 5px blue;
 }
 /* line 129, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box.highlight .top, #why_overlay .sidebar #winner .frame .box.highlight .top {
+#overlay .sidebar .card .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
 /* line 132, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box.highlight .header, #why_overlay .sidebar #winner .frame .box.highlight .header {
+#overlay .sidebar .card .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 115, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .sidebar .npo .card .frame .box .top {
-  background: url("/images/npo_bar.png");
-  color: #502f0d;
-  width: 242px;
-  text-shadow: white 1px 1px 1px;
-}
-/* line 122, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .sidebar .npo .card .frame .box .sc_menu_wrapper .header {
-  background: #99972d;
-  color: white;
-}
-/* line 126, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .sidebar .story {
-  text-align: center;
-}
-/* line 129, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .sidebar .story .logo {
-  margin: 0 auto;
-}
-/* line 132, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .sidebar .story .summary {
-  margin-top: 1em;
-  text-align: left;
-  font-size: 13px;
-}
-/* line 137, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .sidebar .story .link {
-  text-align: left;
-  margin-top: 3em;
-  font-size: 12px;
-}
-/* line 142, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .main_panel {
+/* line 100, ../../../../app/stylesheets/public/sparks.sass */
+#overlay .main_panel {
   width: 425px;
   font-size: 13px;
 }
-/* line 146, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .main_panel .story {
-  margin: 15px 0px;
-  padding: 10px;
-  width: 410px;
-}
-/* line 151, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .main_panel .story .open, #why_overlay .main_panel .story .close {
-  width: 50px;
-}
-/* line 153, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .main_panel .story .middle {
-  width: 300px;
-  font-size: 12pt;
-  line-height: 1.25em;
-  padding: 5px 0px;
-}
-/* line 158, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .main_panel .story .open {
-  vertical-align: top;
-}
-/* line 160, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .main_panel .story .close {
-  vertical-align: bottom;
-}
-/* line 163, ../../../../app/stylesheets/public/sparks.sass */
-#why_overlay .main_panel #actions {
+/* line 104, ../../../../app/stylesheets/public/sparks.sass */
+#overlay .main_panel #actions {
   position: absolute;
   width: 400px;
   bottom: 20px;
   vertical-align: bottom;
+}
+
+/* line 111, ../../../../app/stylesheets/public/sparks.sass */
+#your_story h2 {
+  margin: 1em 0em;
+}
+/* line 114, ../../../../app/stylesheets/public/sparks.sass */
+#your_story .row {
+  margin-bottom: 0.75em;
+}
+/* line 117, ../../../../app/stylesheets/public/sparks.sass */
+#your_story .label {
+  font-weight: bold;
+  padding-right: 10px;
+}
+/* line 122, ../../../../app/stylesheets/public/sparks.sass */
+#your_story form textarea {
+  width: 400px;
+  height: 100px;
 }

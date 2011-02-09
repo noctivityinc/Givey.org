@@ -129,7 +129,7 @@
   height: 400px;
 }
 /* line 2, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card, #game #show #playing_field #winner {
+#game #show #playing_field .card {
   margin: 0 10px;
   float: left;
   background: white;
@@ -139,7 +139,7 @@
   opacity: 1;
 }
 /* line 11, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame, #game #show #playing_field #winner .frame {
+#game #show #playing_field .card .frame {
   width: 260px;
   height: 350px;
   padding: 5px;
@@ -153,7 +153,7 @@
   font-size: 13px;
 }
 /* line 23, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box, #game #show #playing_field #winner .frame .box {
+#game #show #playing_field .card .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -162,7 +162,7 @@
   height: 340px;
 }
 /* line 31, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .top, #game #show #playing_field #winner .frame .box .top {
+#game #show #playing_field .card .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
   font-weight: bold;
@@ -174,21 +174,21 @@
   overflow: hidden;
 }
 /* line 42, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .top .name, #game #show #playing_field .card .frame .box .top .profile_pic, #game #show #playing_field #winner .frame .box .top .name, #game #show #playing_field #winner .frame .box .top .profile_pic {
+#game #show #playing_field .card .frame .box .top .name, #game #show #playing_field .card .frame .box .top .profile_pic {
   float: left;
 }
 /* line 45, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .top .name, #game #show #playing_field #winner .frame .box .top .name {
+#game #show #playing_field .card .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
 /* line 50, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .top .profile_pic, #game #show #playing_field #winner .frame .box .top .profile_pic {
+#game #show #playing_field .card .frame .box .top .profile_pic {
   width: 40px;
 }
 /* line 52, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .top .profile_pic img, #game #show #playing_field #winner .frame .box .top .profile_pic img {
+#game #show #playing_field .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -196,13 +196,13 @@
   height: 30px;
 }
 /* line 59, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper, #game #show #playing_field #winner .frame .box .sc_menu_wrapper {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
 /* line 64, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper .header, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .header {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
   color: white;
@@ -212,65 +212,65 @@
   font-size: 1.1em;
 }
 /* line 73, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper .stats, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .stats {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
 /* line 76, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .even, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .stats .even {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
 /* line 79, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .odd, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .stats .odd {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
 /* line 83, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .stats .items .item {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
 /* line 88, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item .label, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
 /* line 94, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper .photos, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .photos {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
 /* line 98, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper .photos img, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .photos img {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
 /* line 102, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper .status, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .status {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
 /* line 108, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .sc_menu_wrapper .story, #game #show #playing_field #winner .frame .box .sc_menu_wrapper .story {
+#game #show #playing_field .card .frame .box .sc_menu_wrapper .story {
   font-size: 1.25em;
   line-height: 1.25em;
 }
 /* line 112, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .nothing, #game #show #playing_field #winner .frame .box .nothing {
+#game #show #playing_field .card .frame .box .nothing {
   text-align: center;
 }
 /* line 115, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box .nothing img, #game #show #playing_field #winner .frame .box .nothing img {
+#game #show #playing_field .card .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
 /* line 121, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box.highlight, #game #show #playing_field #winner .frame .box.highlight {
+#game #show #playing_field .card .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
   padding: 2px;
@@ -279,11 +279,11 @@
   -moz-box-shadow: 0 0 5px blue;
 }
 /* line 129, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box.highlight .top, #game #show #playing_field #winner .frame .box.highlight .top {
+#game #show #playing_field .card .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
 /* line 132, ../../../../app/stylesheets/public/_card.sass */
-#game #show #playing_field .card .frame .box.highlight .header, #game #show #playing_field #winner .frame .box.highlight .header {
+#game #show #playing_field .card .frame .box.highlight .header {
   background: #ff6600;
 }
 /* line 50, ../../../../app/stylesheets/public/games.sass */
@@ -395,7 +395,7 @@
   width: 325px;
 }
 /* line 2, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card, #why_overlay .sidebar #winner {
+#why_overlay .sidebar .card {
   margin: 0 10px;
   float: left;
   background: white;
@@ -405,7 +405,7 @@
   opacity: 1;
 }
 /* line 11, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame, #why_overlay .sidebar #winner .frame {
+#why_overlay .sidebar .card .frame {
   width: 260px;
   height: 350px;
   padding: 5px;
@@ -419,7 +419,7 @@
   font-size: 13px;
 }
 /* line 23, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box, #why_overlay .sidebar #winner .frame .box {
+#why_overlay .sidebar .card .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -428,7 +428,7 @@
   height: 340px;
 }
 /* line 31, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .top, #why_overlay .sidebar #winner .frame .box .top {
+#why_overlay .sidebar .card .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
   font-weight: bold;
@@ -440,21 +440,21 @@
   overflow: hidden;
 }
 /* line 42, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .top .name, #why_overlay .sidebar .card .frame .box .top .profile_pic, #why_overlay .sidebar #winner .frame .box .top .name, #why_overlay .sidebar #winner .frame .box .top .profile_pic {
+#why_overlay .sidebar .card .frame .box .top .name, #why_overlay .sidebar .card .frame .box .top .profile_pic {
   float: left;
 }
 /* line 45, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .top .name, #why_overlay .sidebar #winner .frame .box .top .name {
+#why_overlay .sidebar .card .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
 /* line 50, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .top .profile_pic, #why_overlay .sidebar #winner .frame .box .top .profile_pic {
+#why_overlay .sidebar .card .frame .box .top .profile_pic {
   width: 40px;
 }
 /* line 52, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .top .profile_pic img, #why_overlay .sidebar #winner .frame .box .top .profile_pic img {
+#why_overlay .sidebar .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -462,13 +462,13 @@
   height: 30px;
 }
 /* line 59, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
 /* line 64, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .header, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .header {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
   color: white;
@@ -478,65 +478,65 @@
   font-size: 1.1em;
 }
 /* line 73, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
 /* line 76, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .even, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .even {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
 /* line 79, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .odd, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .odd {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
 /* line 83, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .items .item {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
 /* line 88, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item .label, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
 /* line 94, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .photos, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .photos {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
 /* line 98, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .photos img, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .photos img {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
 /* line 102, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .status, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .status {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
 /* line 108, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .story, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .story {
+#why_overlay .sidebar .card .frame .box .sc_menu_wrapper .story {
   font-size: 1.25em;
   line-height: 1.25em;
 }
 /* line 112, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .nothing, #why_overlay .sidebar #winner .frame .box .nothing {
+#why_overlay .sidebar .card .frame .box .nothing {
   text-align: center;
 }
 /* line 115, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box .nothing img, #why_overlay .sidebar #winner .frame .box .nothing img {
+#why_overlay .sidebar .card .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
 /* line 121, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box.highlight, #why_overlay .sidebar #winner .frame .box.highlight {
+#why_overlay .sidebar .card .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
   padding: 2px;
@@ -545,11 +545,11 @@
   -moz-box-shadow: 0 0 5px blue;
 }
 /* line 129, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box.highlight .top, #why_overlay .sidebar #winner .frame .box.highlight .top {
+#why_overlay .sidebar .card .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
 /* line 132, ../../../../app/stylesheets/public/_card.sass */
-#why_overlay .sidebar .card .frame .box.highlight .header, #why_overlay .sidebar #winner .frame .box.highlight .header {
+#why_overlay .sidebar .card .frame .box.highlight .header {
   background: #ff6600;
 }
 /* line 99, ../../../../app/stylesheets/public/games.sass */
@@ -704,7 +704,7 @@
   width: 325px;
 }
 /* line 2, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card, #winner #winner_overlay #card #winner {
+#winner #winner_overlay #card .card {
   margin: 0 10px;
   float: left;
   background: white;
@@ -714,7 +714,7 @@
   opacity: 1;
 }
 /* line 11, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame, #winner #winner_overlay #card #winner .frame {
+#winner #winner_overlay #card .card .frame {
   width: 260px;
   height: 350px;
   padding: 5px;
@@ -728,7 +728,7 @@
   font-size: 13px;
 }
 /* line 23, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box, #winner #winner_overlay #card #winner .frame .box {
+#winner #winner_overlay #card .card .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -737,7 +737,7 @@
   height: 340px;
 }
 /* line 31, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .top, #winner #winner_overlay #card #winner .frame .box .top {
+#winner #winner_overlay #card .card .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
   font-weight: bold;
@@ -749,21 +749,21 @@
   overflow: hidden;
 }
 /* line 42, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .top .name, #winner #winner_overlay #card .card .frame .box .top .profile_pic, #winner #winner_overlay #card #winner .frame .box .top .name, #winner #winner_overlay #card #winner .frame .box .top .profile_pic {
+#winner #winner_overlay #card .card .frame .box .top .name, #winner #winner_overlay #card .card .frame .box .top .profile_pic {
   float: left;
 }
 /* line 45, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .top .name, #winner #winner_overlay #card #winner .frame .box .top .name {
+#winner #winner_overlay #card .card .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
 /* line 50, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .top .profile_pic, #winner #winner_overlay #card #winner .frame .box .top .profile_pic {
+#winner #winner_overlay #card .card .frame .box .top .profile_pic {
   width: 40px;
 }
 /* line 52, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .top .profile_pic img, #winner #winner_overlay #card #winner .frame .box .top .profile_pic img {
+#winner #winner_overlay #card .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -771,13 +771,13 @@
   height: 30px;
 }
 /* line 59, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
 /* line 64, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .header, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper .header {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
   color: white;
@@ -787,65 +787,65 @@
   font-size: 1.1em;
 }
 /* line 73, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .stats, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper .stats {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
 /* line 76, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .stats .even, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper .stats .even {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
 /* line 79, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .stats .odd, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper .stats .odd {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
 /* line 83, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .stats .items .item, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper .stats .items .item {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
 /* line 88, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .stats .items .item .label, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
 /* line 94, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .photos, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper .photos {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
 /* line 98, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .photos img, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper .photos img {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
 /* line 102, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .status, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper .status {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
 /* line 108, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .story, #winner #winner_overlay #card #winner .frame .box .sc_menu_wrapper .story {
+#winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .story {
   font-size: 1.25em;
   line-height: 1.25em;
 }
 /* line 112, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .nothing, #winner #winner_overlay #card #winner .frame .box .nothing {
+#winner #winner_overlay #card .card .frame .box .nothing {
   text-align: center;
 }
 /* line 115, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box .nothing img, #winner #winner_overlay #card #winner .frame .box .nothing img {
+#winner #winner_overlay #card .card .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
 /* line 121, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box.highlight, #winner #winner_overlay #card #winner .frame .box.highlight {
+#winner #winner_overlay #card .card .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
   padding: 2px;
@@ -854,11 +854,11 @@
   -moz-box-shadow: 0 0 5px blue;
 }
 /* line 129, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box.highlight .top, #winner #winner_overlay #card #winner .frame .box.highlight .top {
+#winner #winner_overlay #card .card .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
 /* line 132, ../../../../app/stylesheets/public/_card.sass */
-#winner #winner_overlay #card .card .frame .box.highlight .header, #winner #winner_overlay #card #winner .frame .box.highlight .header {
+#winner #winner_overlay #card .card .frame .box.highlight .header {
   background: #ff6600;
 }
 /* line 162, ../../../../app/stylesheets/public/games.sass */

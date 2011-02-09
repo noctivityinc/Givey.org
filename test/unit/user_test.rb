@@ -21,6 +21,7 @@
 #  candidates_story             :text
 #  candidate_post_story_to_wall :boolean
 #  profile                      :text
+#  candidates_npo_id            :integer
 #
 
 require 'test_helper'

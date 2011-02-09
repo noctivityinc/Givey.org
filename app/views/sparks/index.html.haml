@@ -1,4 +1,6 @@
 - title "What Say You?", false
+- content_for :head do
+  = javascript_include_tag 'controllers/users'
 
 #sparks
   #index
@@ -7,11 +9,12 @@
         %h1.question= @spark.question.name
 
       #playing_field
-        = render(:partial => "friend", :collection => @spark.friends)
+        = render(:partial => "profile", :collection => @spark.friends)
 
       #score_board.row
         #selected.fleft= render :partial => 'selected_list'
         #counts.fright= sparks_count_display
         
-          
+- content_for :feet do
+  #overlay
         

@@ -1,7 +1,7 @@
 class SparksController < ApplicationController
   before_filter :require_user
   before_filter :load_friends, :only => :create
-  
+
   helper_method :sparks_count_display
 
   def create
@@ -16,12 +16,9 @@ class SparksController < ApplicationController
     spark = Spark.find(params[:id])
     spark.update_attributes(:winner_uid => params[:uid])
     @spark = current_user.prepare_a_spark
-    render :json => {:status => 'spark', :html => render_to_string(:partial => "friend", :collection => @spark.friends), 
-                    :question => @spark.question.name, :counts => sparks_count_display,
-                    :selected_list => render_to_string(:partial => "selected_list"),
-                    :background => @spark.question.backgrounds.pick.photo(:normal)}
+    render :json => get_json_response
   end
-  
+
   def selected
     render :partial => "selected_list"
   end
@@ -38,6 +35,40 @@ class SparksController < ApplicationController
 
     def sparks_count_display
       "#{current_user.sparks.decided.count + 1} / #{current_user.sparks.goal}"
+    end
+
+    def get_json_response
+      case (current_user.sparks.decided.count + 1)
+      when 0..10 then
+        return User.candidates.empty? ? spark_json : meet_candidate_json
+      when 10 then
+        return User.candidates.empty? ? spark_json : candidates_json
+      when 20 then
+        your_story_json
+      when 21..1000 then
+        current_user.candidates_story.blank? ? your_story_json : spark_json
+      else
+        spark_json
+      end
+    end
+
+    def meet_candidate_json
+      {:status => 'overlay', :html => render_to_string(:partial => "meet_a_candidate", :locals  => {:candidate => User.candidates.sort_by{rand}.first} )}
+    end
+
+    def candidates_json
+      {:status => 'overlay', :html => render_to_string(:partial => "meet_candidates", :locals  => {:candidates => User.candidates.sort_by{rand}.first} )}
+    end
+
+    def your_story_json
+      {:status => 'overlay', :html => render_to_string(:partial => "your_story")}
+    end
+
+    def spark_json
+      {:status => 'spark', :html => render_to_string(:partial => "profile", :collection => @spark.friends),
+       :question => @spark.question.name, :counts => sparks_count_display,
+       :selected_list => render_to_string(:partial => "selected_list"),
+       :background => @spark.question.backgrounds.pick.photo(:normal)}
     end
 
 end

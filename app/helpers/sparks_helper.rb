@@ -4,7 +4,7 @@ module SparksHelper
   end
 
   def stuff_to_display(profile)
-    profile.photos.count > 0 || profile.details.keys.select {|x| !dont_include(profile, x)}.count > 0
+    profile.photos.count > 0 || profile.details.keys.detect {|x| !dont_include(profile, x)}
   end
 
   def dont_include(profile, key)
@@ -22,5 +22,9 @@ module SparksHelper
     else
       val
     end
+  end
+
+  def not_selected_names(s)
+    return s.not_selected.map {|x| "<span class='not_selected_name'>#{x.details.name}</span>"}.join(' and ')
   end
 end

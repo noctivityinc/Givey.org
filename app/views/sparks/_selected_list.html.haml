@@ -1,0 +1,7 @@
+.selected
+- current_user.sparks.decided.order_by_latest.each do |s|
+  .selected.row.trans
+    .fleft.pic= image_tag s.selected.details.pic_square
+    .fleft.text
+      :erb
+        <%="<span class='name'>#{s.selected.details.name}</span> #{s.question.phrase} than #{not_selected_names(s)}"%>

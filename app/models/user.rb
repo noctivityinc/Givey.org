@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
 
   before_create :generate_givey_token
 
+  belongs_to :referring_friend, :class_name => "User", :foreign_key => "referring_id"
+  has_one :profile, :class_name => "Profile", :foreign_key => "uid", :primary_key => "uid", :dependent => :destroy
   has_many :friends, :dependent => :destroy  do
     def pick(n=3)
       self.sort_by{rand}[0..(n-1)]
@@ -39,9 +41,16 @@ class User < ActiveRecord::Base
     end
   end
 
-  has_one :profile, :class_name => "Profile", :foreign_key => "uid", :primary_key => "uid", :dependent => :destroy
-  has_many :sparks, :dependent => :destroy
-  belongs_to :referring_friend, :class_name => "User", :foreign_key => "referring_id"
+  has_many :sparks, :dependent => :destroy do
+    def goal
+      return case self.decided.count
+      when 0..20 then '20'
+      when 21..50 then'50'
+      when 51..100 then '100'
+      else '5000'
+      end
+    end
+  end
 
   def admin?
     self.admin
@@ -99,6 +108,11 @@ class User < ActiveRecord::Base
     friends = combine_friends_and_photos(res)
     save_friends(friends)
   end
+  
+  def destroy_and_get_friends
+    self.friends.destroy_all
+    self.get_friends
+  end
 
   private
 
@@ -115,7 +129,7 @@ class User < ActiveRecord::Base
     end
 
     def photos_fql
-      return "SELECT owner, src, caption, link FROM photo WHERE aid IN (SELECT aid FROM album WHERE owner IN (SELECT uid FROM #all_friends) AND (type = 'profile' OR type = 'wall') LIMIT 9)"
+      return "SELECT owner, src, caption, link FROM photo WHERE aid IN (SELECT aid FROM album WHERE owner IN (SELECT uid FROM #all_friends) AND (type = 'profile' OR type = 'wall'))"
     end
 
     def combine_friends_and_photos(res)

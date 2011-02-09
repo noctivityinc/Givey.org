@@ -1,6 +1,8 @@
 class SparksController < ApplicationController
   before_filter :require_user
   before_filter :load_friends, :only => :create
+  
+  helper_method :sparks_count_display
 
   def create
     render :json => {:status => 'complete', :url => sparks_path}
@@ -10,6 +12,19 @@ class SparksController < ApplicationController
     @spark = current_user.prepare_a_spark
   end
 
+  def update
+    spark = Spark.find(params[:id])
+    spark.update_attributes(:winner_uid => params[:uid])
+    @spark = current_user.prepare_a_spark
+    render :json => {:status => 'spark', :html => render_to_string(:partial => "friend", :collection => @spark.friends), 
+                    :question => @spark.question.name, :counts => sparks_count_display,
+                    :selected_list => render_to_string(:partial => "selected_list")}
+  end
+  
+  def selected
+    render :partial => "selected_list"
+  end
+
   private
 
     def require_user
@@ -17,10 +32,11 @@ class SparksController < ApplicationController
     end
 
     def load_friends
-      if current_user.friends.count < 20 || current_user.friends_outdated?
-        current_user.friends.destroy_all
-        get_friends.get_friends
-      end
+      current_user.destroy_and_get_friends if current_user.friends.count < 20 || current_user.friends_outdated?
+    end
+
+    def sparks_count_display
+      "#{current_user.sparks.decided.count + 1} / #{current_user.sparks.goal}"
     end
 
 end

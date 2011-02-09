@@ -38,16 +38,16 @@
   margin-top: 2em;
 }
 
-/* line 82, ../../../../app/stylesheets/_base.sass */
+/* line 90, ../../../../app/stylesheets/_base.sass */
 .row {
   overflow: hidden;
   width: 100%;
 }
-/* line 86, ../../../../app/stylesheets/_base.sass */
+/* line 94, ../../../../app/stylesheets/_base.sass */
 .row .fleft {
   float: left;
 }
-/* line 89, ../../../../app/stylesheets/_base.sass */
+/* line 97, ../../../../app/stylesheets/_base.sass */
 .row .fright {
   float: right;
 }
@@ -99,23 +99,24 @@
 #sparks #index {
   position: relative;
 }
-/* line 25, ../../../../app/stylesheets/public/sparks.sass */
+/* line 24, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #playing_field {
-  text-align: center;
+  position: absolute;
+  top: 125px;
+  left: 25px;
   height: 400px;
 }
 /* line 2, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card, #sparks #index #playing_field #winner {
   margin: 0 10px;
-  display: inline-block;
-  *display: inline;
+  float: left;
   background: white;
   filter: alpha(opacity=100);
   -moz-opacity: 1;
   -khtml-opacity: 1;
   opacity: 1;
 }
-/* line 12, ../../../../app/stylesheets/public/_card.sass */
+/* line 11, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame, #sparks #index #playing_field #winner .frame {
   width: 260px;
   height: 350px;
@@ -129,7 +130,7 @@
   text-align: left;
   font-size: 13px;
 }
-/* line 24, ../../../../app/stylesheets/public/_card.sass */
+/* line 23, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box, #sparks #index #playing_field #winner .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
@@ -138,7 +139,7 @@
   font-size: 0.85em;
   height: 340px;
 }
-/* line 32, ../../../../app/stylesheets/public/_card.sass */
+/* line 31, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .top, #sparks #index #playing_field #winner .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
@@ -150,21 +151,21 @@
   width: 250px;
   overflow: hidden;
 }
-/* line 43, ../../../../app/stylesheets/public/_card.sass */
+/* line 42, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .top .name, #sparks #index #playing_field .card .frame .box .top .profile_pic, #sparks #index #playing_field #winner .frame .box .top .name, #sparks #index #playing_field #winner .frame .box .top .profile_pic {
   float: left;
 }
-/* line 46, ../../../../app/stylesheets/public/_card.sass */
+/* line 45, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .top .name, #sparks #index #playing_field #winner .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
-/* line 51, ../../../../app/stylesheets/public/_card.sass */
+/* line 50, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .top .profile_pic, #sparks #index #playing_field #winner .frame .box .top .profile_pic {
   width: 40px;
 }
-/* line 53, ../../../../app/stylesheets/public/_card.sass */
+/* line 52, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .top .profile_pic img, #sparks #index #playing_field #winner .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
@@ -172,13 +173,13 @@
   width: 30px;
   height: 30px;
 }
-/* line 60, ../../../../app/stylesheets/public/_card.sass */
+/* line 59, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
-/* line 65, ../../../../app/stylesheets/public/_card.sass */
+/* line 64, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper .header, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
@@ -188,65 +189,65 @@
   margin: 4px 0px;
   font-size: 1.1em;
 }
-/* line 74, ../../../../app/stylesheets/public/_card.sass */
+/* line 73, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
-/* line 77, ../../../../app/stylesheets/public/_card.sass */
+/* line 76, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .even, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
-/* line 80, ../../../../app/stylesheets/public/_card.sass */
+/* line 79, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .odd, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
-/* line 84, ../../../../app/stylesheets/public/_card.sass */
+/* line 83, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
-/* line 89, ../../../../app/stylesheets/public/_card.sass */
+/* line 88, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper .stats .items .item .label, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
-/* line 95, ../../../../app/stylesheets/public/_card.sass */
+/* line 94, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper .photos, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
-/* line 99, ../../../../app/stylesheets/public/_card.sass */
+/* line 98, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper .photos img, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
-/* line 103, ../../../../app/stylesheets/public/_card.sass */
+/* line 102, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper .status, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
-/* line 109, ../../../../app/stylesheets/public/_card.sass */
+/* line 108, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .sc_menu_wrapper .story, #sparks #index #playing_field #winner .frame .box .sc_menu_wrapper .story {
   font-size: 1.25em;
   line-height: 1.25em;
 }
-/* line 113, ../../../../app/stylesheets/public/_card.sass */
+/* line 112, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .nothing, #sparks #index #playing_field #winner .frame .box .nothing {
   text-align: center;
 }
-/* line 116, ../../../../app/stylesheets/public/_card.sass */
+/* line 115, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box .nothing img, #sparks #index #playing_field #winner .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
-/* line 122, ../../../../app/stylesheets/public/_card.sass */
+/* line 121, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box.highlight, #sparks #index #playing_field #winner .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -255,32 +256,84 @@
   -webkit-box-shadow: 0 0 5px blue;
   -moz-box-shadow: 0 0 5px blue;
 }
-/* line 130, ../../../../app/stylesheets/public/_card.sass */
+/* line 129, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box.highlight .top, #sparks #index #playing_field #winner .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
-/* line 133, ../../../../app/stylesheets/public/_card.sass */
+/* line 132, ../../../../app/stylesheets/public/_card.sass */
 #sparks #index #playing_field .card .frame .box.highlight .header, #sparks #index #playing_field #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 30, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #index #skip {
-  display: none;
-  background: white;
-  padding: 5px;
+/* line 31, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #score_board {
+  clear: both;
+  margin-top: 525px;
+  margin-bottom: 2em;
+}
+/* line 36, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #score_board #selected {
+  width: 600px;
+  font-size: 12px;
+}
+/* line 39, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #score_board #selected .pic {
+  width: 30px;
+  margin-right: 10px;
+}
+/* line 41, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #score_board #selected .pic img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+/* line 47, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #score_board #selected .text {
+  width: 560px;
+  text-align: left;
+}
+/* line 50, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #score_board #selected .text .name {
+  color: #1a8922;
+  font-weight: bold;
+}
+/* line 53, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #score_board #selected .text .not_selected_name {
+  color: #990000;
+}
+/* line 57, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #score_board #counts {
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  background: black;
+  color: white;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  border: 1px solid gray;
-  width: 150px;
-  margin: 0 auto;
+  padding: 10px;
+  width: 200px;
 }
-/* line 38, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #index #skip a {
-  text-decoration: none;
-  color: gray;
+/* line 62, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #score_board #counts h1 {
+  color: white;
+  text-shadow: #333333 2px 2px 2px;
+}
+/* line 66, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #question {
+  position: relative;
+  top: 10px;
+  margin-bottom: 40px;
+  -moz-box-shadow: 3px 3px 4px black;
+  -webkit-box-shadow: 3px 3px 4px black;
+  box-shadow: 3px 3px 4px black;
+  border: 2px solid #666666;
+}
+/* line 75, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #question.recording {
+  float: right;
 }
 
-/* line 60, ../../../../app/stylesheets/public/sparks.sass */
+/* line 96, ../../../../app/stylesheets/public/sparks.sass */
 .ui-effects-transfer {
   border: 2px solid gray;
   background: #d0dcfd;
@@ -290,7 +343,7 @@
   opacity: 0.5;
 }
 
-/* line 68, ../../../../app/stylesheets/public/sparks.sass */
+/* line 104, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay {
   display: none;
   width: 750px;
@@ -302,7 +355,7 @@
   border-radius: 8px;
   background: white;
 }
-/* line 54, ../../../../app/stylesheets/public/sparks.sass */
+/* line 90, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay a.button, #why_overlay input.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -367,22 +420,21 @@
 #why_overlay a.button:active, #why_overlay a.button:active:visited, #why_overlay input.button:active, #why_overlay input.button:active:visited {
   color: white;
 }
-/* line 71, ../../../../app/stylesheets/public/sparks.sass */
+/* line 107, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .sidebar {
   width: 325px;
 }
 /* line 2, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card, #why_overlay .sidebar #winner {
   margin: 0 10px;
-  display: inline-block;
-  *display: inline;
+  float: left;
   background: white;
   filter: alpha(opacity=100);
   -moz-opacity: 1;
   -khtml-opacity: 1;
   opacity: 1;
 }
-/* line 12, ../../../../app/stylesheets/public/_card.sass */
+/* line 11, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame, #why_overlay .sidebar #winner .frame {
   width: 260px;
   height: 350px;
@@ -396,7 +448,7 @@
   text-align: left;
   font-size: 13px;
 }
-/* line 24, ../../../../app/stylesheets/public/_card.sass */
+/* line 23, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box, #why_overlay .sidebar #winner .frame .box {
   border: 2px solid white;
   -moz-border-radius: 3px;
@@ -405,7 +457,7 @@
   font-size: 0.85em;
   height: 340px;
 }
-/* line 32, ../../../../app/stylesheets/public/_card.sass */
+/* line 31, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .top, #why_overlay .sidebar #winner .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
@@ -417,21 +469,21 @@
   width: 250px;
   overflow: hidden;
 }
-/* line 43, ../../../../app/stylesheets/public/_card.sass */
+/* line 42, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .top .name, #why_overlay .sidebar .card .frame .box .top .profile_pic, #why_overlay .sidebar #winner .frame .box .top .name, #why_overlay .sidebar #winner .frame .box .top .profile_pic {
   float: left;
 }
-/* line 46, ../../../../app/stylesheets/public/_card.sass */
+/* line 45, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .top .name, #why_overlay .sidebar #winner .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
   width: 200px;
 }
-/* line 51, ../../../../app/stylesheets/public/_card.sass */
+/* line 50, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .top .profile_pic, #why_overlay .sidebar #winner .frame .box .top .profile_pic {
   width: 40px;
 }
-/* line 53, ../../../../app/stylesheets/public/_card.sass */
+/* line 52, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .top .profile_pic img, #why_overlay .sidebar #winner .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
@@ -439,13 +491,13 @@
   width: 30px;
   height: 30px;
 }
-/* line 60, ../../../../app/stylesheets/public/_card.sass */
+/* line 59, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
-/* line 65, ../../../../app/stylesheets/public/_card.sass */
+/* line 64, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .header, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
@@ -455,65 +507,65 @@
   margin: 4px 0px;
   font-size: 1.1em;
 }
-/* line 74, ../../../../app/stylesheets/public/_card.sass */
+/* line 73, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
-/* line 77, ../../../../app/stylesheets/public/_card.sass */
+/* line 76, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .even, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
-/* line 80, ../../../../app/stylesheets/public/_card.sass */
+/* line 79, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .odd, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
-/* line 84, ../../../../app/stylesheets/public/_card.sass */
+/* line 83, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
-/* line 89, ../../../../app/stylesheets/public/_card.sass */
+/* line 88, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item .label, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
-/* line 95, ../../../../app/stylesheets/public/_card.sass */
+/* line 94, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .photos, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
-/* line 99, ../../../../app/stylesheets/public/_card.sass */
+/* line 98, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .photos img, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
-/* line 103, ../../../../app/stylesheets/public/_card.sass */
+/* line 102, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .status, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
-/* line 109, ../../../../app/stylesheets/public/_card.sass */
+/* line 108, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .story, #why_overlay .sidebar #winner .frame .box .sc_menu_wrapper .story {
   font-size: 1.25em;
   line-height: 1.25em;
 }
-/* line 113, ../../../../app/stylesheets/public/_card.sass */
+/* line 112, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .nothing, #why_overlay .sidebar #winner .frame .box .nothing {
   text-align: center;
 }
-/* line 116, ../../../../app/stylesheets/public/_card.sass */
+/* line 115, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .nothing img, #why_overlay .sidebar #winner .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
-/* line 122, ../../../../app/stylesheets/public/_card.sass */
+/* line 121, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box.highlight, #why_overlay .sidebar #winner .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -522,77 +574,77 @@
   -webkit-box-shadow: 0 0 5px blue;
   -moz-box-shadow: 0 0 5px blue;
 }
-/* line 130, ../../../../app/stylesheets/public/_card.sass */
+/* line 129, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box.highlight .top, #why_overlay .sidebar #winner .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
-/* line 133, ../../../../app/stylesheets/public/_card.sass */
+/* line 132, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box.highlight .header, #why_overlay .sidebar #winner .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 79, ../../../../app/stylesheets/public/sparks.sass */
+/* line 115, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .sidebar .npo .card .frame .box .top {
   background: url("/images/npo_bar.png");
   color: #502f0d;
   width: 242px;
   text-shadow: white 1px 1px 1px;
 }
-/* line 86, ../../../../app/stylesheets/public/sparks.sass */
+/* line 122, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .sidebar .npo .card .frame .box .sc_menu_wrapper .header {
   background: #99972d;
   color: white;
 }
-/* line 90, ../../../../app/stylesheets/public/sparks.sass */
+/* line 126, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .sidebar .story {
   text-align: center;
 }
-/* line 93, ../../../../app/stylesheets/public/sparks.sass */
+/* line 129, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .sidebar .story .logo {
   margin: 0 auto;
 }
-/* line 96, ../../../../app/stylesheets/public/sparks.sass */
+/* line 132, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .sidebar .story .summary {
   margin-top: 1em;
   text-align: left;
   font-size: 13px;
 }
-/* line 101, ../../../../app/stylesheets/public/sparks.sass */
+/* line 137, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .sidebar .story .link {
   text-align: left;
   margin-top: 3em;
   font-size: 12px;
 }
-/* line 106, ../../../../app/stylesheets/public/sparks.sass */
+/* line 142, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .main_panel {
   width: 425px;
   font-size: 13px;
 }
-/* line 110, ../../../../app/stylesheets/public/sparks.sass */
+/* line 146, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .main_panel .story {
   margin: 15px 0px;
   padding: 10px;
   width: 410px;
 }
-/* line 115, ../../../../app/stylesheets/public/sparks.sass */
+/* line 151, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .main_panel .story .open, #why_overlay .main_panel .story .close {
   width: 50px;
 }
-/* line 117, ../../../../app/stylesheets/public/sparks.sass */
+/* line 153, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .main_panel .story .middle {
   width: 300px;
   font-size: 12pt;
   line-height: 1.25em;
   padding: 5px 0px;
 }
-/* line 122, ../../../../app/stylesheets/public/sparks.sass */
+/* line 158, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .main_panel .story .open {
   vertical-align: top;
 }
-/* line 124, ../../../../app/stylesheets/public/sparks.sass */
+/* line 160, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .main_panel .story .close {
   vertical-align: bottom;
 }
-/* line 127, ../../../../app/stylesheets/public/sparks.sass */
+/* line 163, ../../../../app/stylesheets/public/sparks.sass */
 #why_overlay .main_panel #actions {
   position: absolute;
   width: 400px;

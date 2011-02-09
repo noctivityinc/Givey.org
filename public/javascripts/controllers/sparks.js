@@ -53,6 +53,7 @@ jQuery(document).ready(function($) {
    function showSpark (r) {
      changeStats(r);
      reloadSelectedList(r)
+     loadBackground(r)
      $('#playing_field').html(r.html).show();
      window.setTimeout(function() {showScoreboard()},1500);
      $('.sc_menu_wrapper').jScrollPane();
@@ -64,6 +65,12 @@ jQuery(document).ready(function($) {
    
    function changeStats(r) {
     $('#counts').text(r.counts)
+   }
+   
+   function loadBackground (r) {
+     $("#supersized img").remove();
+		 $("<img/>").attr("src", r.background).appendTo("#supersized");
+     $('#supersized').resizenow(); 
    }
    
    function reloadSelectedList(r) {

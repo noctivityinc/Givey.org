@@ -10,6 +10,7 @@
 #  photo_content_type :string(255)
 #  photo_file_size    :integer
 #  photo_updated_at   :datetime
+#  question_id        :integer
 #
 
 require 'test_helper'

@@ -18,7 +18,8 @@ class SparksController < ApplicationController
     @spark = current_user.prepare_a_spark
     render :json => {:status => 'spark', :html => render_to_string(:partial => "friend", :collection => @spark.friends), 
                     :question => @spark.question.name, :counts => sparks_count_display,
-                    :selected_list => render_to_string(:partial => "selected_list")}
+                    :selected_list => render_to_string(:partial => "selected_list"),
+                    :background => @spark.question.backgrounds.pick.photo(:normal)}
   end
   
   def selected
@@ -32,7 +33,7 @@ class SparksController < ApplicationController
     end
 
     def load_friends
-      current_user.destroy_and_get_friends if current_user.friends.count < 20 || current_user.friends_outdated?
+      current_user.destroy_and_get_friends if current_user.friends.count < 20 || current_user.friends.outdated?
     end
 
     def sparks_count_display

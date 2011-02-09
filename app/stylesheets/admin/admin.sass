@@ -2,6 +2,7 @@
 @import 'showtastic'
 @import 'backgrounds'
 @import 'categories'
+@import 'flash'
 
 body, html
   background: white
@@ -9,28 +10,27 @@ body, html
 #content-wrapper
   text-align: left
 
-  #admin
-    #main
-      text-align: left
-      
-      table
-        +formatted_table
+  #main
+    text-align: left
     
-      .trans
-        padding: 10px
-        background: white
-        -moz-border-radius: 5px
-        border-radius: 5px
-        filter: alpha(opacity=80)
-        -moz-opacity: 0.8
-        -khtml-opacity: 0.8
-        opacity: 0.8
-        margin-bottom: 10px
-
-        a
-          color: #006
-          text-decoration: underline    
+    table
+      +formatted_table
   
+    .trans
+      padding: 10px
+      background: white
+      -moz-border-radius: 5px
+      border-radius: 5px
+      filter: alpha(opacity=80)
+      -moz-opacity: 0.8
+      -khtml-opacity: 0.8
+      opacity: 0.8
+      margin-bottom: 10px
+
+      a
+        color: #006
+        text-decoration: underline    
+
   #actions
     margin-top: 3em
   

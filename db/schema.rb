@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110203014856) do
+ActiveRecord::Schema.define(:version => 20110209191037) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110203014856) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "question_id"
   end
 
   create_table "battles", :force => true do |t|

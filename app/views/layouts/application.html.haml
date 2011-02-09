@@ -11,7 +11,7 @@
     = csrf_meta_tag
     = yield(:head)
     :javascript
-      randomSlide = [{image : '#{Background.pick.photo(:normal) if Background.exists?}'}]
+      randomSlide = [{image : '#{get_background}'}]
     = render :partial => '/layouts/get_satisfaction_javascript'
 
   %body

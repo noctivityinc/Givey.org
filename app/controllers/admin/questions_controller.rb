@@ -9,6 +9,7 @@ class Admin::QuestionsController < AdminController
 
   def new
     @question = Question.new(:active => true)
+    @question.backgrounds.build
   end
 
   def create
@@ -17,12 +18,14 @@ class Admin::QuestionsController < AdminController
       flash[:notice] = "Successfully created question."
       redirect_to [ :admin, @question ]
     else
+      @question.backgrounds.build
       render :action => 'new'
     end
   end
 
   def edit
     @question = Question.find(params[:id])
+    @question.backgrounds.build if @question.backgrounds.empty?
   end
 
   def update
@@ -31,6 +34,7 @@ class Admin::QuestionsController < AdminController
       flash[:notice] = "Successfully updated question."
       redirect_to admin_question_url
     else
+      @question.backgrounds.build
       render :action => 'edit'
     end
   end

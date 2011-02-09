@@ -3,6 +3,9 @@
 #beta_tester
   #show
     = fieldset_for @question, 'Overview', :name, :phrase, :active, :value
+    - unless @question.backgrounds.empty?
+      %b Background Photo:
+      = image_tag @question.backgrounds.first.photo.url(:thumb) 
 
 #actions
   %p

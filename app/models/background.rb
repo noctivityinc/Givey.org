@@ -10,6 +10,7 @@
 #  photo_content_type :string(255)
 #  photo_file_size    :integer
 #  photo_updated_at   :datetime
+#  question_id        :integer
 #
 
 class Background < ActiveRecord::Base
@@ -19,13 +20,15 @@ class Background < ActiveRecord::Base
     :convert_options => { :all => '-strip -quality 20%'}
 
   before_create :randomize_file_name
+
+  belongs_to :question
   
   validates_presence_of :photo
   validates_attachment_content_type :photo, :content_type => [ 'image/jpg', 'image/jpeg', 'image/gif', 'image/png' ]
   validates_attachment_size :photo, :less_than => 3.megabytes
   
   scope :active, where(:active => true)
-
+  
   def randomize_file_name
     return if photo_file_name.nil?
     extension = File.extname(photo_file_name).downcase
@@ -37,4 +40,5 @@ class Background < ActiveRecord::Base
   def self.pick
     active.sort_by{rand}.first
   end
+  
 end

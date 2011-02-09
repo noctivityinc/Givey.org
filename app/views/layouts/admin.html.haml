@@ -10,29 +10,28 @@
     = csrf_meta_tag
     = yield(:head)
 
-  %body
+  %body.admin
     #content-wrapper
-      #admin
-        #main
-          #flash
-            - flash.each do |name, msg|
-              = content_tag :div, msg, :id => "flash_#{name}"
-      
-          #header.row
-            .fleft
-              - if current_user
-                = image_tag current_user.profile.details.pic_square, :class => "profile_pic"
-                = "Hello Admin named #{current_user.name}."
-                = link_to "Not #{current_user.first_name}?", signout_path
-            .fright.cabin
-              = link_to "Givey.org Admin System", admin_index_path
-      
-          #container
-            - if show_title?
-              %h1.trans= yield(:title)
-          
-            = yield
+      #main
+        #flash
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}"
     
+        #header.row
+          .fleft
+            - if current_user
+              = image_tag current_user.profile.details.pic_square, :class => "profile_pic"
+              = "Hello Admin named #{current_user.name}."
+              = link_to "Not #{current_user.first_name}?", signout_path
+          .fright.cabin
+            = link_to "Givey.org Admin System", admin_index_path
+    
+        #container
+          - if show_title?
+            %h1.trans= yield(:title)
+        
+          = yield
+  
         #footer
           #navs
             .nav
@@ -43,7 +42,7 @@
               = link_to "Privacy Policy", '#'
             .nav
               = link_to "Non Profits", npos_path
-          
+        
           #copyright
             (c) Givey.org 2011
-          
+        

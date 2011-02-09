@@ -583,12 +583,14 @@ form.formtastic fieldset ol li.boolean input {
 #flash #flash_alert {
   color: #cc0000;
 }
+
 /* line 21, ../../../app/stylesheets/_flash.sass */
-#flash .fieldWithErrors {
+.fieldWithErrors {
   display: inline;
 }
+
 /* line 24, ../../../app/stylesheets/_flash.sass */
-#flash .error_messages {
+.error_messages {
   width: 400px;
   border: 2px solid #cf0000;
   padding: 0;
@@ -598,7 +600,7 @@ form.formtastic fieldset ol li.boolean input {
   font-size: 12px;
 }
 /* line 33, ../../../app/stylesheets/_flash.sass */
-#flash .error_messages h2 {
+.error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
   margin: 0;
@@ -608,11 +610,11 @@ form.formtastic fieldset ol li.boolean input {
   color: white;
 }
 /* line 42, ../../../app/stylesheets/_flash.sass */
-#flash .error_messages p {
+.error_messages p {
   margin: 8px 10px;
 }
 /* line 44, ../../../app/stylesheets/_flash.sass */
-#flash .error_messages ul {
+.error_messages ul {
   margin: 0;
 }
 

@@ -4,8 +4,9 @@
   #show
     = fieldset_for @question, 'Overview', :name, :phrase, :active, :value
     - unless @question.backgrounds.empty?
-      %b Background Photo:
-      = image_tag @question.backgrounds.first.photo.url(:thumb) 
+      %b Background Photos:
+      - @question.backgrounds.each do |bg|
+        .background= image_tag bg.photo.url(:thumb) 
 
 #actions
   %p

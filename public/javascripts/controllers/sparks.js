@@ -28,10 +28,11 @@ jQuery(document).ready(function($) {
   }
   
   function timedResponse(resp) {
-    window.setTimeout(function(){handleSelectedResponse(resp)},1500)
+    window.setTimeout(function(){handleSelectedResponse(resp)},1000)
   }
   
   function handleSelectedResponse(resp) {
+      handlePostCallback(resp)
       switch(resp.status) {
       case 'spark':
         $('.card').fadeOut();
@@ -46,6 +47,15 @@ jQuery(document).ready(function($) {
         console.log(resp)
         break;
       }
+   }
+
+   function handlePostCallback(resp) {
+     if(resp.post_url != undefined) {
+       $('#processing_spinner').show()
+       $.post(resp.post_url,{},function() {
+         $('#processing_spinner').hide()
+       })
+     } 
    }
 
    function moveQuestion(resp) {
@@ -66,7 +76,7 @@ jQuery(document).ready(function($) {
      changeStats(resp);
      reloadSelectedList(resp)
      loadBackground(resp)
-     window.setTimeout(function() {showFieldAndBoard(resp)},1500);
+     window.setTimeout(function() {showFieldAndBoard(resp)},2000);
    }
    
    function changeQuestion(resp) {

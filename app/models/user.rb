@@ -113,6 +113,7 @@ class User < ActiveRecord::Base
     res = @fb.multifql({:all_friends => all_friends_fql, :photos => photos_fql})
     friends = combine_friends_and_photos(res)
     save_friends(friends)
+    return true
   end
   
   def destroy_and_get_friends

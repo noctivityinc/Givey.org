@@ -3,20 +3,11 @@ Givey::Application.routes.draw do
 
   resources :donations
   resources :npos
-  resources :users
+  resources :users do 
+    resources :friends
+  end
 
   resources :sparks
-  resources :games do
-    member do
-      get :in_progress
-      put :share
-      post :duel
-      get :winners
-      get :complete
-      get :redo
-    end
-    get :needs_friends, :on => :collection
-  end
 
   resources :candidates do
     collection do

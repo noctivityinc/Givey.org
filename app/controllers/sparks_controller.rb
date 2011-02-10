@@ -3,6 +3,10 @@ class SparksController < ApplicationController
   before_filter :load_friends, :only => :create
 
   helper_method :sparks_count_display
+  
+  def new
+    redirect_to sparks_path unless current_user.sparks.empty?
+  end
 
   def create
     render :json => {:status => 'complete', :url => sparks_path}
@@ -61,14 +65,16 @@ class SparksController < ApplicationController
     end
 
     def your_story_json
-      {:status => 'overlay', :html => render_to_string(:partial => "your_story")}
+      {:status => 'overlay', :post_url => user_friends_path(current_user), :html => render_to_string(:partial => "your_story")}
     end
 
     def spark_json
-      {:status => 'spark', :html => render_to_string(:partial => "profile", :collection => @spark.friends),
+      json = {:status => 'spark', :html => render_to_string(:partial => "profile", :collection => @spark.friends),
        :question => @spark.question.name, :counts => sparks_count_display,
        :selected_list => render_to_string(:partial => "selected_list"),
        :background => @spark.question.backgrounds.pick.photo(:normal)}
+      json.merge!({:post_url => user_friends_path(current_user)}) if ((current_user.sparks.decided.count + 1) % 20 == 0)
+      return json
     end
 
 end

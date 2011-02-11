@@ -39,16 +39,20 @@ jQuery(document).ready(function($) {
         $('.question').text('next question!').css('color','black')
         window.setTimeout(function() {moveQuestion(resp)},1000);
         break;
+      case 'modal':
+        $('#modal').html(resp.html)
+        activate_modal()
+        break;
       case 'overlay':
         $('#overlay').html(resp.html)
-        activate_overlay('#overlay')
+        activate_overlay()
+        moveQuestion(resp.spark_resp)
         break;
       default:
-        console.log(resp)
         break;
       }
    }
-
+   
    function handlePostCallback(resp) {
      if(resp.post_url != undefined) {
        $('#processing_spinner').show()
@@ -69,6 +73,7 @@ jQuery(document).ready(function($) {
    function showFieldAndBoard(resp){
      $('#playing_field').html(resp.html).show();
      $('#score_board').fadeIn('slow');
+     $('#candidate_supporter_msg').html(resp.candidate_supporter_msg)
      $('.sc_menu_wrapper').jScrollPane();
    }
    
@@ -96,20 +101,39 @@ jQuery(document).ready(function($) {
    function reloadSelectedList(resp) {
      $('#selected').html(resp.selected_list)
    }
-  
+
+   var overlayDiv = $('#trigger_overlay').overlay({
+    top: 160,
+    mask: '#000',
+    api: true
+   })
+   
+   $('#trigger_overlay').live('click',function(){overlayDiv.load();})
+   $('#close_overlay').live('click',function(){overlayDiv.close();})
+   
+   var modalDiv = $('#trigger_modal').overlay({
+   	top: 160,
+   	closeOnClick: false,
+   	closeOnEsc: false,
+     	mask: {
+     		color: '#000',
+         zIndex: 50,
+     		loadSpeed: 200,
+     		opacity: 0.80
+     	}
+   })
+   
+   $('#trigger_modal').live('click',function(){modalDiv .load();})
+   $('#close_modal').live('click',function(){modalDiv .close();})
+   
+   
 });
 
-function activate_overlay (div_id) {
-  $(div_id).overlay({
-  	top: 160,
-  	closeOnClick: false,
-  	closeOnEsc: false,
-    	mask: {
-    		color: '#000',
-        zIndex: 50,
-    		loadSpeed: 200,
-    		opacity: 0.80
-    	},
-  	load: true
-  });
+function activate_overlay () {
+  $('#trigger_overlay').click();
 }
+
+function activate_modal () {
+  $('#trigger_modal').click();
+}
+

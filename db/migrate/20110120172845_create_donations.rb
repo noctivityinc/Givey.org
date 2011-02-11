@@ -3,7 +3,7 @@ class CreateDonations < ActiveRecord::Migration
     create_table :donations do |t|
       t.integer :user_id
       t.integer :game_id
-      t.decimal :amount
+      t.decimal :amount, :precision => 8, :scale  => 2
       t.datetime :donated_at
       t.string :wepay_id
       t.string :transaction_id

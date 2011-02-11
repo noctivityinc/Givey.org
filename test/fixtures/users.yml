@@ -9,7 +9,6 @@
 #  name                         :string(255)
 #  gender                       :string(255)
 #  locale                       :string(255)
-#  profile_pic                  :string(255)
 #  token                        :string(255)
 #  created_at                   :datetime
 #  updated_at                   :datetime
@@ -20,7 +19,6 @@
 #  candidate                    :boolean
 #  candidates_story             :text
 #  candidate_post_story_to_wall :boolean
-#  profile                      :text
 #  candidates_npo_id            :integer
 #
 

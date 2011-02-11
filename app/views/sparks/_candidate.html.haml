@@ -1,0 +1,13 @@
+.card.candidate
+  .frame
+    .box
+      .top
+        .profile_pic= image_tag candidate.profile.details.pic_square
+        .name= candidate.public_display_name
+
+      .cause
+        = image_tag candidate.candidates_npo.logo(:medium)
+        
+      .fb_like        
+        %fb:like{:href => "#{npo_url(candidate.candidates_npo)}", :layout => "button_count", :show_faces => "false", :width => "50"}
+        

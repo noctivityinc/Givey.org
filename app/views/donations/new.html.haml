@@ -1,104 +1,24 @@
-- title "Donate To The Cause"
-
-- content_for :head do
-  :javascript
-    $(document).ready(function() {
-
-    });
-    
+- title "Join The Movement."
 
 #donation
   #new
     #copy.trans
-      - if @game && @game.winner
-        %h1= "So you think that #{@game.winner.name} might save the world?"
+      %h1= "#{Donation.count} people have joined the movement contributing over #{number_to_currency(Donation.total)}."
       
-        %h1 Please help us find out how.
+      #charity_logo= image_tag current_user.candidates_npo.logo(:medium)
       
-        %h2
-          Together, we're raising $25,000 to give to  
-          = @game.winner.name.split(/\s/)[0] 
-          to split among some amazing causes.*
-        
-        %h2
-          We're only asking for $5 from each player, and have
-          already raised $XXXX from Givey players just like you.
-        
-        #actions
-          = button_to 'Contribute Now', '#', :id => 'donate_btn', :class => "button", :rel => "In honor of #{@game.winner}, who's going to change the world."
+      = render :partial => (current_user ? 'user' : 'not_user')
       
-      - else
-        %h1= "Looking to help us change the world??"
-      
-        %h2
-          Together, we're raising $25,000 for   
-          the most trusted person on Facebook
-          to split amount some amazing causes.
-        
-        %h2
-          We're only asking for $5 from each player, and have
-          already raised $XXXX from Givey players just like you.
-        
-        #actions
-          = button_to 'Contribute Now', '#', :id => 'donate_btn', :class => "button", :rel => "To help us make a difference."
-        
-    .trans
-      %h3.beta BETA TESTER INFO - In case you're curious, this is what the Facebook posts will look like:
+      #actions
+        = button_to 'Join The Movement. Contribute $5', APP_CONFIG[:givey]['donate_url'], :class => "button", :rel => "I'm pulling for #{current_user.candidates_npo.name}"
+        = link_to "Skip the Donation", sparks_path
 
-      %p
-        Note: To see what someone would experience if they clicked on one of the links in the Facebook posts, you can 
-        click on 
-        = link_to "this link.", current_user.referral_link
+      #wall.row
+        - if Donation.count > 10
+          - Donation.random(300).each do |donation|
+            .pic= image_tag donation.user.profile.details.pic_square, :title => donation.user.name
+        - else
+          - current_user.friends.random(200).each do |friend|
+            .pic.fleft= image_tag friend.profile.details.pic_square, :title => friend.profile.details.name 
 
-      %h4 Your wall...
-      
-      .fbUIBlock.row
-        .fleft.fbProfilePic
-          = image_tag current_user.profile_pic
-        .fleft.fbbody
-          = link_to current_user.name, '#'
-          %br
-          = "Just voted #{@game.winner.name} most likely to change the world out of my Facebook friends on Givey."
-          
-          .fbMessageBox
-            .name= link_to "#{@game.winner.name} is going to save the world.", current_user.referral_link
-            .caption= "I'm pretty sure #{@game.winner.name} can save the world."
-            %p.description= "I just played Givey.org's game changer.  My money's on #{@game.winner.name} to change the world.  What do you think?"
-          .fbFooter
-            = Time.now.strftime('%A at %I:%M%p')
-            via Givey.org
-            &#183;
-            = link_to "Like", '#'
-            &#183;
-            = link_to "Comment", '#'
-            
-          
-      %h4 Winner's wall...
-
-      .fbUIBlock.row
-        .fleft.fbProfilePic
-          = image_tag current_user.profile_pic
-        .fleft.fbbody
-          .fbHeader
-            = link_to current_user.name, '#'
-            .arrow
-            = link_to @game.winner.name, '#'
-            %br
-            = "#{@game.winner.first_name}, I selected you as most likely to change the world if given $25K.  I need you to confirm your nomination.  Can you click the link below please?"
-
-          .fbMessageBox.row.withPic
-            .fleft.fbProfilePic
-              = image_tag "givey_logo_black.png"
-            .fleft.fbbody
-              .name= link_to "Givey.org - Can you change the world? Let's play.", "http://#{APP_CONFIG[:domain]}/c/#{@game.token}"
-              .caption= "www.givey.org"
-          .fbFooter
-            = Time.now.strftime('%A at %I:%M%p')
-            via Givey.org
-            &#183;
-            = link_to "Like", '#'
-            &#183;
-            = link_to "Comment", '#'
-
-
-        
+      = # render :partial => 'facebook_sample_posts'

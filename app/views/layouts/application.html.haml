@@ -18,18 +18,20 @@
     #content-wrapper
       #main
         #flash
+          #flash_close
           - flash.each do |name, msg|
             = content_tag :div, msg, :id => "flash_#{name}"
 
         - unless (controller.controller_name == 'home' && !current_user)
-          #header.row
-            .fleft
-              - if current_user && !hide_login_info?
-                = image_tag current_user.profile.details.pic_square, :class => "profile_pic"
-                = link_to "Not #{current_user.first_name}?", signout_path, :id => "log_out" 
-            .fright
-              = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
-              = image_tag "spinner.gif", :id => "processing_spinner"
+          %table#header
+            %tr
+              %td.left
+                = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
+                = image_tag "spinner.gif", :id => "processing_spinner"
+              %td#candidate_supporter_msg
+              %td.right
+                - if current_user && !hide_login_info?
+                  = link_to "Not #{current_user.first_name}? Log Out.", signout_path, :id => "log_out" 
       
         #container
           = yield

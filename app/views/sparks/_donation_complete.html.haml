@@ -1,0 +1,12 @@
+%h1
+  = "Thank you #{current_user.name} for your #{number_to_currency(current_user.donations.last.amount)} donation"
+  
+#actions.row
+  .fright
+    = link_to "Continue >>", 'javascript:return false;', :class => "button close"
+  
+  
+:javascript
+  $(document).ready(function() {
+    activate_overlay('#overlay');
+  });

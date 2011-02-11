@@ -27,4 +27,11 @@ module SparksHelper
   def not_selected_names(s)
     return s.not_selected.map {|x| "<span class='not_selected_name'>#{x.details.name}</span>"}.join(' and ')
   end
+
+  def donation_overlay
+    if session[:donation_complete]
+      session[:donation_complete] = nil # => resetting so we dont show twice
+      return true
+    end
+  end
 end

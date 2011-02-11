@@ -9,7 +9,6 @@
 #  name                         :string(255)
 #  gender                       :string(255)
 #  locale                       :string(255)
-#  profile_pic                  :string(255)
 #  token                        :string(255)
 #  created_at                   :datetime
 #  updated_at                   :datetime
@@ -20,7 +19,6 @@
 #  candidate                    :boolean
 #  candidates_story             :text
 #  candidate_post_story_to_wall :boolean
-#  profile                      :text
 #  candidates_npo_id            :integer
 #
 
@@ -32,6 +30,7 @@ class User < ActiveRecord::Base
 
   belongs_to :referring_friend, :class_name => "User", :foreign_key => "referring_id"
   has_one :profile, :class_name => "Profile", :foreign_key => "uid", :primary_key => "uid", :dependent => :destroy
+  has_many :donations
   has_many :friends, :dependent => :destroy  do
     def pick(n=3)
       self.sort_by{rand}[0..(n-1)]
@@ -53,16 +52,26 @@ class User < ActiveRecord::Base
     end
   end
   
-  has_one :candidates_npo, :class_name => "Npo", :foreign_key => "candidates_npo_id"
+  
+  belongs_to :candidates_npo, :class_name => "Npo"
   
   scope :candidates, where(:candidate => true)
-
+  
   def admin?
     self.admin
   end
 
   def first_name
     self.name.split(/\s/)[0]
+  end
+  
+  def public_display_name
+    last_initial = self.name.split(/\s/)[1][0]
+    return "#{first_name} #{last_initial}."
+  end
+  
+  def self.random_candidate
+    self.candidates.sort_by{rand}.first
   end
 
   def prepare_a_spark
@@ -109,8 +118,8 @@ class User < ActiveRecord::Base
   end
 
   def get_friends
-    @fb ||= MiniFB::OAuthSession.new(self.token)
-    res = @fb.multifql({:all_friends => all_friends_fql, :photos => photos_fql})
+    fb ||= MiniFB::OAuthSession.new(self.token)
+    res = fb.multifql({:all_friends => all_friends_fql, :photos => photos_fql})
     friends = combine_friends_and_photos(res)
     save_friends(friends)
     return true

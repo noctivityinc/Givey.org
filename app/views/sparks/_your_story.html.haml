@@ -2,12 +2,13 @@
   .sidebar.fleft
     = render :partial => 'profile', :object => current_user.profile
   .main_panel.fleft
-    = form_for current_user, :remote => true, :html => {:id => 'user_story'} do |f|
+    = form_for current_user, :html => {:id => 'user_story'} do |f|
+      = hidden_field_tag 'to', new_donation_path
       %h1 What would you do with $5,000?
       %h2 You could decide what happens
       .row
         .fleft.label What's your favorite cause?
-        .fleft= f.select :candidates_npo_id, Npo.all.map {|x| [x.name, x.id]}
+        .fleft= f.select :candidates_npo_id, Npo.active.map {|x| [x.name, x.id]}
       .row
         .label Why does this cause matters to you (in 255 words or less):
       .row

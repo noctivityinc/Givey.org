@@ -1,3 +1,21 @@
-%h1
-  Hello
-  = candidate.name
+#meet_a_candidate.row
+  .sidebar.fleft
+    = render :partial => 'candidate', :object => candidate
+  .main_panel.fleft
+    %h2= "#{candidate.public_display_name} joined the movement to turn their $5 into $5000 for #{candidate.candidates_npo.name}.  Here's why..."
+    
+    %table.story
+      %tr
+        %td.open
+          = image_tag "icons/quote_open.png"
+        %td.middle
+          = candidate.candidates_story
+        %td.close_quotes
+          = image_tag "icons/quote_close.png"
+      
+    
+      #actions.row
+        .fleft
+          %b (more on this later :))
+        .fright
+          = link_to "Continue >>", '#', :class => "button close", :id => 'close_overlay' 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110209211804) do
+ActiveRecord::Schema.define(:version => 20110211151204) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -65,14 +65,14 @@ ActiveRecord::Schema.define(:version => 20110209211804) do
 
   create_table "donations", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "game_id"
-    t.decimal  "amount"
+    t.decimal  "net",            :precision => 8, :scale => 2
     t.datetime "donated_at"
-    t.string   "wepay_id"
     t.string   "transaction_id"
-    t.string   "event"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "bill_id"
+    t.text     "response"
+    t.decimal  "fee",            :precision => 8, :scale => 2
   end
 
   create_table "duels", :force => true do |t|
@@ -189,7 +189,6 @@ ActiveRecord::Schema.define(:version => 20110209211804) do
     t.string   "name"
     t.string   "gender"
     t.string   "locale"
-    t.string   "profile_pic"
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -200,7 +199,6 @@ ActiveRecord::Schema.define(:version => 20110209211804) do
     t.boolean  "candidate"
     t.text     "candidates_story"
     t.boolean  "candidate_post_story_to_wall"
-    t.text     "profile"
     t.integer  "candidates_npo_id"
   end
 

@@ -1,6 +1,7 @@
 @import 'base'
 @import 'card'
 @import 'fancy-buttons'
+@import 'overlays'
 
 #spark
   #new
@@ -72,54 +73,3 @@
       &.recording
         float: right
         
-=overlay
-  display: none
-  width: 750px
-  border: 10px solid #666
-  padding: 10px
-  text-align: left
-  z-index: 100
-
-  border: 10px solid rgba(82, 82, 82, 0.698)
-  +rounded_borders(8px)
-
-  background: #fff
-
-  a.button, input.button
-    +fancy-button(darken(#57b42c, 8))      
-    color: #fff
-    text-decoration: none
-
-#overlay
-  +overlay
-
-  .sidebar
-    +card
-    width: 325px   
-
-  .main_panel
-    width: 425px
-    font-size: 13px
-
-    #actions
-      position: absolute
-      width: 400px
-      bottom: 20px
-      vertical-align: bottom
-      
-#your_story
-  h2
-    margin: 1em 0em
-    
-  .row
-    margin-bottom: .75em
-  
-  .label
-    font-weight: bold
-    padding-right: 10px
-  
-  form
-    textarea
-      width: 400px
-      height: 100px
-

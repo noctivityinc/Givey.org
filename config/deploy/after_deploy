@@ -15,6 +15,9 @@ rake db:migrate --trace >> ~/shared/log/migrate.log 2>&1
 # $scripts_path/log "info" "Updating cron via whenever..."
 # whenever --set environment=production -w 
 
+$scripts_path/log "info" "Updating Wepay API"
+rails runner lib/update_wepay_account.rb
+
 mkdir -p $current_path/tmp/pids
 
 # $scripts_path/log "info" "Starting delayed job..."

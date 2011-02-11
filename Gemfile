@@ -25,6 +25,7 @@ group :default do
   gem 'geo_location' #, :git => 'git://github.com/chrisyour/geo_location.git'
   gem 'hoptoad_notifier'
   gem 'will_paginate', '~> 3.0.beta'
+  gem 'oauth'
   
 end
 

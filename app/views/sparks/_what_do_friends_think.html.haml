@@ -1,0 +1,26 @@
+#what_do_friends_think
+  %h2 We know what you think about your friends...
+  .friends.row
+    - current_user.sparks.decided.sort_by{rand}[0..9].each do |s|
+      .fleft.pic= image_tag s.selected.details.pic_square
+    
+  %h2
+    But what do they think about YOU?
+    
+  .profile_pic= image_tag current_user.profile.details.pic_square
+  
+  %h1.share Share Givey.org and find out.
+  
+  .share_actions.row
+    .share_facebook.fleft= link_to '', "http://www.facebook.com/sharer.php?u=#{CGI.escape(current_user.referral_link)}"
+    .share_twitter.fleft= link_to '', "http://twitter.com/share?text=#{CGI.escape(Question.active.sort_by{rand}.first.name+' Let me know on Givey.org')}&url=#{CGI.escape(current_user.referral_link)}"
+      
+  .share_email
+    %h3 Or share with friends by email.
+    %p 
+      Give them this URL to analyze you on Givey:
+      = text_field_tag 'link', current_user.referral_link
+    
+  #actions.row
+    .fright
+      = link_to image_tag('icons/close.png'), '#', :id => 'close_overlay' 

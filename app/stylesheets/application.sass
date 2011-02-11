@@ -9,7 +9,6 @@
 html, body
   padding: 0px
   margin: 0px  
-  height: 100%
 
 body
   background-color: $primary_color
@@ -32,37 +31,59 @@ body
       overflow: hidden
   
     #header
-      width: 99%
+      width: 100%
+      margin: 0px
       height: 30px
-      padding: 5px 10px
+      padding: 5px 0px
       font-size: .85em
       +black_trans
   
       a
         color: white
   
-      img.profile_pic
-        height: 24px
-        widght: 24px
-        margin-right: 5px
-        vertical-align: baseline
-        border: 2px solid white
+      .left
+        width: 130px
+        #processing_spinner
+          margin: 0px
+          +rounded-borders
+          background: white
+          padding: 2px
+          height: 24px
+          width: 24px
+          vertical-align: top
+          display: none
         
-      #processing_spinner
-        margin: 0px
-        +rounded-borders
-        background: white
-        padding: 2px
-        height: 24px
-        widght: 24px
-        vertical-align: top
-        display: none
+      #candidate_supporter_msg
+        text-align: center
+        color: white
+        font-weight: bold
+        
+        div
+          display: inline
+          
+        img
+          height: 24px
+          widght: 24px
+          margin: 0px 5px
+          vertical-align: baseline
+          border: 2px solid white
+          
+        .candidates_cause
+          color: yellow
+          
+      .right
+        text-align: right
+        width: 130px
+        font-size: 13px
+        padding-right: 3px
+        
+        
 
     #container
       width: 960px
       margin: 0 auto
       padding: 10px 
-      padding-bottom: 100px
+      padding-bottom: 150px
   
       h1, h2, h3, h4, p
         margin-bottom: .75em
@@ -140,7 +161,9 @@ body
         font-size: .80em
         text-transform: uppercase
     
-
+.trigger
+  display: none
+  
 a.button
   +fancy-button(darken(#57b42c, 8))      
   color: #fff

@@ -1,0 +1,125 @@
+=overlay
+  display: none
+  width: 750px
+  border: 10px solid #666
+  padding: 10px
+  text-align: left
+  z-index: 100
+
+  border: 10px solid rgba(82, 82, 82, 0.698)
+  +rounded_borders(8px)
+
+  background: #fff
+
+  a.button, input.button
+    +fancy-button(darken(#57b42c, 8))      
+    color: #fff
+    text-decoration: none
+
+.trigger
+  display: hide
+  
+#overlay, #modal
+  +overlay
+
+  .sidebar
+    +card
+    width: 325px   
+
+  .main_panel
+    width: 425px
+    font-size: 13px
+
+    #actions
+      position: absolute
+      width: 400px
+      bottom: 20px
+      vertical-align: bottom
+      
+  #what_do_friends_think
+    h2
+      margin-bottom: 10px
+    
+    .friends
+      margin-bottom: .75em
+      width: 600px
+      margin: 0 auto
+      
+      .pic
+        padding-right: 10px
+      
+    .profile_pic
+      width: 25px
+      margin: 10px auto
+      
+    h1
+      text-align: center
+      
+    .share_actions
+      width: 450px
+      margin: 15px auto
+      
+      .share_facebook
+        a
+          background: url('/images/buttons/share_facebook.png') no-repeat 0 0
+          width: 224px
+          height: 81px
+          display: block
+        
+          &:hover
+            background: url('/images/buttons/share_facebook.png') no-repeat -81 0
+                
+      .share_twitter
+        a
+          background: url('/images/buttons/share_twitter.png') no-repeat 0 0
+          width: 224px
+          height: 81px
+          display: block
+        
+          &:hover
+            background: url('/images/buttons/share_twitter.png') no-repeat -81 0
+    
+    input
+      font-size: 18px
+      padding: 5px
+      width: 350px
+      
+  #your_story
+    h2
+      margin: 1em 0em
+    
+    .row
+      margin-bottom: .75em
+  
+    .label
+      font-weight: bold
+      padding-right: 10px
+  
+    form
+      textarea
+        width: 400px
+        height: 100px
+
+
+  #meet_a_candidate
+    .candidate
+      .cause
+        text-align: center
+        margin-top: 1em
+      
+      .fb_like
+        width: 260px
+        text-align: center
+        padding: 15px
+
+    h2
+      margin-bottom: 1em
+    
+    .story
+      margin: 1em auto
+      font-size: 1.25em
+      line-height: 1.25em
+      color: #309
+    
+      .middle
+        padding: 0 5px

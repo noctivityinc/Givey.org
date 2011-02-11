@@ -4,15 +4,10 @@ development:
     app_id: '176745529032044'
     api_key: '3cc8c8db3c869419f97c737eb262c3e1'
     app_secret: 'd9281c1aace16a61b9e90785042c9ac5'
-  paypal:
-    cert_id: ZTXAERWAJF26N
-    email: Seller_1294884489_biz@givey.org
-    secret: givegetfun
-    url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
   givey:
-    post_url: 'http://stage.wepay.com'
-    token: e3079fae0f
-    group_id: 95508
+    access_token: '579f6c58ee058480358d1a6261386e8d2078472da644b9a7904c3aa180e05c6b'
+    donate_url: 'https://stage.wepay.com/donate/givey'
+    api_url: 'stage.wepayapi.com'
 
 test:
   domain: test.host
@@ -23,12 +18,21 @@ staging:
     app_id: '176745529032044'
     api_key: '3cc8c8db3c869419f97c737eb262c3e1'
     app_secret: 'd9281c1aace16a61b9e90785042c9ac5'
-  paypal:
-    cert_id: ZTXAERWAJF26N
-    email: Seller_1294884489_biz@givey.org
-    secret: givegetfun
-    url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  givey:
+    access_token: '579f6c58ee058480358d1a6261386e8d2078472da644b9a7904c3aa180e05c6b'
+    donate_url: 'https://stage.wepay.com/donate/givey'
+    api_url: 'stage.wepayapi.com'
 
+beta:
+  domain: givey.org
+  facebook:
+    app_id: '176745529032044'
+    api_key: '3cc8c8db3c869419f97c737eb262c3e1'
+    app_secret: 'd9281c1aace16a61b9e90785042c9ac5'
+  givey:
+    access_token: '40ab94b9b587dd48445c4021a8624d6d2feac601fd0e6be25072bdf363dd7e38'
+    donate_url: 'https://www.wepay.com/donate/givey'
+    api_url: 'stage.wepayapi.com'
 
 production:
   domain: givey.org
@@ -36,8 +40,7 @@ production:
     app_id: '176745529032044'
     api_key: '3cc8c8db3c869419f97c737eb262c3e1'
     app_secret: 'd9281c1aace16a61b9e90785042c9ac5'
-  paypal:
-    cert_id: ZTXAERWAJF26N
-    email: Seller_1294884489_biz@givey.org
-    secret: givegetfun
-    url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  givey:
+    access_token: '40ab94b9b587dd48445c4021a8624d6d2feac601fd0e6be25072bdf363dd7e38'
+    donate_url: 'https://www.wepay.com/donate/givey'
+    api_url: 'stage.wepayapi.com'

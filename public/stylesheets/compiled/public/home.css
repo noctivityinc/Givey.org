@@ -224,6 +224,17 @@
 #home #show .card .frame .box.highlight .header {
   background: #ff6600;
 }
+/* line 135, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card.candidate > .frame > .box > .top {
+  background: url("/images/candidate_bar.png");
+  color: white;
+  width: 242px;
+  text-shadow: #666666 2px 2px 2px;
+}
+/* line 141, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card.candidate > .frame > .box > .sc_menu_wrapper > .header {
+  background: #2e133f;
+}
 /* line 20, ../../../../app/stylesheets/public/home.sass */
 #home #show h1, #home #show h2, #home #show h3 {
   width: 700px;

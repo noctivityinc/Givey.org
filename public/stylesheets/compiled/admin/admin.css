@@ -91,33 +91,45 @@ fieldset.showtastic ol li .value {
 /* line 1, ../../../../app/stylesheets/_flash.sass */
 #flash {
   display: none;
-  width: 98%;
-  padding: 15px;
+  width: 100%;
   border-bottom: 2px solid gray;
   text-align: center;
-  background-color: #f7da73;
+  padding-top: 35px;
+  background-color: #003048;
+  z-index: 2;
+  position: absolute;
+  height: 78px;
+  font-size: 24px;
   -moz-box-shadow: 3px 3px 4px black;
   -webkit-box-shadow: 3px 3px 4px black;
   box-shadow: 3px 3px 4px black;
-  z-index: 2;
+}
+/* line 16, ../../../../app/stylesheets/_flash.sass */
+#flash #flash_close {
+  background: url(/images/icons/flash_close.png) no-repeat;
   position: absolute;
+  width: 32px;
+  height: 32px;
+  right: 32px;
+  display: block;
+  z-index: 3;
 }
-/* line 14, ../../../../app/stylesheets/_flash.sass */
+/* line 25, ../../../../app/stylesheets/_flash.sass */
 #flash #flash_notice {
-  color: black;
+  color: white;
 }
-/* line 17, ../../../../app/stylesheets/_flash.sass */
+/* line 28, ../../../../app/stylesheets/_flash.sass */
 #flash #flash_error,
 #flash #flash_alert {
   color: #cc0000;
 }
 
-/* line 21, ../../../../app/stylesheets/_flash.sass */
+/* line 32, ../../../../app/stylesheets/_flash.sass */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 24, ../../../../app/stylesheets/_flash.sass */
+/* line 35, ../../../../app/stylesheets/_flash.sass */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -127,7 +139,7 @@ fieldset.showtastic ol li .value {
   background-color: #f0f0f0;
   font-size: 12px;
 }
-/* line 33, ../../../../app/stylesheets/_flash.sass */
+/* line 44, ../../../../app/stylesheets/_flash.sass */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -137,11 +149,11 @@ fieldset.showtastic ol li .value {
   background-color: #cc0000;
   color: white;
 }
-/* line 42, ../../../../app/stylesheets/_flash.sass */
+/* line 53, ../../../../app/stylesheets/_flash.sass */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 44, ../../../../app/stylesheets/_flash.sass */
+/* line 55, ../../../../app/stylesheets/_flash.sass */
 .error_messages ul {
   margin: 0;
 }
@@ -207,6 +219,10 @@ body, html {
   text-decoration: underline;
 }
 /* line 34, ../../../../app/stylesheets/admin/admin.sass */
+#content-wrapper #main #admin {
+  margin-bottom: 3em;
+}
+/* line 37, ../../../../app/stylesheets/admin/admin.sass */
 #content-wrapper #actions {
   margin-top: 3em;
 }

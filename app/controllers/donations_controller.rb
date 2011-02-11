@@ -1,56 +1,23 @@
 class DonationsController < ApplicationController
   before_filter :require_user
-  before_filter :get_game
   
-  
+  def new
+    session[:donation_pending] = true
+    session[:donation_complete] = true
+  end
+    
   def index
     @donations = Donation.all
   end
-  
-  def show
-    @donation = Donation.find(params[:id])
-  end
-  
-  def new
-    @donation = Donation.new
-  end
-  
-  def create
-    @donation = Donation.new(params[:donation])
-    if @donation.save
-      flash[:notice] = "Successfully created donation."
-      redirect_to @donation
+    
+  def callback
+    if session[:donation_pending] && current_user.donations.verify_and_create(current_user, params[:transaction])
+      session[:donation_pending] = false # => prevents duplicate recording of donation since its a GET request
+      session[:donation_complete] = true
+      redirect_to sparks_path()
     else
-      render :action => 'new'
+      redirect_to sparks_path
     end
   end
-  
-  def edit
-    @donation = Donation.find(params[:id])
-  end
-  
-  def update
-    @donation = Donation.find(params[:id])
-    if @donation.update_attributes(params[:donation])
-      flash[:notice] = "Successfully updated donation."
-      redirect_to donation_url
-    else
-      render :action => 'edit'
-    end
-  end
-  
-  def destroy
-    @donation = Donation.find(params[:id])
-    @donation.destroy
-    flash[:notice] = "Successfully destroyed donation."
-    redirect_to donations_url
-  end
-  
-  private
 
-  def get_game
-    if params[:gid]
-      @game = Game.find(params[:gid])
-    end
-  end
 end

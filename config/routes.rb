@@ -1,9 +1,13 @@
 Givey::Application.routes.draw do
 
+  resources :donations do
+    collection do
+      get :callback
+    end
+  end
 
-  resources :donations
   resources :npos
-  resources :users do 
+  resources :users do
     resources :friends
   end
 

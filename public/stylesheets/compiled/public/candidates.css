@@ -293,6 +293,17 @@
 #candidates #index .candidate .card .frame .box.highlight .header, #candidates #show .candidate .card .frame .box.highlight .header, #candidate #index .candidate .card .frame .box.highlight .header, #candidate #show .candidate .card .frame .box.highlight .header {
   background: #ff6600;
 }
+/* line 135, ../../../../app/stylesheets/public/_card.sass */
+#candidates #index .candidate .card.candidate > .frame > .box > .top, #candidates #show .candidate .card.candidate > .frame > .box > .top, #candidate #index .candidate .card.candidate > .frame > .box > .top, #candidate #show .candidate .card.candidate > .frame > .box > .top {
+  background: url("/images/candidate_bar.png");
+  color: white;
+  width: 242px;
+  text-shadow: #666666 2px 2px 2px;
+}
+/* line 141, ../../../../app/stylesheets/public/_card.sass */
+#candidates #index .candidate .card.candidate > .frame > .box > .sc_menu_wrapper > .header, #candidates #show .candidate .card.candidate > .frame > .box > .sc_menu_wrapper > .header, #candidate #index .candidate .card.candidate > .frame > .box > .sc_menu_wrapper > .header, #candidate #show .candidate .card.candidate > .frame > .box > .sc_menu_wrapper > .header {
+  background: #2e133f;
+}
 /* line 79, ../../../../app/stylesheets/public/candidates.sass */
 #candidates #index .candidate .card > .frame > .box > .top, #candidates #show .candidate .card > .frame > .box > .top, #candidate #index .candidate .card > .frame > .box > .top, #candidate #show .candidate .card > .frame > .box > .top {
   background: url("/images/candidate_bar.png");

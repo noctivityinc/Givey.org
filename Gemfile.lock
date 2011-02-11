@@ -76,6 +76,7 @@ GEM
       rake
     nifty-generators (0.4.4)
     nokogiri (1.4.4)
+    oauth (0.4.4)
     paperclip (2.3.8)
       activerecord
       activesupport
@@ -145,6 +146,7 @@ DEPENDENCIES
   mocha
   nifty-generators
   nokogiri
+  oauth
   paperclip
   pg (= 0.8.0)
   rails (= 3.0.3)

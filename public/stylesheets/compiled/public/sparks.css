@@ -54,7 +54,7 @@
 
 /* incase an inverted custom gradient isn't specified */
 /* line 176, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class, #overlay a.button, #overlay input.button {
+.fancy-button-reset-base-class, #overlay a.button, #overlay input.button, #modal a.button, #modal input.button {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
   background: url('/images/button_bg.png') repeat-x bottom left;
   margin: 0;
@@ -67,39 +67,408 @@
   font-weight: bold;
 }
 /* line 165, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class::-moz-focus-inner, #overlay a.button::-moz-focus-inner, #overlay input.button::-moz-focus-inner {
+.fancy-button-reset-base-class::-moz-focus-inner, #overlay a.button::-moz-focus-inner, #overlay input.button::-moz-focus-inner, #modal a.button::-moz-focus-inner, #modal input.button::-moz-focus-inner {
   border: none;
   padding: 0;
 }
 /* line 168, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-.fancy-button-reset-base-class:focus, #overlay a.button:focus, #overlay input.button:focus {
+.fancy-button-reset-base-class:focus, #overlay a.button:focus, #overlay input.button:focus, #modal a.button:focus, #modal input.button:focus {
   outline: none;
 }
 
-/* line 8, ../../../../app/stylesheets/public/sparks.sass */
+/* line 19, ../../../../app/stylesheets/public/_overlays.sass */
+.trigger {
+  display: hide;
+}
+
+/* line 22, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay, #modal {
+  display: none;
+  width: 750px;
+  border: 10px solid #666666;
+  padding: 10px;
+  text-align: left;
+  z-index: 100;
+  border: 10px solid rgba(82, 82, 82, 0.698);
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background: white;
+}
+/* line 14, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay a.button, #overlay input.button, #modal a.button, #modal input.button {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1.2em;
+  padding: 0.3em 1em;
+  border-width: 1px;
+  background-color: #3ab700;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #9ee080), color-stop(10%, #66ce36), color-stop(50%, #418721), color-stop(50%, #3b7b1e), color-stop(100%, #4fa428));
+  background-image: -moz-linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
+  background-image: linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
+  border-color: #295615;
+  text-shadow: #123800 0px 1px 1px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -o-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -khtml-background-clip: padding-box;
+  background-clip: padding-box;
+  color: white;
+  text-decoration: none;
+}
+/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#overlay a.button, #overlay a.button:visited, #overlay input.button, #overlay input.button:visited, #modal a.button, #modal a.button:visited, #modal input.button, #modal input.button:visited {
+  color: white;
+}
+/* line 31, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#overlay a.button:hover, #overlay a.button:focus, #overlay input.button:hover, #overlay input.button:focus, #modal a.button:hover, #modal a.button:focus, #modal input.button:hover, #modal input.button:focus {
+  background-color: #35a800;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #95dd73), color-stop(10%, #5fc430), color-stop(50%, #3b7b1e), color-stop(50%, #356e1b), color-stop(100%, #499725));
+  background-image: -moz-linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
+  background-image: linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
+  border-color: #234912;
+  text-shadow: #0d2800 0px 1px 1px;
+}
+/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#overlay a.button:hover, #overlay a.button:hover:visited, #overlay a.button:focus, #overlay a.button:focus:visited, #overlay input.button:hover, #overlay input.button:hover:visited, #overlay input.button:focus, #overlay input.button:focus:visited, #modal a.button:hover, #modal a.button:hover:visited, #modal a.button:focus, #modal a.button:focus:visited, #modal input.button:hover, #modal input.button:hover:visited, #modal input.button:focus, #modal input.button:focus:visited {
+  color: white;
+}
+/* line 36, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#overlay a.button:active, #overlay input.button:active, #modal a.button:active, #modal input.button:active {
+  background-color: #309900;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #3b7b1e), color-stop(30%, #3f8320), color-stop(50%, #37721c), color-stop(50%, #316619), color-stop(100%, #4b9b26));
+  background-image: -moz-linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
+  background-image: linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
+  border-color: #1e3d0f;
+  text-shadow: #081900 0px -1px -1px;
+  -moz-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  -webkit-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  -o-box-shadow: #295615 0 0.08em 0.1em 1px inset;
+  box-shadow: #295615 0 0.08em 0.1em 1px inset;
+}
+/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
+#overlay a.button:active, #overlay a.button:active:visited, #overlay input.button:active, #overlay input.button:active:visited, #modal a.button:active, #modal a.button:active:visited, #modal input.button:active, #modal input.button:active:visited {
+  color: white;
+}
+/* line 25, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay .sidebar, #modal .sidebar {
+  width: 325px;
+}
+/* line 2, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card, #modal .sidebar .card {
+  margin: 0 10px;
+  float: left;
+  background: white;
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+}
+/* line 11, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame, #modal .sidebar .card .frame {
+  width: 260px;
+  height: 350px;
+  padding: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 3px 3px 4px black;
+  -webkit-box-shadow: 3px 3px 4px black;
+  box-shadow: 3px 3px 4px black;
+  border: 2px solid #666666;
+  text-align: left;
+  font-size: 13px;
+}
+/* line 23, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box, #modal .sidebar .card .frame .box {
+  border: 2px solid white;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px;
+  font-size: 0.85em;
+  height: 340px;
+}
+/* line 31, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .top, #modal .sidebar .card .frame .box .top {
+  background: url("/images/header_bar.png");
+  color: white;
+  font-weight: bold;
+  padding: 4px;
+  min-height: 34px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width: 250px;
+  overflow: hidden;
+}
+/* line 42, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .top .name, #overlay .sidebar .card .frame .box .top .profile_pic, #modal .sidebar .card .frame .box .top .name, #modal .sidebar .card .frame .box .top .profile_pic {
+  float: left;
+}
+/* line 45, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .top .name, #modal .sidebar .card .frame .box .top .name {
+  font-size: 18px;
+  line-height: 1em;
+  width: 200px;
+}
+/* line 50, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .top .profile_pic, #modal .sidebar .card .frame .box .top .profile_pic {
+  width: 40px;
+}
+/* line 52, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .top .profile_pic img, #modal .sidebar .card .frame .box .top .profile_pic img {
+  border: 1px solid white;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+}
+/* line 59, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper, #modal .sidebar .card .frame .box .sc_menu_wrapper {
+  height: 300px;
+  width: 250px;
+  overflow: auto;
+}
+/* line 64, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .header, #modal .sidebar .card .frame .box .sc_menu_wrapper .header {
+  background: #f38630;
+  text-transform: uppercase;
+  color: white;
+  padding: 5px;
+  text-align: left;
+  margin: 4px 0px;
+  font-size: 1.1em;
+}
+/* line 73, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats, #modal .sidebar .card .frame .box .sc_menu_wrapper .stats {
+  text-align: left;
+}
+/* line 76, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .even, #modal .sidebar .card .frame .box .sc_menu_wrapper .stats .even {
+  background: #fcfef5;
+}
+/* line 79, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .odd, #modal .sidebar .card .frame .box .sc_menu_wrapper .stats .odd {
+  background: #fafbe3;
+}
+/* line 83, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item, #modal .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item {
+  padding: 5px;
+  border-bottom: 1px solid #cdcfb7;
+  color: black;
+}
+/* line 88, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item .label, #modal .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item .label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-bottom: 2px;
+}
+/* line 94, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .photos, #modal .sidebar .card .frame .box .sc_menu_wrapper .photos {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px 0px;
+}
+/* line 98, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .photos img, #modal .sidebar .card .frame .box .sc_menu_wrapper .photos img {
+  height: 68px;
+  max-width: 80px;
+}
+/* line 102, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .status, #modal .sidebar .card .frame .box .sc_menu_wrapper .status {
+  height: 200px;
+  vertical-align: absmiddle;
+  text-align: center;
+  padding: 10px;
+}
+/* line 108, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .sc_menu_wrapper .story, #modal .sidebar .card .frame .box .sc_menu_wrapper .story {
+  font-size: 1.25em;
+  line-height: 1.25em;
+}
+/* line 112, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .nothing, #modal .sidebar .card .frame .box .nothing {
+  text-align: center;
+}
+/* line 115, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box .nothing img, #modal .sidebar .card .frame .box .nothing img {
+  border: 2px solid #edf2e6;
+  margin: 15px;
+  max-height: 275px;
+}
+/* line 121, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box.highlight, #modal .sidebar .card .frame .box.highlight {
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px;
+  box-shadow: 0 0 5px blue;
+  -webkit-box-shadow: 0 0 5px blue;
+  -moz-box-shadow: 0 0 5px blue;
+}
+/* line 129, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box.highlight .top, #modal .sidebar .card .frame .box.highlight .top {
+  background: url("/images/header_bar_on.png");
+}
+/* line 132, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card .frame .box.highlight .header, #modal .sidebar .card .frame .box.highlight .header {
+  background: #ff6600;
+}
+/* line 135, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card.candidate > .frame > .box > .top, #modal .sidebar .card.candidate > .frame > .box > .top {
+  background: url("/images/candidate_bar.png");
+  color: white;
+  width: 242px;
+  text-shadow: #666666 2px 2px 2px;
+}
+/* line 141, ../../../../app/stylesheets/public/_card.sass */
+#overlay .sidebar .card.candidate > .frame > .box > .sc_menu_wrapper > .header, #modal .sidebar .card.candidate > .frame > .box > .sc_menu_wrapper > .header {
+  background: #2e133f;
+}
+/* line 29, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay .main_panel, #modal .main_panel {
+  width: 425px;
+  font-size: 13px;
+}
+/* line 33, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay .main_panel #actions, #modal .main_panel #actions {
+  position: absolute;
+  width: 400px;
+  bottom: 20px;
+  vertical-align: bottom;
+}
+/* line 40, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think h2, #modal #what_do_friends_think h2 {
+  margin-bottom: 10px;
+}
+/* line 43, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think .friends, #modal #what_do_friends_think .friends {
+  margin-bottom: 0.75em;
+  width: 600px;
+  margin: 0 auto;
+}
+/* line 48, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think .friends .pic, #modal #what_do_friends_think .friends .pic {
+  padding-right: 10px;
+}
+/* line 51, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think .profile_pic, #modal #what_do_friends_think .profile_pic {
+  width: 25px;
+  margin: 10px auto;
+}
+/* line 55, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think h1, #modal #what_do_friends_think h1 {
+  text-align: center;
+}
+/* line 58, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think .share_actions, #modal #what_do_friends_think .share_actions {
+  width: 450px;
+  margin: 15px auto;
+}
+/* line 63, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think .share_actions .share_facebook a, #modal #what_do_friends_think .share_actions .share_facebook a {
+  background: url("/images/buttons/share_facebook.png") no-repeat 0 0;
+  width: 224px;
+  height: 81px;
+  display: block;
+}
+/* line 69, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think .share_actions .share_facebook a:hover, #modal #what_do_friends_think .share_actions .share_facebook a:hover {
+  background: url("/images/buttons/share_facebook.png") no-repeat -81 0;
+}
+/* line 73, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think .share_actions .share_twitter a, #modal #what_do_friends_think .share_actions .share_twitter a {
+  background: url("/images/buttons/share_twitter.png") no-repeat 0 0;
+  width: 224px;
+  height: 81px;
+  display: block;
+}
+/* line 79, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think .share_actions .share_twitter a:hover, #modal #what_do_friends_think .share_actions .share_twitter a:hover {
+  background: url("/images/buttons/share_twitter.png") no-repeat -81 0;
+}
+/* line 82, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #what_do_friends_think input, #modal #what_do_friends_think input {
+  font-size: 18px;
+  padding: 5px;
+  width: 350px;
+}
+/* line 88, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story h2, #modal #your_story h2 {
+  margin: 1em 0em;
+}
+/* line 91, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story .row, #modal #your_story .row {
+  margin-bottom: 0.75em;
+}
+/* line 94, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story .label, #modal #your_story .label {
+  font-weight: bold;
+  padding-right: 10px;
+}
+/* line 99, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story form textarea, #modal #your_story form textarea {
+  width: 400px;
+  height: 100px;
+}
+/* line 106, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #meet_a_candidate .candidate .cause, #modal #meet_a_candidate .candidate .cause {
+  text-align: center;
+  margin-top: 1em;
+}
+/* line 110, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #meet_a_candidate .candidate .fb_like, #modal #meet_a_candidate .candidate .fb_like {
+  width: 260px;
+  text-align: center;
+  padding: 15px;
+}
+/* line 115, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #meet_a_candidate h2, #modal #meet_a_candidate h2 {
+  margin-bottom: 1em;
+}
+/* line 118, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #meet_a_candidate .story, #modal #meet_a_candidate .story {
+  margin: 1em auto;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  color: #330099;
+}
+/* line 124, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #meet_a_candidate .story .middle, #modal #meet_a_candidate .story .middle {
+  padding: 0 5px;
+}
+
+/* line 9, ../../../../app/stylesheets/public/sparks.sass */
 #spark #new #please_wait #actions {
   margin-top: 2em;
 }
-/* line 10, ../../../../app/stylesheets/public/sparks.sass */
+/* line 11, ../../../../app/stylesheets/public/sparks.sass */
 #spark #new #please_wait #actions #wait_btn {
   font-size: 16px;
   padding: 10px;
   width: 150px;
 }
-/* line 14, ../../../../app/stylesheets/public/sparks.sass */
+/* line 15, ../../../../app/stylesheets/public/sparks.sass */
 #spark #new #please_wait #actions #next_btn {
   display: none;
 }
-/* line 17, ../../../../app/stylesheets/public/sparks.sass */
+/* line 18, ../../../../app/stylesheets/public/sparks.sass */
 #spark #new #try_later {
   display: none;
 }
 
-/* line 22, ../../../../app/stylesheets/public/sparks.sass */
+/* line 23, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index {
   position: relative;
 }
-/* line 24, ../../../../app/stylesheets/public/sparks.sass */
+/* line 25, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #playing_field {
   height: 400px;
   padding-left: 25px;
@@ -262,42 +631,53 @@
 #sparks #index #playing_field .card .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 29, ../../../../app/stylesheets/public/sparks.sass */
+/* line 135, ../../../../app/stylesheets/public/_card.sass */
+#sparks #index #playing_field .card.candidate > .frame > .box > .top {
+  background: url("/images/candidate_bar.png");
+  color: white;
+  width: 242px;
+  text-shadow: #666666 2px 2px 2px;
+}
+/* line 141, ../../../../app/stylesheets/public/_card.sass */
+#sparks #index #playing_field .card.candidate > .frame > .box > .sc_menu_wrapper > .header {
+  background: #2e133f;
+}
+/* line 30, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board {
   clear: both;
   margin-bottom: 2em;
 }
-/* line 33, ../../../../app/stylesheets/public/sparks.sass */
+/* line 34, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected {
   width: 600px;
   font-size: 12px;
 }
-/* line 36, ../../../../app/stylesheets/public/sparks.sass */
+/* line 37, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected .pic {
   width: 30px;
   margin-right: 10px;
 }
-/* line 38, ../../../../app/stylesheets/public/sparks.sass */
+/* line 39, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected .pic img {
   width: 24px;
   height: 24px;
   vertical-align: middle;
 }
-/* line 44, ../../../../app/stylesheets/public/sparks.sass */
+/* line 45, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected .text {
   width: 560px;
   text-align: left;
 }
-/* line 47, ../../../../app/stylesheets/public/sparks.sass */
+/* line 48, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected .text .name {
   color: #1a8922;
   font-weight: bold;
 }
-/* line 50, ../../../../app/stylesheets/public/sparks.sass */
+/* line 51, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #selected .text .not_selected_name {
   color: #990000;
 }
-/* line 54, ../../../../app/stylesheets/public/sparks.sass */
+/* line 55, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts {
   filter: alpha(opacity=80);
   -moz-opacity: 0.8;
@@ -310,12 +690,12 @@
   padding: 10px;
   width: 200px;
 }
-/* line 59, ../../../../app/stylesheets/public/sparks.sass */
+/* line 60, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts h1 {
   color: white;
   text-shadow: #333333 2px 2px 2px;
 }
-/* line 63, ../../../../app/stylesheets/public/sparks.sass */
+/* line 64, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question {
   position: relative;
   top: 10px;
@@ -325,279 +705,7 @@
   box-shadow: 3px 3px 4px black;
   border: 2px solid #666666;
 }
-/* line 72, ../../../../app/stylesheets/public/sparks.sass */
+/* line 73, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question.recording {
   float: right;
-}
-
-/* line 93, ../../../../app/stylesheets/public/sparks.sass */
-#overlay {
-  display: none;
-  width: 750px;
-  border: 10px solid #666666;
-  padding: 10px;
-  text-align: left;
-  z-index: 100;
-  border: 10px solid rgba(82, 82, 82, 0.698);
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  background: white;
-}
-/* line 88, ../../../../app/stylesheets/public/sparks.sass */
-#overlay a.button, #overlay input.button {
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -o-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -khtml-border-radius: 6px;
-  border-radius: 6px;
-  font-size: 18px;
-  line-height: 1.2em;
-  padding: 0.3em 1em;
-  border-width: 1px;
-  background-color: #3ab700;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #9ee080), color-stop(10%, #66ce36), color-stop(50%, #418721), color-stop(50%, #3b7b1e), color-stop(100%, #4fa428));
-  background-image: -moz-linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
-  background-image: linear-gradient(top, #9ee080 0%, #66ce36 10%, #418721 50%, #3b7b1e 50%, #4fa428 100%);
-  border-color: #295615;
-  text-shadow: #123800 0px 1px 1px;
-  -moz-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
-  -o-box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
-  box-shadow: rgba(255, 255, 255, 0.359) 0 0 0.1em 1px inset;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding;
-  -o-background-clip: padding-box;
-  -ms-background-clip: padding-box;
-  -khtml-background-clip: padding-box;
-  background-clip: padding-box;
-  color: white;
-  text-decoration: none;
-}
-/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#overlay a.button, #overlay a.button:visited, #overlay input.button, #overlay input.button:visited {
-  color: white;
-}
-/* line 31, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#overlay a.button:hover, #overlay a.button:focus, #overlay input.button:hover, #overlay input.button:focus {
-  background-color: #35a800;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #95dd73), color-stop(10%, #5fc430), color-stop(50%, #3b7b1e), color-stop(50%, #356e1b), color-stop(100%, #499725));
-  background-image: -moz-linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
-  background-image: linear-gradient(top, #95dd73 0%, #5fc430 10%, #3b7b1e 50%, #356e1b 50%, #499725 100%);
-  border-color: #234912;
-  text-shadow: #0d2800 0px 1px 1px;
-}
-/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#overlay a.button:hover, #overlay a.button:hover:visited, #overlay a.button:focus, #overlay a.button:focus:visited, #overlay input.button:hover, #overlay input.button:hover:visited, #overlay input.button:focus, #overlay input.button:focus:visited {
-  color: white;
-}
-/* line 36, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#overlay a.button:active, #overlay input.button:active {
-  background-color: #309900;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #3b7b1e), color-stop(30%, #3f8320), color-stop(50%, #37721c), color-stop(50%, #316619), color-stop(100%, #4b9b26));
-  background-image: -moz-linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
-  background-image: linear-gradient(top, #3b7b1e 0%, #3f8320 30%, #37721c 50%, #316619 50%, #4b9b26 100%);
-  border-color: #1e3d0f;
-  text-shadow: #081900 0px -1px -1px;
-  -moz-box-shadow: #295615 0 0.08em 0.1em 1px inset;
-  -webkit-box-shadow: #295615 0 0.08em 0.1em 1px inset;
-  -o-box-shadow: #295615 0 0.08em 0.1em 1px inset;
-  box-shadow: #295615 0 0.08em 0.1em 1px inset;
-}
-/* line 116, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
-#overlay a.button:active, #overlay a.button:active:visited, #overlay input.button:active, #overlay input.button:active:visited {
-  color: white;
-}
-/* line 96, ../../../../app/stylesheets/public/sparks.sass */
-#overlay .sidebar {
-  width: 325px;
-}
-/* line 2, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card {
-  margin: 0 10px;
-  float: left;
-  background: white;
-  filter: alpha(opacity=100);
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  opacity: 1;
-}
-/* line 11, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame {
-  width: 260px;
-  height: 350px;
-  padding: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 3px 3px 4px black;
-  -webkit-box-shadow: 3px 3px 4px black;
-  box-shadow: 3px 3px 4px black;
-  border: 2px solid #666666;
-  text-align: left;
-  font-size: 13px;
-}
-/* line 23, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box {
-  border: 2px solid white;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  padding: 2px;
-  font-size: 0.85em;
-  height: 340px;
-}
-/* line 31, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .top {
-  background: url("/images/header_bar.png");
-  color: white;
-  font-weight: bold;
-  padding: 4px;
-  min-height: 34px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  width: 250px;
-  overflow: hidden;
-}
-/* line 42, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .top .name, #overlay .sidebar .card .frame .box .top .profile_pic {
-  float: left;
-}
-/* line 45, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .top .name {
-  font-size: 18px;
-  line-height: 1em;
-  width: 200px;
-}
-/* line 50, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .top .profile_pic {
-  width: 40px;
-}
-/* line 52, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .top .profile_pic img {
-  border: 1px solid white;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  width: 30px;
-  height: 30px;
-}
-/* line 59, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper {
-  height: 300px;
-  width: 250px;
-  overflow: auto;
-}
-/* line 64, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper .header {
-  background: #f38630;
-  text-transform: uppercase;
-  color: white;
-  padding: 5px;
-  text-align: left;
-  margin: 4px 0px;
-  font-size: 1.1em;
-}
-/* line 73, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats {
-  text-align: left;
-}
-/* line 76, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .even {
-  background: #fcfef5;
-}
-/* line 79, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .odd {
-  background: #fafbe3;
-}
-/* line 83, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item {
-  padding: 5px;
-  border-bottom: 1px solid #cdcfb7;
-  color: black;
-}
-/* line 88, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper .stats .items .item .label {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.8em;
-  margin-bottom: 2px;
-}
-/* line 94, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper .photos {
-  text-align: center;
-  vertical-align: middle;
-  padding: 5px 0px;
-}
-/* line 98, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper .photos img {
-  height: 68px;
-  max-width: 80px;
-}
-/* line 102, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper .status {
-  height: 200px;
-  vertical-align: absmiddle;
-  text-align: center;
-  padding: 10px;
-}
-/* line 108, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .sc_menu_wrapper .story {
-  font-size: 1.25em;
-  line-height: 1.25em;
-}
-/* line 112, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .nothing {
-  text-align: center;
-}
-/* line 115, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box .nothing img {
-  border: 2px solid #edf2e6;
-  margin: 15px;
-  max-height: 275px;
-}
-/* line 121, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box.highlight {
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  padding: 2px;
-  box-shadow: 0 0 5px blue;
-  -webkit-box-shadow: 0 0 5px blue;
-  -moz-box-shadow: 0 0 5px blue;
-}
-/* line 129, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box.highlight .top {
-  background: url("/images/header_bar_on.png");
-}
-/* line 132, ../../../../app/stylesheets/public/_card.sass */
-#overlay .sidebar .card .frame .box.highlight .header {
-  background: #ff6600;
-}
-/* line 100, ../../../../app/stylesheets/public/sparks.sass */
-#overlay .main_panel {
-  width: 425px;
-  font-size: 13px;
-}
-/* line 104, ../../../../app/stylesheets/public/sparks.sass */
-#overlay .main_panel #actions {
-  position: absolute;
-  width: 400px;
-  bottom: 20px;
-  vertical-align: bottom;
-}
-
-/* line 111, ../../../../app/stylesheets/public/sparks.sass */
-#your_story h2 {
-  margin: 1em 0em;
-}
-/* line 114, ../../../../app/stylesheets/public/sparks.sass */
-#your_story .row {
-  margin-bottom: 0.75em;
-}
-/* line 117, ../../../../app/stylesheets/public/sparks.sass */
-#your_story .label {
-  font-weight: bold;
-  padding-right: 10px;
-}
-/* line 122, ../../../../app/stylesheets/public/sparks.sass */
-#your_story form textarea {
-  width: 400px;
-  height: 100px;
 }

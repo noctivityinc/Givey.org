@@ -286,6 +286,17 @@
 #game #show #playing_field .card .frame .box.highlight .header {
   background: #ff6600;
 }
+/* line 135, ../../../../app/stylesheets/public/_card.sass */
+#game #show #playing_field .card.candidate > .frame > .box > .top {
+  background: url("/images/candidate_bar.png");
+  color: white;
+  width: 242px;
+  text-shadow: #666666 2px 2px 2px;
+}
+/* line 141, ../../../../app/stylesheets/public/_card.sass */
+#game #show #playing_field .card.candidate > .frame > .box > .sc_menu_wrapper > .header {
+  background: #2e133f;
+}
 /* line 50, ../../../../app/stylesheets/public/games.sass */
 #game #show #skip {
   display: none;
@@ -551,6 +562,17 @@
 /* line 132, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box.highlight .header {
   background: #ff6600;
+}
+/* line 135, ../../../../app/stylesheets/public/_card.sass */
+#why_overlay .sidebar .card.candidate > .frame > .box > .top {
+  background: url("/images/candidate_bar.png");
+  color: white;
+  width: 242px;
+  text-shadow: #666666 2px 2px 2px;
+}
+/* line 141, ../../../../app/stylesheets/public/_card.sass */
+#why_overlay .sidebar .card.candidate > .frame > .box > .sc_menu_wrapper > .header {
+  background: #2e133f;
 }
 /* line 99, ../../../../app/stylesheets/public/games.sass */
 #why_overlay .sidebar .npo .card .frame .box .top {
@@ -860,6 +882,17 @@
 /* line 132, ../../../../app/stylesheets/public/_card.sass */
 #winner #winner_overlay #card .card .frame .box.highlight .header {
   background: #ff6600;
+}
+/* line 135, ../../../../app/stylesheets/public/_card.sass */
+#winner #winner_overlay #card .card.candidate > .frame > .box > .top {
+  background: url("/images/candidate_bar.png");
+  color: white;
+  width: 242px;
+  text-shadow: #666666 2px 2px 2px;
+}
+/* line 141, ../../../../app/stylesheets/public/_card.sass */
+#winner #winner_overlay #card .card.candidate > .frame > .box > .sc_menu_wrapper > .header {
+  background: #2e133f;
 }
 /* line 162, ../../../../app/stylesheets/public/games.sass */
 #winner #winner_overlay #pitch {

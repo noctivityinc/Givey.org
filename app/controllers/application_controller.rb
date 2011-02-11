@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   after_filter :record_previous_page
 
-  helper_method :current_user, :facebook_oauth_callback_url, :unfinished_games?, :production?
+  helper_method :current_user, :require_admin, :facebook_oauth_callback_url, :unfinished_games?, :production?
 
   def facebook_oauth_callback_url
     return "http://#{request.host_with_port}/auth/facebook/callback"
@@ -33,6 +33,10 @@ class ApplicationController < ActionController::Base
 
     def current_user
       @current_user ||= User.find_by_id(cookies[:user_id]) unless cookies[:user_id].blank?
+    end
+    
+    def require_admin
+      redirect_to root_url, :notice => 'Unauthorized Access' unless current_user && current_user.admin? 
     end
 
     def record_previous_page

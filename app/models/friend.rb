@@ -14,4 +14,6 @@ class Friend < ActiveRecord::Base
   belongs_to :user
   has_one :profile, :class_name => "Profile", :foreign_key => "uid", :primary_key => "uid"
   
+  scope :random, lambda {|x| order("random()").limit(x)}
+  
 end

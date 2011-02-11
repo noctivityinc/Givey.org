@@ -38,6 +38,8 @@ class Npo < ActiveRecord::Base
     :path => ":rails_root/public/images/npos/:id/:style/:basename.:extension"
     
   before_create :randomize_file_name
+  
+  scope :active, where(:active => true)
 
   has_many :slots
   has_many :campaigns, :through => :slots
@@ -52,10 +54,10 @@ class Npo < ActiveRecord::Base
   private
   
   def randomize_file_name
-    return if photo_file_name.nil?
-    extension = File.extname(photo_file_name).downcase
-    if photo_file_name_changed?
-      self.photo.instance_write(:file_name, "#{ActiveSupport::SecureRandom.hex(16)}#{extension}")
+    return if logo_file_name.nil?
+    extension = File.extname(logo_file_name).downcase
+    if logo_file_name_changed?
+      self.logo.instance_write(:file_name, "#{ActiveSupport::SecureRandom.hex(16)}#{extension}")
     end
   end
 end

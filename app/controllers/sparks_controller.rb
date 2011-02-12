@@ -26,6 +26,14 @@ class SparksController < ApplicationController
   def selected
     render :partial => "selected_list"
   end
+  
+  def reset
+    if !production? && current_user.sparks.destroy_all
+      redirect_to sparks_path, :notice => "Sparks reset.  Enjoy." 
+    else
+      redirect_to sparks_path, :notice => "Sorry, reseting sparks failed." 
+    end
+  end
 
   private
 

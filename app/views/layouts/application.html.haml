@@ -50,6 +50,10 @@
             - if current_user && current_user.admin?
               .nav
                 = link_to "Admin Facility", admin_index_path
+                
+            - unless current_user && production?
+              .nav
+                = link_to "Reset *Sparks", sparks_reset_path, :confirm => "Are you sure you want to remove all sparks?" 
           
           #copyright
             (c) Givey.org 2011

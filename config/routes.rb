@@ -11,7 +11,8 @@ Givey::Application.routes.draw do
     resources :friends
   end
 
-  resources :sparks
+  get 'sparks/reset'
+  resources :sparks 
 
   resources :candidates do
     collection do

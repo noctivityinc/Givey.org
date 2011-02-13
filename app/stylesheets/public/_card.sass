@@ -17,7 +17,7 @@
       -webkit-box-shadow: 3px 3px 4px #000
       box-shadow: 3px 3px 4px #000
       border: 2px solid #666
-      text-align: left
+      text-align: center
       font-size: 13px
 
       .box
@@ -27,6 +27,10 @@
         padding: 2px
         font-size: .85em
         height: 340px
+        
+        .spinner
+          width: 30px
+          margin: 100px auto
 
         .top
           background: url('/images/header_bar.png')
@@ -36,7 +40,7 @@
           min-height: 34px
           -moz-border-radius: 3px
           border-radius: 3px
-          width: 250px
+          width: 245px
           overflow: hidden
 
           .name, .profile_pic
@@ -45,7 +49,21 @@
           .name
             font-size: 18px
             line-height: 1em
-            width: 200px
+            width: 180px
+            
+          .remove_button
+            display: none
+            float: right
+            a
+              display: block
+              width: 18px
+              height: 18px
+              background: url(/images/icons/remove_buttons.png) no-repeat 0 0
+              
+              &:hover
+                background: url(/images/icons/remove_buttons.png) no-repeat 0 -16px
+            
+                
   
           .profile_pic
             width: 40px

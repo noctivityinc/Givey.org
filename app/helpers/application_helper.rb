@@ -47,5 +47,9 @@ module ApplicationHelper
     end
     out.join("\n").html_safe
   end
+  
+  def get_question_array
+    return Question.pick(10).map{|x| "'#{x.name.gsub("'","")}'"}.join(',')
+  end
 
 end

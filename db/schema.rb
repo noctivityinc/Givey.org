@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110211151204) do
+ActiveRecord::Schema.define(:version => 20110212183102) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20110211151204) do
     t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active",     :default => true
   end
 
   add_index "friends", ["uid"], :name => "index_friends_on_uid"

@@ -1,6 +1,7 @@
 class SparksController < ApplicationController
   before_filter :require_user
   before_filter :load_friends, :only => :create
+  before_filter :validate_enough_friends, :only => [:index]
 
   helper_method :sparks_count_display
 
@@ -26,12 +27,27 @@ class SparksController < ApplicationController
   def selected
     render :partial => "selected_list"
   end
-  
+
   def reset
     if !production? && current_user.sparks.destroy_all
-      redirect_to sparks_path, :notice => "Sparks reset.  Enjoy." 
+      redirect_to sparks_path, :notice => "Sparks reset.  Enjoy."
     else
-      redirect_to sparks_path, :notice => "Sorry, reseting sparks failed." 
+      redirect_to sparks_path, :notice => "Sorry, reseting sparks failed."
+    end
+  end
+
+  def defriend
+    @spark = current_user.sparks.find_by_id(params[:id])
+    if @spark
+      @spark.replace_friend(params[:uid]) && @spark.reload
+      current_user.get_friends if current_user.friends.active.count < 20
+      if current_user.friends.active.count < 20
+        render :json => {:status => "not_enough_friends", :url => user_url(current_user, {:over => 1})}
+      else
+        render :json => get_json_response
+      end
+    else
+      render :json => {:status => "error", :message => "Spark not found for user"}
     end
   end
 
@@ -42,11 +58,18 @@ class SparksController < ApplicationController
     end
 
     def load_friends
-      current_user.destroy_and_get_friends if current_user.friends.count < 20 || current_user.friends.outdated?
+      current_user.destroy_and_get_friends if current_user.friends.active.count < 20 || current_user.friends.active.outdated?
     end
 
     def sparks_count_display
       "#{current_user.sparks.decided.count + 1} / #{current_user.sparks.goal}"
+    end
+
+    def validate_enough_friends
+      current_user.get_friends if current_user.friends.active.count < 20
+      if current_user.friends.active.count < 20
+        redirect_to needs_friends_user_url(current_user)
+      end
     end
 
     def get_json_response
@@ -65,19 +88,19 @@ class SparksController < ApplicationController
     end
 
     def meet_candidate_json
-      {:status => 'overlay', :html => render_to_string(:partial => "meet_a_candidate", :locals  => {:candidate => User.random_candidate} )}
+      {:status => "success", :type => 'overlay', :html => render_to_string(:partial => "meet_a_candidate", :locals  => {:candidate => User.random_candidate} )}
     end
 
     def what_do_friends_think_json
-      {:status => 'overlay', :html => render_to_string(:partial => "what_do_friends_think")}
+      {:status => "success", :type => 'overlay', :html => render_to_string(:partial => "what_do_friends_think")}
     end
 
     def your_story_json
-      {:status => 'modal', :post_url => user_friends_path(current_user), :html => render_to_string(:partial => "your_story")}
+      {:status => "success", :type => 'modal', :post_url => user_friends_path(current_user), :html => render_to_string(:partial => "your_story")}
     end
 
     def spark_json
-      json = {:status => 'spark', :html => render_to_string(:partial => "profile", :collection => @spark.friends),
+      json = {:status => "success", :type => 'spark', :html => render_to_string(:partial => "profile", :collection => @spark.friends),
               :question => @spark.question.name, :counts => sparks_count_display,
               :selected_list => render_to_string(:partial => "selected_list"),
               :background => @spark.question.backgrounds.pick.photo(:normal),

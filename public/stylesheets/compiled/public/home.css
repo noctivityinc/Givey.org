@@ -56,15 +56,63 @@
 #home #index #copy {
   margin-top: 30px;
 }
-/* line 9, ../../../../app/stylesheets/public/home.sass */
-#home #index #copy h1 {
+/* line 11, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy #heading h1 {
   width: 600px;
   margin: 0em auto;
   margin-bottom: 0.75em;
+  color: #cc6600;
 }
-/* line 14, ../../../../app/stylesheets/public/home.sass */
-#home #index #copy #choose {
-  padding-top: 20px;
+/* line 17, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy .row {
+  width: 960px;
+}
+/* line 20, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy .row #facebook {
+  width: 250px;
+}
+/* line 22, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy .row #facebook b {
+  font-size: 13px;
+}
+/* line 24, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy .row #facebook .login_button {
+  margin-top: 10px;
+}
+/* line 27, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy .row #facebook .secure, #home #index #copy .row #facebook .user, #home #index #copy .row #facebook .heart {
+  width: 250px;
+  text-align: left;
+  margin-top: 15px;
+}
+/* line 32, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy .row #facebook .secure img, #home #index #copy .row #facebook .user img, #home #index #copy .row #facebook .heart img {
+  text-align: top;
+  width: 30px;
+  margin-right: 3px;
+}
+/* line 36, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy .row #facebook .secure p, #home #index #copy .row #facebook .user p, #home #index #copy .row #facebook .heart p {
+  width: 200px;
+  font-size: 10pt;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 42, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy .row #screen_shot {
+  position: relative;
+  width: 650px;
+  height: 300px;
+  background: url(/images/ss_sample.png) no-repeat;
+}
+/* line 48, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy .row #screen_shot .question {
+  margin-top: 30px;
+  font-size: 1.1em;
+}
+/* line 51, ../../../../app/stylesheets/public/home.sass */
+#home #index #copy #about {
+  text-align: left;
 }
 /* line 2, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card {
@@ -87,7 +135,7 @@
   -webkit-box-shadow: 3px 3px 4px black;
   box-shadow: 3px 3px 4px black;
   border: 2px solid #666666;
-  text-align: left;
+  text-align: center;
   font-size: 13px;
 }
 /* line 23, ../../../../app/stylesheets/public/_card.sass */
@@ -100,6 +148,11 @@
   height: 340px;
 }
 /* line 31, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .spinner {
+  width: 30px;
+  margin: 100px auto;
+}
+/* line 35, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .top {
   background: url("/images/header_bar.png");
   color: white;
@@ -108,24 +161,40 @@
   min-height: 34px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  width: 250px;
+  width: 245px;
   overflow: hidden;
 }
-/* line 42, ../../../../app/stylesheets/public/_card.sass */
+/* line 46, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .top .name, #home #show .card .frame .box .top .profile_pic {
   float: left;
 }
-/* line 45, ../../../../app/stylesheets/public/_card.sass */
+/* line 49, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .top .name {
   font-size: 18px;
   line-height: 1em;
-  width: 200px;
+  width: 180px;
 }
-/* line 50, ../../../../app/stylesheets/public/_card.sass */
+/* line 54, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .top .remove_button {
+  display: none;
+  float: right;
+}
+/* line 57, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .top .remove_button a {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url(/images/icons/remove_buttons.png) no-repeat 0 0;
+}
+/* line 63, ../../../../app/stylesheets/public/_card.sass */
+#home #show .card .frame .box .top .remove_button a:hover {
+  background: url(/images/icons/remove_buttons.png) no-repeat 0 -16px;
+}
+/* line 68, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .top .profile_pic {
   width: 40px;
 }
-/* line 52, ../../../../app/stylesheets/public/_card.sass */
+/* line 70, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
@@ -133,13 +202,13 @@
   width: 30px;
   height: 30px;
 }
-/* line 59, ../../../../app/stylesheets/public/_card.sass */
+/* line 77, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
 }
-/* line 64, ../../../../app/stylesheets/public/_card.sass */
+/* line 82, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper .header {
   background: #f38630;
   text-transform: uppercase;
@@ -149,65 +218,65 @@
   margin: 4px 0px;
   font-size: 1.1em;
 }
-/* line 73, ../../../../app/stylesheets/public/_card.sass */
+/* line 91, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper .stats {
   text-align: left;
 }
-/* line 76, ../../../../app/stylesheets/public/_card.sass */
+/* line 94, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper .stats .even {
   background: #fcfef5;
 }
-/* line 79, ../../../../app/stylesheets/public/_card.sass */
+/* line 97, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper .stats .odd {
   background: #fafbe3;
 }
-/* line 83, ../../../../app/stylesheets/public/_card.sass */
+/* line 101, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper .stats .items .item {
   padding: 5px;
   border-bottom: 1px solid #cdcfb7;
   color: black;
 }
-/* line 88, ../../../../app/stylesheets/public/_card.sass */
+/* line 106, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper .stats .items .item .label {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8em;
   margin-bottom: 2px;
 }
-/* line 94, ../../../../app/stylesheets/public/_card.sass */
+/* line 112, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper .photos {
   text-align: center;
   vertical-align: middle;
   padding: 5px 0px;
 }
-/* line 98, ../../../../app/stylesheets/public/_card.sass */
+/* line 116, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper .photos img {
   height: 68px;
   max-width: 80px;
 }
-/* line 102, ../../../../app/stylesheets/public/_card.sass */
+/* line 120, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper .status {
   height: 200px;
   vertical-align: absmiddle;
   text-align: center;
   padding: 10px;
 }
-/* line 108, ../../../../app/stylesheets/public/_card.sass */
+/* line 126, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .sc_menu_wrapper .story {
   font-size: 1.25em;
   line-height: 1.25em;
 }
-/* line 112, ../../../../app/stylesheets/public/_card.sass */
+/* line 130, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .nothing {
   text-align: center;
 }
-/* line 115, ../../../../app/stylesheets/public/_card.sass */
+/* line 133, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box .nothing img {
   border: 2px solid #edf2e6;
   margin: 15px;
   max-height: 275px;
 }
-/* line 121, ../../../../app/stylesheets/public/_card.sass */
+/* line 139, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box.highlight {
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -216,92 +285,92 @@
   -webkit-box-shadow: 0 0 5px blue;
   -moz-box-shadow: 0 0 5px blue;
 }
-/* line 129, ../../../../app/stylesheets/public/_card.sass */
+/* line 147, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box.highlight .top {
   background: url("/images/header_bar_on.png");
 }
-/* line 132, ../../../../app/stylesheets/public/_card.sass */
+/* line 150, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card .frame .box.highlight .header {
   background: #ff6600;
 }
-/* line 135, ../../../../app/stylesheets/public/_card.sass */
+/* line 153, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card.candidate > .frame > .box > .top {
   background: url("/images/candidate_bar.png");
   color: white;
   width: 242px;
   text-shadow: #666666 2px 2px 2px;
 }
-/* line 141, ../../../../app/stylesheets/public/_card.sass */
+/* line 159, ../../../../app/stylesheets/public/_card.sass */
 #home #show .card.candidate > .frame > .box > .sc_menu_wrapper > .header {
   background: #2e133f;
 }
-/* line 20, ../../../../app/stylesheets/public/home.sass */
+/* line 57, ../../../../app/stylesheets/public/home.sass */
 #home #show h1, #home #show h2, #home #show h3 {
   width: 700px;
   margin: 0.75em auto;
 }
-/* line 24, ../../../../app/stylesheets/public/home.sass */
+/* line 61, ../../../../app/stylesheets/public/home.sass */
 #home #show #cards {
   width: 750px;
   margin: 0 auto;
 }
-/* line 28, ../../../../app/stylesheets/public/home.sass */
+/* line 65, ../../../../app/stylesheets/public/home.sass */
 #home #show #cards .heart {
   padding: 100px 20px;
 }
-/* line 30, ../../../../app/stylesheets/public/home.sass */
+/* line 67, ../../../../app/stylesheets/public/home.sass */
 #home #show #cards .heart img {
   width: 100px;
 }
-/* line 33, ../../../../app/stylesheets/public/home.sass */
+/* line 70, ../../../../app/stylesheets/public/home.sass */
 #home #show #cards .card {
   margin-bottom: 40px;
 }
-/* line 37, ../../../../app/stylesheets/public/home.sass */
+/* line 74, ../../../../app/stylesheets/public/home.sass */
 #home #index #facebook, #home #show #facebook {
   width: 300px;
   margin: 1em auto;
   text-align: center;
 }
-/* line 42, ../../../../app/stylesheets/public/home.sass */
+/* line 79, ../../../../app/stylesheets/public/home.sass */
 #home #index #not_user, #home #show #not_user {
   font-size: 12px;
   margin-top: 5px;
 }
-/* line 46, ../../../../app/stylesheets/public/home.sass */
+/* line 83, ../../../../app/stylesheets/public/home.sass */
 #home #index #friends, #home #show #friends {
   width: 500px;
   margin: 20px auto;
 }
-/* line 50, ../../../../app/stylesheets/public/home.sass */
+/* line 87, ../../../../app/stylesheets/public/home.sass */
 #home #index #logo, #home #show #logo {
   width: 400px;
   margin: 0 auto;
   padding-top: 5em;
 }
-/* line 55, ../../../../app/stylesheets/public/home.sass */
+/* line 92, ../../../../app/stylesheets/public/home.sass */
 #home #index #logo img, #home #show #logo img {
   width: 350px;
 }
-/* line 60, ../../../../app/stylesheets/public/home.sass */
+/* line 97, ../../../../app/stylesheets/public/home.sass */
 #home #not_yet #npos .npo {
   margin: 10px;
 }
-/* line 64, ../../../../app/stylesheets/public/home.sass */
+/* line 101, ../../../../app/stylesheets/public/home.sass */
 #home #beta_test ul {
   margin: 2em 0em;
   text-align: left;
   margin-left: 200px;
   width: 500px;
 }
-/* line 70, ../../../../app/stylesheets/public/home.sass */
+/* line 107, ../../../../app/stylesheets/public/home.sass */
 #home #beta_test ul li {
   list-style: disc;
   text-align: left;
   margin: 1.25em 0em;
   line-height: 1.5em;
 }
-/* line 76, ../../../../app/stylesheets/public/home.sass */
+/* line 113, ../../../../app/stylesheets/public/home.sass */
 #home #beta_test #actions {
   margin-top: 2em;
   text-align: center;

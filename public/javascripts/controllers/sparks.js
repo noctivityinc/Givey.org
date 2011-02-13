@@ -1,9 +1,24 @@
 jQuery(document).ready(function($) {
   
+  $('.remove_button').live('click',function() {
+    event.preventDefault()
+    $(this).closest('.box').html("<img src='/images/spinner.gif' class='spinner'>");
+    return false;
+  }).live('ajax:success', function(event, resp, status, xhr) {
+    if(resp.status=='success') {
+      $('#playing_field').html(resp.html)
+      $('.sc_menu_wrapper').jScrollPane();
+     } else if (resp.status=='not_enough_friends') {
+       no_more_friends(resp.url);
+     }
+  });
+  
   $('.card.clickable .box').live("mouseover",function(e){
     $(this).addClass('highlight')
+    $(this).find('.remove_button').show()
   }).live("mouseout",function(e){
     $(this).removeClass('highlight')
+    $(this).find('.remove_button').hide()
   }).live("click",function(){
     card = $(this).closest('.card');
     postSelected(card)
@@ -33,7 +48,7 @@ jQuery(document).ready(function($) {
   
   function handleSelectedResponse(resp) {
       handlePostCallback(resp)
-      switch(resp.status) {
+      switch(resp.type) {
       case 'spark':
         $('.card').fadeOut();
         $('.question').text('next question!').css('color','black')
@@ -100,6 +115,10 @@ jQuery(document).ready(function($) {
    
    function reloadSelectedList(resp) {
      $('#selected').html(resp.selected_list)
+   }
+   
+   function no_more_friends(url) {
+     location.href = url
    }
 
    var overlayDiv = $('#trigger_overlay').overlay({

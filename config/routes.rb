@@ -9,19 +9,17 @@ Givey::Application.routes.draw do
   resources :npos
   resources :users do
     resources :friends
+    member do
+      get :needs_friends
+    end
   end
 
   get 'sparks/reset'
-  resources :sparks 
-
-  resources :candidates do
-    collection do
-      get :story
-      put :submit_story
-      get :not_the_winner
+  resources :sparks do
+    member do
+      get :defriend
     end
   end
-  match "/c/:token"  => "candidates#new"
 
   match "/auth/:provider/callback" => "sessions#create"
   match 'access_denied', :to => "sessions#access_denied", :as => "access_denied"

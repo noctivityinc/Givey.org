@@ -33,11 +33,11 @@ class User < ActiveRecord::Base
   has_many :donations
   has_many :friends, :dependent => :destroy  do
     def pick(n=3)
-      self.sort_by{rand}[0..(n-1)]
+      active.sort_by{rand}[0..(n-1)]
     end
 
     def outdated?
-      return maximum(:created_at) < 3.days.ago
+      return active.maximum(:created_at) < 3.days.ago
     end
   end
 
@@ -75,7 +75,9 @@ class User < ActiveRecord::Base
   end
 
   def prepare_a_spark
-    return sparks.undecided.first if sparks.undecided.first
+    spark = sparks.undecided.first 
+    spark.validate && spark.reload if spark
+    return spark if spark
 
     question = Question.active.sort_by{rand}.first
     spark_friends = self.friends.pick

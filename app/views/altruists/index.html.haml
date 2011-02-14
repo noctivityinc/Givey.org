@@ -1,0 +1,23 @@
+- title "Most Altruistic Souls", false
+#altruists
+  #index.trans
+    %h1 Most Altruistic Souls
+
+    .display= page_entries_info @altruists, :entry_name  => 'altruists'
+
+    - @altruists.each_with_index do |a,ndx|
+      .altruist.fleft.row
+        .fleft= image_tag a.details.pic_square
+        .fleft
+          .name.cabin
+            = link_to a.details.name, "http://www.facebook.com/profile.php?id=#{a.uid}", :target => "_blank"
+          - if a.user && a.user.candidate?
+            %span.candidate
+              supports
+              %span.cause= a.user.candidates_npo.name
+          .rank_score
+            .score.cabin= "##{rank(ndx)}"
+            .rank= " with #{pluralize(a.score,'Altruism Point')}"
+        
+    .paginate
+      = will_paginate @altruists

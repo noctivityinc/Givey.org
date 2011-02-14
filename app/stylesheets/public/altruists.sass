@@ -1,0 +1,39 @@
+@import 'base'
+@import 'card'
+
+#altruists
+  #index
+    +card
+    
+    .display
+      margin-bottom: 25px
+      font-size: 13px
+    
+    .altruist
+      padding-bottom: 40px
+      .name
+        padding-left: 20px
+        
+        a
+          text-decoration: none
+          color: #02517F
+          
+          &:hover
+            text-decoration: underline
+            
+      .candidate
+        .cause
+          font-weight: bold
+          color: #3D024F
+      
+      .rank_score
+        clear: both
+        padding-top: 10px
+        text-align: center
+        width: 260px
+        .score
+          font-size: 24px
+          text-shadow: #999 2px 2px 2px
+          display: inline
+        .rank
+          display: inline

@@ -10,7 +10,7 @@
         %h1.question= @spark.question.name
 
       #playing_field
-        = render(:partial => "profile", :collection => @spark.friends)
+        = render(:partial => "shared/profile", :collection => @spark.friends)
 
       #score_board.row
         #selected.fleft= render :partial => 'selected_list'

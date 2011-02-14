@@ -70,10 +70,15 @@ class User < ActiveRecord::Base
     return "#{first_name} #{last_initial}."
   end
 
+  def candidate?
+    candidate
+  end
+
+
   def self.random_candidate
     self.candidates.sort_by{rand}.first
   end
-
+  
   def prepare_a_spark
     spark = sparks.undecided.first
     spark.validate && spark.reload if spark

@@ -38,16 +38,16 @@
   margin-top: 2em;
 }
 
-/* line 90, ../../../../app/stylesheets/_base.sass */
+/* line 98, ../../../../app/stylesheets/_base.sass */
 .row {
   overflow: hidden;
   width: 100%;
 }
-/* line 94, ../../../../app/stylesheets/_base.sass */
+/* line 102, ../../../../app/stylesheets/_base.sass */
 .row .fleft {
   float: left;
 }
-/* line 97, ../../../../app/stylesheets/_base.sass */
+/* line 105, ../../../../app/stylesheets/_base.sass */
 .row .fright {
   float: right;
 }

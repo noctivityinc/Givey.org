@@ -104,11 +104,11 @@ class SparksController < ApplicationController
     end
 
     def spark_json
-      json = {:status => "success", :type => 'spark', :html => render_to_string(:partial => "profile", :collection => @spark.friends),
+      json = {:status => "success", :type => 'spark', :html => render_to_string(:partial => "/shared/profile", :collection => @spark.friends),
               :question => @spark.question.name, :counts => sparks_count_display,
               :selected_list => render_to_string(:partial => "selected_list"),
               :background => @spark.question.backgrounds.pick.photo(:normal),
-              :candidate_supporter_msg  => render_to_string(:partial => '/layouts/candidate_supporter_msg', :locals  => {:candidate => User.random_candidate})}
+              :candidate_supporter_msg  => render_to_string(:partial => '/shared/candidate_supporter_msg', :locals  => {:candidate => User.random_candidate})}
       json.merge!({:post_url => user_friends_path(current_user)}) if ((current_user.sparks.decided.count + 1) % 20 == 0)
       return json
     end

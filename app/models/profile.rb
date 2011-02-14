@@ -13,7 +13,7 @@
 #
 
 class Profile < ActiveRecord::Base
-  MIN_REQUIRED = 3
+  MIN_REQUIRED = 1
   serialize :details
   serialize :photos
   
@@ -22,8 +22,10 @@ class Profile < ActiveRecord::Base
   has_many :questions_where_selected, :class_name => "Question", :finder_sql => 'SELECT q.* FROM questions q INNER JOIN sparks s ON q.id = s.question_id WHERE s.winner_uid = \'#{uid}\''
   has_many :questions_where_not_selected, :class_name => "Question", :finder_sql => 'SELECT q.* FROM questions q INNER JOIN sparks s ON q.id = s.question_id WHERE s.winner_uid <> \'#{uid}\' AND (s.friend_uid_1 = \'#{uid}\' OR s.friend_uid_2 = \'#{uid}\' OR s.friend_uid_3 = \'#{uid}\')'
   has_many :friend_lists, :class_name => 'User', :finder_sql => 'SELECT u.* FROM users u INNER JOIN friends f ON u.id = f.user_id WHERE f.uid = \'#{uid}\''
+  belongs_to :user, :class_name => "User", :foreign_key => "uid", :primary_key => "uid" 
 
-  scope :scorable, where("friend_list_count >= #{MIN_REQUIRED}")
+  scope :scorable, where("score > 0").where("friend_list_count >= #{MIN_REQUIRED}")
+  scope :by_score, order("score DESC")
 
   def scorable?
     friend_list_count >= MIN_REQUIRED

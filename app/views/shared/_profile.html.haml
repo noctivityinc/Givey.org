@@ -4,7 +4,8 @@
       .top
         .profile_pic= image_tag profile.details.pic_square
         .name= profile.details.name
-        .remove_button= link_to '', defriend_spark_path(@spark, {:uid => profile.uid}), :remote => true, :confirm => "Are you SURE you want to remove this friend from Givey?  This will prevent them from appearing in the future and remove any previous altruism points you may have given them.", :title => "Remove #{profile.details.name} from your Givey"  
+        - if @spark
+          .remove_button= link_to '', defriend_spark_path(@spark, {:uid => profile.uid}), :remote => true, :confirm => "Are you SURE you want to remove this friend from Givey?  This will prevent them from appearing in the future and remove any previous altruism points you may have given them.", :title => "Remove #{profile.details.name} from your Givey"  
 
       - if stuff_to_display(profile)
         .sc_menu_wrapper

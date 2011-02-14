@@ -1,3 +1,9 @@
-= image_tag candidate.profile.details.pic_square
-= "#{candidate.public_display_name} joined Givey to support"
-.candidates_cause= candidate.candidates_npo.name
+%table{:align => "center"}
+  %tr
+    %td= image_tag candidate.profile.details.pic_square
+    %td
+      %em random givey.org altruist...
+      %br
+      .statement
+        = "#{candidate.public_display_name} joined Givey to support"
+        .candidates_cause= candidate.candidates_npo.name

@@ -54,22 +54,29 @@ body
           display: none
         
       #candidate_supporter_msg
-        text-align: center
         color: white
-        font-weight: bold
+
+        table
+          margin: 0 auto
         
-        div
-          display: inline
+          img
+            height: 24px
+            widght: 24px
+            margin: 0px 5px
+            vertical-align: baseline
+            border: 2px solid white
+
+          em
+            font-size: 11px
+            font-style: italic
           
-        img
-          height: 24px
-          widght: 24px
-          margin: 0px 5px
-          vertical-align: baseline
-          border: 2px solid white
+          .statement
+            font-weight: bold
+            margin-top: 3px
           
-        .candidates_cause
-          color: yellow
+            .candidates_cause
+              color: yellow
+              display: inline
           
       .right
         text-align: right

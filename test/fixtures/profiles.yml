@@ -2,12 +2,13 @@
 #
 # Table name: profiles
 #
-#  id         :integer         not null, primary key
-#  uid        :string(255)
-#  details    :text
-#  photos     :text
-#  created_at :datetime
-#  updated_at :datetime
+#  id                :integer         not null, primary key
+#  uid               :string(255)
+#  details           :text
+#  photos            :text
+#  created_at        :datetime
+#  updated_at        :datetime
+#  friend_list_count :integer
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

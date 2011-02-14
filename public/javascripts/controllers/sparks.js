@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
       if($(this).attr('givey:uid')!=card.attr('givey:uid')) $(this).hide();
     })
     
-    $('.question').text('recording...').css('color','red')
+    $('.question').text('scoring altruist...').css('color','red')
     $('#question').css('top','200px').css('width','600px').addClass('recording').fadeIn()
     
     url = card.attr('givey:spark_url')

@@ -697,49 +697,58 @@ body #main #header .left #processing_spinner {
 }
 /* line 56, ../../../app/stylesheets/application.sass */
 body #main #header #candidate_supporter_msg {
-  text-align: center;
   color: white;
-  font-weight: bold;
 }
-/* line 61, ../../../app/stylesheets/application.sass */
-body #main #header #candidate_supporter_msg div {
-  display: inline;
+/* line 59, ../../../app/stylesheets/application.sass */
+body #main #header #candidate_supporter_msg table {
+  margin: 0 auto;
 }
-/* line 64, ../../../app/stylesheets/application.sass */
-body #main #header #candidate_supporter_msg img {
+/* line 62, ../../../app/stylesheets/application.sass */
+body #main #header #candidate_supporter_msg table img {
   height: 24px;
   widght: 24px;
   margin: 0px 5px;
   vertical-align: baseline;
   border: 2px solid white;
 }
-/* line 71, ../../../app/stylesheets/application.sass */
-body #main #header #candidate_supporter_msg .candidates_cause {
-  color: yellow;
+/* line 69, ../../../app/stylesheets/application.sass */
+body #main #header #candidate_supporter_msg table em {
+  font-size: 11px;
+  font-style: italic;
 }
-/* line 74, ../../../app/stylesheets/application.sass */
+/* line 73, ../../../app/stylesheets/application.sass */
+body #main #header #candidate_supporter_msg table .statement {
+  font-weight: bold;
+  margin-top: 3px;
+}
+/* line 77, ../../../app/stylesheets/application.sass */
+body #main #header #candidate_supporter_msg table .statement .candidates_cause {
+  color: yellow;
+  display: inline;
+}
+/* line 81, ../../../app/stylesheets/application.sass */
 body #main #header .right {
   text-align: right;
   width: 130px;
   font-size: 13px;
   padding-right: 3px;
 }
-/* line 82, ../../../app/stylesheets/application.sass */
+/* line 89, ../../../app/stylesheets/application.sass */
 body #main #container {
   width: 960px;
   margin: 0 auto;
   padding: 10px;
   padding-bottom: 150px;
 }
-/* line 88, ../../../app/stylesheets/application.sass */
+/* line 95, ../../../app/stylesheets/application.sass */
 body #main #container h1, body #main #container h2, body #main #container h3, body #main #container h4, body #main #container p {
   margin-bottom: 0.75em;
 }
-/* line 91, ../../../app/stylesheets/application.sass */
+/* line 98, ../../../app/stylesheets/application.sass */
 body #main #container h1.beta, body #main #container h2.beta, body #main #container h3.beta, body #main #container h4.beta, body #main #container p.beta {
   color: red;
 }
-/* line 94, ../../../app/stylesheets/application.sass */
+/* line 101, ../../../app/stylesheets/application.sass */
 body #main #container .trans {
   padding: 10px;
   margin-bottom: 10px;
@@ -747,7 +756,7 @@ body #main #container .trans {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 100, ../../../app/stylesheets/application.sass */
+/* line 107, ../../../app/stylesheets/application.sass */
 body #main #container .trans a.button, body #main #container .trans input.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -812,31 +821,31 @@ body #main #container .trans a.button:active, body #main #container .trans input
 body #main #container .trans a.button:active, body #main #container .trans a.button:active:visited, body #main #container .trans input.button:active, body #main #container .trans input.button:active:visited {
   color: white;
 }
-/* line 105, ../../../app/stylesheets/application.sass */
+/* line 112, ../../../app/stylesheets/application.sass */
 body #main #container #copy {
   margin: 0.25em auto;
   text-align: center;
 }
-/* line 109, ../../../app/stylesheets/application.sass */
+/* line 116, ../../../app/stylesheets/application.sass */
 body #main #container #copy.boxit {
   padding: 15px;
   background: white;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 115, ../../../app/stylesheets/application.sass */
+/* line 122, ../../../app/stylesheets/application.sass */
 body #main #container #copy h1 {
   text-align: center;
 }
-/* line 118, ../../../app/stylesheets/application.sass */
+/* line 125, ../../../app/stylesheets/application.sass */
 body #main #container #copy h2 {
   text-align: center;
 }
-/* line 121, ../../../app/stylesheets/application.sass */
+/* line 128, ../../../app/stylesheets/application.sass */
 body #main #container #copy h3 {
   text-align: center;
 }
-/* line 124, ../../../app/stylesheets/application.sass */
+/* line 131, ../../../app/stylesheets/application.sass */
 body #main #container #copy p {
   font-size: 12pt;
   width: 650px;
@@ -844,11 +853,11 @@ body #main #container #copy p {
   line-height: 1.25em;
   display: block;
 }
-/* line 131, ../../../app/stylesheets/application.sass */
+/* line 138, ../../../app/stylesheets/application.sass */
 body #main #container #copy.justify {
   text-align: left;
 }
-/* line 134, ../../../app/stylesheets/application.sass */
+/* line 141, ../../../app/stylesheets/application.sass */
 body #main #footer {
   position: absolute;
   bottom: 0;
@@ -859,22 +868,22 @@ body #main #footer {
   text-align: center;
   family: "Lucinda Grande";
 }
-/* line 144, ../../../app/stylesheets/application.sass */
+/* line 151, ../../../app/stylesheets/application.sass */
 body #main #footer a {
   color: #333333;
   text-transform: uppercase;
   font-size: 0.9em;
 }
-/* line 149, ../../../app/stylesheets/application.sass */
+/* line 156, ../../../app/stylesheets/application.sass */
 body #main #footer a:hover {
   color: red;
 }
-/* line 153, ../../../app/stylesheets/application.sass */
+/* line 160, ../../../app/stylesheets/application.sass */
 body #main #footer #navs .nav {
   display: inline;
   padding-right: 15px;
 }
-/* line 157, ../../../app/stylesheets/application.sass */
+/* line 164, ../../../app/stylesheets/application.sass */
 body #main #footer #copyright {
   clear: both;
   padding-top: 2em;
@@ -883,12 +892,12 @@ body #main #footer #copyright {
   text-transform: uppercase;
 }
 
-/* line 164, ../../../app/stylesheets/application.sass */
+/* line 171, ../../../app/stylesheets/application.sass */
 .trigger {
   display: none;
 }
 
-/* line 167, ../../../app/stylesheets/application.sass */
+/* line 174, ../../../app/stylesheets/application.sass */
 a.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -954,7 +963,7 @@ a.button:active, a.button:active:visited {
   color: white;
 }
 
-/* line 172, ../../../app/stylesheets/application.sass */
+/* line 179, ../../../app/stylesheets/application.sass */
 .gray-button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;

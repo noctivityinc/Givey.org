@@ -167,12 +167,12 @@ class User < ActiveRecord::Base
     def save_friends(friends)
       friends.each do |f|
         self.friends.create!(:uid => f.uid.to_s)
-        profile = Profile.where(:uid => f.uid.to_s).where('updated_at > ?',1.day.ago)
-        if profile.empty?
-          profile = Profile.create!(:uid => f.uid, :details => f.details, :photos => f.photos, :friend_list_count => 1)
-        else
+        profile = Profile.find(:first, :conditions => ['uid = ? AND updated_at > ?',f.uid.to_s, 1.day.ago])
+        if profile
           profile.update_attributes(:details => f.details, :photos => f.photos)
           profile.update_friends_list_count!     # => updates profile table for the user with the latest count for scoring purposes
+        else
+          profile = Profile.create!(:uid => f.uid, :details => f.details, :photos => f.photos, :friend_list_count => 1)
         end
       end
     end

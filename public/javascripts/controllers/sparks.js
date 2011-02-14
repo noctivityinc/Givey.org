@@ -43,7 +43,10 @@ jQuery(document).ready(function($) {
   }
   
   function timedResponse(resp) {
-    window.setTimeout(function(){handleSelectedResponse(resp)},1000)
+    if(resp.status == 'success')
+      window.setTimeout(function(){handleSelectedResponse(resp)},1000)
+    else if(resp.status == 'error')
+      location.reload(true)
   }
   
   function handleSelectedResponse(resp) {

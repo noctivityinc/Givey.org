@@ -56,6 +56,11 @@ class Spark < ActiveRecord::Base
       self.update_attribute(:friend_uid_3, new_friend_uid) if self.friend_uid_3 == uid
     end
   end
+  
+  def update_winner!(uid)
+    self.update_attribute(:winner_uid, uid)
+    selected.update_score!(self.question.value)
+  end
 
   private
 

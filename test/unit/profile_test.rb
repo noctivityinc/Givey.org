@@ -9,6 +9,7 @@
 #  created_at        :datetime
 #  updated_at        :datetime
 #  friend_list_count :integer
+#  score             :integer
 #
 
 require 'test_helper'

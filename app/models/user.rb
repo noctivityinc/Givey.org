@@ -51,12 +51,12 @@ class User < ActiveRecord::Base
       end
     end
   end
-  
-  
+
+
   belongs_to :candidates_npo, :class_name => "Npo"
-  
+
   scope :candidates, where(:candidate => true)
-  
+
   def admin?
     self.admin
   end
@@ -64,18 +64,18 @@ class User < ActiveRecord::Base
   def first_name
     self.name.split(/\s/)[0]
   end
-  
+
   def public_display_name
     last_initial = self.name.split(/\s/)[1][0]
     return "#{first_name} #{last_initial}."
   end
-  
+
   def self.random_candidate
     self.candidates.sort_by{rand}.first
   end
 
   def prepare_a_spark
-    spark = sparks.undecided.first 
+    spark = sparks.undecided.first
     spark.validate && spark.reload if spark
     return spark if spark
 
@@ -126,7 +126,7 @@ class User < ActiveRecord::Base
     save_friends(friends)
     return true
   end
-  
+
   def destroy_and_get_friends
     self.friends.destroy_all
     self.get_friends
@@ -163,7 +163,12 @@ class User < ActiveRecord::Base
       friends.each do |f|
         self.friends.create!(:uid => f.uid.to_s)
         profile = Profile.where(:uid => f.uid.to_s).where('updated_at > ?',1.day.ago)
-        Profile.create!(:uid => f.uid, :details => f.details, :photos => f.photos) if profile.empty?
+        if profile.empty?
+          profile = Profile.create!(:uid => f.uid, :details => f.details, :photos => f.photos, :friend_list_count => 1)
+        else
+          profile.update_attributes(:details => f.details, :photos => f.photos)
+          profile.update_friends_list_count!     # => updates profile table for the user with the latest count for scoring purposes
+        end
       end
     end
 

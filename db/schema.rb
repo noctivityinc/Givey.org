@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110214191158) do
+ActiveRecord::Schema.define(:version => 20110214194740) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -160,9 +160,12 @@ ActiveRecord::Schema.define(:version => 20110214191158) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "friend_list_count"
+    t.integer  "score"
   end
 
+  add_index "profiles", ["friend_list_count", "score"], :name => "index_list_count_score"
   add_index "profiles", ["friend_list_count"], :name => "index_profiles_on_friend_list_count"
+  add_index "profiles", ["score"], :name => "index_profiles_on_score"
   add_index "profiles", ["uid"], :name => "index_profiles_on_uid"
 
   create_table "questions", :force => true do |t|

@@ -18,10 +18,14 @@ class SparksController < ApplicationController
   end
 
   def update
-    spark = Spark.find(params[:id])
-    spark.update_attributes(:winner_uid => params[:uid])
-    @spark = current_user.prepare_a_spark
-    render :json => get_json_response
+    begin
+      spark = Spark.find(params[:id])
+      spark.update_winner!(params[:uid])
+      @spark = current_user.prepare_a_spark
+      render :json => get_json_response
+    rescue Exception => e
+      render :json => {:status => "error", :message => e.message} 
+    end
   end
 
   def selected

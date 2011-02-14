@@ -29,7 +29,6 @@
                 = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
                 = image_tag "spinner.gif", :id => "processing_spinner"
               %td#candidate_supporter_msg
-                = render :partial => "/layouts/candidate_supporter_msg", :locals  => {:candidate => User.random_candidate}
               %td.right
                 - if current_user && !hide_login_info?
                   = link_to "Not #{current_user.first_name}? Log Out.", signout_path, :id => "log_out" 

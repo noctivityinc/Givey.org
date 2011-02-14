@@ -18,15 +18,15 @@ class SparksController < ApplicationController
   end
 
   def update
-    begin
+    # begin
       spark = Spark.find(params[:id])
       spark.update_winner!(params[:uid])
       @spark = current_user.prepare_a_spark
       render :json => get_json_response
-    rescue Exception => e
-      notify_hoptoad(e)
-      render :json => {:status => "error", :message => e.message} 
-    end
+    # rescue Exception => e
+    #   notify_hoptoad(e)
+    #   render :json => {:status => "error", :message => e.message} 
+    # end
   end
 
   def selected

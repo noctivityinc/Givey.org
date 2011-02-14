@@ -46,7 +46,6 @@ jQuery(document).ready(function($) {
     if(resp.status == 'success')
       window.setTimeout(function(){handleSelectedResponse(resp)},1000)
     else if(resp.status == 'error')
-      Hoptoad.notify(resp.message)
       location.reload(true)
   }
   

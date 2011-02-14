@@ -3,7 +3,7 @@ class DonationsController < ApplicationController
   
   def new
     session[:donation_pending] = true
-    session[:donation_complete] = true
+    session[:donation_complete] = false
   end
     
   def index

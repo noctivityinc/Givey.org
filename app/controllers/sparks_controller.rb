@@ -58,7 +58,7 @@ class SparksController < ApplicationController
     end
 
     def load_friends
-      current_user.destroy_and_get_friends if current_user.friends.active.count < 20 || current_user.friends.active.outdated?
+      current_user.destroy_and_get_friends if current_user.friends.active.count < 20 || current_user.friends.outdated?
     end
 
     def sparks_count_display

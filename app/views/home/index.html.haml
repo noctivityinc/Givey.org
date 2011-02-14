@@ -24,7 +24,7 @@
     #copy
       .trans
         #heading
-          %h2= "#{Donation.count+20} people have given over #{number_to_currency(Donation.total)} to find the most (and least) altruistic person on Facebook."
+          %h2= "#{Donation.count+20} people have given over #{number_to_currency(Donation.total)} for the most altruistic person on Facebook."
         
           %h1 Maybe it's one of your friends?
 
@@ -76,26 +76,25 @@
             %b We show you three friends.
             %p
               We pick three friends and ask you a seemingly random question.  You pick the 
-              friend that best matches the question.
+              most appropriate friend based on the question.
             
           %li 
             %b Every question counts
             %p
-              Using a complex, top secret government altruism model, we score your friends 
-              based on who you select and don't select.
+              Every question asked has an "altruism score" that helps us determine if the friend you 
+              pick is more or less likely to, well, save the world.
             
           %li
-            %b We combine the scores
+            %b Your friends of friends play and we combine the scores
             %p
-              Once your friends have been "scored" by other people you have in common enough times,
+              Once your friends have been "scored" by other people you both have in common enough times,
               you and your friends can see what others (anonymously) think of them
             
           %li
             %b Join the movement
             %p
               Tell us about your favorite cause and why it matters to you.  Contribute $5 to hopefully 
-              turn it into $5,000 if other altruistic souls (like yourself) also care about your cause.
-            
+              turn it into $5,000 if you score as the most altruistic person on the web.
             
           %li
             %b We hit five grand and turn over the keys

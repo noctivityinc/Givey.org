@@ -24,6 +24,7 @@ class SparksController < ApplicationController
       @spark = current_user.prepare_a_spark
       render :json => get_json_response
     rescue Exception => e
+      notify_hoptoad(e)
       render :json => {:status => "error", :message => e.message} 
     end
   end

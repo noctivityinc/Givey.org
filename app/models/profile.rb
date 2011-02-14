@@ -40,7 +40,7 @@ class Profile < ActiveRecord::Base
       increment!(:score, value)
     else
       # to be EXTRA safe 10% of the time recalculate the score entirely based on source questions
-      update_attribute(:score, questions_where_selected.inject(0) {|res,x| res += x})
+      update_attribute(:score, questions_where_selected.inject(0) {|res,x| res += x.value})
     end
   end
 end

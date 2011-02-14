@@ -1,6 +1,6 @@
 #your_story.row
   .sidebar.fleft
-    = render :partial => 'profile', :object => current_user.profile
+    = render :partial => 'shared/profile', :object => current_user.profile
   .main_panel.fleft
     = form_for current_user, :html => {:id => 'user_story'} do |f|
       = hidden_field_tag 'to', new_donation_path

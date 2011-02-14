@@ -15,7 +15,7 @@
       
       window.setInterval(function(){
         $('.question').text(questionArray[Math.floor(Math.random()*questionArray.length)])
-      },3000)
+      },4000)
     });
     
 
@@ -24,64 +24,86 @@
     #copy
       .trans
         #heading
-          %h2= "#{Donation.count} people have given over #{number_to_currency(Donation.total)} to find the most (and least) altruistic person on Facebook."
+          %h2= "#{Donation.count+20} people have given over #{number_to_currency(Donation.total)} to find the most (and least) altruistic person on Facebook."
         
-          %h1 How well do you know your friends?
+          %h1 Maybe it's one of your friends?
 
         .row
-          #facebook.fleft
-            - unless production?
-              %b Completely Anonymous & Secure
-              .login_button= link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
-              #not_user
+          .fleft
+            #facebook
+              - unless production?
+                %b Completely Anonymous & Secure
+                .login_button= link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
+                #not_user
               
-            .secure.row
-              .fleft= image_tag "icons/security.png"
-              %p.fleft
-                %b Secret
-                Everything's private - you're 
-                "friends" will never know what you clicked (unless you tell them).
+            #main_points
+              .secure.row
+                .fleft= image_tag "icons/security.png"
+                %p.fleft
+                  %b Everything's private
+                  Who you select for what is never revealed.
               
-            .user.row
-              .fleft= image_tag "icons/user.png"
-              %p.fleft
-                %b No Posting Policy
-                Nothing will be posted to anyone's wall unless you say so.
+              .user.row
+                .fleft= image_tag "icons/user.png"
+                %p.fleft
+                  %b No Posting Policy
+                  We never post to anyone's wall unless asked.
               
-            .heart.row
-              .fleft= image_tag "icons/heart.png"
-              %p.fleft
-                %b It's Darn Fun
-                Try it.  You might learn a thing or two about your friends
+              .heart.row
+                .fleft= image_tag "icons/heart.png"
+                %p.fleft
+                  %b It's Darn Fun
+                  Try it.  You might learn a thing or two about your friends
                 
           #screen_shot.fleft
             %h3.question= Question.active.sort_by{rand}.first.name
                 
-      #about.trans
-        %h3 So What's This All About?
+      #npos.trans.scrollable
+        .items
+          - Npo.active.in_groups_of(8) do |group| 
+            %div
+              %table
+                %tr
+                  - group.each do |npo|
+                    %td{:valign => "middle"}
+                      .npo= image_tag npo.logo(:thumb) if npo
         
-        %p
-          Years ago a group of smart science people created something called the 
-          = link_to "Five Factors Model", '#'
-          of personality.  It's designed to help them, well, classify people by asking 
-          crazy questions like "Are you bashful" and "Would you help an old woman cross the street."  
+      #how_it_works.trans
+        %h3 How Does Givey.org Work?
+        
+        %ol
+          %li 
+            %b We show you three friends.
+            %p
+              We pick three friends and ask you a seemingly random question.  You pick the 
+              friend that best matches the question.
+            
+          %li 
+            %b Every question counts
+            %p
+              Using a complex, top secret government altruism model, we score your friends 
+              based on who you select and don't select.
+            
+          %li
+            %b We combine the scores
+            %p
+              Once your friends have been "scored" by other people you have in common enough times,
+              you and your friends can see what others (anonymously) think of them
+            
+          %li
+            %b Join the movement
+            %p
+              Tell us about your favorite cause and why it matters to you.  Contribute $5 to hopefully 
+              turn it into $5,000 if other altruistic souls (like yourself) also care about your cause.
+            
+            
+          %li
+            %b We hit five grand and turn over the keys
+            %p
+              Once $5,000 has been raised, we let the person with the highest combined altruism 
+              score decide what to do with the money and start again.
+            
           
-        %p
-          A few years ago one of our founders started a non-profit for his daughter, who is 
-          battling SMA, a terrible disease.  Since then he's met some incredible people and an 
-          even more incredible number of other amazing non-profits
-          
-        %p
-          A few months ago a site called CubeDuel launched to rate your co-workers.  It inspired us.
-          We thought - "what if we could use Five Factors to figure out who our most altruistic friend is
-          and give them some money to donate to a non-profit?"  Strange idea but here we are.
-          
-        %p
-          So that's 
-          %b the Givey.org movement.
-          We're trying to band together and find the most altruistic people on the web.  We're also 
-          asking for everyone to contribute (optionally) just $5 and everytime we hit $5,000 the 
-          person with the highest "altruism score" will determine where the money gets donated.
-      
+
       #logo
         = image_tag "givey_logo_large.png", :title => "Givey.org"

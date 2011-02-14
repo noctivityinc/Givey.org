@@ -19,11 +19,15 @@
         
         #facebook
           width: 250px
-          b
-            font-size: 13px
+          margin-bottom: 30px
           .login_button
             margin-top: 10px
+          b
+            font-size: 13px
+
             
+        #main_points
+          width: 250px
           .secure, .user, .heart
             width: 250px
             text-align: left
@@ -48,8 +52,38 @@
           .question
             margin-top: 30px
             font-size: 1.10em
-      #about
+        
+      #npos
+        text-align: center
+        .npo
+          +rounded_borders
+          padding: 3px
+          background: white
+          margin-right: 10px
+          
+      #how_it_works
         text-align: left
+        
+        ol
+          list-style-type: decimal
+          margin-left: 20px
+          
+          li
+            margin-bottom: 2em
+            font-size: 18px
+            font-weight: bold
+
+            b, p
+              font-size: 13px
+              margin: 0
+              padding: 0
+              
+            b
+              color: #390
+            
+            p
+              font-weight: normal
+            
       
   #show
     +card

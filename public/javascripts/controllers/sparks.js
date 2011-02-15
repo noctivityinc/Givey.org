@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
   
   function timedResponse(resp) {
     if(resp.status == 'success')
-      window.setTimeout(function(){handleSelectedResponse(resp)},1000)
+      window.setTimeout(function(){handleSelectedResponse(resp)},500)
     else if(resp.status == 'error')
       location.reload(true)
   }
@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
       case 'spark':
         $('.card').fadeOut();
         $('.question').text('next question!').css('color','black')
-        window.setTimeout(function() {moveQuestion(resp)},1000);
+        window.setTimeout(function() {moveQuestion(resp)},750);
         break;
       case 'modal':
         $('#modal').html(resp.html)

@@ -22,6 +22,9 @@ class Spark < ActiveRecord::Base
   scope :undecided, where(:winner_uid => nil)
   scope :decided, where('winner_uid IS NOT NULL')
   scope :order_by_latest, :order => "updated_at desc"
+  scope :answered_by, lambda {|user| where("user_id = #{user.id}")}
+  scope :not_answered_by, lambda {|user| where("user_id <> #{user.id}")}
+  scope :with_uid, lambda {|uid| where("friend_uid_1 = '#{uid}' OR friend_uid_2 = '#{uid}' OR friend_uid_3 = '#{uid}'")}
   
   def friends
     (res ||= []) << user.friends.active.find_by_uid(friend_uid_1).profile rescue nil

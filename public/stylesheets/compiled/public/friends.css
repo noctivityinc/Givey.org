@@ -1,0 +1,98 @@
+/* line 3, ../../../../app/stylesheets/_base.sass */
+.wf-active h1 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 36px;
+}
+
+/* line 7, ../../../../app/stylesheets/_base.sass */
+.wf-active h2 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 30px;
+}
+
+/* line 11, ../../../../app/stylesheets/_base.sass */
+.wf-active h3 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 24px;
+}
+
+/* line 15, ../../../../app/stylesheets/_base.sass */
+.wf-active h4 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 16px;
+}
+
+/* line 19, ../../../../app/stylesheets/_base.sass */
+.wf-active .cabin {
+  font-family: "Cabin";
+  font-size: 18px;
+}
+
+/* line 23, ../../../../app/stylesheets/_base.sass */
+.margin_top_1 {
+  margin-top: 2em;
+}
+
+/* line 26, ../../../../app/stylesheets/_base.sass */
+.margin_top_2 {
+  margin-top: 2em;
+}
+
+/* line 98, ../../../../app/stylesheets/_base.sass */
+.row {
+  overflow: hidden;
+  width: 100%;
+}
+/* line 102, ../../../../app/stylesheets/_base.sass */
+.row .fleft {
+  float: left;
+}
+/* line 105, ../../../../app/stylesheets/_base.sass */
+.row .fright {
+  float: right;
+}
+
+/* line 5, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .display {
+  margin-bottom: 25px;
+  font-size: 13px;
+}
+/* line 9, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend {
+  padding-bottom: 40px;
+}
+/* line 11, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .name {
+  padding-left: 20px;
+}
+/* line 14, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .name a {
+  text-decoration: none;
+  color: #02517f;
+}
+/* line 18, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .name a:hover {
+  text-decoration: underline;
+}
+/* line 22, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .candidate .cause {
+  font-weight: bold;
+  color: #3d024f;
+}
+/* line 26, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .rank_score {
+  clear: both;
+  padding-top: 10px;
+  text-align: center;
+  width: 260px;
+}
+/* line 31, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .rank_score .score {
+  font-size: 24px;
+  text-shadow: #999999 2px 2px 2px;
+  display: inline;
+}
+/* line 35, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .rank_score .rank {
+  display: inline;
+}

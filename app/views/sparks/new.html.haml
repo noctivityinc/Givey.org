@@ -30,7 +30,7 @@
         %h1.title Please Wait. We're mixing it up...
       
         %p.wait
-          Your game should be ready in a minute or so
+          Your questions should be ready in a minute or so
         
         .spinner.wait
           = image_tag "spinner.gif", :title => "Spinner"
@@ -45,6 +45,6 @@
         %p Please give it a few minutes and then refresh this page.  Hopefully the traffic will have died down by then.
         
 
-      #npos
+      #npos.row
         - Npo.all.each do |n|
-          .npo= image_tag n.logo.url(:thumb)
+          .npo.fleft.trans= image_tag n.logo.url(:thumb)

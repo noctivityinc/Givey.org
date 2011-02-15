@@ -44,6 +44,7 @@ class Npo < ActiveRecord::Base
   has_many :slots
   has_many :campaigns, :through => :slots
   belongs_to :category
+  has_many :users
   
   validates_presence_of :name, :website, :description, :summary, :category
 

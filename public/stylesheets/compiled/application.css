@@ -473,7 +473,7 @@ form.formtastic fieldset ol li.boolean input {
   border-left: 2px solid #cccccc;
   padding-left: 5px;
   color: gray;
-  margin: 10px 0px;
+  margin: 5px 0px;
   padding-left: 10px;
 }
 /* line 57, ../../../app/stylesheets/_facebook_styles.sass */
@@ -871,6 +871,39 @@ body #main #container #copy.justify {
   text-align: left;
 }
 /* line 152, ../../../app/stylesheets/application.sass */
+body #main #container .spark_history {
+  width: 100%;
+  font-size: 12px;
+}
+/* line 155, ../../../app/stylesheets/application.sass */
+body #main #container .spark_history .pic {
+  width: 30px;
+  margin-right: 10px;
+}
+/* line 157, ../../../app/stylesheets/application.sass */
+body #main #container .spark_history .pic img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+/* line 163, ../../../app/stylesheets/application.sass */
+body #main #container .spark_history .text {
+  display: block;
+  width: 90%;
+  text-align: left;
+  line-height: 1.25em;
+}
+/* line 169, ../../../app/stylesheets/application.sass */
+body #main #container .spark_history .text .name a {
+  color: #1a8922;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 173, ../../../app/stylesheets/application.sass */
+body #main #container .spark_history .text .not_selected_name {
+  color: #990000;
+}
+/* line 176, ../../../app/stylesheets/application.sass */
 body #main #footer {
   position: absolute;
   bottom: 0;
@@ -881,22 +914,22 @@ body #main #footer {
   text-align: center;
   family: "Lucinda Grande";
 }
-/* line 162, ../../../app/stylesheets/application.sass */
+/* line 186, ../../../app/stylesheets/application.sass */
 body #main #footer a {
   color: #333333;
   text-transform: uppercase;
   font-size: 0.9em;
 }
-/* line 167, ../../../app/stylesheets/application.sass */
+/* line 191, ../../../app/stylesheets/application.sass */
 body #main #footer a:hover {
   color: red;
 }
-/* line 171, ../../../app/stylesheets/application.sass */
+/* line 195, ../../../app/stylesheets/application.sass */
 body #main #footer #navs .nav {
   display: inline;
   padding-right: 15px;
 }
-/* line 175, ../../../app/stylesheets/application.sass */
+/* line 199, ../../../app/stylesheets/application.sass */
 body #main #footer #copyright {
   clear: both;
   padding-top: 2em;
@@ -905,12 +938,12 @@ body #main #footer #copyright {
   text-transform: uppercase;
 }
 
-/* line 182, ../../../app/stylesheets/application.sass */
+/* line 206, ../../../app/stylesheets/application.sass */
 .trigger {
   display: none;
 }
 
-/* line 185, ../../../app/stylesheets/application.sass */
+/* line 209, ../../../app/stylesheets/application.sass */
 a.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -976,7 +1009,7 @@ a.button:active, a.button:active:visited {
   color: white;
 }
 
-/* line 190, ../../../app/stylesheets/application.sass */
+/* line 214, ../../../app/stylesheets/application.sass */
 .gray-button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;

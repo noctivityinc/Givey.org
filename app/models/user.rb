@@ -2,24 +2,23 @@
 #
 # Table name: users
 #
-#  id                           :integer         not null, primary key
-#  provider                     :string(255)
-#  uid                          :string(255)
-#  email                        :string(255)
-#  name                         :string(255)
-#  gender                       :string(255)
-#  locale                       :string(255)
-#  token                        :string(255)
-#  created_at                   :datetime
-#  updated_at                   :datetime
-#  admin                        :boolean
-#  location                     :text
-#  givey_token                  :string(255)
-#  referring_id                 :integer
-#  candidate                    :boolean
-#  candidates_story             :text
-#  candidate_post_story_to_wall :boolean
-#  candidates_npo_id            :integer
+#  id                 :integer         not null, primary key
+#  provider           :string(255)
+#  uid                :string(255)
+#  email              :string(255)
+#  name               :string(255)
+#  gender             :string(255)
+#  locale             :string(255)
+#  token              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  admin              :boolean
+#  location           :text
+#  givey_token        :string(255)
+#  referring_id       :integer
+#  story              :text
+#  post_story_to_wall :boolean
+#  npo_id             :integer
 #
 
 class User < ActiveRecord::Base
@@ -31,6 +30,8 @@ class User < ActiveRecord::Base
   belongs_to :referring_friend, :class_name => "User", :foreign_key => "referring_id"
   has_one :profile, :class_name => "Profile", :foreign_key => "uid", :primary_key => "uid", :dependent => :destroy
   has_many :donations
+  belongs_to :npo
+
   has_many :friends, :dependent => :destroy  do
     def pick(n=3)
       active.sort_by{rand}[0..(n-1)]
@@ -52,10 +53,12 @@ class User < ActiveRecord::Base
     end
   end
 
-
-  belongs_to :candidates_npo, :class_name => "Npo"
-
-  scope :candidates, where(:candidate => true)
+  scope :scorable, lambda {
+    joins("join profiles on profiles.uid = users.uid").
+    where("profiles.friend_list_count >= #{Profile::MIN_FRIEND_LISTS_REQUIRED}").
+    order("profiles.score DESC")
+  }
+  scope :with_causes, where("npo_id is not null")
 
   def admin?
     self.admin
@@ -69,16 +72,15 @@ class User < ActiveRecord::Base
     last_initial = self.name.split(/\s/)[1][0]
     return "#{first_name} #{last_initial}."
   end
-
-  def candidate?
-    candidate
-  end
-
-
-  def self.random_candidate
-    self.candidates.sort_by{rand}.first
-  end
   
+  def has_a_cause?
+    !self.npo_id.nil?
+  end
+
+  def self.random_with_a_cause
+    self.with_causes.sort_by{rand}.first
+  end
+
   def prepare_a_spark
     spark = sparks.undecided.first
     spark.validate && spark.reload if spark
@@ -102,7 +104,7 @@ class User < ActiveRecord::Base
       user.uid = fb.id
       user.location = location
       user.referring_id = referring_id
-      user.candidate_post_story_to_wall = true # set to true.  let them uncheck
+      user.post_story_to_wall = true # set to true.  let them uncheck
     end
   end
 
@@ -137,6 +139,21 @@ class User < ActiveRecord::Base
     self.get_friends
   end
 
+  def post_to_wall(*args)
+    begin
+      options = extract_options!(args)
+      fb = MiniFB::OAuthSession.new(self.token)
+      fb.post('me', :type => :feed, :params => {
+                :link => (options[:link] || "http://#{APP_CONFIG[:domain]}/#{self.givey_token}"),
+                :name => (options[:name] || "Givey.org"),
+                :caption => options[:caption],
+                :description => options[:description],
+                :message => options[:story]
+      })
+    rescue Exception => e
+    end
+  end
+
   private
 
     def generate_givey_token
@@ -148,7 +165,7 @@ class User < ActiveRecord::Base
       exclude_sql = exclude_list.empty? ? '' : "AND uid2 <> #{exclude_list.join(' AND uid2 <> ')}"
       return "SELECT uid, name, first_name, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
             current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
-            FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() #{exclude_sql}) ORDER BY rand() LIMIT 40"
+            FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() #{exclude_sql}) ORDER BY rand() LIMIT 60"
     end
 
     def photos_fql

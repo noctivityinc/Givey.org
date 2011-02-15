@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
-  $('#user_story').live('submit',function() {
-    if (missing('#user_candidates_npo_id') || missing('#user_candidates_story')) {
+  $('#user_story_form').live('submit',function() {
+    if (missing('#user_npo_id') || missing('#user_story')) {
       alert('Please select a cause and tell us why it matters to you')
       return false;
     } else if (!enough_words()) {
@@ -17,7 +17,7 @@ function missing (div) {
 }
 
 function enough_words() {
-  return (cnt($('#user_candidates_story').val()) > 5) 
+  return (cnt($('#user_story').val()) > 5) 
 }
 
 function cnt(y){

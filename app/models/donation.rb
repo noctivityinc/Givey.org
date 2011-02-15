@@ -17,8 +17,6 @@
 class Donation < ActiveRecord::Base
   serialize :response
 
-  after_save :update_user
-
   belongs_to :user
   validates_presence_of :user
 
@@ -47,9 +45,4 @@ class Donation < ActiveRecord::Base
     end
   end
 
-  private
-  
-  def update_user
-    user.update_attribute(:candidate, true)
-  end
 end

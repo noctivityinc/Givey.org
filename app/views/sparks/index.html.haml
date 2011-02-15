@@ -1,4 +1,4 @@
-- title "How well do you know your friends?", false
+- title "How would you classify your friends?", false
 
 - content_for :head do
   = javascript_include_tag 'controllers/users'
@@ -13,7 +13,7 @@
         = render(:partial => "shared/profile", :collection => @spark.friends)
 
       #score_board.row
-        #selected.fleft= render :partial => 'selected_list'
+        .spark_history.fleft= render :partial => 'shared/sparks', :collection => current_user.sparks.decided.order_by_latest 
         #counts.fright= sparks_count_display
 
 - content_for :feet do

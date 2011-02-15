@@ -1,0 +1,5 @@
+.selected.row.trans
+  .fleft.pic= image_tag sparks.selected.details.pic_square
+  .fleft.text
+    :erb
+      <%="<span class='name'><a href='#{altruist_path(sparks.selected.givey_token)}'>#{sparks.selected.details.name}</a></span> #{sparks.question.phrase} than #{not_selected_names(sparks)}"%>

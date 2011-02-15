@@ -80,20 +80,20 @@ class SparksController < ApplicationController
     def get_json_response
       case (current_user.sparks.decided.count + 1)
       when 5 then
-        return User.candidates.empty? ? spark_json : meet_candidate_json.merge!({:spark_resp => spark_json})
+        return User.with_causes.empty? ? spark_json : meet_candidate_json.merge!({:spark_resp => spark_json})
       when 10 then
         return what_do_friends_think_json.merge!({:spark_resp => spark_json})
       when 20 then
         your_story_json
       when 21..1000 then
-        current_user.candidates_story.blank? ? your_story_json : spark_json
+        current_user.story.blank? ? your_story_json : spark_json
       else
         spark_json
       end
     end
 
     def meet_candidate_json
-      {:status => "success", :type => 'overlay', :html => render_to_string(:partial => "meet_a_candidate", :locals  => {:candidate => User.random_candidate} )}
+      {:status => "success", :type => 'overlay', :html => render_to_string(:partial => "meet_a_candidate", :locals  => {:candidate => User.random_with_a_cause} )}
     end
 
     def what_do_friends_think_json
@@ -109,7 +109,7 @@ class SparksController < ApplicationController
               :question => @spark.question.name, :counts => sparks_count_display,
               :selected_list => render_to_string(:partial => "selected_list"),
               :background => @spark.question.backgrounds.pick.photo(:normal),
-              :candidate_supporter_msg  => render_to_string(:partial => '/shared/candidate_supporter_msg', :locals  => {:candidate => User.random_candidate})}
+              :candidate_supporter_msg  => render_to_string(:partial => '/shared/candidate_supporter_msg', :locals  => {:candidate => User.random_with_a_cause})}
       json.merge!({:post_url => user_friends_path(current_user)}) if ((current_user.sparks.decided.count + 1) % 20 == 0)
       return json
     end

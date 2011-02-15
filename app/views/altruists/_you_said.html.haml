@@ -1,0 +1,2 @@
+%h3= "How you classified #{@altruist.details.first_name}"
+.spark_history= render :partial => 'shared/sparks', :collection => current_user.sparks.with_uid(@altruist.uid).decided.order_by_latest

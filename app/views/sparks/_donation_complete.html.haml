@@ -1,12 +1,24 @@
-%h1
-  = "Thank you #{current_user.name} for your #{number_to_currency(current_user.donations.last.amount)} donation"
+#donation_complete
+  %h2
+    = "Thank you #{current_user.name} for your #{number_to_currency(current_user.donations.last.amount)} contribution."
   
-#actions.row
-  .fright
-    = link_to "Continue >>", 'javascript:return false;', :class => "button close"
-  
-  
+  %h1.share "Like" Givey on Facebook to keep this movement going!
+
+  .share_actions.row
+    %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"}
+    %fb:like-box{:header => "false", :href => "http://www.facebook.com/pages/Giveyorg/121752667894755", :show_faces => "true", :stream => "false", :width => "400"}
+
+  .share_email
+    %h3 Or share with friends by email.
+    %p 
+      Give them this URL to analyze you on Givey:
+      = text_field_tag 'link', current_user.referral_link
+
+  #actions.row
+    .fright
+      = link_to image_tag('icons/close.png'), '#', :id => 'close_overlay'  
+
 :javascript
   $(document).ready(function() {
-    activate_overlay('#overlay');
+    activate_overlay();
   });

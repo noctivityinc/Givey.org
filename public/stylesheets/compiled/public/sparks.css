@@ -366,57 +366,57 @@
   vertical-align: bottom;
 }
 /* line 40, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think h2, #modal #what_do_friends_think h2 {
+#overlay #what_do_friends_think h2, #overlay #donation_complete h2, #modal #what_do_friends_think h2, #modal #donation_complete h2 {
   margin-bottom: 10px;
 }
 /* line 43, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think .friends, #modal #what_do_friends_think .friends {
+#overlay #what_do_friends_think .friends, #overlay #donation_complete .friends, #modal #what_do_friends_think .friends, #modal #donation_complete .friends {
   margin-bottom: 0.75em;
   width: 600px;
   margin: 0 auto;
 }
 /* line 48, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think .friends .pic, #modal #what_do_friends_think .friends .pic {
+#overlay #what_do_friends_think .friends .pic, #overlay #donation_complete .friends .pic, #modal #what_do_friends_think .friends .pic, #modal #donation_complete .friends .pic {
   padding-right: 10px;
 }
 /* line 51, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think .profile_pic, #modal #what_do_friends_think .profile_pic {
+#overlay #what_do_friends_think .profile_pic, #overlay #donation_complete .profile_pic, #modal #what_do_friends_think .profile_pic, #modal #donation_complete .profile_pic {
   width: 25px;
   margin: 10px auto;
 }
 /* line 55, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think h1, #modal #what_do_friends_think h1 {
+#overlay #what_do_friends_think h1, #overlay #donation_complete h1, #modal #what_do_friends_think h1, #modal #donation_complete h1 {
   text-align: center;
 }
 /* line 58, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think .share_actions, #modal #what_do_friends_think .share_actions {
+#overlay #what_do_friends_think .share_actions, #overlay #donation_complete .share_actions, #modal #what_do_friends_think .share_actions, #modal #donation_complete .share_actions {
   width: 450px;
   margin: 15px auto;
 }
 /* line 63, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think .share_actions .share_facebook a, #modal #what_do_friends_think .share_actions .share_facebook a {
+#overlay #what_do_friends_think .share_actions .share_facebook a, #overlay #donation_complete .share_actions .share_facebook a, #modal #what_do_friends_think .share_actions .share_facebook a, #modal #donation_complete .share_actions .share_facebook a {
   background: url("/images/buttons/share_facebook.png") no-repeat 0 0;
   width: 224px;
   height: 81px;
   display: block;
 }
 /* line 69, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think .share_actions .share_facebook a:hover, #modal #what_do_friends_think .share_actions .share_facebook a:hover {
+#overlay #what_do_friends_think .share_actions .share_facebook a:hover, #overlay #donation_complete .share_actions .share_facebook a:hover, #modal #what_do_friends_think .share_actions .share_facebook a:hover, #modal #donation_complete .share_actions .share_facebook a:hover {
   background: url("/images/buttons/share_facebook.png") no-repeat -81 0;
 }
 /* line 73, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think .share_actions .share_twitter a, #modal #what_do_friends_think .share_actions .share_twitter a {
+#overlay #what_do_friends_think .share_actions .share_twitter a, #overlay #donation_complete .share_actions .share_twitter a, #modal #what_do_friends_think .share_actions .share_twitter a, #modal #donation_complete .share_actions .share_twitter a {
   background: url("/images/buttons/share_twitter.png") no-repeat 0 0;
   width: 224px;
   height: 81px;
   display: block;
 }
 /* line 79, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think .share_actions .share_twitter a:hover, #modal #what_do_friends_think .share_actions .share_twitter a:hover {
+#overlay #what_do_friends_think .share_actions .share_twitter a:hover, #overlay #donation_complete .share_actions .share_twitter a:hover, #modal #what_do_friends_think .share_actions .share_twitter a:hover, #modal #donation_complete .share_actions .share_twitter a:hover {
   background: url("/images/buttons/share_twitter.png") no-repeat -81 0;
 }
 /* line 82, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #what_do_friends_think input, #modal #what_do_friends_think input {
+#overlay #what_do_friends_think input, #overlay #donation_complete input, #modal #what_do_friends_think input, #modal #donation_complete input {
   font-size: 18px;
   padding: 5px;
   width: 350px;
@@ -690,36 +690,10 @@
   margin-bottom: 2em;
 }
 /* line 34, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #index #score_board #selected {
+#sparks #index #score_board .spark_history {
   width: 600px;
-  font-size: 12px;
 }
 /* line 37, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #index #score_board #selected .pic {
-  width: 30px;
-  margin-right: 10px;
-}
-/* line 39, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #index #score_board #selected .pic img {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-}
-/* line 45, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #index #score_board #selected .text {
-  width: 560px;
-  text-align: left;
-}
-/* line 48, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #index #score_board #selected .text .name {
-  color: #1a8922;
-  font-weight: bold;
-}
-/* line 51, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #index #score_board #selected .text .not_selected_name {
-  color: #990000;
-}
-/* line 55, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts {
   filter: alpha(opacity=80);
   -moz-opacity: 0.8;
@@ -732,12 +706,12 @@
   padding: 10px;
   width: 200px;
 }
-/* line 60, ../../../../app/stylesheets/public/sparks.sass */
+/* line 42, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts h1 {
   color: white;
   text-shadow: #333333 2px 2px 2px;
 }
-/* line 64, ../../../../app/stylesheets/public/sparks.sass */
+/* line 46, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question {
   position: relative;
   top: 10px;
@@ -747,7 +721,7 @@
   box-shadow: 3px 3px 4px black;
   border: 2px solid #666666;
 }
-/* line 73, ../../../../app/stylesheets/public/sparks.sass */
+/* line 55, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question.recording {
   float: right;
 }

@@ -2,14 +2,14 @@
   .sidebar.fleft
     = render :partial => 'shared/candidate', :object => candidate
   .main_panel.fleft
-    %h2= "#{candidate.public_display_name} joined the movement to turn their $5 into $5000 for #{candidate.candidates_npo.name}.  Here's why..."
+    %h2= "#{candidate.public_display_name} joined the movement to turn their $5 into $5000 for #{candidate.npo.name}.  Here's why..."
     
     %table.story
       %tr
         %td.open
           = image_tag "icons/quote_open.png"
         %td.middle
-          = candidate.candidates_story
+          = candidate.story
         %td.close_quotes
           = image_tag "icons/quote_close.png"
       

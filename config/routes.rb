@@ -1,7 +1,6 @@
 Givey::Application.routes.draw do
 
-  match "/altruists/"  => "altruists#index"
-  
+  resources :altruists, :only => [:show, :index] 
   resources :donations do
     collection do
       get :callback
@@ -15,6 +14,7 @@ Givey::Application.routes.draw do
       get :needs_friends
     end
   end
+  match '/friends'  => "friends#index"
 
   get 'sparks/reset'
   resources :sparks do

@@ -7,17 +7,16 @@
 
     - @altruists.each_with_index do |a,ndx|
       .altruist.fleft.row
-        .fleft= image_tag a.details.pic_square
+        .fleft= image_tag a.profile.details.pic_square
         .fleft
           .name.cabin
-            = link_to a.details.name, "http://www.facebook.com/profile.php?id=#{a.uid}", :target => "_blank"
-          - if a.user && a.user.candidate?
+            = link_to a.profile.details.name, altruist_path(a.profile.givey_token)
             %span.candidate
               supports
-              %span.cause= a.user.candidates_npo.name
+              %span.cause= a.npo.name
           .rank_score
             .score.cabin= "##{rank(ndx)}"
-            .rank= " with #{pluralize(a.score,'Altruism Point')}"
+            .rank= " with #{pluralize(a.profile.score,'Altruism Point')}"
         
     .paginate
       = will_paginate @altruists

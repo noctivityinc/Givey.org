@@ -1,0 +1,38 @@
+- title "Altruist - #{@altruist.details.name}", false
+
+#altruist
+  #show
+    #copy
+      .row.trans
+        .fleft.pic= image_tag @altruist.details.pic_square
+        .fleft.details
+          .name.cabin
+            = @altruist.details.name
+            = "(You)" unless altruist_isnt_current_user
+            
+            - if @altruist.is_user? && @altruist.user.has_a_cause?
+              %span.candidate
+                supports
+                %span.cause= @altruist.user.npo.name
+          .score= "#{pluralize(@altruist.score,'Altruism Point')}"
+
+      %table
+        %tr
+          %td
+            - if altruist_isnt_current_user
+              .you_said.trans= render :partial => 'you_said'
+        
+            .they_said.trans= render :partial => 'they_said'
+
+          %td
+            - if @altruist.user.has_a_cause?
+              .npo.trans
+                %h3= "About #{@altruist.user.npo.name}"
+                .logo= image_tag @altruist.user.npo.logo(:thumb) if @altruist.is_user? && @altruist.user.has_a_cause?
+                .summary= @altruist.user.npo.summary
+                .links
+                  .facebook= link_to image_tag("icons/facebook_64.png"), @altruist.user.npo.facebook_url unless @altruist.user.npo.facebook_url.blank?
+                  .twitter= link_to image_tag("icons/twitter_32.png"), @altruist.user.npo.twitter_name unless @altruist.user.npo.twitter_name.blank?
+        
+      
+    

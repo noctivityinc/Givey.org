@@ -10,6 +10,7 @@
 #  updated_at        :datetime
 #  friend_list_count :integer
 #  score             :integer
+#  givey_token       :string(255)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

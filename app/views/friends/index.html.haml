@@ -1,0 +1,23 @@
+- title "Are Your Friends Altruistic (or Something Else)?", false
+#friends
+  #index.trans
+    %h1 Your Friends - Declassified.
+
+    .display= page_entries_info @friends, :entry_name  => 'friends'
+
+    - @friends.each_with_index do |a,ndx|
+      .friend.fleft.row
+        .fleft= image_tag a.profile.details.pic_square
+        .fleft
+          .name.cabin
+            = link_to a.profile.details.name, altruist_path(a.profile.givey_token), :target => "_blank"
+            - if a.user? && !a.story.blank?
+              %span.candidate
+                supports
+                %span.cause= a.npo.name
+          - if a.profile.scorable?
+            .rank_score
+              .score= "#{pluralize(a.profile.score,'Altruism Point')}"
+        
+    .paginate
+      = will_paginate @friends

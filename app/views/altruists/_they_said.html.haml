@@ -1,0 +1,10 @@
+%h3= "How others classified #{@altruist.details.first_name}"
+- if @altruist.scorable?
+  .spark_history= render :partial => 'shared/sparks', :collection => Spark.not_answered_by(current_user).with_uid(@altruist.uid).decided.order_by_latest
+- else
+  .not_enough.trans
+    - if altruist_isnt_current_user
+      = "#{@altruist.details.first_name} needs more friends to #{display_classfied_gender}"
+    - else
+      You need more friends if you want to be classified.
+    = link_to "Invite Them", "http://www.facebook.com/sharer.php?u=#{CGI.escape(current_user.referral_link)}", :target => "_blank" 

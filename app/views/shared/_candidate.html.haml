@@ -6,8 +6,8 @@
         .name= candidate.public_display_name
 
       .cause
-        = image_tag candidate.candidates_npo.logo(:medium)
+        = image_tag candidate.npo.logo(:medium)
         
       .fb_like        
-        %fb:like{:href => "#{npo_url(candidate.candidates_npo)}", :layout => "button_count", :show_faces => "false", :width => "50"}
+        %fb:like{:href => "#{npo_url(candidate.npo)}", :layout => "button_count", :show_faces => "false", :width => "50"}
         

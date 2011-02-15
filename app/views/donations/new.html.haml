@@ -3,14 +3,14 @@
 #donation
   #new
     #copy.trans
-      %h1= "#{Donation.count} people have joined the movement contributing over #{number_to_currency(Donation.total)}."
+      %h1= "#{Donation.count+20} people have joined the movement contributing over #{number_to_currency(Donation.total)}."
       
-      #charity_logo= image_tag current_user.candidates_npo.logo(:medium)
+      #charity_logo= image_tag current_user.npo.logo(:medium)
       
       = render :partial => (current_user ? 'user' : 'not_user')
       
       #actions
-        = button_to 'Join The Movement. Contribute $5', APP_CONFIG[:givey]['donate_url'], :class => "button", :rel => "I'm pulling for #{current_user.candidates_npo.name}"
+        = button_to 'Join The Movement. Contribute $5', APP_CONFIG[:givey]['donate_url'], :class => "button", :rel => "I'm pulling for #{current_user.npo.name}"
         = link_to "Skip the Donation", sparks_path
 
       #wall.row
@@ -21,4 +21,5 @@
           - current_user.friends.random(200).each do |friend|
             .pic.fleft= image_tag friend.profile.details.pic_square, :title => friend.profile.details.name 
 
-      = # render :partial => 'facebook_sample_posts'
+  #wall
+    = render :partial => 'facebook_sample_posts'

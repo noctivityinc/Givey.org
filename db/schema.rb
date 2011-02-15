@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110214194740) do
+ActiveRecord::Schema.define(:version => 20110215184153) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -22,19 +22,6 @@ ActiveRecord::Schema.define(:version => 20110214194740) do
     t.datetime "photo_updated_at"
     t.integer  "question_id"
   end
-
-  create_table "battles", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "question_id"
-    t.string   "winner_uid"
-    t.string   "friend_uid_1"
-    t.string   "friend_uid_2"
-    t.string   "friend_uid_3"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "battles", ["user_id"], :name => "index_battles_on_user_id"
 
   create_table "beta_testers", :force => true do |t|
     t.string   "email"
@@ -75,16 +62,6 @@ ActiveRecord::Schema.define(:version => 20110214194740) do
     t.decimal  "fee",            :precision => 8, :scale => 2
   end
 
-  create_table "duels", :force => true do |t|
-    t.integer  "round"
-    t.string   "winner_uid"
-    t.integer  "game_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "is_sub"
-    t.boolean  "active"
-  end
-
   create_table "friends", :force => true do |t|
     t.integer  "user_id"
     t.string   "uid"
@@ -95,24 +72,6 @@ ActiveRecord::Schema.define(:version => 20110214194740) do
 
   add_index "friends", ["uid"], :name => "index_friends_on_uid"
   add_index "friends", ["user_id", "uid"], :name => "ndx_user_id_and_uid"
-
-  create_table "games", :force => true do |t|
-    t.integer  "campaign_id"
-    t.integer  "user_id"
-    t.string   "winner_uid"
-    t.datetime "completed_at"
-    t.text     "friends_hash"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "token"
-    t.integer  "referring_game_id"
-    t.boolean  "official",           :default => true
-    t.boolean  "shared_on_facebook"
-    t.boolean  "shared_with_winner"
-    t.integer  "total_candidates"
-    t.boolean  "posted_to_wall"
-    t.boolean  "notified_winner"
-  end
 
   create_table "npos", :force => true do |t|
     t.string   "name"
@@ -144,15 +103,6 @@ ActiveRecord::Schema.define(:version => 20110214194740) do
     t.text     "story"
   end
 
-  create_table "payment_notifications", :force => true do |t|
-    t.text     "params"
-    t.string   "status"
-    t.string   "transaction_id"
-    t.integer  "campaign_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "profiles", :force => true do |t|
     t.string   "uid"
     t.text     "details"
@@ -161,10 +111,12 @@ ActiveRecord::Schema.define(:version => 20110214194740) do
     t.datetime "updated_at"
     t.integer  "friend_list_count"
     t.integer  "score"
+    t.string   "givey_token"
   end
 
   add_index "profiles", ["friend_list_count", "score"], :name => "index_list_count_score"
   add_index "profiles", ["friend_list_count"], :name => "index_profiles_on_friend_list_count"
+  add_index "profiles", ["givey_token"], :name => "index_profiles_on_givey_token"
   add_index "profiles", ["score"], :name => "index_profiles_on_score"
   add_index "profiles", ["uid"], :name => "index_profiles_on_uid"
 
@@ -202,10 +154,9 @@ ActiveRecord::Schema.define(:version => 20110214194740) do
     t.text     "location"
     t.string   "givey_token"
     t.integer  "referring_id"
-    t.boolean  "candidate"
-    t.text     "candidates_story"
-    t.boolean  "candidate_post_story_to_wall"
-    t.integer  "candidates_npo_id"
+    t.text     "story"
+    t.boolean  "post_story_to_wall"
+    t.integer  "npo_id"
   end
 
 end

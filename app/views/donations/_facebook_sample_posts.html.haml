@@ -1,60 +1,33 @@
+.trans
+  %h3.beta BETA TESTER INFO - In case you're curious, this is what the Facebook posts will look like:
 
-    .trans
-      %h3.beta BETA TESTER INFO - In case you're curious, this is what the Facebook posts will look like:
+  %p
+    Note: To see what someone would experience if they clicked on one of the links in the Facebook posts, you can 
+    click on 
+    = link_to "this link.", current_user.referral_link
 
-      %p
-Note: To see what someone would experience if they clicked on one of the links in the Facebook posts, you can 
-click on 
-= link_to "this link.", current_user.referral_link
-
-      %h4 Your wall...
-      
-      .fbUIBlock.row
-.fleft.fbProfilePic
-  = image_tag current_user.profile_pic
-.fleft.fbbody
-  = link_to current_user.name, '#'
-  %br
-  = "Just voted #{@game.winner.name} most likely to change the world out of my Facebook friends on Givey."
+  %h4 Your wall...
   
-  .fbMessageBox
-    .name= link_to "#{@game.winner.name} is going to save the world.", current_user.referral_link
-    .caption= "I'm pretty sure #{@game.winner.name} can save the world."
-    %p.description= "I just played Givey.org's game changer.  My money's on #{@game.winner.name} to change the world.  What do you think?"
-  .fbFooter
-    = Time.now.strftime('%A at %I:%M%p')
-    via Givey.org
-    &#183;
-    = link_to "Like", '#'
-    &#183;
-    = link_to "Comment", '#'
-    
-  
-      %h4 Winner's wall...
-
-      .fbUIBlock.row
-.fleft.fbProfilePic
-  = image_tag current_user.profile_pic
-.fleft.fbbody
-  .fbHeader
-    = link_to current_user.name, '#'
-    .arrow
-    = link_to @game.winner.name, '#'
-    %br
-    = "#{@game.winner.first_name}, I selected you as most likely to change the world if given $25K.  I need you to confirm your nomination.  Can you click the link below please?"
-
-  .fbMessageBox.row.withPic
+  .fbUIBlock.row
     .fleft.fbProfilePic
-      = image_tag "givey_logo_black.png"
+      = image_tag current_user.profile.details.pic_square
     .fleft.fbbody
-      .name= link_to "Givey.org - Can you change the world? Let's play.", "http://#{APP_CONFIG[:domain]}/c/#{@game.token}"
-      .caption= "www.givey.org"
-  .fbFooter
-    = Time.now.strftime('%A at %I:%M%p')
-    via Givey.org
-    &#183;
-    = link_to "Like", '#'
-    &#183;
-    = link_to "Comment", '#'
+      = link_to current_user.name, '#'
+      %br
+      = current_user.story
 
-
+      .fbMessageBox.withPic
+        %table
+          %tr
+            %td.pic= image_tag current_user.npo.logo(:thumb)
+            %td
+              .name= link_to "Givey.org", current_user.referral_link
+              .caption= "Are you the most altruistic person on the web?"
+              %p.description= "#{Donation.count+20} people have given #{number_to_currency(Donation.total)} to find (and give) to the most altruistic person on Facebook."
+      .fbFooter
+        = Time.now.strftime('%A at %I:%M%p')
+        via Givey.org
+        &#183;
+        = link_to "Like", '#'
+        &#183;
+        = link_to "Comment", '#'

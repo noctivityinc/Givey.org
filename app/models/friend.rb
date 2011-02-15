@@ -20,6 +20,20 @@ class Friend < ActiveRecord::Base
   scope :active, where(:active => true)
   scope :random, lambda {|x| order("random()").limit(x)}
   
+  scope :scorable, lambda {
+    joins("join profiles on profiles.uid = friends.uid").
+    where("profiles.friend_list_count >= #{Profile::MIN_FRIEND_LISTS_REQUIRED}").
+    order("profiles.score DESC")
+  }
+  scope :not_scorable, lambda {
+    joins("join profiles on profiles.uid = friends.uid").
+    where("profiles.friend_list_count < #{Profile::MIN_FRIEND_LISTS_REQUIRED}")
+  }
+  
+  def user?
+    User.find_by_uid(self.uid)
+  end
+  
   private
   
   def remove_sparks!

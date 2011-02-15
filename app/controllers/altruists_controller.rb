@@ -1,5 +1,9 @@
 class AltruistsController < ApplicationController
   def index
-    @altruists = Profile.scorable.by_score.paginate :page => params[:page], :per_page => 10
+    @altruists = User.scorable.with_causes.paginate :page => params[:page], :per_page => 10
+  end
+  
+  def show
+    @altruist = Profile.find_by_givey_token(params[:id])
   end
 end

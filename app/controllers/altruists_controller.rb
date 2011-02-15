@@ -4,6 +4,7 @@ class AltruistsController < ApplicationController
   end
   
   def show
+    redirect_to root_url, :notice => "You need to be logged in to view an altruists details" unless current_user 
     @altruist = Profile.find_by_givey_token(params[:id])
   end
 end

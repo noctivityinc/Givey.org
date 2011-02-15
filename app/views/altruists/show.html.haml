@@ -25,10 +25,10 @@
             .they_said.trans= render :partial => 'they_said'
 
           %td
-            - if @altruist.user.has_a_cause?
+            - if @altruist.is_user? && @altruist.user.has_a_cause?
               .npo.trans
                 %h3= "About #{@altruist.user.npo.name}"
-                .logo= image_tag @altruist.user.npo.logo(:thumb) if @altruist.is_user? && @altruist.user.has_a_cause?
+                .logo= image_tag @altruist.user.npo.logo(:thumb)
                 .summary= @altruist.user.npo.summary
                 .links
                   .facebook= link_to image_tag("icons/facebook_64.png"), @altruist.user.npo.facebook_url unless @altruist.user.npo.facebook_url.blank?

@@ -103,7 +103,7 @@ class User < ActiveRecord::Base
   end
 
   def referral_link
-    return "http://#{APP_CONFIG[:domain]}/#{self.givey_token}"
+    return "http://#{APP_CONFIG[:domain]}/r/#{self.givey_token}"
   end
 
   def self.create_with_mini_fb(fb, location, referring_id)

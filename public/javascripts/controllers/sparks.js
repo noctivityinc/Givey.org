@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
   
   function timedResponse(resp) {
     if(resp.status == 'success')
-      window.setTimeout(function(){handleSelectedResponse(resp)},500)
+      window.setTimeout(function(){handleSelectedResponse(resp)},750)
     else if(resp.status == 'error')
       location.reload(true)
   }

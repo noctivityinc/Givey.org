@@ -45,6 +45,21 @@ $(document).ready(function() {
   } 
   
   $('.sc_menu_wrapper').jScrollPane();
+  
+  $('#header_share').click(function() {
+      FB.ui(
+         {
+           method: 'feed',
+           name: "How altruistic am I?",
+           link: "http://givey.org",
+           caption: 'Givey.org',
+           description: "I'm using Givey.org to see if any of my friends think I'm the most altruistic people on Facebook.  It's pretty interesting.",
+           message: "Come check out Givey.  I think I'm pretty great.  What do you think?"
+         }
+       );
+
+      return false;
+  });
 });
 
 function _ajax_request(url, data, callback, type, method) {

@@ -24,9 +24,13 @@
           #candidate_supporter_msg                
         
       %td.right
+        .nav.cabin= link_to "Share", '#', :id => "header_share"
         - if current_user && !hide_login_info?
-          = link_to "Not #{current_user.first_name}? Log Out.", signout_path, :id => "log_out" 
+          .nav.cabin= link_to "Log out", signout_path, :id => "log_out"
     - else
       %td.navs
         .nav.cabin= link_to "Highest Rated Altruists", altruists_path
         .nav.cabin= link_to "Top Altruist Causes", altruists_path
+        
+        
+        

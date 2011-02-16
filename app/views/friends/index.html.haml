@@ -3,6 +3,11 @@
   #index.trans
     %h1 Your Friends - Declassified.
 
+    - if current_user.friends.scorable.empty?
+      .public_invite
+        %p Givey doesn't have enough info on your friends yet to psycho-analyze them.
+        = link_to "Post An Invite!", '', :class => 'invite button', :fb_to => current_user.uid, :fb_link => current_user.referral_link
+
     .row
       - @friends.each_with_index do |a,ndx|
         .friend.fleft.gray_trans
@@ -10,14 +15,14 @@
           - if a.profile.scorable?
             .score{:class => get_background_class(a), :title => "#{a.profile.score} Altruism Points" }= a.profile.score
           - else
-            .lock{:fb_to => a.uid, :fb_link => current_user.referral_link}= image_tag "icons/lock32.png", :title => "Locked!  Click to Invite!" 
+            .lock.invite{:fb_to => a.uid, :fb_link => current_user.referral_link}= image_tag "icons/lock32.png", :title => "Locked!  Click to Invite!" 
             
             
 :javascript
   $(document).ready(function() {
     $('[title]').qtip({ style: { name: 'cream', tip: true } })
     
-    $('.lock').click(function() {
+    $('.invite').click(function() {
       fb_to = $(this).attr('fb_to')
       fb_link = $(this).attr('fb_link')
       FB.ui(

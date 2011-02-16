@@ -32,9 +32,12 @@
           .fleft
             #facebook
               - unless production?
-                %b Completely Anonymous & Secure
-                .login_button= link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
-                #not_user
+                - if current_user
+                  = link_to "More Questions >>", sparks_path, :class => "button"
+                - else
+                  %b Completely Anonymous & Secure
+                  .login_button= link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
+                  #not_user
               
             #main_points
               .secure.row

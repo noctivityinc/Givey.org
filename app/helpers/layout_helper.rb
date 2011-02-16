@@ -35,4 +35,8 @@ module LayoutHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+  
+  def flash_class
+    flash.map {|name, msg| name}.join(' ')
+  end
 end

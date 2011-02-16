@@ -7,6 +7,7 @@
         .fleft.pic.gray_trans= image_tag @altruist.details.pic_square
         .fleft.details
           .name.cabin
+            = link_to image_tag("icons/facebook_64.png"), "http://www.facebook.com/profile.php?id=#{@altruist.uid}", :target => "_blank"
             = @altruist.details.name
             = "(You)" unless altruist_isnt_current_user
             
@@ -19,7 +20,7 @@
       %table
         %tr
           %td
-            - if altruist_isnt_current_user
+            - if altruist_isnt_current_user && !current_user.sparks.with_uid(@altruist.uid).decided.order_by_latest.empty?
               .you_said.trans= render :partial => 'you_said'
         
             .they_said.trans= render :partial => 'they_said'

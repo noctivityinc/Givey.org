@@ -24,10 +24,15 @@
 
   #flash_notice
     color: #fff
+    
+  #flash_notice, #flash_alert, #flash_error
+    width: 80%
+    margin: 0 auto
 
-  #flash_error,
-  #flash_alert
-    color: #CC0000
+  &.alert, &.error
+    background-color: #CC0000
+    color: white
+    
 
 .fieldWithErrors
   display: inline

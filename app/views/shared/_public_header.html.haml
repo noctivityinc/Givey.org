@@ -12,7 +12,7 @@
             .nav.cabin= link_to "Top Causes", altruists_path
             .nav.cabin
               = link_to_if current_user.scores_unlocked?, "Your Scores", altruist_path(current_user.profile.givey_token) do
-                .locked{:title => "Your Friends Are Locked.  Answer More Questions", :class => "qtip"}
+                .locked{:title => "Your Scores Are Locked.  Answer More Questions", :class => "qtip"}
                   = image_tag "icons/lock32.png", :title => "Your Scores Are Locked.  Answer More Questions", :class => "qtip" 
                   Your Scores
             .nav.cabin

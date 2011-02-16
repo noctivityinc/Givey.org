@@ -17,7 +17,7 @@
   %body
     #content-wrapper
       #main
-        #flash
+        #flash{:class => flash_class}
           #flash_close
           - flash.each do |name, msg|
             = content_tag :div, msg, :id => "flash_#{name}"

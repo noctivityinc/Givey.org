@@ -41,7 +41,6 @@ Givey::Application.routes.draw do
   match '/header'  => "home#header"
   get "home/index"
   root :to => "home#index"
-  match "/:token", :to => "home#show"
 
 
 end

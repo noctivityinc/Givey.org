@@ -53,26 +53,36 @@
 }
 
 /* line 5, ../../../../app/stylesheets/public/friends.sass */
-#friends #index .display {
-  margin-bottom: 25px;
-  font-size: 13px;
+#friends #index .public_invite {
+  width: 600px;
+  padding: 10px;
+  margin: 20px auto;
+  border: 2px dashed #0e4873;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
 }
-/* line 9, ../../../../app/stylesheets/public/friends.sass */
+/* line 12, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .public_invite p {
+  font-weight: bold;
+  color: #970c0c;
+}
+/* line 17, ../../../../app/stylesheets/public/friends.sass */
 #friends #index .friend {
   position: relative;
   margin: 10px;
 }
-/* line 13, ../../../../app/stylesheets/public/friends.sass */
+/* line 21, ../../../../app/stylesheets/public/friends.sass */
 #friends #index .friend .lock {
   position: absolute;
   left: 50px;
   z-index: 4;
 }
-/* line 17, ../../../../app/stylesheets/public/friends.sass */
+/* line 25, ../../../../app/stylesheets/public/friends.sass */
 #friends #index .friend .lock img {
   width: 24px;
 }
-/* line 20, ../../../../app/stylesheets/public/friends.sass */
+/* line 28, ../../../../app/stylesheets/public/friends.sass */
 #friends #index .friend .score {
   position: absolute;
   left: 50px;
@@ -87,11 +97,11 @@
   text-align: center;
   padding: 4px 4px 0px 4px;
 }
-/* line 34, ../../../../app/stylesheets/public/friends.sass */
+/* line 42, ../../../../app/stylesheets/public/friends.sass */
 #friends #index .friend .score.neg {
   background: #970c0c;
 }
-/* line 37, ../../../../app/stylesheets/public/friends.sass */
+/* line 45, ../../../../app/stylesheets/public/friends.sass */
 #friends #index .friend .score.pos {
   background: #0e4873;
 }

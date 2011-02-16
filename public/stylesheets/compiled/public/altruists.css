@@ -104,7 +104,11 @@
   padding: 0px;
   margin: 0px;
 }
-/* line 45, ../../../../app/stylesheets/public/altruists.sass */
+/* line 44, ../../../../app/stylesheets/public/altruists.sass */
+#altruist #show .details .name img {
+  width: 24px;
+}
+/* line 47, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show .details .score {
   padding-top: 10px;
   padding-left: 10px;
@@ -112,46 +116,46 @@
   text-shadow: #999999 2px 2px 2px;
   font-size: 18px;
 }
-/* line 52, ../../../../app/stylesheets/public/altruists.sass */
+/* line 56, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table {
   width: 100%;
 }
-/* line 54, ../../../../app/stylesheets/public/altruists.sass */
+/* line 58, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table tr > td {
   vertical-align: top;
 }
-/* line 57, ../../../../app/stylesheets/public/altruists.sass */
+/* line 61, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table .npo {
   float: right;
   width: 250px;
   padding-left: 10px;
 }
-/* line 62, ../../../../app/stylesheets/public/altruists.sass */
+/* line 66, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table .npo .logo {
   text-align: center;
 }
-/* line 65, ../../../../app/stylesheets/public/altruists.sass */
+/* line 69, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table .npo .summary {
   font-size: 13px;
   margin: 5px 0px;
   line-height: 1.25em;
 }
-/* line 71, ../../../../app/stylesheets/public/altruists.sass */
+/* line 75, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table .npo .links div {
   display: inline;
 }
-/* line 73, ../../../../app/stylesheets/public/altruists.sass */
+/* line 77, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table .npo .links div img {
   width: 32px;
   height: 32px;
 }
 
-/* line 78, ../../../../app/stylesheets/public/altruists.sass */
+/* line 82, ../../../../app/stylesheets/public/altruists.sass */
 #altruists .candidate, #altruist .candidate {
   color: black;
   text-shadow: none;
 }
-/* line 81, ../../../../app/stylesheets/public/altruists.sass */
+/* line 85, ../../../../app/stylesheets/public/altruists.sass */
 #altruists .candidate .cause, #altruist .candidate .cause {
   font-weight: bold;
   color: #3d024f;

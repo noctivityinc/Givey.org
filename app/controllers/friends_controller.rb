@@ -1,8 +1,12 @@
 class FriendsController < ApplicationController
   before_filter :verify_user
-  
+
   def index
-    @friends = current_user.friends # .scorable.paginate :page => params[:page], :per_page => 10
+    if current_user.friends_scores_unlocked?
+      @friends = current_user.friends.active
+    else
+      redirect_to sparks_path, :alert => "You need to answer 10 questions before you can view what others said about your friends." 
+    end
   end
 
   def create

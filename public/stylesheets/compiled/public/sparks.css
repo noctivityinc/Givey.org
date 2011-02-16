@@ -746,7 +746,7 @@
 }
 /* line 75, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question h1 {
-  margin: 0;
+  margin: 0 0 10px 0;
   padding: 0;
 }
 /* line 78, ../../../../app/stylesheets/public/sparks.sass */

@@ -7,9 +7,9 @@
       %td
         - if show_top_navs? 
           .navs
-            .nav.cabin.classify= link_to "Complete More Questions", sparks_path
+            .nav.cabin.classify= link_to "More Questions", sparks_path
             .nav.cabin= link_to "Highest Rated Altruists", altruists_path
-            .nav.cabin= link_to "Top Altruist Causes", altruists_path
+            .nav.cabin= link_to "Top Causes", altruists_path
             .nav.cabin
               = link_to_if current_user.scores_unlocked?, "Your Scores", altruist_path(current_user.profile.givey_token) do
                 .locked{:title => "Your Friends Are Locked.  Answer More Questions", :class => "qtip"}

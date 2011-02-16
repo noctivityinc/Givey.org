@@ -1,6 +1,6 @@
 class SparksController < ApplicationController
   before_filter :require_user
-  before_filter :load_friends, :only => :create
+  before_filter :load_friends, :prepare_sparks, :only => :create
   before_filter :validate_enough_friends, :only => [:index]
 
   helper_method :sparks_count_display
@@ -14,14 +14,14 @@ class SparksController < ApplicationController
   end
 
   def index
-    @spark = current_user.prepare_a_spark
+    @spark = current_user.get_spark
   end
 
   def update
     # begin
       spark = Spark.find(params[:id])
       spark.update_winner!(params[:uid])
-      @spark = current_user.prepare_a_spark
+      @spark = current_user.get_spark
       render :json => get_json_response
     # rescue Exception => e
     #   notify_hoptoad(e)
@@ -64,6 +64,10 @@ class SparksController < ApplicationController
 
     def load_friends
       current_user.destroy_and_get_friends if current_user.friends.active.count < 20 || current_user.friends.outdated?
+    end
+    
+    def prepare_sparks
+      current_user.prepare_sparks
     end
 
     def sparks_count_display

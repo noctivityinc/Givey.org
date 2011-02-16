@@ -1,5 +1,6 @@
 class SparksController < ApplicationController
   before_filter :require_user
+  before_filter :check_for_end_of_round, :only => [:index]
   before_filter :load_friends, :prepare_sparks, :only => :create
   before_filter :validate_enough_friends, :only => [:index]
 
@@ -65,6 +66,10 @@ class SparksController < ApplicationController
     def load_friends
       current_user.destroy_and_get_friends if current_user.friends.active.count < 20 || current_user.friends.outdated?
     end
+    
+    def check_for_end_of_round
+      redirect_to end_round_sparks_path if current_user.waiting?
+    end
 
     def prepare_sparks
       current_user.prepare_sparks
@@ -95,12 +100,12 @@ class SparksController < ApplicationController
         your_story_json
       when 16..19
         current_user.story.blank? ? your_story_json : spark_json
-      when 20 then
+      when 21 then
         end_round_json
-      when 21..1001
+      when 22..1001
         current_user.scores_unlocked? ? spark_json : end_round_json
       else
-        spark_json
+        current_user.waiting? ? end_round_json : spark_json
       end
     end
 
@@ -122,7 +127,7 @@ class SparksController < ApplicationController
               :spark_history => render_to_string(:partial => "shared/sparks", :collection => current_user.sparks.decided.order_by_latest ),
               :background => @spark.question.backgrounds.pick.photo(:normal),
               :candidate_supporter_msg  => render_to_string(:partial => '/shared/candidate_supporter_msg', :locals  => {:candidate => User.random_with_a_cause})}
-      json.merge!({:post_url => user_friends_path(current_user)}) if ((current_user.sparks.decided.count + 1) % 20 == 0)
+      json.merge!({:post_url => user_friends_path(current_user)}) if ((current_user.sparks.decided.count + 1) % 21 == 0)
       return json
     end
     

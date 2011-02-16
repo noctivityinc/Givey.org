@@ -7,7 +7,8 @@
       %td
         - if show_top_navs? 
           .navs
-            .nav.cabin.classify= link_to "More Questions", sparks_path
+            - unless current_user.scores_unlocked? || current_user.waiting?
+              .nav.cabin.classify= link_to "More Questions", sparks_path
             .nav.cabin= link_to "Highest Rated Altruists", altruists_path
             .nav.cabin= link_to "Top Causes", altruists_path
             .nav.cabin

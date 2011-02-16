@@ -764,3 +764,56 @@
 #sparks #index #question.recording {
   float: right;
 }
+/* line 92, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round p {
+  text-align: left;
+}
+/* line 95, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round h2 {
+  width: 600px;
+  margin: 0 auto;
+}
+/* line 99, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round .share_actions {
+  width: 450px;
+  margin: 15px auto;
+}
+/* line 104, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round .share_actions .share_facebook a {
+  background: url("/images/buttons/share_facebook.png") no-repeat 0 0;
+  width: 224px;
+  height: 81px;
+  display: block;
+}
+/* line 110, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round .share_actions .share_facebook a:hover {
+  background: url("/images/buttons/share_facebook.png") no-repeat -81 0;
+}
+/* line 114, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round .share_actions .share_twitter a {
+  background: url("/images/buttons/share_twitter.png") no-repeat 0 0;
+  width: 224px;
+  height: 81px;
+  display: block;
+}
+/* line 120, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round .share_actions .share_twitter a:hover {
+  background: url("/images/buttons/share_twitter.png") no-repeat -81 0;
+}
+/* line 123, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round .share_email {
+  margin-top: 25px;
+}
+/* line 125, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round .share_email h4 {
+  width: 650px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 24px;
+}
+/* line 131, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round input {
+  font-size: 18px;
+  padding: 5px;
+  width: 350px;
+}

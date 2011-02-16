@@ -71,8 +71,8 @@ class SparksController < ApplicationController
     end
 
     def sparks_count_display
-      if current_user.sparks.decided.count < 25
-        "#{current_user.sparks.decided.count+1} of 25 needed"
+      if current_user.sparks.decided.count < 20
+        "#{current_user.sparks.decided.count+1} of 20 needed"
       else
         "#{current_user.sparks.decided.count+1} questions answered"
       end
@@ -91,10 +91,14 @@ class SparksController < ApplicationController
         return User.with_causes.empty? ? spark_json : meet_candidate_json.merge!({:spark_resp => spark_json})
       when 10 then
         return what_do_friends_think_json.merge!({:spark_resp => spark_json})
-      when 20 then
+      when 15 then
         your_story_json
-      when 21..1000 then
+      when 16..19
         current_user.story.blank? ? your_story_json : spark_json
+      when 20 then
+        end_round_json
+      when 21..1001
+        current_user.scores_unlocked? ? spark_json : end_round_json
       else
         spark_json
       end
@@ -120,6 +124,10 @@ class SparksController < ApplicationController
               :candidate_supporter_msg  => render_to_string(:partial => '/shared/candidate_supporter_msg', :locals  => {:candidate => User.random_with_a_cause})}
       json.merge!({:post_url => user_friends_path(current_user)}) if ((current_user.sparks.decided.count + 1) % 20 == 0)
       return json
+    end
+    
+    def end_round_json
+      {:status => "success", :type => "end_round", :url => end_round_sparks_path}
     end
 
 end

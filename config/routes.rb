@@ -1,6 +1,6 @@
 Givey::Application.routes.draw do
 
-  resources :altruists, :only => [:show, :index] 
+  resources :altruists, :only => [:show, :index]
   resources :donations do
     collection do
       get :callback
@@ -21,6 +21,10 @@ Givey::Application.routes.draw do
     member do
       get :defriend
     end
+
+    collection do
+      get :end_round
+    end
   end
 
   match "/auth/:provider/callback" => "sessions#create"
@@ -40,6 +44,6 @@ Givey::Application.routes.draw do
   match "/beta_test" => "home#beta_test", :as => "beta_test"
   match '/header'  => "home#header"
   get "home/index"
-  match "/r/:id"  => "home#referral"
+  match "/r/:token"  => "home#referral"
   root :to => "home#index"
 end

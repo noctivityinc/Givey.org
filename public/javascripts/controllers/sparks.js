@@ -66,6 +66,8 @@ jQuery(document).ready(function($) {
         activate_overlay()
         moveQuestion(resp.spark_resp)
         break;
+      case 'end_round':
+        document.location.href = resp.url
       default:
         break;
       }

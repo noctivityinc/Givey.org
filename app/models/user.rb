@@ -85,8 +85,12 @@ class User < ActiveRecord::Base
     self.sparks.decided.count+1 >= 10
   end
 
-  def scores_unlocked?
+  def waiting?
     self.sparks.decided.count+1 >= 20
+  end
+
+  def scores_unlocked?
+    self.waiting? && self.profile.scorable?
   end
 
   def prepare_sparks(num=25)

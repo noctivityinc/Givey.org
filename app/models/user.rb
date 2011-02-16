@@ -106,7 +106,10 @@ class User < ActiveRecord::Base
 
   def get_spark
     spark = sparks.undecided.first
-    prepare_sparks unless spark  # => if there are no more undecided prepare a new set of sparks
+    unless spark
+      prepare_sparks   # => if there are no more undecided prepare a new set of sparks
+      spark = sparks.undecided.first
+    end
     spark
   end
 

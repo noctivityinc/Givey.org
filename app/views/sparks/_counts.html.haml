@@ -3,17 +3,17 @@
 .friends_score
   - if current_user.friends_scores_unlocked?
     = image_tag "icons/unlock32.png"
-    = link_to "Friends Scores", user_friends_path(current_user)
+    = link_to "Your Friends", user_friends_path(current_user)
   - else
     = image_tag "icons/lock32.png"
-    Friends Scores
+    About Your Friends
     .answer_num= "answer #{10-current_user.sparks.decided.count-1} more Qs to unlock"
 
 .your_scores
   - if current_user.scores_unlocked?
     = image_tag "icons/unlock32.png"
-    = link_to "You Scores", altruist_path(current_user.profile.givey_token)
+    = link_to "Your Scores", altruist_path(current_user.profile.givey_token)
   - else
     = image_tag "icons/lock32.png"
-    Your Scores
+    About YOU
     .answer_num= "answer #{20-current_user.sparks.decided.count-1} more Qs to unlock"

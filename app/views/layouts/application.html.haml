@@ -5,14 +5,14 @@
       = yield(:title) || "Givey.org Admin System"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
     = stylesheet_link_tag 'compiled/application', 'jquery/flick/jquery-ui', "compiled/public/#{controller.controller_name}", 'supersized'
-    = javascript_include_tag :defaults, 'jquery-ui.min.js', 'jquery.tools.min.js',  'jquery.mousewheel', 'jquery.jscrollpane.min', 'supersized.3.0.core.js'
+    = javascript_include_tag :defaults, 'jquery-ui.min.js', 'jquery.tools.min.js',  'jquery.mousewheel', 'jquery.jscrollpane.min', 'supersized.3.0.core.js', 'jquery.qtip.min'
     = javascript_include_tag "controllers/#{controller.controller_name}"
     = javascript_include_flash
     = csrf_meta_tag
     = yield(:head)
     :javascript
       randomSlide = [{image : '#{get_background}'}]
-    = render :partial => '/layouts/get_satisfaction_javascript'
+    = render :partial => '/shared/get_satisfaction_javascript'
 
   %body
     #content-wrapper
@@ -22,19 +22,8 @@
           - flash.each do |name, msg|
             = content_tag :div, msg, :id => "flash_#{name}"
 
-        %table#header
-          %tr
-            %td.left
-              = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
-              = image_tag "spinner.gif", :id => "processing_spinner"
-            - if current_user
-              %td#candidate_supporter_msg
-              %td.right
-                - if current_user && !hide_login_info?
-                  = link_to "Not #{current_user.first_name}? Log Out.", signout_path, :id => "log_out" 
-            - else
-              %td.navs
-                .nav= link_to "Highest Rated Altruists", altruists_path
+        #header
+          = render :partial => 'shared/public_header'
       
         #container
           = yield

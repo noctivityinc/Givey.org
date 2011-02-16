@@ -98,7 +98,7 @@ jQuery(document).ready(function($) {
    
    function showSpark (resp) {
      changeStats(resp);
-     reloadSelectedList(resp)
+     reloadSparkHistory(resp)
      loadBackground(resp)
      window.setTimeout(function() {showFieldAndBoard(resp)},2000);
    }
@@ -117,8 +117,8 @@ jQuery(document).ready(function($) {
      $('#supersized').resizenow(); 
    }
    
-   function reloadSelectedList(resp) {
-     $('#selected').html(resp.selected_list)
+   function reloadSparkHistory(resp) {
+     $('.spark_history').html(resp.spark_history)
    }
    
    function no_more_friends(url) {

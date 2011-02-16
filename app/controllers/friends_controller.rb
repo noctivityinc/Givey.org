@@ -2,7 +2,7 @@ class FriendsController < ApplicationController
   before_filter :verify_user
   
   def index
-    @friends = current_user.friends.scorable.paginate :page => params[:page], :per_page => 10
+    @friends = current_user.friends # .scorable.paginate :page => params[:page], :per_page => 10
   end
 
   def create

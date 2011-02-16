@@ -3,21 +3,37 @@
   #index.trans
     %h1 Your Friends - Declassified.
 
-    .display= page_entries_info @friends, :entry_name  => 'friends'
-
-    - @friends.each_with_index do |a,ndx|
-      .friend.fleft.row
-        .fleft= image_tag a.profile.details.pic_square
-        .fleft
-          .name.cabin
-            = link_to a.profile.details.name, altruist_path(a.profile.givey_token), :target => "_blank"
-            - if a.user? && !a.story.blank?
-              %span.candidate
-                supports
-                %span.cause= a.npo.name
+    .row
+      - @friends.each_with_index do |a,ndx|
+        .friend.fleft.gray_trans
+          .fleft= link_to image_tag(a.profile.details.pic_square, :title => "#{a.profile.details.name}"), altruist_path(a.profile.givey_token)
           - if a.profile.scorable?
-            .rank_score
-              .score= "#{pluralize(a.profile.score,'Altruism Point')}"
+            .score{:class => get_background_class(a), :title => "#{a.profile.score} Altruism Points" }= a.profile.score
+          - else
+            .lock{:fb_to => a.uid, :fb_link => current_user.referral_link}= image_tag "icons/lock32.png", :title => "Locked!  Click to Invite!" 
+            
+            
+:javascript
+  $(document).ready(function() {
+    $('[title]').qtip({ style: { name: 'cream', tip: true } })
+    
+    $('.lock').click(function() {
+      fb_to = $(this).attr('fb_to')
+      fb_link = $(this).attr('fb_link')
+      FB.ui(
+         {
+           method: 'feed',
+           to: fb_to,
+           name: "Do you think I'm Altruistic or, well, something else?",
+           link: fb_link,
+           caption: 'Givey.org',
+           description: "I'd like to know what you think of me so I can give $5,000 to something I care about.",
+           message: "Come check out Givey.org.  It's pretty great."
+         }
+       );
+
+      return false;
+    });
+  });
+  
         
-    .paginate
-      = will_paginate @friends

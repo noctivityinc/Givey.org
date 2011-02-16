@@ -49,6 +49,7 @@ $(document).ready(function() {
     if (response.session) {
       showMe()
       getFriends();
+      $('#header').load('/header',{uid: response.session.uid})
     } else {
     }
   });

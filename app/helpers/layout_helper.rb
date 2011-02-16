@@ -12,6 +12,14 @@ module LayoutHelper
     @show_title
   end
   
+  def show_top_nav(val)
+    @top_nav = val
+  end
+  
+  def show_top_navs?
+    return @top_nav.nil? ?  true : @top_nav
+  end
+  
   def hide_login_info
     @hide_login_info = true
   end

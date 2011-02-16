@@ -38,16 +38,16 @@
   margin-top: 2em;
 }
 
-/* line 98, ../../../../app/stylesheets/_base.sass */
+/* line 101, ../../../../app/stylesheets/_base.sass */
 .row {
   overflow: hidden;
   width: 100%;
 }
-/* line 102, ../../../../app/stylesheets/_base.sass */
+/* line 105, ../../../../app/stylesheets/_base.sass */
 .row .fleft {
   float: left;
 }
-/* line 105, ../../../../app/stylesheets/_base.sass */
+/* line 108, ../../../../app/stylesheets/_base.sass */
 .row .fright {
   float: right;
 }
@@ -59,40 +59,39 @@
 }
 /* line 9, ../../../../app/stylesheets/public/friends.sass */
 #friends #index .friend {
-  padding-bottom: 40px;
+  position: relative;
+  margin: 10px;
 }
-/* line 11, ../../../../app/stylesheets/public/friends.sass */
-#friends #index .friend .name {
-  padding-left: 20px;
+/* line 13, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .lock {
+  position: absolute;
+  left: 50px;
+  z-index: 4;
 }
-/* line 14, ../../../../app/stylesheets/public/friends.sass */
-#friends #index .friend .name a {
-  text-decoration: none;
-  color: #02517f;
+/* line 17, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .lock img {
+  width: 24px;
 }
-/* line 18, ../../../../app/stylesheets/public/friends.sass */
-#friends #index .friend .name a:hover {
-  text-decoration: underline;
-}
-/* line 22, ../../../../app/stylesheets/public/friends.sass */
-#friends #index .friend .candidate .cause {
+/* line 20, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .score {
+  position: absolute;
+  left: 50px;
+  z-index: 4;
+  color: white;
   font-weight: bold;
-  color: #3d024f;
-}
-/* line 26, ../../../../app/stylesheets/public/friends.sass */
-#friends #index .friend .rank_score {
-  clear: both;
-  padding-top: 10px;
+  display: block;
+  min-width: 20px;
+  height: 20px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
   text-align: center;
-  width: 260px;
+  padding: 4px 4px 0px 4px;
 }
-/* line 31, ../../../../app/stylesheets/public/friends.sass */
-#friends #index .friend .rank_score .score {
-  font-size: 24px;
-  text-shadow: #999999 2px 2px 2px;
-  display: inline;
+/* line 34, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .score.neg {
+  background: #970c0c;
 }
-/* line 35, ../../../../app/stylesheets/public/friends.sass */
-#friends #index .friend .rank_score .rank {
-  display: inline;
+/* line 37, ../../../../app/stylesheets/public/friends.sass */
+#friends #index .friend .score.pos {
+  background: #0e4873;
 }

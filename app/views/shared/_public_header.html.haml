@@ -1,0 +1,30 @@
+%table
+  %tr
+    %td.left
+      = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
+      = image_tag "spinner.gif", :id => "processing_spinner"
+    - if current_user
+      %td
+        - if show_top_navs? 
+          .navs
+            .nav.cabin.classify= link_to "Complete More Questions", sparks_path
+            .nav.cabin= link_to "Highest Rated Altruists", altruists_path
+            .nav.cabin= link_to "Top Altruist Causes", altruists_path
+            .nav.cabin
+              = link_to_if current_user.scores_unlocked?, "Your Scores", altruist_path(current_user.profile.givey_token) do
+                = image_tag "icons/lock32.png", :title => "Your Scores Locked"
+                Your Scores
+            .nav.cabin
+              = link_to_if current_user.friends_scores_unlocked?, "Your Friends Declassified", user_friends_path(current_user) do
+                = image_tag "icons/lock32.png", :title => "Your Friends Declassified"
+                Your Friends Declassified
+        - else
+          #candidate_supporter_msg                
+        
+      %td.right
+        - if current_user && !hide_login_info?
+          = link_to "Not #{current_user.first_name}? Log Out.", signout_path, :id => "log_out" 
+    - else
+      %td.navs
+        .nav.cabin= link_to "Highest Rated Altruists", altruists_path
+        .nav.cabin= link_to "Top Altruist Causes", altruists_path

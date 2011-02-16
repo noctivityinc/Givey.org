@@ -17,6 +17,12 @@ class HomeController < ApplicationController
       end
     end
   end
+  
+  def header
+    current_user = User.find_by_uid(params[:uid]) if params[:uid]
+    cookies[:user_id] = {:value => current_user.id, :expires => 24.hours.from_now } if current_user
+    render :partial => "shared/public_header", :locals => {:current_user => current_user} 
+  end
 
   private
 

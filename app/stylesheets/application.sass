@@ -31,69 +31,83 @@ body
       overflow: hidden
   
     #header
-      width: 100%
-      margin: 0px
-      height: 30px
-      padding: 5px 0px
-      font-size: .85em
-      +green_trans
+      table
+        width: 100%
+        margin: 0px
+        height: 30px
+        padding: 5px 0px
+        font-size: .85em
+        +green_trans
   
-      a
-        color: white
+        a
+          color: white
   
-      .left
-        width: 130px
-        #processing_spinner
-          margin: 0px
-          +rounded-borders
-          background: white
-          padding: 2px
-          height: 24px
-          width: 24px
-          vertical-align: top
-          display: none
-        
-      .navs
-        .nav
-          margin-right: 10px
-          text-transform: capitalize
-          
-          a
-            text-decoration: none
-            
-            &:hover
-              text-decoration: underline
-          
-      #candidate_supporter_msg
-        color: white
-
-        table
-          margin: 0 auto
-        
-          img
+        .left
+          width: 130px
+          #processing_spinner
+            margin: 0px
+            +rounded-borders
+            background: white
+            padding: 2px
             height: 24px
-            widght: 24px
-            margin: 0px 5px
-            vertical-align: baseline
-            border: 2px solid white
+            width: 24px
+            vertical-align: top
+            display: none
+        
+        .navs
+          overflow: hidden
+          .nav
+            float: left
+            margin-right: 20px
+            text-transform: capitalize
+            font-size: 14px
+          
+            a
+              text-decoration: none
+            
+              &:hover
+                text-decoration: underline
+                color: yellow
 
-          em
-            font-size: 11px
-            font-style: italic
+            img
+              width: 14px
+              vertical-align: baseline
+            
+            &.classify
+              a
+                color: #FEEDB3
+            
           
-          .statement
-            font-weight: bold
-            margin-top: 3px
+        #candidate_supporter_msg
+          color: white
+
+          table
+            margin: 0 auto
+        
+            img
+              height: 24px
+              widght: 24px
+              margin: 0px 5px
+              vertical-align: baseline
+              border: 2px solid white
+
+            em
+              font-size: 11px
+              font-style: italic
           
-            .candidates_cause
-              color: yellow
-              display: inline
+            .statement
+              font-weight: bold
+              margin-top: 3px
           
-      .right
-        text-align: right
-        width: 130px
-        font-size: 13px
-        padding-right: 3px
+              .candidates_cause
+                color: yellow
+                display: inline
+          
+        .right
+          text-align: right
+          width: 130px
+          font-size: 13px
+          padding-right: 3px
         
         
 
@@ -113,6 +127,17 @@ body
         padding: 10px
         margin-bottom: 10px
         background: url(/images/white_90.png)
+        +rounded-borders
+          
+        a.button, input.button
+          +fancy-button(darken(#57b42c, 8))      
+          color: #fff
+          text-decoration: none
+      
+      .gray_trans
+        padding: 10px
+        margin-bottom: 10px
+        +gray_trans
         +rounded-borders
           
         a.button, input.button
@@ -170,23 +195,28 @@ body
               color: #1A8922
               font-weight: bold
               text-decoration: none
+              
+              &:hover
+                text-decoration: underline
           .not_selected_name
             color: #900
 
     #footer
       position: absolute
       bottom: 0
-      height: 100px
+      height: 50px
       padding-top: 25px
       width: 100%
-      background: #f0f0f0 url('/images/bg_footer.png') repeat-x
+      background: #333
       text-align: center
-      family: 'Lucinda Grande'
+      font: normal 12px/20px helvetica,arial,sans-serif
+      border-top: 2px solid white
   
       a
-        color: #333
+        color: #c8cbb3
         text-transform: uppercase
         font-size: .90em
+        text-decoration: none
     
         &:hover
           color: red
@@ -198,8 +228,8 @@ body
     
       #copyright
         clear: both
-        padding-top: 2em
-        color: #333
+        padding-top: .75em
+        color: #b3cbb3
         font-size: .80em
         text-transform: uppercase
     

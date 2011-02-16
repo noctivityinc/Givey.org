@@ -89,17 +89,25 @@ class User < ActiveRecord::Base
     self.sparks.decided.count+1 >= 20
   end
 
-  def prepare_a_spark
-    spark = sparks.undecided.first
-    spark.validate && spark.reload if spark
-    return spark if spark
+  def prepare_sparks(num=25)
+    questions = Question.pick(num-1)
+    spark_friends = self.friends.pick(40)
 
-    question = Question.active.sort_by{rand}.first
-    spark_friends = self.friends.pick
-    unless spark_friends.empty?
-      prepare_a_spark if !self.sparks.create!(:question => question, :friend_uid_1 => spark_friends[0].uid, :friend_uid_2 => spark_friends[1].uid, :friend_uid_3 => spark_friends[2].uid)
+    question_ndx = 0
+    friend_ndx = 0
+    0.upto(num-1).each do |i|
+      question_ndx = (question_ndx < questions.count ? question_ndx : 0)
+      spark_friends += self.friends.pick(40) if (friend_ndx+2) > spark_friends.count
+      self.sparks.create!(:question => questions[question_ndx], :friend_uid_1 => spark_friends[friend_ndx].uid, :friend_uid_2 => spark_friends[friend_ndx+1].uid, :friend_uid_3 => spark_friends[friend_ndx+2].uid)
+      question_ndx += 1
+      friend_ndx += 3
     end
-    return sparks.undecided.first
+  end
+
+  def get_spark
+    spark = sparks.undecided.first
+    prepare_sparks unless spark  # => if there are no more undecided prepare a new set of sparks
+    spark
   end
 
   def referral_link
@@ -143,7 +151,7 @@ class User < ActiveRecord::Base
   end
 
   def destroy_and_get_friends
-    self.friends.destroy_all
+    self.friends.active.destroy_all
     self.get_friends
   end
 

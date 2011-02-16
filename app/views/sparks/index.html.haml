@@ -8,7 +8,8 @@
   #index
     #copy
       #question.trans
-        %h1.question= @spark.question.name
+        %h1
+          .question= @spark.question.name
 
       #playing_field
         = render(:partial => "shared/profile", :collection => @spark.friends)

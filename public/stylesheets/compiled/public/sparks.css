@@ -745,6 +745,22 @@
   border: 2px solid #666666;
 }
 /* line 75, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #question h1 {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+/* line 78, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #question h1 .q_num {
+  margin-right: 5px;
+  color: #0e4873;
+  font-size: 15px;
+  vertical-align: baseline;
+}
+/* line 84, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #index #question h1 .question, #sparks #index #question h1 .q_num {
+  display: inline;
+}
+/* line 88, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question.recording {
   float: right;
 }

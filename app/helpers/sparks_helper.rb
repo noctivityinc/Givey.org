@@ -1,4 +1,9 @@
 module SparksHelper
+  
+  def question_count
+    "#{current_user.sparks.decided.count+1} of 25" if current_user.sparks.decided.count < 25
+  end
+
   def random_photos(profile)
     pics = profile.photos.sort_by{rand}[0..2]
   end

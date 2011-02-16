@@ -20,7 +20,6 @@ $(document).ready(function() {
   FB.getLoginStatus(function(response) {
     if (response.session) {
       showMe()
-      $('#header').load('/header',{uid: response.session.uid})
     } else {
     }
   });

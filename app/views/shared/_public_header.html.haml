@@ -12,12 +12,14 @@
             .nav.cabin= link_to "Top Altruist Causes", altruists_path
             .nav.cabin
               = link_to_if current_user.scores_unlocked?, "Your Scores", altruist_path(current_user.profile.givey_token) do
-                = image_tag "icons/lock32.png", :title => "Your Scores Locked"
-                Your Scores
+                .locked{:title => "Your Friends Are Locked.  Answer More Questions", :class => "qtip"}
+                  = image_tag "icons/lock32.png", :title => "Your Scores Are Locked.  Answer More Questions", :class => "qtip" 
+                  Your Scores
             .nav.cabin
               = link_to_if current_user.friends_scores_unlocked?, "Your Friends Declassified", user_friends_path(current_user) do
-                = image_tag "icons/lock32.png", :title => "Your Friends Declassified"
-                Your Friends Declassified
+                .locked{:title => "Your Friends Are Locked.  Answer More Questions", :class => "qtip"}
+                  = image_tag "icons/lock32.png"
+                  Your Friends Declassified
         - else
           #candidate_supporter_msg                
         

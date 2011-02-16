@@ -17,6 +17,17 @@ function randomOrder(){
 }
 
 $(document).ready(function() {
+  $('.qtip').live('mouseover', function() {
+     $(this).qtip({
+        overwrite: false, // Make sure another tooltip can't overwrite this one without it being explicitly destroyed
+        content: $(this).attr('title'),
+        style: 'cream',
+        show: {
+           ready: true // Needed to make it show on first mouseover event
+        }
+     })
+  })
+  
   $('#log_out').click(function() {
     FB.logout();
     return true;

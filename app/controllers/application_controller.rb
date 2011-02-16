@@ -13,13 +13,13 @@ class ApplicationController < ActionController::Base
     session[:previous_page] = nil
     redirect_to (session_page || default_url)
   end
-  
+
   def redirect_forward_or_to(default_url=nil)
     session_page = session[:next_page]
     session[:next_page] = nil
     redirect_to (session_page || default_url)
   end
-  
+
   def production?
     Rails.env == 'production'
   end
@@ -34,16 +34,25 @@ class ApplicationController < ActionController::Base
     def current_user
       @current_user ||= User.find_by_id(cookies[:user_id]) unless cookies[:user_id].blank?
     end
-    
+
     def require_admin
-      redirect_to root_url, :notice => 'Unauthorized Access' unless current_user && current_user.admin? 
+      redirect_to root_url, :notice => 'Unauthorized Access' unless current_user && current_user.admin?
     end
 
     def record_previous_page
       session[:previous_page] = request.url
     end
-    
+
     def unfinished_games?
       !current_user.games.incomplete.empty?
+    end
+
+    def help
+      Helper.instance
+    end
+
+    class Helper
+      include Singleton
+      include ActionView::Helpers::TextHelper
     end
 end

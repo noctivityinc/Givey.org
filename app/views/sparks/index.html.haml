@@ -14,8 +14,9 @@
 
       #score_board.row
         .spark_history.fleft= render :partial => 'shared/sparks', :collection => current_user.sparks.decided.order_by_latest 
-        #counts.fright= sparks_count_display
+        #counts.fright= render :partial => 'counts'
 
+            
 - content_for :feet do
   = link_to "trigger overlay", '#', :rel => "#overlay", :id => 'trigger_overlay', :class => "trigger"
   = link_to "trigger modal", '#', :rel => "#modal", :id => 'trigger_modal', :class => "trigger"

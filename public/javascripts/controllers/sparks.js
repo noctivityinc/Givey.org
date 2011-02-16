@@ -108,7 +108,7 @@ jQuery(document).ready(function($) {
    }
    
    function changeStats(resp) {
-    $('#counts').text(resp.counts)
+    $('#counts').html(resp.counts)
    }
    
    function loadBackground (resp) {

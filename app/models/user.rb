@@ -72,13 +72,21 @@ class User < ActiveRecord::Base
     last_initial = self.name.split(/\s/)[1][0]
     return "#{first_name} #{last_initial}."
   end
-  
+
   def has_a_cause?
     !self.npo_id.nil?
   end
 
   def self.random_with_a_cause
     self.with_causes.sort_by{rand}.first
+  end
+
+  def friends_scores_unlocked?
+    self.sparks.decided.count+1 >= 10
+  end
+
+  def scores_unlocked?
+    self.sparks.decided.count+1 >= 20
   end
 
   def prepare_a_spark

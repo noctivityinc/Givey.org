@@ -46,12 +46,15 @@ $(document).ready(function() {
   
   $('.sc_menu_wrapper').jScrollPane();
   
-  $('#header_share').click(function() {
+  $('.fb_share').click(function() {
+      link = $(this).attr('rel');
+      if(link=='') link = 'http://www.givey.org';
+      console.log(link)
       FB.ui(
          {
            method: 'feed',
            name: "How altruistic am I?",
-           link: "http://givey.org",
+           link: link,
            caption: 'Givey.org',
            description: "I'm using Givey.org to see if any of my friends think I'm the most altruistic people on Facebook.  It's pretty interesting.",
            message: "Come check out Givey.  I think I'm pretty great.  What do you think?"

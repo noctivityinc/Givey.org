@@ -25,7 +25,7 @@
           #candidate_supporter_msg                
         
       %td.right
-        .nav.cabin= link_to "Share", '#', :id => "header_share"
+        .nav.cabin= link_to "Share", '#', :id => "header_share", :class => "fb_share"
         - if current_user && !hide_login_info?
           .nav.cabin= link_to "Log out", signout_path, :id => "log_out"
     - else

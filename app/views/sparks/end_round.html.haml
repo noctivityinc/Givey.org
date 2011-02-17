@@ -21,7 +21,7 @@
       %h2.share Share Givey.org and we'll notify you via email as soon as enough of your friends have had their way with you.
   
       .share_actions.row
-        .share_facebook.fleft= link_to '', "http://www.facebook.com/sharer.php?u=#{CGI.escape(current_user.referral_link)}"
+        .share_facebook.fleft= link_to '', "#", :class => "fb_share", :rel => current_user.referral_link  
         .share_twitter.fleft= link_to '', "http://twitter.com/share?text=#{CGI.escape(Question.active.sort_by{rand}.first.name+' Let me know on Givey.org')}&url=#{CGI.escape(current_user.referral_link)}"
       
       .share_email

@@ -8,10 +8,7 @@ module ApplicationHelper
 
   def facebook_oauth_url
     MiniFB.oauth_url(APP_CONFIG[:facebook]['api_key'],facebook_oauth_callback_url,
-                     :scope=>"publish_stream,email,user_about_me,
-                                  user_birthday,user_interests,user_activities,user_status,user_photos,friends_about_me,
-                                  friends_birthday,friends_interests,friends_activities,
-                                  friends_relationships,friends_status,friends_photos,friends_relationship_details")
+                     :scope=>"publish_stream,email,user_about_me,user_birthday,user_interests,user_activities,user_status,user_photos,friends_about_me,friends_birthday,friends_interests,friends_activities,friends_relationships,friends_status,friends_photos,friends_relationship_details")
   end
 
   def get_background

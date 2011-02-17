@@ -162,3 +162,35 @@ function activate_modal () {
   $('#trigger_modal').click();
 }
 
+function exec_new() {
+  var ready = false
+  var p = 1;
+  var data_url;
+  url = $('#new').attr('givey:url');
+  $.post(url, function(data) {
+     if (data.status == 'complete') {
+      ready = true;
+      data_url = data.url;
+     };
+    })
+
+  $('#wait_btn').click(function() {
+    return false;
+  });
+  
+  $('#next_btn').click(function() {
+    location.href = $(this).attr('rel')
+    return false;
+  });
+  
+  var int = window.setInterval(function(){
+    $('.p'+p).fadeIn();
+    p++;
+    if(p>6 && ready) {
+      window.clearInterval(int);
+      $('.wait').hide();
+      $('#next_btn').attr('rel',data_url).fadeIn();
+      $('.title').text("We're Ready For You!").css('color','red')
+    }
+  },3000)
+}

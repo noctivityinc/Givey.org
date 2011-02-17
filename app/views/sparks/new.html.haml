@@ -4,23 +4,7 @@
 - content_for :head do
   :javascript
     $(document).ready(function() {
-      url = $('#new').attr('givey:url');
-      $.post(url, function(data) {
-         if (data.status == 'complete') {
-           $('.wait').hide();
-           $('#next_btn').attr('rel',data.url).fadeIn();
-           $('.title').text("We're Ready For You!").css('color','red')
-         }
-        })
-
-        $('#wait_btn').click(function() {
-          return false;
-        });
-        
-        $('#next_btn').click(function() {
-          location.href = $(this).attr('rel')
-          return false;
-        });
+      exec_new();
     });
 
     
@@ -28,9 +12,26 @@
   #new{'givey:url' => "#{sparks_path}"}
     #copy
       #please_wait.trans
-        %h1.title Please Wait. We're mixing it up...
+        %h1.title Please Wait...
       
-        %p.wait
+        %h2.msg.p1
+          We're talking to Facebook about your friends...
+      
+        %h2.msg.p2
+          While preparing 
+          %span.num_q 20 
+          thought-provoking questions.
+        
+        %h2.msg.p3
+          To determine if they are destined for greatness (or something else).
+
+        %h2.msg.p4
+          And when you're done talking about them.
+          
+        %h1.msg.p5.you
+          You can find out what they said about you!
+          
+        .msg.p6
           Your questions should be ready in a minute or so
         
         .spinner.wait
@@ -38,7 +39,7 @@
           
         #actions
           = button_to "Please Wait...", '#', :id => "wait_btn", :disabled => true, :class => "wait"
-          = button_to "Ready?  Let's Go >>", '#', :id => "next_btn", :class => "button", :rel => "" 
+          = button_to "You Ready?  Let's Go >>", '#', :id => "next_btn", :class => "button", :rel => "" 
           
       #try_later.trans
         %h1 Sorry, but Facebook seems overloaded with givers right now

@@ -2,7 +2,9 @@
   .sidebar.fleft
     = render :partial => 'shared/candidate', :object => candidate
   .main_panel.fleft
-    %h2= "#{candidate.public_display_name} joined the movement to turn their $5 into $5000 for #{candidate.npo.name}.  Here's why..."
+    %h2 This is what it's all about...
+    
+    %h3= "#{candidate.public_display_name} joined the movement to turn their $5 into $5000 for #{candidate.npo.name}.  Here's why..."
     
     %table.story
       %tr

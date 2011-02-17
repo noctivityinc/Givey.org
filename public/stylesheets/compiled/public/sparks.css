@@ -481,15 +481,35 @@
   display: none;
 }
 /* line 18, ../../../../app/stylesheets/public/sparks.sass */
+#spark #new #please_wait h2 {
+  color: #0e4873;
+}
+/* line 21, ../../../../app/stylesheets/public/sparks.sass */
+#spark #new #please_wait .msg {
+  display: none;
+}
+/* line 24, ../../../../app/stylesheets/public/sparks.sass */
+#spark #new #please_wait .num_q {
+  font-size: 1.25em;
+}
+/* line 27, ../../../../app/stylesheets/public/sparks.sass */
+#spark #new #please_wait .you {
+  color: #336600;
+}
+/* line 30, ../../../../app/stylesheets/public/sparks.sass */
 #spark #new #try_later {
   display: none;
 }
+/* line 34, ../../../../app/stylesheets/public/sparks.sass */
+#spark #new #npos .npo {
+  margin-right: 10px;
+}
 
-/* line 23, ../../../../app/stylesheets/public/sparks.sass */
+/* line 38, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index {
   position: relative;
 }
-/* line 25, ../../../../app/stylesheets/public/sparks.sass */
+/* line 40, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #playing_field {
   height: 400px;
   padding-left: 25px;
@@ -684,39 +704,39 @@
 #sparks #index #playing_field .card.candidate > .frame > .box > .sc_menu_wrapper > .header {
   background: #2e133f;
 }
-/* line 30, ../../../../app/stylesheets/public/sparks.sass */
+/* line 45, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board {
   clear: both;
   margin-bottom: 2em;
   text-align: left;
 }
-/* line 36, ../../../../app/stylesheets/public/sparks.sass */
+/* line 51, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts a {
   color: white;
 }
-/* line 39, ../../../../app/stylesheets/public/sparks.sass */
+/* line 54, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts a:hover {
   color: yellow;
 }
-/* line 42, ../../../../app/stylesheets/public/sparks.sass */
+/* line 57, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts .count {
   font-size: 1.2em;
   font-weight: bold;
   text-align: center;
   margin-bottom: 15px;
 }
-/* line 48, ../../../../app/stylesheets/public/sparks.sass */
+/* line 63, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts .answer_num {
   font-style: italic;
   font-size: 12px;
   padding-left: 40px;
   margin-bottom: 10px;
 }
-/* line 54, ../../../../app/stylesheets/public/sparks.sass */
+/* line 69, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board .spark_history {
   width: 600px;
 }
-/* line 57, ../../../../app/stylesheets/public/sparks.sass */
+/* line 72, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts {
   filter: alpha(opacity=80);
   -moz-opacity: 0.8;
@@ -729,12 +749,12 @@
   padding: 10px;
   width: 200px;
 }
-/* line 62, ../../../../app/stylesheets/public/sparks.sass */
+/* line 77, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #score_board #counts h1 {
   color: white;
   text-shadow: #333333 2px 2px 2px;
 }
-/* line 66, ../../../../app/stylesheets/public/sparks.sass */
+/* line 81, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question {
   position: relative;
   top: 10px;
@@ -744,74 +764,74 @@
   box-shadow: 3px 3px 4px black;
   border: 2px solid #666666;
 }
-/* line 75, ../../../../app/stylesheets/public/sparks.sass */
+/* line 90, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question h1 {
   margin: 0 0 10px 0;
   padding: 0;
 }
-/* line 78, ../../../../app/stylesheets/public/sparks.sass */
+/* line 93, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question h1 .q_num {
   margin-right: 5px;
   color: #0e4873;
   font-size: 15px;
   vertical-align: baseline;
 }
-/* line 84, ../../../../app/stylesheets/public/sparks.sass */
+/* line 99, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question h1 .question, #sparks #index #question h1 .q_num {
   display: inline;
 }
-/* line 88, ../../../../app/stylesheets/public/sparks.sass */
+/* line 103, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #index #question.recording {
   float: right;
 }
-/* line 92, ../../../../app/stylesheets/public/sparks.sass */
+/* line 107, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #end_round p {
   text-align: left;
 }
-/* line 95, ../../../../app/stylesheets/public/sparks.sass */
+/* line 110, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #end_round h2 {
   width: 600px;
   margin: 0 auto;
 }
-/* line 99, ../../../../app/stylesheets/public/sparks.sass */
+/* line 114, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #end_round .share_actions {
   width: 450px;
   margin: 15px auto;
 }
-/* line 104, ../../../../app/stylesheets/public/sparks.sass */
+/* line 119, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #end_round .share_actions .share_facebook a {
   background: url("/images/buttons/share_facebook.png") no-repeat 0 0;
   width: 224px;
   height: 81px;
   display: block;
 }
-/* line 110, ../../../../app/stylesheets/public/sparks.sass */
+/* line 125, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #end_round .share_actions .share_facebook a:hover {
   background: url("/images/buttons/share_facebook.png") no-repeat -81 0;
 }
-/* line 114, ../../../../app/stylesheets/public/sparks.sass */
+/* line 129, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #end_round .share_actions .share_twitter a {
   background: url("/images/buttons/share_twitter.png") no-repeat 0 0;
   width: 224px;
   height: 81px;
   display: block;
 }
-/* line 120, ../../../../app/stylesheets/public/sparks.sass */
+/* line 135, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #end_round .share_actions .share_twitter a:hover {
   background: url("/images/buttons/share_twitter.png") no-repeat -81 0;
 }
-/* line 123, ../../../../app/stylesheets/public/sparks.sass */
+/* line 138, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #end_round .share_email {
   margin-top: 25px;
 }
-/* line 125, ../../../../app/stylesheets/public/sparks.sass */
+/* line 140, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #end_round .share_email h4 {
   width: 650px;
   margin: 0 auto;
   text-align: left;
   font-size: 24px;
 }
-/* line 131, ../../../../app/stylesheets/public/sparks.sass */
+/* line 146, ../../../../app/stylesheets/public/sparks.sass */
 #sparks #end_round input {
   font-size: 18px;
   padding: 5px;

@@ -84,6 +84,10 @@ class User < ActiveRecord::Base
   def friends_scores_unlocked?
     self.sparks.decided.count+1 >= 10
   end
+  
+  def needs_friends?
+    self.friends.active.count < 20
+  end
 
   def waiting?
     self.sparks.decided.count+1 > 20

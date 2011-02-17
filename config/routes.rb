@@ -42,8 +42,7 @@ Givey::Application.routes.draw do
 
   match "/not_yet" => "home#not_yet"
   match "/beta_test" => "home#beta_test", :as => "beta_test"
-  match '/header'  => "home#header"
-  get "home/index"
   match "/r/:token"  => "home#referral"
+  get "home/index"
   root :to => "home#index"
 end

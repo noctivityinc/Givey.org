@@ -46,10 +46,9 @@ $(document).ready(function() {
   
   $('.sc_menu_wrapper').jScrollPane();
   
-  $('.fb_share').click(function() {
+  $('.fb_share').live('click',function() {
       link = $(this).attr('rel');
       if(link=='') link = 'http://www.givey.org';
-      console.log(link)
       FB.ui(
          {
            method: 'feed',

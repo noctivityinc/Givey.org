@@ -6,20 +6,21 @@
       %h1 Sorry, but Givey.org is invite only right now.
       
       %p
-        We're still working out the kinks and making sure that all the stars are 
-        aligned to help us raise $25,000 for some amazing NPOs.
+        Our crack psychologists are busy figuring out the best way 
+        to gently probe the your psyche to find your most (and least) 
+        altruistic friends. 
         
       %p
         In the meantime, we invite you to follow us on Facebook and Twitter.  
         
       %p
         = link_to image_tag('icons/twitter_64.png'), 'http://www.twitter.com/giveyorg'
-        = link_to image_tag('icons/facebook_64.png'), 'http://www.facebook.com/giveyorg'
+        = link_to image_tag('icons/facebook_64.png'), 'http://www.facebook.com/pages/Giveyorg/121752667894755'
         
     #npos.trans
       %h2 Also, please visit some of these incredible non-profits we are working with:
       
       .row
         - Npo.all.each do |n|
-          .npo.fleft.trans= image_tag n.logo.url(:thumb)
+          .npo.fleft.trans= link_to image_tag(n.logo.url(:thumb)), n.website, :target => "_blank"
         

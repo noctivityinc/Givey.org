@@ -66,7 +66,7 @@ class SparksController < ApplicationController
     def load_friends
       current_user.destroy_and_get_friends if current_user.friends.active.count < 20 || current_user.friends.outdated?
     end
-    
+
     def check_for_end_of_round
       redirect_to end_round_sparks_path if current_user.waiting?
     end
@@ -84,10 +84,8 @@ class SparksController < ApplicationController
     end
 
     def validate_enough_friends
-      current_user.get_friends if current_user.friends.active.count < 20
-      if current_user.friends.active.count < 20
-        redirect_to needs_friends_user_url(current_user)
-      end
+      current_user.get_friends if current_user.needs_friends?
+      redirect_to needs_friends_user_url(current_user) if current_user.needs_friends?
     end
 
     def get_json_response
@@ -130,7 +128,7 @@ class SparksController < ApplicationController
       json.merge!({:post_url => user_friends_path(current_user)}) if ((current_user.sparks.decided.count + 1) % 21 == 0)
       return json
     end
-    
+
     def end_round_json
       {:status => "success", :type => "end_round", :url => end_round_sparks_path}
     end

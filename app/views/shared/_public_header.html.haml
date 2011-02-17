@@ -7,7 +7,7 @@
       %td
         - if show_top_navs? 
           .navs
-            - unless current_user.scores_unlocked? || current_user.waiting?
+            - unless current_user.scores_unlocked? || current_user.waiting? || current_user.needs_friends?
               .nav.cabin.classify= link_to "More Questions", sparks_path
             .nav.cabin= link_to "Highest Rated Altruists", altruists_path
             .nav.cabin= link_to "Top Causes", altruists_path
@@ -27,7 +27,7 @@
       %td.right
         .nav.cabin= link_to "Share", '#', :id => "header_share", :class => "fb_share"
         - if current_user && !hide_login_info?
-          .nav.cabin= link_to "Log out", signout_path, :id => "log_out"
+          .nav.cabin= link_to "Log out #{current_user.profile.details.first_name}", signout_path, :id => "log_out"
     - else
       %td.navs
         .nav.cabin= link_to "Highest Rated Altruists", altruists_path

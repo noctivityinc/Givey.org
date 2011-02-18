@@ -211,11 +211,11 @@
 #candidates #index .candidate .card .frame .box .top .remove_button a:hover, #candidates #show .candidate .card .frame .box .top .remove_button a:hover, #candidate #index .candidate .card .frame .box .top .remove_button a:hover, #candidate #show .candidate .card .frame .box .top .remove_button a:hover {
   background: url(/images/icons/remove_buttons.png) no-repeat 0 -16px;
 }
-/* line 68, ../../../../app/stylesheets/public/_card.sass */
+/* line 66, ../../../../app/stylesheets/public/_card.sass */
 #candidates #index .candidate .card .frame .box .top .profile_pic, #candidates #show .candidate .card .frame .box .top .profile_pic, #candidate #index .candidate .card .frame .box .top .profile_pic, #candidate #show .candidate .card .frame .box .top .profile_pic {
   width: 40px;
 }
-/* line 70, ../../../../app/stylesheets/public/_card.sass */
+/* line 68, ../../../../app/stylesheets/public/_card.sass */
 #candidates #index .candidate .card .frame .box .top .profile_pic img, #candidates #show .candidate .card .frame .box .top .profile_pic img, #candidate #index .candidate .card .frame .box .top .profile_pic img, #candidate #show .candidate .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
@@ -223,11 +223,13 @@
   width: 30px;
   height: 30px;
 }
-/* line 77, ../../../../app/stylesheets/public/_card.sass */
+/* line 75, ../../../../app/stylesheets/public/_card.sass */
 #candidates #index .candidate .card .frame .box .sc_menu_wrapper, #candidates #show .candidate .card .frame .box .sc_menu_wrapper, #candidate #index .candidate .card .frame .box .sc_menu_wrapper, #candidate #show .candidate .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
+  margin: 0px;
+  padding: 0px;
 }
 /* line 82, ../../../../app/stylesheets/public/_card.sass */
 #candidates #index .candidate .card .frame .box .sc_menu_wrapper .header, #candidates #show .candidate .card .frame .box .sc_menu_wrapper .header, #candidate #index .candidate .card .frame .box .sc_menu_wrapper .header, #candidate #show .candidate .card .frame .box .sc_menu_wrapper .header {

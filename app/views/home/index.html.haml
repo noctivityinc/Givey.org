@@ -24,12 +24,15 @@
     #copy
       .trans
         #heading
-          %h2= "#{Donation.count+20} people have given #{number_to_currency(Donation.total)} to find (and give) to the most altruistic person on Facebook."
+          - if production?
+            %h2 Starting March 1st we plan on giving $5,000* to the most altruistic people on Facebook.
+          - else
+            %h2= "#{Donation.count+20} people have given #{number_to_currency(Donation.total)} to find (and give) to the most altruistic person on Facebook."
         
           %h1 Maybe it's one of your friends? (Maybe it's you).
 
-        .row
-          .fleft
+        #top_copy.row
+          #login_and_points.fleft
             #facebook
               - unless production?
                 - if current_user
@@ -61,6 +64,8 @@
           #screen_shot.fleft
             %h3.question= Question.active.sort_by{rand}.first.name
                 
+          - if !production?
+            .footnote= "* $5,000 will be contributed by Givey.org members and given to the non-profit selected by the most altruistic person as voted on my Givey members."
       #npos.trans.scrollable
         .items
           - Npo.active.in_groups_of(8) do |group| 

@@ -204,11 +204,11 @@
 #game #show #playing_field .card .frame .box .top .remove_button a:hover {
   background: url(/images/icons/remove_buttons.png) no-repeat 0 -16px;
 }
-/* line 68, ../../../../app/stylesheets/public/_card.sass */
+/* line 66, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .top .profile_pic {
   width: 40px;
 }
-/* line 70, ../../../../app/stylesheets/public/_card.sass */
+/* line 68, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
@@ -216,11 +216,13 @@
   width: 30px;
   height: 30px;
 }
-/* line 77, ../../../../app/stylesheets/public/_card.sass */
+/* line 75, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
+  margin: 0px;
+  padding: 0px;
 }
 /* line 82, ../../../../app/stylesheets/public/_card.sass */
 #game #show #playing_field .card .frame .box .sc_menu_wrapper .header {
@@ -502,11 +504,11 @@
 #why_overlay .sidebar .card .frame .box .top .remove_button a:hover {
   background: url(/images/icons/remove_buttons.png) no-repeat 0 -16px;
 }
-/* line 68, ../../../../app/stylesheets/public/_card.sass */
+/* line 66, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .top .profile_pic {
   width: 40px;
 }
-/* line 70, ../../../../app/stylesheets/public/_card.sass */
+/* line 68, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
@@ -514,11 +516,13 @@
   width: 30px;
   height: 30px;
 }
-/* line 77, ../../../../app/stylesheets/public/_card.sass */
+/* line 75, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
+  margin: 0px;
+  padding: 0px;
 }
 /* line 82, ../../../../app/stylesheets/public/_card.sass */
 #why_overlay .sidebar .card .frame .box .sc_menu_wrapper .header {
@@ -843,11 +847,11 @@
 #winner #winner_overlay #card .card .frame .box .top .remove_button a:hover {
   background: url(/images/icons/remove_buttons.png) no-repeat 0 -16px;
 }
-/* line 68, ../../../../app/stylesheets/public/_card.sass */
+/* line 66, ../../../../app/stylesheets/public/_card.sass */
 #winner #winner_overlay #card .card .frame .box .top .profile_pic {
   width: 40px;
 }
-/* line 70, ../../../../app/stylesheets/public/_card.sass */
+/* line 68, ../../../../app/stylesheets/public/_card.sass */
 #winner #winner_overlay #card .card .frame .box .top .profile_pic img {
   border: 1px solid white;
   -moz-border-radius: 2px;
@@ -855,11 +859,13 @@
   width: 30px;
   height: 30px;
 }
-/* line 77, ../../../../app/stylesheets/public/_card.sass */
+/* line 75, ../../../../app/stylesheets/public/_card.sass */
 #winner #winner_overlay #card .card .frame .box .sc_menu_wrapper {
   height: 300px;
   width: 250px;
   overflow: auto;
+  margin: 0px;
+  padding: 0px;
 }
 /* line 82, ../../../../app/stylesheets/public/_card.sass */
 #winner #winner_overlay #card .card .frame .box .sc_menu_wrapper .header {

@@ -44,7 +44,7 @@ $(document).ready(function() {
     $('#supersized').supersized();
   } 
   
-  $('.sc_menu_wrapper').jScrollPane();
+  // $('.sc_menu_wrapper').jScrollPane();
   
   $('.fb_share').live('click',function() {
       link = $(this).attr('rel');

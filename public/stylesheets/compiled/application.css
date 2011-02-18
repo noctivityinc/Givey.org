@@ -767,42 +767,41 @@ body #main #header table #candidate_supporter_msg table .statement .candidates_c
 /* line 109, ../../../app/stylesheets/application.sass */
 body #main #header table .right {
   text-align: right;
-  width: 200px;
   padding-right: 10px;
   vertical-align: center;
 }
-/* line 114, ../../../app/stylesheets/application.sass */
+/* line 113, ../../../app/stylesheets/application.sass */
 body #main #header table .right .nav {
   display: inline;
-  margin-right: 5px;
+  margin-right: 15px;
 }
-/* line 117, ../../../app/stylesheets/application.sass */
+/* line 116, ../../../app/stylesheets/application.sass */
 body #main #header table .right .nav a {
   font-size: 13px;
   text-decoration: none;
   white-space: nowrap;
 }
-/* line 122, ../../../app/stylesheets/application.sass */
+/* line 121, ../../../app/stylesheets/application.sass */
 body #main #header table .right .nav a:hover {
   text-decoration: underline;
   color: yellow;
 }
-/* line 128, ../../../app/stylesheets/application.sass */
+/* line 127, ../../../app/stylesheets/application.sass */
 body #main #container {
   width: 960px;
   margin: 0 auto;
   padding: 10px;
   padding-bottom: 150px;
 }
-/* line 134, ../../../app/stylesheets/application.sass */
+/* line 133, ../../../app/stylesheets/application.sass */
 body #main #container h1, body #main #container h2, body #main #container h3, body #main #container h4, body #main #container p {
   margin-bottom: 0.75em;
 }
-/* line 137, ../../../app/stylesheets/application.sass */
+/* line 136, ../../../app/stylesheets/application.sass */
 body #main #container h1.beta, body #main #container h2.beta, body #main #container h3.beta, body #main #container h4.beta, body #main #container p.beta {
   color: red;
 }
-/* line 140, ../../../app/stylesheets/application.sass */
+/* line 139, ../../../app/stylesheets/application.sass */
 body #main #container .trans {
   padding: 10px;
   margin-bottom: 10px;
@@ -810,7 +809,7 @@ body #main #container .trans {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 146, ../../../app/stylesheets/application.sass */
+/* line 145, ../../../app/stylesheets/application.sass */
 body #main #container .trans a.button, body #main #container .trans input.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -875,7 +874,7 @@ body #main #container .trans a.button:active, body #main #container .trans input
 body #main #container .trans a.button:active, body #main #container .trans a.button:active:visited, body #main #container .trans input.button:active, body #main #container .trans input.button:active:visited {
   color: white;
 }
-/* line 151, ../../../app/stylesheets/application.sass */
+/* line 150, ../../../app/stylesheets/application.sass */
 body #main #container .gray_trans {
   padding: 10px;
   margin-bottom: 10px;
@@ -883,7 +882,7 @@ body #main #container .gray_trans {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 157, ../../../app/stylesheets/application.sass */
+/* line 156, ../../../app/stylesheets/application.sass */
 body #main #container .gray_trans a.button, body #main #container .gray_trans input.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -948,31 +947,31 @@ body #main #container .gray_trans a.button:active, body #main #container .gray_t
 body #main #container .gray_trans a.button:active, body #main #container .gray_trans a.button:active:visited, body #main #container .gray_trans input.button:active, body #main #container .gray_trans input.button:active:visited {
   color: white;
 }
-/* line 162, ../../../app/stylesheets/application.sass */
+/* line 161, ../../../app/stylesheets/application.sass */
 body #main #container #copy {
   margin: 0.25em auto;
   text-align: center;
 }
-/* line 166, ../../../app/stylesheets/application.sass */
+/* line 165, ../../../app/stylesheets/application.sass */
 body #main #container #copy.boxit {
   padding: 15px;
   background: white;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 172, ../../../app/stylesheets/application.sass */
+/* line 171, ../../../app/stylesheets/application.sass */
 body #main #container #copy h1 {
   text-align: center;
 }
-/* line 175, ../../../app/stylesheets/application.sass */
+/* line 174, ../../../app/stylesheets/application.sass */
 body #main #container #copy h2 {
   text-align: center;
 }
-/* line 178, ../../../app/stylesheets/application.sass */
+/* line 177, ../../../app/stylesheets/application.sass */
 body #main #container #copy h3 {
   text-align: center;
 }
-/* line 181, ../../../app/stylesheets/application.sass */
+/* line 180, ../../../app/stylesheets/application.sass */
 body #main #container #copy p {
   font-size: 12pt;
   width: 650px;
@@ -980,48 +979,48 @@ body #main #container #copy p {
   line-height: 1.25em;
   display: block;
 }
-/* line 188, ../../../app/stylesheets/application.sass */
+/* line 187, ../../../app/stylesheets/application.sass */
 body #main #container #copy.justify {
   text-align: left;
 }
-/* line 191, ../../../app/stylesheets/application.sass */
+/* line 190, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history {
   width: 95%;
   font-size: 12px;
 }
-/* line 194, ../../../app/stylesheets/application.sass */
+/* line 193, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .pic {
   width: 30px;
   margin-right: 10px;
 }
-/* line 196, ../../../app/stylesheets/application.sass */
+/* line 195, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .pic img {
   width: 24px;
   height: 24px;
   vertical-align: middle;
 }
-/* line 202, ../../../app/stylesheets/application.sass */
+/* line 201, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .text {
   display: block;
   width: 90%;
   text-align: left;
   line-height: 1.25em;
 }
-/* line 208, ../../../app/stylesheets/application.sass */
+/* line 207, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .text .name a {
   color: #1a8922;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 213, ../../../app/stylesheets/application.sass */
+/* line 212, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .text .name a:hover {
   text-decoration: underline;
 }
-/* line 215, ../../../app/stylesheets/application.sass */
+/* line 214, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .text .not_selected_name {
   color: #990000;
 }
-/* line 218, ../../../app/stylesheets/application.sass */
+/* line 217, ../../../app/stylesheets/application.sass */
 body #main #footer {
   position: absolute;
   bottom: 0;
@@ -1033,23 +1032,23 @@ body #main #footer {
   font: normal 12px/20px helvetica, arial, sans-serif;
   border-top: 2px solid white;
 }
-/* line 229, ../../../app/stylesheets/application.sass */
+/* line 228, ../../../app/stylesheets/application.sass */
 body #main #footer a {
   color: #c8cbb3;
   text-transform: uppercase;
   font-size: 0.9em;
   text-decoration: none;
 }
-/* line 235, ../../../app/stylesheets/application.sass */
+/* line 234, ../../../app/stylesheets/application.sass */
 body #main #footer a:hover {
   color: red;
 }
-/* line 239, ../../../app/stylesheets/application.sass */
+/* line 238, ../../../app/stylesheets/application.sass */
 body #main #footer #navs .nav {
   display: inline;
   padding-right: 15px;
 }
-/* line 243, ../../../app/stylesheets/application.sass */
+/* line 242, ../../../app/stylesheets/application.sass */
 body #main #footer #copyright {
   clear: both;
   padding-top: 0.75em;
@@ -1058,12 +1057,12 @@ body #main #footer #copyright {
   text-transform: uppercase;
 }
 
-/* line 250, ../../../app/stylesheets/application.sass */
+/* line 249, ../../../app/stylesheets/application.sass */
 .trigger {
   display: none;
 }
 
-/* line 253, ../../../app/stylesheets/application.sass */
+/* line 252, ../../../app/stylesheets/application.sass */
 a.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -1129,7 +1128,7 @@ a.button:active, a.button:active:visited {
   color: white;
 }
 
-/* line 258, ../../../app/stylesheets/application.sass */
+/* line 257, ../../../app/stylesheets/application.sass */
 .gray-button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;

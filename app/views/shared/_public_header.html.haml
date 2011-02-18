@@ -1,26 +1,25 @@
-%table
+%table{:width => "100%"}
   %tr
     %td.left
       = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
       = image_tag "spinner.gif", :id => "processing_spinner"
     - if current_user
-      %td
+      %td.navs
         - if show_top_navs? 
-          .navs
-            - unless current_user.scores_unlocked? || current_user.waiting? || current_user.needs_friends?
-              .nav.cabin.classify= link_to "More Questions", sparks_path
-            .nav.cabin= link_to "Highest Rated Altruists", altruists_path
-            .nav.cabin= link_to "Top Causes", altruists_path
-            .nav.cabin
-              = link_to_if current_user.scores_unlocked?, "Your Scores", altruist_path(current_user.profile.givey_token) do
-                .locked{:title => "Your Scores Are Locked.  Answer More Questions", :class => "qtip"}
-                  = image_tag "icons/lock32.png", :title => "Your Scores Are Locked.  Answer More Questions", :class => "qtip" 
-                  Your Scores
-            .nav.cabin
-              = link_to_if current_user.friends_scores_unlocked?, "Your Friends Declassified", user_friends_path(current_user) do
-                .locked{:title => "Your Friends Are Locked.  Answer More Questions", :class => "qtip"}
-                  = image_tag "icons/lock32.png"
-                  Your Friends Declassified
+          - unless current_user.scores_unlocked? || current_user.waiting? || current_user.needs_friends?
+            .nav.cabin.classify= link_to "More Questions", sparks_path
+          .nav.cabin= link_to "Highest Rated Altruists", altruists_path
+          .nav.cabin= link_to "Top Causes", altruists_path
+          .nav.cabin
+            = link_to_if current_user.scores_unlocked?, "Your Scores", altruist_path(current_user.profile.givey_token) do
+              .locked{:title => "Your Scores Are Locked.  Answer More Questions", :class => "qtip"}
+                = image_tag "icons/lock32.png", :title => "Your Scores Are Locked.  Answer More Questions", :class => "qtip" 
+                Your Scores
+          .nav.cabin
+            = link_to_if current_user.friends_scores_unlocked?, "Your Friends Declassified", user_friends_path(current_user) do
+              .locked{:title => "Your Friends Are Locked.  Answer More Questions", :class => "qtip"}
+                = image_tag "icons/lock32.png"
+                Your Friends Declassified
         - else
           #candidate_supporter_msg                
         

@@ -20,6 +20,14 @@ class HomeController < ApplicationController
       redirect_to root_url
     end
   end
+  
+  def cc
+    render :layout => false 
+  end
+
+  def cc2
+    render :layout => false 
+  end
 
   private
 

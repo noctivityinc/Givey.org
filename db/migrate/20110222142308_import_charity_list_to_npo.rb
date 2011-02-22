@@ -17,12 +17,21 @@ class ImportCharityListToNpo < ActiveRecord::Migration
       end
     end
 
-    puts "Executing SQL"
-    ActiveRecord::Base.connection.execute npos.join(';')
+    begin
+      puts "Executing SQL"
+      ActiveRecord::Base.connection.execute npos.join(';')
+      puts "Imported #{counter} charities into NPOS"
+    rescue Exception => e
+      puts "Error: #{e.message}"
+    end
 
-    puts "Imported #{counter} charities into NPOS"
+    add_index :npos, :name
+    add_index :npos, [:id, :name], :name => "index_id_name"
+
   end
 
   def self.down
+    remove_index :npos, :name => :index_id_name
+    remove_index :npos, :name
   end
 end

@@ -1,4 +1,4 @@
-- unless candidate.profile.nil?
+- unless candidate.nil? || candidate.profile.nil?
   %table{:align => "center"}
     %tr
       %td= image_tag candidate.profile.details.pic_square

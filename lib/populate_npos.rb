@@ -10,10 +10,11 @@ File.open("files/eopub780111.txt", "r") do |infile|
   end
 end
 
-begin
-  puts "Executing SQL"
-  ActiveRecord::Base.connection.execute npos.join(';')
-  puts "Imported #{counter} charities into NPOS"
-rescue Exception => e
-  puts "Error: #{e.message}"
+Npo.where('id > 3').delete_all
+
+puts "."
+puts "Executing SQL"
+npos.each do |n|
+  ActiveRecord::Base.connection.execute n
 end
+puts "Imported #{counter} charities into NPOS"

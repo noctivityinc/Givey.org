@@ -19,7 +19,9 @@ class ImportCharityListToNpo < ActiveRecord::Migration
 
     begin
       puts "Executing SQL"
-      ActiveRecord::Base.connection.execute npos.join(';')
+      npos.each do |npo|
+        ActiveRecord::Base.connection.execute npo
+      end
       puts "Imported #{counter} charities into NPOS"
     rescue Exception => e
       puts "Error: #{e.message}"

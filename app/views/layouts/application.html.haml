@@ -63,7 +63,8 @@
         appId  : "#{APP_CONFIG[:facebook]['app_id']}",
         status : true, // check login status
         cookie : true, // enable cookies to allow the server to access the session
-        xfbml  : true  // parse XFBML
+        xfbml  : true,  // parse XFBML
+        channelUrl  : 'http://#{APP_CONFIG[:domain]}/channel.html'  // custom channel
       });
       
     = yield(:feet)

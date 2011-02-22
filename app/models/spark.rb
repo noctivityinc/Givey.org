@@ -25,7 +25,8 @@ class Spark < ActiveRecord::Base
   scope :answered_by, lambda {|user| where("user_id = #{user.id}")}
   scope :not_answered_by, lambda {|user| where("user_id <> #{user.id}")}
   scope :with_uid, lambda {|uid| where("friend_uid_1 = '#{uid}' OR friend_uid_2 = '#{uid}' OR friend_uid_3 = '#{uid}'")}
-  
+
+
   def friends
     (res ||= []) << user.friends.active.find_by_uid(friend_uid_1).profile rescue nil
     (res ||= []) << user.friends.active.find_by_uid(friend_uid_2).profile rescue nil
@@ -53,13 +54,13 @@ class Spark < ActiveRecord::Base
     friend = user.friends.find_by_uid(uid)
     if friend
       friend.update_attributes(:active => false)
-      new_friend_uid = user.friends.pick(1).first.uid
+      new_friend_uid = user.friends.except(uid).randomized.limit(1).first.uid
       self.update_attribute(:friend_uid_1, new_friend_uid) if self.friend_uid_1 == uid
       self.update_attribute(:friend_uid_2, new_friend_uid) if self.friend_uid_2 == uid
       self.update_attribute(:friend_uid_3, new_friend_uid) if self.friend_uid_3 == uid
     end
   end
-  
+
   def update_winner!(uid)
     self.update_attribute(:winner_uid, uid)
     selected.update_score!(self.question.value)

@@ -44,16 +44,16 @@ $(document).ready(function() {
     $('#supersized').supersized();
   } 
   
-  // $('.sc_menu_wrapper').jScrollPane();
+  if(!isIE) $('.sc_menu_wrapper').jScrollPane();
   
   $('.fb_share').live('click',function() {
-      link = $(this).attr('rel');
-      if(link=='') link = 'http://www.givey.org';
+      var givey_link = $(this).attr('rel');
+      if (givey_link=='') {givey_link = 'http://www.givey.org';}
       FB.ui(
          {
            method: 'feed',
            name: "How altruistic am I?",
-           link: link,
+           link: givey_link,
            caption: 'Givey.org',
            description: "I'm using Givey.org to see if any of my friends think I'm the most altruistic people on Facebook.  It's pretty interesting.",
            message: "Come check out Givey.  I think I'm pretty great.  What do you think?"
@@ -86,3 +86,9 @@ jQuery.extend({
         return _ajax_request(url, data, callback, type, 'DELETE');
     }
 });
+
+function isIE()
+{
+   return (navigator.appName == 'Microsoft Internet Explorer')
+}
+

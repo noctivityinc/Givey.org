@@ -67,14 +67,16 @@
   margin-top: 3em;
 }
 /* line 16, ../../../../app/stylesheets/public/donations.sass */
-#donation #new #actions .button {
+#donation #new #actions a.button {
   margin-bottom: 0.5em;
+  clear: both;
+  font-size: 18px;
 }
-/* line 19, ../../../../app/stylesheets/public/donations.sass */
+/* line 21, ../../../../app/stylesheets/public/donations.sass */
 #donation #new #actions a {
-  font-size: 12px;
+  font-size: 14px;
 }
-/* line 22, ../../../../app/stylesheets/public/donations.sass */
+/* line 24, ../../../../app/stylesheets/public/donations.sass */
 #donation #wall {
   margin-top: 2em;
   width: 900px;

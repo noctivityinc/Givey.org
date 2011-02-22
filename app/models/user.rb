@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
 
   has_many :friends, :dependent => :destroy  do
     def pick(n=3)
-      active.sort_by{rand}[0..(n-1)]
+      randomized.limit(n)
     end
 
     def outdated?
@@ -49,6 +49,16 @@ class User < ActiveRecord::Base
       when 21..50 then'50'
       when 51..100 then '100'
       else '5000'
+      end
+    end
+
+    def next_available
+      spark = undecided.first
+      if spark && spark.friends.count < 2
+        spark.destroy
+        next_available
+      else
+        return spark
       end
     end
   end
@@ -84,9 +94,9 @@ class User < ActiveRecord::Base
   def friends_scores_unlocked?
     self.sparks.decided.count+1 >= 10
   end
-  
+
   def needs_friends?
-    self.friends.active.count < 20
+    self.friends.active.count < 40
   end
 
   def waiting?
@@ -99,24 +109,24 @@ class User < ActiveRecord::Base
 
   def prepare_sparks(num=25)
     questions = Question.pick(num-1)
-    spark_friends = self.friends.pick(40)
+    spark_friends = self.friends.pick(40).all
 
     question_ndx = 0
     friend_ndx = 0
     0.upto(num-1).each do |i|
       question_ndx = (question_ndx < questions.count ? question_ndx : 0)
-      spark_friends += self.friends.pick(40) if (friend_ndx+2) > spark_friends.count
-      self.sparks.create!(:question => questions[question_ndx], :friend_uid_1 => spark_friends[friend_ndx].uid, :friend_uid_2 => spark_friends[friend_ndx+1].uid, :friend_uid_3 => spark_friends[friend_ndx+2].uid)
+      spark_friends += self.friends.pick(40).all if (friend_ndx+2) > spark_friends.count
+      self.sparks.create(:question => questions[question_ndx], :friend_uid_1 => spark_friends[friend_ndx].uid, :friend_uid_2 => spark_friends[friend_ndx+1].uid, :friend_uid_3 => spark_friends[friend_ndx+2].uid)
       question_ndx += 1
       friend_ndx += 3
     end
   end
 
   def get_spark
-    spark = sparks.undecided.first
+    spark = sparks.next_available
     unless spark
       prepare_sparks   # => if there are no more undecided prepare a new set of sparks
-      spark = sparks.undecided.first
+      spark = sparks.next_available
     end
     spark
   end

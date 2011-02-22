@@ -16,6 +16,7 @@ class SparksController < ApplicationController
 
   def index
     @spark = current_user.get_spark
+    redirect_to needs_friends_user_url(current_user) unless @spark
   end
 
   def update
@@ -46,8 +47,12 @@ class SparksController < ApplicationController
     @spark = current_user.sparks.find_by_id(params[:id])
     if @spark
       @spark.replace_friend(params[:uid]) && @spark.reload
-      current_user.get_friends if current_user.friends.active.count < 20
-      if current_user.friends.active.count < 20
+      if current_user.needs_friends?
+        current_user.get_friends
+        @spark.replace_friend(params[:uid]) && @spark.reload
+      end
+
+      if current_user.needs_friends? || @spark.friends.count < 2
         render :json => {:status => "not_enough_friends", :url => user_url(current_user, {:over => 1})}
       else
         render :json => get_json_response
@@ -89,6 +94,8 @@ class SparksController < ApplicationController
     end
 
     def get_json_response
+      return {:status => "not_enough_friends", :url => user_url(current_user, {:over => 1})} unless @spark
+
       case (current_user.sparks.decided.count + 1)
       when 5 then
         return User.with_causes.empty? ? spark_json : meet_candidate_json.merge!({:spark_resp => spark_json})

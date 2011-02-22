@@ -1,6 +1,8 @@
 class Admin::NposController < AdminController
   def index
-    @npos = Npo.all
+    session[:search] = params[:search] if params[:search]
+    session[:search] = '' if params[:reset]
+    @npos = Npo.search session[:search], params[:page]
   end
 
   def show

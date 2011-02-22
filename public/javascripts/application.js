@@ -16,6 +16,8 @@ function randomOrder(){
   return (Math.round(Math.random())-0.5);
 }
 
+var isIE = (navigator.appName == 'Microsoft Internet Explorer')
+
 $(document).ready(function() {
   $('.qtip').live('mouseover', function() {
      $(this).qtip({
@@ -44,7 +46,7 @@ $(document).ready(function() {
     $('#supersized').supersized();
   } 
   
-  if(!isIE) $('.sc_menu_wrapper').jScrollPane();
+  if (!isIE) $('.sc_menu_wrapper').jScrollPane();
   
   $('.fb_share').live('click',function() {
       var givey_link = $(this).attr('rel');
@@ -87,8 +89,5 @@ jQuery.extend({
     }
 });
 
-function isIE()
-{
-   return (navigator.appName == 'Microsoft Internet Explorer')
-}
+
 

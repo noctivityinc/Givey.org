@@ -3,8 +3,11 @@
 #admin
   #npo
     #show
-      = image_tag @npo.logo.url
-      = fieldset_for @npo, 'General', :name, :website, ['Category',@npo.category.name], :paypal_email, :tax_id
+      = image_tag @npo.logo.url if @npo.logo.exists?
+      - if @npo.category
+        = fieldset_for @npo, 'General', :name, :website, ['Category',@npo.category.name], :paypal_email, :tax_id
+      - else
+        = fieldset_for @npo, 'General', :name, :website, ['Category','n/a'], :paypal_email, :tax_id
       = fieldset_for @npo, 'Status', :active, :feature, :num_featured
       = fieldset_for @npo, 'Overview', :summary, :description, :story
       = fieldset_for @npo, 'Contact Details', :attention, :email, :address_1, :address_2, :city, :state, :zip_code

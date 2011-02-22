@@ -56,7 +56,7 @@
 /* line 176, ../../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class, #overlay a.button, #overlay input.button, #modal a.button, #modal input.button {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png') repeat-x bottom left;
+  background: url('/images/button_bg.png?1298338266') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
@@ -441,30 +441,55 @@
   width: 400px;
   height: 100px;
 }
-/* line 106, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #meet_a_candidate .candidate .cause, #modal #meet_a_candidate .candidate .cause {
+/* line 103, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story .other, #modal #your_story .other {
+  display: none;
+  padding: 5px;
+  font-size: 16px;
+  color: red;
+  vertical-align: baseline;
+}
+/* line 110, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story .other input, #modal #your_story .other input {
+  font-size: 16px;
+  padding: 3px;
+  width: 250px;
+}
+
+/* line 115, ../../../../app/stylesheets/public/_overlays.sass */
+.ui-autocomplete {
+  max-height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 20px;
+  font-size: 12px;
+  background: #fcfef5;
+  width: 250px;
+}
+/* line 127, ../../../../app/stylesheets/public/_overlays.sass */
+.ui-autocomplete #meet_a_candidate .candidate .cause {
   text-align: center;
   margin-top: 1em;
 }
-/* line 110, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #meet_a_candidate .candidate .fb_like, #modal #meet_a_candidate .candidate .fb_like {
+/* line 131, ../../../../app/stylesheets/public/_overlays.sass */
+.ui-autocomplete #meet_a_candidate .candidate .fb_like {
   width: 260px;
   text-align: center;
   padding: 15px;
 }
-/* line 115, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #meet_a_candidate h2, #modal #meet_a_candidate h2 {
+/* line 136, ../../../../app/stylesheets/public/_overlays.sass */
+.ui-autocomplete #meet_a_candidate h2 {
   margin-bottom: 1em;
 }
-/* line 118, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #meet_a_candidate .story, #modal #meet_a_candidate .story {
+/* line 139, ../../../../app/stylesheets/public/_overlays.sass */
+.ui-autocomplete #meet_a_candidate .story {
   margin: 1em auto;
   font-size: 1.25em;
   line-height: 1.25em;
   color: #330099;
 }
-/* line 124, ../../../../app/stylesheets/public/_overlays.sass */
-#overlay #meet_a_candidate .story .middle, #modal #meet_a_candidate .story .middle {
+/* line 145, ../../../../app/stylesheets/public/_overlays.sass */
+.ui-autocomplete #meet_a_candidate .story .middle {
   padding: 0 5px;
 }
 

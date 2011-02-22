@@ -1,8 +1,8 @@
 %table{:width => "100%"}
   %tr
     %td.left
-      = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
       = image_tag "spinner.gif", :id => "processing_spinner"
+      = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
     - if current_user
       %td.navs
         - if show_top_navs? 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110215184153) do
+ActiveRecord::Schema.define(:version => 20110222142308) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true

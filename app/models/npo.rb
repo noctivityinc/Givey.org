@@ -40,16 +40,22 @@ class Npo < ActiveRecord::Base
   before_create :randomize_file_name
   
   scope :active, where(:active => true)
+  scope :featured, where(:feature => true)
 
   has_many :slots
   has_many :campaigns, :through => :slots
   belongs_to :category
   has_many :users
   
-  validates_presence_of :name, :website, :description, :summary, :category
+  validates_presence_of :name
 
   def self.pick
     all.sort_by{rand}.first
+  end
+  
+  def self.search(search, page)
+    paginate :per_page => 20, :page => page,
+             :conditions => ['name ilike ?', "%#{search}%"], :order => 'name'
   end
   
   private

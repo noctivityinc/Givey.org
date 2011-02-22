@@ -68,7 +68,7 @@
             .footnote= "* $5,000 will be contributed by Givey.org members and given to the non-profit selected by the most altruistic person as voted on my Givey members."
       #npos.trans.scrollable
         .items
-          - Npo.active.in_groups_of(8) do |group| 
+          - Npo.active.featured.in_groups_of(8) do |group| 
             %div
               %table
                 %tr

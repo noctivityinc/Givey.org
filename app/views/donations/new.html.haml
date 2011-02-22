@@ -5,7 +5,8 @@
     #copy.trans
       %h1= "#{Donation.count+20} people have joined the movement contributing over #{number_to_currency(Donation.total)}."
       
-      #charity_logo= image_tag current_user.npo.logo(:medium)
+      - if current_user.npo.logo.exists?
+        #charity_logo= image_tag current_user.npo.logo(:medium)
       
       = render :partial => (current_user ? 'user' : 'not_user')
       

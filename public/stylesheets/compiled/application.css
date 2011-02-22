@@ -393,7 +393,7 @@ form.formtastic fieldset ol li.boolean input {
 /* line 176, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class, body #main #container .trans a.button, body #main #container .trans input.button, body #main #container .gray_trans a.button, body #main #container .gray_trans input.button, a.button, .gray-button {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png') repeat-x bottom left;
+  background: url('/images/button_bg.png?1298338266') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
@@ -690,7 +690,7 @@ body #main #header table a {
 }
 /* line 48, ../../../app/stylesheets/application.sass */
 body #main #header table .left {
-  width: 130px;
+  width: 150px;
 }
 /* line 50, ../../../app/stylesheets/application.sass */
 body #main #header table .left #processing_spinner {

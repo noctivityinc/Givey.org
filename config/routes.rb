@@ -4,6 +4,7 @@ Givey::Application.routes.draw do
   resources :donations do
     collection do
       get :callback
+      get :skip
     end
   end
 

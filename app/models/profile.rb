@@ -29,6 +29,17 @@ class Profile < ActiveRecord::Base
 
   scope :scorable, where("score > 0").where("friend_list_count >= #{MIN_FRIEND_LISTS_REQUIRED}")
   scope :by_score, order("score DESC")
+  
+  validates_uniqueness_of :uid
+  
+  def self.create_or_update(attributes)
+    profile = Profile.find_or_initialize_by_uid(attributes)
+    if profile.new_record?
+      profile.save
+    else
+      profile.update_attributes(attributes)
+    end
+  end
 
   def scorable?
     friend_list_count >= MIN_FRIEND_LISTS_REQUIRED if friend_list_count

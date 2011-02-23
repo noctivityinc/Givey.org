@@ -48,7 +48,7 @@ class SessionsController < ApplicationController
     def create_profile(fb)
       res = fb.multifql({:bio => bio_fql, :photos => photos_fql})
       profile = combine_bio_and_photos(res)
-      Profile.create!(:uid => profile.uid, :details => profile.details, :photos => profile.photos)
+      Profile.create_or_update({:uid => profile.uid.to_s, :details => profile.details, :photos => profile.photos})
     end
 
     def bio_fql
@@ -69,7 +69,7 @@ class SessionsController < ApplicationController
 
     def set_user_cookie
       cookies[:user_id] = {:value => @user.id, :expires => 24.hours.from_now }
-      redirect_forward_or_to(beta_test_path)
+      redirect_back(beta_test_path)
     end
 
     def beta_tester_allowed(fb)

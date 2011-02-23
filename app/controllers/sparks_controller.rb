@@ -61,6 +61,10 @@ class SparksController < ApplicationController
       render :json => {:status => "error", :message => "Spark not found for user"}
     end
   end
+  
+  def end_round
+    current_user.update_attribute(:completed_round_one_at, Time.now) unless current_user.completed_round_one_at
+  end
 
   private
 

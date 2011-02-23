@@ -1,0 +1,20 @@
+<%= @user.first_name %>,
+
+We wanted to share some QUICK facts about contributing to Givey.org:
+
+1 - Givey.org takes NOTHING.  100% (minus credit card processing fees) will go to the non-profit with the most altruistic votes.
+
+2 - <%="#{Donation.count+20} people already contributed over #{number_to_currency(Donation.total)}." %>
+
+3 - You can contribute as much or little as you can afford.  We ask for $5, but if you only have a buck, please consider contributing.
+
+
+Here is a direct link to contribute:
+
+<%= APP_CONFIG[:givey]['donate_url'] %>
+
+
+
+Thank you,
+
+All Givey.org Members

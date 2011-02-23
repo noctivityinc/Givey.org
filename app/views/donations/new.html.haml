@@ -5,15 +5,16 @@
     #copy.trans
       %h1= "#{Donation.count+20} people have joined the movement contributing over #{number_to_currency(Donation.total)}."
       
-      - if current_user.npo.logo.exists?
-        #charity_logo= image_tag current_user.npo.logo(:medium)
+      - if current_user.npo
+        - if current_user.npo.logo.exists?
+          #charity_logo= image_tag current_user.npo.logo(:medium)
       
-      = render :partial => (current_user ? 'user' : 'not_user')
+        = render :partial => (current_user ? 'user' : 'not_user')
       
       #actions
-        = link_to 'Join The Movement. Contribute $5', APP_CONFIG[:givey]['donate_url'], :class => "button", :rel => "I'm pulling for #{current_user.npo.name}"
+        = link_to 'Join The Movement. Contribute $5', APP_CONFIG[:givey]['donate_url'], :class => "button"
         %br
-        = link_to "Skip the Donation", sparks_path
+        = link_to "Skip the Donation", skip_donations_url
 
       #wall.row
         - if Donation.count > 10
@@ -24,4 +25,4 @@
             .pic.fleft= image_tag friend.profile.details.pic_square, :title => friend.profile.details.name 
 
   #wall
-    = render :partial => 'facebook_sample_posts'
+    = render :partial => 'facebook_sample_posts' if current_user.npo && !production?

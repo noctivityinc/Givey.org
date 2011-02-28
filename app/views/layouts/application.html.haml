@@ -30,15 +30,14 @@
     
         #footer
           #navs
-            - if !production?
-              .nav
-                = link_to "About Givey.org", '#'
-              .nav
-                = link_to "Terms & Conditions", terms_path
-              .nav
-                = link_to "Privacy Policy", privacy_path
-              .nav
-                = link_to "Non Profits", npos_path
+            .nav
+              = link_to "About Givey.org", about_path
+            .nav
+              = link_to "Terms & Conditions", terms_path
+            .nav
+              = link_to "Privacy Policy", privacy_path
+            .nav
+              = link_to "Non Profits", npos_path
       
             - if current_user && current_user.admin?
               .nav

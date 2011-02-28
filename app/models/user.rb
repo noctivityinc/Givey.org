@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
   serialize :profile
 
   before_create :generate_givey_token
-  after_create :email_welcome
 
   belongs_to :referring_friend, :class_name => "User", :foreign_key => "referring_id"
   has_one :profile, :class_name => "Profile", :foreign_key => "uid", :primary_key => "uid", :dependent => :destroy
@@ -81,6 +80,10 @@ class User < ActiveRecord::Base
 
   def admin?
     self.admin
+  end
+  
+  def mturk?
+    Mturk.find_by_uid(uid)
   end
 
   def first_name
@@ -205,10 +208,6 @@ class User < ActiveRecord::Base
     def generate_givey_token
       self.givey_token = rand(36**8).to_s(36)
     end
-    
-    def email_welcome
-      UserMailer.welcome(self).deliver
-    end
 
     def all_friends_fql
       exclude_list = self.friends.map {|x| x.uid}
@@ -239,7 +238,7 @@ class User < ActiveRecord::Base
           profile.update_attributes(:details => f.details, :photos => f.photos)
           profile.update_friends_list_count!     # => updates profile table for the user with the latest count for scoring purposes
         else
-          profile = Profile.create!(:uid => f.uid, :details => f.details, :photos => f.photos, :friend_list_count => 1)
+          profile = Profile.create(:uid => f.uid, :details => f.details, :photos => f.photos, :friend_list_count => 1)
         end
       end
     end

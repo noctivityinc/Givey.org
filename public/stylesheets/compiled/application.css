@@ -971,7 +971,7 @@ body #main #container #copy h3 {
   text-align: center;
 }
 /* line 179, ../../../app/stylesheets/application.sass */
-body #main #container #copy p, body #main #container #copy ul {
+body #main #container #copy p, body #main #container #copy ul, body #main #container #copy ol {
   font-size: 12pt;
   width: 650px;
   margin: 1em auto;

@@ -1,5 +1,7 @@
 Givey::Application.routes.draw do
 
+  resources :mturks
+
   resources :altruists, :only => [:show, :index]
   resources :donations do
     collection do

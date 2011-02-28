@@ -45,4 +45,9 @@ module SparksHelper
     npos << ['Other','other']
     npos
   end
+  
+  def mturk_confirmation_code
+    @mturk = Mturk.find_by_uid(current_user.uid)
+    @mturk.confirmation_token if @mturk
+  end
 end

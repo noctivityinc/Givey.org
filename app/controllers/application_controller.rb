@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :require_admin, :facebook_oauth_callback_url, :unfinished_games?, :production?
 
-  def facebook_oauth_callback_url
+  def facebook_oauth_callback_url()
     return "http://#{request.host_with_port}/auth/facebook/callback"
   end
 

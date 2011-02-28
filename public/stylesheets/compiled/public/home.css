@@ -426,3 +426,12 @@
   margin-top: 2em;
   text-align: center;
 }
+/* line 160, ../../../../app/stylesheets/public/home.sass */
+#home #terms h4, #home #privacy h4 {
+  font-size: 1.25em;
+}
+
+/* line 166, ../../../../app/stylesheets/public/home.sass */
+.left {
+  text-align: left;
+}

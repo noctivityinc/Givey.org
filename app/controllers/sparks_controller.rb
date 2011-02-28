@@ -55,7 +55,7 @@ class SparksController < ApplicationController
       if current_user.needs_friends? || @spark.friends.count < 2
         render :json => {:status => "not_enough_friends", :url => user_url(current_user, {:over => 1})}
       else
-        render :json => get_json_response
+        render :json => spark_json
       end
     else
       render :json => {:status => "error", :message => "Spark not found for user"}
@@ -108,7 +108,7 @@ class SparksController < ApplicationController
       when 15 then
         your_story_json
       when 16..19
-        current_user.story.blank? ? your_story_json : spark_json
+        current_user.npo.blank? ? your_story_json : spark_json
       when 21 then
         end_round_json
       when 22..1001

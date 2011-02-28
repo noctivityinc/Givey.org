@@ -52,35 +52,30 @@
   float: right;
 }
 
-/* line 5, ../../../../app/stylesheets/public/donations.sass */
-#donation #new #charity_logo {
+/* line 5, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo {
+  margin-bottom: 1.5em;
+  border-bottom: 1px dotted gray;
+  padding-bottom: 0.75em;
+}
+/* line 10, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .logo {
   background: white;
+  padding: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  padding: 5px;
-  width: 200px;
-  border: 1px solid gray;
-  margin: 1em auto;
+  border: 1px solid #cccccc;
 }
-/* line 13, ../../../../app/stylesheets/public/donations.sass */
-#donation #new #actions {
-  width: 650px;
-  margin: 3em auto;
-  text-align: center;
+/* line 16, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .details {
+  padding-left: 20px;
 }
-/* line 18, ../../../../app/stylesheets/public/donations.sass */
-#donation #new #actions a.button {
-  margin-bottom: 0.5em;
-  clear: both;
-  font-size: 18px;
+/* line 20, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .details .links div {
+  display: inline;
 }
-/* line 23, ../../../../app/stylesheets/public/donations.sass */
-#donation #new #actions a {
-  font-size: 14px;
-}
-/* line 26, ../../../../app/stylesheets/public/donations.sass */
-#donation #wall {
-  margin-top: 2em;
-  width: 900px;
-  margin-left: 15px;
+/* line 22, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .details .links div img {
+  width: 32px;
+  height: 32px;
 }

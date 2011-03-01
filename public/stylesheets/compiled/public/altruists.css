@@ -52,63 +52,67 @@
   float: right;
 }
 
-/* line 5, ../../../../app/stylesheets/public/altruists.sass */
+/* line 6, ../../../../app/stylesheets/public/altruists.sass */
+#altruists #index #not_time .fleft {
+  width: 800px;
+}
+/* line 9, ../../../../app/stylesheets/public/altruists.sass */
 #altruists #index .display {
   margin-bottom: 25px;
   font-size: 13px;
 }
-/* line 9, ../../../../app/stylesheets/public/altruists.sass */
+/* line 13, ../../../../app/stylesheets/public/altruists.sass */
 #altruists #index .altruist {
   padding-bottom: 40px;
 }
-/* line 11, ../../../../app/stylesheets/public/altruists.sass */
+/* line 15, ../../../../app/stylesheets/public/altruists.sass */
 #altruists #index .altruist .name {
   padding-left: 20px;
 }
-/* line 14, ../../../../app/stylesheets/public/altruists.sass */
+/* line 18, ../../../../app/stylesheets/public/altruists.sass */
 #altruists #index .altruist .name a {
   text-decoration: none;
   color: #02517f;
 }
-/* line 18, ../../../../app/stylesheets/public/altruists.sass */
+/* line 22, ../../../../app/stylesheets/public/altruists.sass */
 #altruists #index .altruist .name a:hover {
   text-decoration: underline;
 }
-/* line 21, ../../../../app/stylesheets/public/altruists.sass */
+/* line 25, ../../../../app/stylesheets/public/altruists.sass */
 #altruists #index .altruist .rank_score {
   clear: both;
   padding-top: 10px;
   text-align: center;
   width: 260px;
 }
-/* line 26, ../../../../app/stylesheets/public/altruists.sass */
+/* line 30, ../../../../app/stylesheets/public/altruists.sass */
 #altruists #index .altruist .rank_score .score {
   font-size: 24px;
   text-shadow: #999999 2px 2px 2px;
   display: inline;
 }
-/* line 30, ../../../../app/stylesheets/public/altruists.sass */
+/* line 34, ../../../../app/stylesheets/public/altruists.sass */
 #altruists #index .altruist .rank_score .rank {
   display: inline;
 }
 
-/* line 35, ../../../../app/stylesheets/public/altruists.sass */
+/* line 39, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show .details {
   padding-left: 20px;
   text-align: left;
 }
-/* line 39, ../../../../app/stylesheets/public/altruists.sass */
+/* line 43, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show .details .name {
   font-size: 24px;
   color: #02517f;
   padding: 0px;
   margin: 0px;
 }
-/* line 44, ../../../../app/stylesheets/public/altruists.sass */
+/* line 48, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show .details .name img {
   width: 24px;
 }
-/* line 47, ../../../../app/stylesheets/public/altruists.sass */
+/* line 51, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show .details .score {
   padding-top: 10px;
   padding-left: 10px;
@@ -116,46 +120,46 @@
   text-shadow: #999999 2px 2px 2px;
   font-size: 18px;
 }
-/* line 56, ../../../../app/stylesheets/public/altruists.sass */
+/* line 60, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table {
   width: 100%;
 }
-/* line 58, ../../../../app/stylesheets/public/altruists.sass */
+/* line 62, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table tr > td {
   vertical-align: top;
 }
-/* line 61, ../../../../app/stylesheets/public/altruists.sass */
+/* line 65, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table .npo {
   float: right;
   width: 250px;
   padding-left: 10px;
 }
-/* line 66, ../../../../app/stylesheets/public/altruists.sass */
+/* line 70, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table .npo .logo {
   text-align: center;
 }
-/* line 69, ../../../../app/stylesheets/public/altruists.sass */
+/* line 73, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table .npo .summary {
   font-size: 13px;
   margin: 5px 0px;
   line-height: 1.25em;
 }
-/* line 75, ../../../../app/stylesheets/public/altruists.sass */
+/* line 79, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table .npo .links div {
   display: inline;
 }
-/* line 77, ../../../../app/stylesheets/public/altruists.sass */
+/* line 81, ../../../../app/stylesheets/public/altruists.sass */
 #altruist #show table .npo .links div img {
   width: 32px;
   height: 32px;
 }
 
-/* line 82, ../../../../app/stylesheets/public/altruists.sass */
+/* line 86, ../../../../app/stylesheets/public/altruists.sass */
 #altruists .candidate, #altruist .candidate {
   color: black;
   text-shadow: none;
 }
-/* line 85, ../../../../app/stylesheets/public/altruists.sass */
+/* line 89, ../../../../app/stylesheets/public/altruists.sass */
 #altruists .candidate .cause, #altruist .candidate .cause {
   font-weight: bold;
   color: #3d024f;

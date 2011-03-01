@@ -6,6 +6,12 @@ class NposController < ApplicationController
     end
   end
   
+  def top
+    users = User.scorable.with_causes.limit(10)
+    @npo_ids = {}
+    users.each {|x| @npo_ids[x.npo_id] += x.score }
+  end
+  
   private
   
   def search

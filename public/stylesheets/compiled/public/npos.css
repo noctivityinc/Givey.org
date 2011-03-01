@@ -52,30 +52,34 @@
   float: right;
 }
 
-/* line 5, ../../../../app/stylesheets/public/npos.sass */
-#npos #index .npo {
+/* line 6, ../../../../app/stylesheets/public/npos.sass */
+#npos #index #not_yet .fleft, #npos #top #not_yet .fleft {
+  width: 800px;
+}
+/* line 9, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo, #npos #top .npo {
   margin-bottom: 1.5em;
   border-bottom: 1px dotted gray;
   padding-bottom: 0.75em;
 }
-/* line 10, ../../../../app/stylesheets/public/npos.sass */
-#npos #index .npo .logo {
+/* line 14, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .logo, #npos #top .npo .logo {
   background: white;
   padding: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid #cccccc;
 }
-/* line 16, ../../../../app/stylesheets/public/npos.sass */
-#npos #index .npo .details {
+/* line 20, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .details, #npos #top .npo .details {
   padding-left: 20px;
 }
-/* line 20, ../../../../app/stylesheets/public/npos.sass */
-#npos #index .npo .details .links div {
+/* line 24, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .details .links div, #npos #top .npo .details .links div {
   display: inline;
 }
-/* line 22, ../../../../app/stylesheets/public/npos.sass */
-#npos #index .npo .details .links div img {
+/* line 26, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .details .links div img, #npos #top .npo .details .links div img {
   width: 32px;
   height: 32px;
 }

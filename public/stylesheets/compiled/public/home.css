@@ -427,11 +427,23 @@
   text-align: center;
 }
 /* line 160, ../../../../app/stylesheets/public/home.sass */
-#home #terms h4, #home #privacy h4 {
+#home #terms h4, #home #privacy h4, #home #about h4, #home #faq h4 {
   font-size: 1.25em;
 }
+/* line 164, ../../../../app/stylesheets/public/home.sass */
+#home #faq .question {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* line 168, ../../../../app/stylesheets/public/home.sass */
+#home #faq .answer {
+  width: 650px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  line-height: 1.3em;
+}
 
-/* line 166, ../../../../app/stylesheets/public/home.sass */
+/* line 174, ../../../../app/stylesheets/public/home.sass */
 .left {
   text-align: left;
 }

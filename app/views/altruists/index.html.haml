@@ -1,22 +1,35 @@
 - title "Most Altruistic Souls", false
 #altruists
   #index.trans
-    %h1 Most Altruistic Souls
+    - if @altruists.empty? && Date.today >= Date.new(2011,04,01)
+      #not_time
+        .row
+          .fleft
+            %h2 Check back on April 1st to find out who are the most altruistic people on Facebook.
+            %p
+              It's too early in the life of Givey to reveal the most (and least) altruistic people around. 
+            %p  
+              Check back with us on April 1st.  We will hopefully be ready to lift the curtain by then.  
+              In the meantime, please share the love of Givey.org with others now.
+          .fright
+            = image_tag "up_arrow.png"
+    - else
+      %h1 Most Altruistic Souls
+      
+      .display= page_entries_info @altruists, :entry_name  => 'altruists'
 
-    .display= page_entries_info @altruists, :entry_name  => 'altruists'
-
-    - @altruists.each_with_index do |a,ndx|
-      .altruist.fleft.row
-        .fleft= image_tag a.profile.details.pic_square
-        .fleft
-          .name.cabin
-            = link_to a.profile.details.name, altruist_path(a.profile.givey_token)
-            %span.candidate
-              supports
-              %span.cause= a.npo.name
-          .rank_score
-            .score.cabin= "##{rank(ndx)}"
-            .rank= " with #{pluralize(a.profile.score,'Altruism Point')}"
+      - @altruists.each_with_index do |a,ndx|
+        .altruist.fleft.row
+          .fleft= image_tag a.profile.details.pic_square
+          .fleft
+            .name.cabin
+              = link_to a.profile.details.name, altruist_path(a.profile.givey_token)
+              %span.candidate
+                supports
+                %span.cause= a.npo.name
+            .rank_score
+              .score.cabin= "##{rank(ndx)}"
+              .rank= " with #{pluralize(a.profile.score,'Altruism Point')}"
         
-    .paginate
-      = will_paginate @altruists
+      .paginate
+        = will_paginate @altruists

@@ -1,0 +1,31 @@
+- title "Top Altruist Causes"
+
+#npos
+  #top
+    #copy.trans
+      - if @npo_ids.empty? && Date.today >= Date.new(2011,04,01)
+        #not_yet.row
+          .fleft
+            %h2 Check back on April 1st to find out which causes our altruists support.
+            %p
+              It's too early in the life of Givey to rank the causes that our altruistic members support. 
+            %p  
+              We need to allow time for people to play and share Givey before we reveal the initial leaders.  We 
+              plan on releasing the top scores on April 1st so make sure to spread the word to as many people as possible
+              before then!
+          .fright
+            = image_tag "up_arrow.png"
+      - else
+        %h1 Top Altruist Causes
+        - @npo_ids.sort {|a,b| a[1] <=> b[1]}.each do |id|
+          - npo = Npo.find_by_id(id)
+          .npo.row
+            .fleft
+              .logo= image_tag npo.logo.url(:medium)
+            .fleft.details
+              %h3= npo.name
+              %p= npo.summary
+              %p= link_to npo.website, npo.website, :target => "_blank"
+              .links
+                .facebook= link_to image_tag("icons/facebook_64.png"), npo.facebook_url unless npo.facebook_url.blank?
+                .twitter= link_to image_tag("icons/twitter_32.png"), npo.twitter_name unless npo.twitter_name.blank?

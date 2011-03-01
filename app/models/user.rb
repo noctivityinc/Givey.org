@@ -94,6 +94,10 @@ class User < ActiveRecord::Base
     last_initial = self.name.split(/\s/)[1][0]
     return "#{first_name} #{last_initial}."
   end
+  
+  def score
+    profile.score
+  end
 
   def has_a_cause?
     !self.npo_id.nil?

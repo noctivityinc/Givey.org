@@ -11,7 +11,7 @@ def main
     end
   end
 
-  Npo.where('id > 3').delete_all
+  Npo.where('id > 3').where('feature != true').delete_all
 
   puts "."
   puts "Executing SQL"

@@ -10,10 +10,7 @@ class FriendsController < ApplicationController
   end
 
   def create
-    respond_to do |wants|
-      wants.html { redirect_to sparks_url }
-      wants.js { render :json => {:status => 'complete'} if current_user.get_friends }
-    end
+    render :json => {:status => 'complete'} if current_user.get_friends
   end
 
   def destroy

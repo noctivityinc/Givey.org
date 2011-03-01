@@ -1,15 +1,15 @@
 %table{:width => "100%"}
   %tr
     %td.left
-      = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
       = image_tag "spinner.gif", :id => "processing_spinner"
+      = link_to image_tag("givey_logo.png", :title => "Givey.org"), root_url
     - if current_user
       %td.navs
         - if show_top_navs? 
           - unless current_user.scores_unlocked? || current_user.waiting? || current_user.needs_friends?
             .nav.cabin.classify= link_to "More Questions", sparks_path
           .nav.cabin= link_to "Highest Rated Altruists", altruists_path
-          .nav.cabin= link_to "Top Causes", altruists_path
+          .nav.cabin= link_to "Top Causes", top_npos_path
           .nav.cabin
             = link_to_if current_user.scores_unlocked?, "Your Scores", altruist_path(current_user.profile.givey_token) do
               .locked{:title => "Your Scores Are Locked.  Answer More Questions", :class => "qtip"}
@@ -30,7 +30,11 @@
     - else
       %td.navs
         .nav.cabin= link_to "Highest Rated Altruists", altruists_path
-        .nav.cabin= link_to "Top Altruist Causes", altruists_path
+        .nav.cabin= link_to "Top Altruist Causes", top_npos_path
+      %td.right
+        .nav.cabin= link_to "Share", '#', :id => "header_share", :class => "fb_share"
+        %fb:like{:href => "http://www.givey.org", :show_faces => "false", :width => "100", :layout => "button_count" }
+      
         
         
         

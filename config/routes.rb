@@ -1,13 +1,20 @@
 Givey::Application.routes.draw do
 
+  resources :mturks
+
   resources :altruists, :only => [:show, :index]
   resources :donations do
     collection do
       get :callback
+      get :skip
     end
   end
 
-  resources :npos
+  resources :causes, :as => "npos", :controller => "npos" do
+    collection do
+      get :top
+    end
+  end
   resources :users do
     resources :friends
     member do
@@ -44,6 +51,11 @@ Givey::Application.routes.draw do
   match "/cc2" => "home#cc2"
   match "/beta_test" => "home#beta_test", :as => "beta_test"
   match "/r/:token"  => "home#referral"
+  
+  match '/about'  => "home#about", :as => "about" 
+  match '/terms'  => "home#terms", :as => "terms" 
+  match '/privacy'  => "home#privacy", :as => "privacy" 
+  match '/faq'  => "home#faq", :as => "faq" 
   get "home/index"
   root :to => "home#index"
 end

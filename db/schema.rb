@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110215184153) do
+ActiveRecord::Schema.define(:version => 20110228190603) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -72,6 +72,15 @@ ActiveRecord::Schema.define(:version => 20110215184153) do
 
   add_index "friends", ["uid"], :name => "index_friends_on_uid"
   add_index "friends", ["user_id", "uid"], :name => "ndx_user_id_and_uid"
+
+  create_table "mturks", :force => true do |t|
+    t.string   "uid"
+    t.string   "confirmation_token"
+    t.datetime "completed_at"
+    t.datetime "approved_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "npos", :force => true do |t|
     t.string   "name"
@@ -157,6 +166,9 @@ ActiveRecord::Schema.define(:version => 20110215184153) do
     t.text     "story"
     t.boolean  "post_story_to_wall"
     t.integer  "npo_id"
+    t.datetime "completed_round_one_at"
+    t.datetime "emailed_invite_friends_at"
+    t.datetime "emailed_scores_unlocked_at"
   end
 
 end

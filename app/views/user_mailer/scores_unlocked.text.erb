@@ -1,0 +1,25 @@
+<%= @user.first_name %>,
+
+Awesome news (we'll exciting anyway), your scores on Givey.org have been unlocked.
+
+To view what your friends think about you, simply click the following link:
+
+
+<%= altruist_url(@user.profile.givey_token) %>
+
+
+
+
+
+And remember, this is all for a good cause so please share the Givey love by 
+posting, tweeting or emailing more friends to play:
+
+<%= @user.referral_link %>
+
+
+
+Best,
+
+
+Josh & Bill
+Givey.org

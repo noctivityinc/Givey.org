@@ -1,5 +1,13 @@
 #sparks
   #end_round
+    - if current_user.mturk?
+      #mturks.trans
+        %h2= "#{current_user.name}, here is your Mechanical Turk Confirmation Code:"
+      
+        %h1= mturk_confirmation_code
+        
+        %p Please return to the HIT on Mechanical Turk and enter this code along with your feedback for compensation.
+    
     #copy.trans
       %h2 
         = image_tag "icons/lock64.png"

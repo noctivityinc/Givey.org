@@ -393,7 +393,7 @@ form.formtastic fieldset ol li.boolean input {
 /* line 176, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.4/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class, body #main #container .trans a.button, body #main #container .trans input.button, body #main #container .gray_trans a.button, body #main #container .gray_trans input.button, a.button, .gray-button {
   font-family: "Lucida Grande", Lucida, Arial, sans-serif;
-  background: url('/images/button_bg.png') repeat-x bottom left;
+  background: url('/images/button_bg.png?1298338266') repeat-x bottom left;
   margin: 0;
   width: auto;
   overflow: visible;
@@ -690,7 +690,7 @@ body #main #header table a {
 }
 /* line 48, ../../../app/stylesheets/application.sass */
 body #main #header table .left {
-  width: 130px;
+  width: 150px;
 }
 /* line 50, ../../../app/stylesheets/application.sass */
 body #main #header table .left #processing_spinner {
@@ -950,77 +950,76 @@ body #main #container .gray_trans a.button:active, body #main #container .gray_t
 /* line 161, ../../../app/stylesheets/application.sass */
 body #main #container #copy {
   margin: 0.25em auto;
-  text-align: center;
 }
-/* line 165, ../../../app/stylesheets/application.sass */
+/* line 164, ../../../app/stylesheets/application.sass */
 body #main #container #copy.boxit {
   padding: 15px;
   background: white;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 171, ../../../app/stylesheets/application.sass */
+/* line 170, ../../../app/stylesheets/application.sass */
 body #main #container #copy h1 {
   text-align: center;
 }
-/* line 174, ../../../app/stylesheets/application.sass */
+/* line 173, ../../../app/stylesheets/application.sass */
 body #main #container #copy h2 {
   text-align: center;
 }
-/* line 177, ../../../app/stylesheets/application.sass */
+/* line 176, ../../../app/stylesheets/application.sass */
 body #main #container #copy h3 {
   text-align: center;
 }
-/* line 180, ../../../app/stylesheets/application.sass */
-body #main #container #copy p {
+/* line 179, ../../../app/stylesheets/application.sass */
+body #main #container #copy p, body #main #container #copy ul, body #main #container #copy ol {
   font-size: 12pt;
   width: 650px;
   margin: 1em auto;
-  line-height: 1.25em;
+  line-height: 1.3em;
   display: block;
 }
-/* line 187, ../../../app/stylesheets/application.sass */
+/* line 186, ../../../app/stylesheets/application.sass */
 body #main #container #copy.justify {
   text-align: left;
 }
-/* line 190, ../../../app/stylesheets/application.sass */
+/* line 189, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history {
   width: 95%;
   font-size: 12px;
 }
-/* line 193, ../../../app/stylesheets/application.sass */
+/* line 192, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .pic {
   width: 30px;
   margin-right: 10px;
 }
-/* line 195, ../../../app/stylesheets/application.sass */
+/* line 194, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .pic img {
   width: 24px;
   height: 24px;
   vertical-align: middle;
 }
-/* line 201, ../../../app/stylesheets/application.sass */
+/* line 200, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .text {
   display: block;
   width: 90%;
   text-align: left;
   line-height: 1.25em;
 }
-/* line 207, ../../../app/stylesheets/application.sass */
+/* line 206, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .text .name a {
   color: #1a8922;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 212, ../../../app/stylesheets/application.sass */
+/* line 211, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .text .name a:hover {
   text-decoration: underline;
 }
-/* line 214, ../../../app/stylesheets/application.sass */
+/* line 213, ../../../app/stylesheets/application.sass */
 body #main #container .spark_history .text .not_selected_name {
   color: #990000;
 }
-/* line 217, ../../../app/stylesheets/application.sass */
+/* line 216, ../../../app/stylesheets/application.sass */
 body #main #footer {
   position: absolute;
   bottom: 0;
@@ -1032,23 +1031,23 @@ body #main #footer {
   font: normal 12px/20px helvetica, arial, sans-serif;
   border-top: 2px solid white;
 }
-/* line 228, ../../../app/stylesheets/application.sass */
+/* line 227, ../../../app/stylesheets/application.sass */
 body #main #footer a {
   color: #c8cbb3;
   text-transform: uppercase;
   font-size: 0.9em;
   text-decoration: none;
 }
-/* line 234, ../../../app/stylesheets/application.sass */
+/* line 233, ../../../app/stylesheets/application.sass */
 body #main #footer a:hover {
   color: red;
 }
-/* line 238, ../../../app/stylesheets/application.sass */
+/* line 237, ../../../app/stylesheets/application.sass */
 body #main #footer #navs .nav {
   display: inline;
   padding-right: 15px;
 }
-/* line 242, ../../../app/stylesheets/application.sass */
+/* line 241, ../../../app/stylesheets/application.sass */
 body #main #footer #copyright {
   clear: both;
   padding-top: 0.75em;
@@ -1057,12 +1056,12 @@ body #main #footer #copyright {
   text-transform: uppercase;
 }
 
-/* line 249, ../../../app/stylesheets/application.sass */
+/* line 248, ../../../app/stylesheets/application.sass */
 .trigger {
   display: none;
 }
 
-/* line 252, ../../../app/stylesheets/application.sass */
+/* line 251, ../../../app/stylesheets/application.sass */
 a.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -1128,7 +1127,7 @@ a.button:active, a.button:active:visited {
   color: white;
 }
 
-/* line 257, ../../../app/stylesheets/application.sass */
+/* line 256, ../../../app/stylesheets/application.sass */
 .gray-button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;

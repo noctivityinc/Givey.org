@@ -2,8 +2,25 @@
 
 #npos
   #index
-    #copy
+    #copy.trans
       %h1 Amazing Non-Profits We Givey With.
     
       - @npos.each do |npo|
-        = npo.name
+        .npo.row
+          .fleft
+            .logo= image_tag npo.logo.url(:medium)
+          .fleft.details
+            %h3= npo.name
+            %p= npo.summary
+            %p= link_to npo.website, npo.website, :target => "_blank"
+            .links
+              .facebook= link_to image_tag("icons/facebook_64.png"), npo.facebook_url unless npo.facebook_url.blank?
+              .twitter= link_to image_tag("icons/twitter_32.png"), npo.twitter_name unless npo.twitter_name.blank?
+            
+    .trans
+      %h3 Partner with Givey.org
+      %p
+        If you are a registered 501(c)3 and are interested in being featured on Givey.org, which is completely free to 
+        all qualifying NPOs, please send a note to 
+        = mail_to "npo@givey.org"
+        \.

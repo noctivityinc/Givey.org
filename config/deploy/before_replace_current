@@ -1,3 +1,4 @@
 rm -rf "$stage_path/certs" ; ln -nfs "$shared_path/app/certs" "$stage_path/certs"
+rm -rf "$stage_path/files" ; ln -nfs "$shared_path/app/files" "$stage_path/files"
 rm -rf "$stage_path/public/images/backgrounds" ; ln -nfs "$shared_path/app/backgrounds" "$stage_path/public/images/backgrounds"
 rm -rf "$stage_path/public/images/npos" ; ln -nfs "$shared_path/app/npos" "$stage_path/public/images/npos"

@@ -48,5 +48,5 @@
         
 
       #npos.row
-        - Npo.all.each do |n|
+        - Npo.active.featured.each do |n|
           .npo.fleft.trans= image_tag n.logo.url(:thumb)

@@ -32,7 +32,7 @@ beta:
   givey:
     access_token: '40ab94b9b587dd48445c4021a8624d6d2feac601fd0e6be25072bdf363dd7e38'
     donate_url: 'https://www.wepay.com/donate/givey'
-    api_url: 'stage.wepayapi.com'
+    api_url: 'www.wepayapi.com'
 
 production:
   domain: givey.org
@@ -43,4 +43,4 @@ production:
   givey:
     access_token: '40ab94b9b587dd48445c4021a8624d6d2feac601fd0e6be25072bdf363dd7e38'
     donate_url: 'https://www.wepay.com/donate/givey'
-    api_url: 'stage.wepayapi.com'
+    api_url: 'www.wepayapi.com'

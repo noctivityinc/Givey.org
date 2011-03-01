@@ -1,12 +1,12 @@
 jQuery(document).ready(function($) {
-  
+
   $('.remove_button').live('click',function() {
     $(this).closest('.box').html("<img src='/images/spinner.gif' class='spinner'>");
     return false;
   }).live('ajax:success', function(event, resp, status, xhr) {
     if(resp.status=='success') {
       $('#playing_field').html(resp.html)
-      // $('.sc_menu_wrapper').jScrollPane();
+      if(!isIE) $('.sc_menu_wrapper').jScrollPane();
      } else if (resp.status=='not_enough_friends') {
        no_more_friends(resp.url);
      }
@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
   
   $('.card.clickable .box').live("mouseover",function(e){
     $(this).addClass('highlight')
-    $(this).find('.remove_button').show()
+    if(!isIE) $(this).find('.remove_button').show()
   }).live("mouseout",function(e){
     $(this).removeClass('highlight')
     $(this).find('.remove_button').hide()
@@ -94,7 +94,7 @@ jQuery(document).ready(function($) {
      $('#playing_field').html(resp.html).show();
      $('#score_board').fadeIn('slow');
      $('#candidate_supporter_msg').html(resp.candidate_supporter_msg)
-     // $('.sc_menu_wrapper').jScrollPane();
+     if(!isIE) $('.sc_menu_wrapper').jScrollPane();
    }
    
    function showSpark (resp) {

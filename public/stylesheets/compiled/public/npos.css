@@ -1,0 +1,85 @@
+/* line 3, ../../../../app/stylesheets/_base.sass */
+.wf-active h1 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 36px;
+}
+
+/* line 7, ../../../../app/stylesheets/_base.sass */
+.wf-active h2 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 30px;
+}
+
+/* line 11, ../../../../app/stylesheets/_base.sass */
+.wf-active h3 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 24px;
+}
+
+/* line 15, ../../../../app/stylesheets/_base.sass */
+.wf-active h4 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 16px;
+}
+
+/* line 19, ../../../../app/stylesheets/_base.sass */
+.wf-active .cabin {
+  font-family: "Cabin";
+  font-size: 18px;
+}
+
+/* line 23, ../../../../app/stylesheets/_base.sass */
+.margin_top_1 {
+  margin-top: 2em;
+}
+
+/* line 26, ../../../../app/stylesheets/_base.sass */
+.margin_top_2 {
+  margin-top: 2em;
+}
+
+/* line 101, ../../../../app/stylesheets/_base.sass */
+.row {
+  overflow: hidden;
+  width: 100%;
+}
+/* line 105, ../../../../app/stylesheets/_base.sass */
+.row .fleft {
+  float: left;
+}
+/* line 108, ../../../../app/stylesheets/_base.sass */
+.row .fright {
+  float: right;
+}
+
+/* line 6, ../../../../app/stylesheets/public/npos.sass */
+#npos #index #not_yet .fleft, #npos #top #not_yet .fleft {
+  width: 800px;
+}
+/* line 9, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo, #npos #top .npo {
+  margin-bottom: 1.5em;
+  border-bottom: 1px dotted gray;
+  padding-bottom: 0.75em;
+}
+/* line 14, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .logo, #npos #top .npo .logo {
+  background: white;
+  padding: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+/* line 20, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .details, #npos #top .npo .details {
+  padding-left: 20px;
+}
+/* line 24, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .details .links div, #npos #top .npo .details .links div {
+  display: inline;
+}
+/* line 26, ../../../../app/stylesheets/public/npos.sass */
+#npos #index .npo .details .links div img, #npos #top .npo .details .links div img {
+  width: 32px;
+  height: 32px;
+}

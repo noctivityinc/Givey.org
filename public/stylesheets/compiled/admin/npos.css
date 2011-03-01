@@ -1,0 +1,9 @@
+/* line 3, ../../../../app/stylesheets/admin/npos.sass */
+#npos #index #search {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+/* line 7, ../../../../app/stylesheets/admin/npos.sass */
+#npos #index #search input {
+  padding: 3px;
+}

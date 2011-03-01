@@ -32,11 +32,17 @@ class SessionsController < ApplicationController
       access_token = access_token_hash["access_token"]
       fb = MiniFB::OAuthSession.new(access_token)
 
-      if beta_tester_allowed(fb)
-        @user = User.find_by_provider_and_uid('facebook',fb.me.id) || User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
+      if beta_tester_allowed(fb) || mturk_tester(fb)
+        @user = User.find_by_provider_and_uid('facebook',fb.me.id)
+        unless @user
+          User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
+          @new_user = true
+        end
+
         @user.update_with_mini_fb(fb, access_token) # => updates to make sure we have latest session key and profile info
 
         create_profile(fb)
+        UserMailer.welcome(@user).deliver if @new_user
 
         set_user_cookie
         session[:referring_id] = nil
@@ -48,7 +54,7 @@ class SessionsController < ApplicationController
     def create_profile(fb)
       res = fb.multifql({:bio => bio_fql, :photos => photos_fql})
       profile = combine_bio_and_photos(res)
-      Profile.create!(:uid => profile.uid, :details => profile.details, :photos => profile.photos)
+      Profile.create_or_update({:uid => profile.uid.to_s, :details => profile.details, :photos => profile.photos})
     end
 
     def bio_fql
@@ -69,7 +75,15 @@ class SessionsController < ApplicationController
 
     def set_user_cookie
       cookies[:user_id] = {:value => @user.id, :expires => 24.hours.from_now }
-      redirect_forward_or_to(beta_test_path)
+      redirect_back(new_spark_path)
+    end
+
+    def mturk_tester(fb)
+      if session[:mturk] 
+        session[:mturk] = false
+        Mturk.find_or_create_by_uid({:uid => fb.me.id})
+        return true
+      end
     end
 
     def beta_tester_allowed(fb)

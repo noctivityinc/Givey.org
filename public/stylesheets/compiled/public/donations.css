@@ -64,17 +64,21 @@
 }
 /* line 13, ../../../../app/stylesheets/public/donations.sass */
 #donation #new #actions {
-  margin-top: 3em;
+  width: 650px;
+  margin: 3em auto;
+  text-align: center;
 }
-/* line 16, ../../../../app/stylesheets/public/donations.sass */
-#donation #new #actions .button {
+/* line 18, ../../../../app/stylesheets/public/donations.sass */
+#donation #new #actions a.button {
   margin-bottom: 0.5em;
+  clear: both;
+  font-size: 18px;
 }
-/* line 19, ../../../../app/stylesheets/public/donations.sass */
+/* line 23, ../../../../app/stylesheets/public/donations.sass */
 #donation #new #actions a {
-  font-size: 12px;
+  font-size: 14px;
 }
-/* line 22, ../../../../app/stylesheets/public/donations.sass */
+/* line 26, ../../../../app/stylesheets/public/donations.sass */
 #donation #wall {
   margin-top: 2em;
   width: 900px;

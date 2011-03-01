@@ -21,6 +21,6 @@
       %h2 Also, please visit some of these incredible non-profits we are working with:
       
       .row
-        - Npo.all.each do |n|
+        - Npo.active.featured.each do |n|
           .npo.fleft.trans= link_to image_tag(n.logo.url(:thumb)), n.website, :target => "_blank"
         

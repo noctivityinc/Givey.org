@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: mturks
+#
+#  id                 :integer         not null, primary key
+#  uid                :string(255)
+#  confirmation_token :string(255)
+#  completed_at       :datetime
+#  approved_at        :datetime
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
+one:
+  uid: MyString
+  confirmation_token: MyString
+  completed_at: 2011-02-28 14:06:03
+  approved_at: 2011-02-28 14:06:03
+
+two:
+  uid: MyString
+  confirmation_token: MyString
+  completed_at: 2011-02-28 14:06:03
+  approved_at: 2011-02-28 14:06:03

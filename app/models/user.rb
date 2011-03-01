@@ -2,23 +2,26 @@
 #
 # Table name: users
 #
-#  id                 :integer         not null, primary key
-#  provider           :string(255)
-#  uid                :string(255)
-#  email              :string(255)
-#  name               :string(255)
-#  gender             :string(255)
-#  locale             :string(255)
-#  token              :string(255)
-#  created_at         :datetime
-#  updated_at         :datetime
-#  admin              :boolean
-#  location           :text
-#  givey_token        :string(255)
-#  referring_id       :integer
-#  story              :text
-#  post_story_to_wall :boolean
-#  npo_id             :integer
+#  id                         :integer         not null, primary key
+#  provider                   :string(255)
+#  uid                        :string(255)
+#  email                      :string(255)
+#  name                       :string(255)
+#  gender                     :string(255)
+#  locale                     :string(255)
+#  token                      :string(255)
+#  created_at                 :datetime
+#  updated_at                 :datetime
+#  admin                      :boolean
+#  location                   :text
+#  givey_token                :string(255)
+#  referring_id               :integer
+#  story                      :text
+#  post_story_to_wall         :boolean
+#  npo_id                     :integer
+#  completed_round_one_at     :datetime
+#  emailed_invite_friends_at  :datetime
+#  emailed_scores_unlocked_at :datetime
 #
 
 class User < ActiveRecord::Base
@@ -34,7 +37,7 @@ class User < ActiveRecord::Base
 
   has_many :friends, :dependent => :destroy  do
     def pick(n=3)
-      active.sort_by{rand}[0..(n-1)]
+      randomized.limit(n)
     end
 
     def outdated?
@@ -51,17 +54,36 @@ class User < ActiveRecord::Base
       else '5000'
       end
     end
+
+    def next_available
+      spark = undecided.first
+      if spark && spark.friends.count < 2
+        spark.destroy
+        next_available
+      else
+        return spark
+      end
+    end
   end
 
   scope :scorable, lambda {
     joins("join profiles on profiles.uid = users.uid").
-    where("profiles.friend_list_count >= #{Profile::MIN_FRIEND_LISTS_REQUIRED}").
+    where("coalesce(profiles.friend_list_count,0) >= #{Profile::MIN_FRIEND_LISTS_REQUIRED}").
+    order("profiles.score DESC")
+  }
+  scope :not_scorable, lambda {
+    joins("join profiles on profiles.uid = users.uid").
+    where("coalesce(profiles.friend_list_count,0) < #{Profile::MIN_FRIEND_LISTS_REQUIRED}").
     order("profiles.score DESC")
   }
   scope :with_causes, where("npo_id is not null")
 
   def admin?
     self.admin
+  end
+  
+  def mturk?
+    Mturk.find_by_uid(uid)
   end
 
   def first_name
@@ -71,6 +93,10 @@ class User < ActiveRecord::Base
   def public_display_name
     last_initial = self.name.split(/\s/)[1][0]
     return "#{first_name} #{last_initial}."
+  end
+  
+  def score
+    profile.score
   end
 
   def has_a_cause?
@@ -84,9 +110,9 @@ class User < ActiveRecord::Base
   def friends_scores_unlocked?
     self.sparks.decided.count+1 >= 10
   end
-  
+
   def needs_friends?
-    self.friends.active.count < 20
+    self.friends.active.count < 40
   end
 
   def waiting?
@@ -99,24 +125,24 @@ class User < ActiveRecord::Base
 
   def prepare_sparks(num=25)
     questions = Question.pick(num-1)
-    spark_friends = self.friends.pick(40)
+    spark_friends = self.friends.pick(40).all
 
     question_ndx = 0
     friend_ndx = 0
     0.upto(num-1).each do |i|
       question_ndx = (question_ndx < questions.count ? question_ndx : 0)
-      spark_friends += self.friends.pick(40) if (friend_ndx+2) > spark_friends.count
-      self.sparks.create!(:question => questions[question_ndx], :friend_uid_1 => spark_friends[friend_ndx].uid, :friend_uid_2 => spark_friends[friend_ndx+1].uid, :friend_uid_3 => spark_friends[friend_ndx+2].uid)
+      spark_friends += self.friends.pick(40).all if (friend_ndx+2) > spark_friends.count
+      self.sparks.create(:question => questions[question_ndx], :friend_uid_1 => spark_friends[friend_ndx].uid, :friend_uid_2 => spark_friends[friend_ndx+1].uid, :friend_uid_3 => spark_friends[friend_ndx+2].uid)
       question_ndx += 1
       friend_ndx += 3
     end
   end
 
   def get_spark
-    spark = sparks.undecided.first
+    spark = sparks.next_available
     unless spark
       prepare_sparks   # => if there are no more undecided prepare a new set of sparks
-      spark = sparks.undecided.first
+      spark = sparks.next_available
     end
     spark
   end
@@ -171,11 +197,11 @@ class User < ActiveRecord::Base
       options = extract_options!(args)
       fb = MiniFB::OAuthSession.new(self.token)
       fb.post('me', :type => :feed, :params => {
-                :link => (options[:link] || "http://#{APP_CONFIG[:domain]}/#{self.givey_token}"),
+                :link => (options[:link] || self.referral_link),
                 :name => (options[:name] || "Givey.org"),
                 :caption => options[:caption],
                 :description => options[:description],
-                :message => options[:story]
+                :message => options[:message]
       })
     rescue Exception => e
     end
@@ -216,7 +242,7 @@ class User < ActiveRecord::Base
           profile.update_attributes(:details => f.details, :photos => f.photos)
           profile.update_friends_list_count!     # => updates profile table for the user with the latest count for scoring purposes
         else
-          profile = Profile.create!(:uid => f.uid, :details => f.details, :photos => f.photos, :friend_list_count => 1)
+          profile = Profile.create(:uid => f.uid, :details => f.details, :photos => f.photos, :friend_list_count => 1)
         end
       end
     end

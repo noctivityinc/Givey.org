@@ -39,4 +39,15 @@ module SparksHelper
       return true
     end
   end
+  
+  def get_npo_options
+    npos = Npo.active.featured.map {|x| [x.name, x.id]}
+    npos << ['Other','other']
+    npos
+  end
+  
+  def mturk_confirmation_code
+    @mturk = Mturk.find_by_uid(current_user.uid)
+    @mturk.confirmation_token if @mturk
+  end
 end

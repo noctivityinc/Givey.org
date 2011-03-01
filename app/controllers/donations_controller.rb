@@ -19,5 +19,10 @@ class DonationsController < ApplicationController
       redirect_to sparks_path
     end
   end
+  
+  def skip
+    DonationMailer.skipped_donation(current_user).deliver
+    redirect_to sparks_url
+  end
 
 end

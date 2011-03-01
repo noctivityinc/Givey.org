@@ -1,7 +1,7 @@
 - title "Most Altruistic Souls", false
 #altruists
   #index.trans
-    - if @altruists.empty? && Date.today >= Date.new(2011,04,01)
+    - if @altruists.empty? || Date.today < Date.new(2011,04,01)
       #not_time
         .row
           .fleft

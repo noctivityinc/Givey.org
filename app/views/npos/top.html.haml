@@ -3,7 +3,7 @@
 #npos
   #top
     #copy.trans
-      - if @npo_ids.empty? && Date.today >= Date.new(2011,04,01)
+      - if @npo_ids.empty? || Date.today < Date.new(2011,04,01)
         #not_yet.row
           .fleft
             %h2 Check back on April 1st to find out which causes our altruists support.

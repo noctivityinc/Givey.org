@@ -27,7 +27,7 @@
           - if production?
             %h2 Starting March 8th we plan on giving $5,000* to the most altruistic people on Facebook.
           - else
-            %h2= "#{Donation.count+20} people have given #{number_to_currency(Donation.total)} to find (and give) to the most altruistic person on Facebook."
+            %h2= "#{Donation.count+20} people have given #{number_to_currency(Donation.total)} to find (and give) to the most altruistic people on Facebook."
         
           %h1 Maybe it's one of your friends? (Maybe it's you).
 
@@ -46,26 +46,26 @@
               .secure.row
                 .fleft= image_tag "icons/security.png"
                 %p.fleft
-                  %b Everything's private
+                  %b Everything's Private
                   Who you select for what is never revealed.
               
               .user.row
                 .fleft= image_tag "icons/user.png"
                 %p.fleft
                   %b No Posting Policy
-                  We never post to anyone's wall unless asked.
+                  We never post to anyone's wall without permission.
               
               .heart.row
                 .fleft= image_tag "icons/heart.png"
                 %p.fleft
                   %b It's Darn Fun
-                  Try it.  You might learn a thing or two about your friends
+                  Try it.  You might learn a thing or two about your friends.
                 
           #screen_shot.fleft
             %h3.question= Question.active.sort_by{rand}.first.name
                 
           - if !production?
-            .footnote= "* $5,000 will be contributed by Givey.org members and given to the non-profit selected by the most altruistic person as voted on my Givey members."
+            .footnote= "* $5,000 will be contributed by Givey.org members and given to the top non-profit selected by the 10 most altruistic people as voted on my Givey members."
       #npos.trans.scrollable
         .items
           - Npo.active.featured.in_groups_of(8) do |group| 
@@ -73,15 +73,15 @@
               %table
                 %tr
                   - group.each do |npo|
-                    %td{:valign => "middle"}
-                      .npo= image_tag npo.logo(:thumb) if npo
+                    %td{:valign => "middle", :align => "center"}
+                      .npo= link_to image_tag(npo.logo(:thumb)), npo.website, :target => "_blank" if npo
         
       #how_it_works.trans
         %h3 How Does Givey.org Work?
         
         %ol
           %li 
-            %b We show you three friends.
+            %b We show you three friends
             %p
               We pick three friends and ask you a seemingly random question.  You pick the 
               most appropriate friend based on the question.
@@ -93,10 +93,10 @@
               pick is more or less likely to, well, save the world.
             
           %li
-            %b Your friends of friends play and we combine the scores
+            %b You, your friends and friends of friends play and we combine the scores
             %p
               Once your friends have been "scored" by other people you both have in common enough times,
-              you and your friends can see what others (anonymously) think of them
+              you and your friends can see what others (anonymously) think of them.
             
           %li
             %b Join the movement
@@ -105,10 +105,10 @@
               turn it into $5,000 if you score as the most altruistic person on the web.
             
           %li
-            %b We hit five grand and turn over the keys
+            %b We hit five grand and let altruism rule
             %p
-              Once $5,000 has been raised, we let the person with the highest combined altruism 
-              score decide what to do with the money and start again.
+              Once $5,000 has been contributed by people like you, the top cause voted on by the 10 most altruistic people 
+              will be given the money.  Then, we start again.
             
           
 

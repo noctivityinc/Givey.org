@@ -15,5 +15,5 @@
     = link_to "Your Scores", altruist_path(current_user.profile.givey_token)
   - else
     = image_tag "icons/lock32.png"
-    About YOU
-    .answer_num= "answer #{20-current_user.sparks.decided.count-1} more Qs to unlock"
+    About You
+    .answer_num= "answer #{20-current_user.sparks.decided.count-1} more Qs"

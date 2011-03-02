@@ -12,8 +12,8 @@
           .nav.cabin= link_to "Top Causes", top_npos_path
           .nav.cabin
             = link_to_if current_user.scores_unlocked?, "Your Scores", altruist_path(current_user.profile.givey_token) do
-              .locked{:title => "Your Scores Are Locked.  Answer More Questions", :class => "qtip"}
-                = image_tag "icons/lock32.png", :title => "Your Scores Are Locked.  Answer More Questions", :class => "qtip" 
+              .locked{:title => "Your Scores Are Locked.  Share with friends to unlock", :class => "qtip"}
+                = image_tag "icons/lock32.png", :title => "Your Scores Are Locked.  Share with friends to unlock", :class => "qtip" 
                 Your Scores
           .nav.cabin
             = link_to_if current_user.friends_scores_unlocked?, "Your Friends Declassified", user_friends_path(current_user) do
@@ -26,7 +26,7 @@
       %td.right
         .nav.cabin= link_to "Share", '#', :id => "header_share", :class => "fb_share"
         - if current_user && !hide_login_info?
-          .nav.cabin= link_to "Log out #{current_user.profile.details.first_name}", signout_path, :id => "log_out"
+          .nav.cabin= link_to "Log Out #{current_user.profile.details.first_name}", signout_path, :id => "log_out"
     - else
       %td.navs
         .nav.cabin= link_to "Highest Rated Altruists", altruists_path

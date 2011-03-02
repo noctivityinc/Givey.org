@@ -86,7 +86,7 @@ class SparksController < ApplicationController
 
     def sparks_count_display
       if current_user.sparks.decided.count < 20
-        "#{current_user.sparks.decided.count+1} of 20 needed"
+        "#{current_user.sparks.decided.count+1} of 20 Qs Needed"
       else
         "#{current_user.sparks.decided.count+1} questions answered"
       end

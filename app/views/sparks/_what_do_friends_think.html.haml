@@ -1,5 +1,5 @@
 #what_do_friends_think
-  %h2 We know what you think about your friends...
+  %h2 We have a pretty good idea of what you think about your friends...
   .friends.row
     - current_user.sparks.decided.sort_by{rand}[0..9].each do |s|
       .fleft.pic= image_tag s.selected.details.pic_square
@@ -13,7 +13,7 @@
   
   .share_actions.row
     .share_facebook.fleft= link_to '', "#", :class => "fb_share", :rel => current_user.referral_link  
-    .share_twitter.fleft= link_to '', "http://twitter.com/share?text=#{CGI.escape(Question.active.sort_by{rand}.first.name+' Let me know on Givey.org')}&url=#{CGI.escape(current_user.referral_link)}"
+    .share_twitter.fleft= link_to '', "http://twitter.com/share?text=#{CGI.escape(Question.active.sort_by{rand}.first.name+' Let me know on Givey.org')}&url=#{CGI.escape(current_user.referral_link)}", :target => "_blank"
       
   .share_email
     %h3 Or share with friends by email.

@@ -57,8 +57,8 @@ $(document).ready(function() {
            name: "How altruistic am I?",
            link: givey_link,
            caption: 'Givey.org',
-           description: "I'm using Givey.org to see if any of my friends think I'm the most altruistic people on Facebook.  It's pretty interesting.",
-           message: "Come check out Givey.  I think I'm pretty great.  What do you think?"
+           description: "I'm playing Givey.org to find my most altruistic friends but I'm also interested in finding out what you think of me. It's a fun social experiment that's looking for the most philanthropic people on Facebook to give them a voice in how they would change the world through Givey.",
+           message: "Check out Givey.org.  I think I'm pretty altruistic but what do you think?"
          }
        );
 

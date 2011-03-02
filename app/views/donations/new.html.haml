@@ -3,7 +3,7 @@
 #donation
   #new
     #copy.trans
-      %h1= "#{Donation.count+20} people have joined the movement contributing over #{number_to_currency(Donation.total)}."
+      %h1= "#{Donation.count+20} people have joined the Givey.org movement contributing over #{number_to_currency(Donation.total)} to the pot."
       
       - if current_user.npo
         - if current_user.npo.logo.exists?
@@ -12,7 +12,7 @@
         = render :partial => (current_user ? 'user' : 'not_user')
       
       #actions
-        = link_to 'Join The Movement. Contribute $5', APP_CONFIG[:givey]['donate_url'], :class => "button"
+        = link_to 'Join The Movement. Contribute $5 >>', APP_CONFIG[:givey]['donate_url'], :class => "button"
         %br
         = link_to "Skip the Donation", skip_donations_url
 

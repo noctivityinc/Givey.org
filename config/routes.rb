@@ -1,5 +1,7 @@
 Givey::Application.routes.draw do
 
+  namespace(:admin){ resources :mturks }
+
   resources :mturks
 
   resources :altruists, :only => [:show, :index]

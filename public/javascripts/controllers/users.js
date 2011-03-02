@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
   
   $('#other_name').live('keydown.autocomplete', function(){
     $(this).autocomplete({
-    source: '/npos',
+    source: '/causes',
     minLength: 3,
     select: function( event, ui ) {
       $('#other_npo_id').val(ui.item.id);

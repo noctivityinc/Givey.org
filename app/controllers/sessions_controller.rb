@@ -35,7 +35,7 @@ class SessionsController < ApplicationController
       if beta_tester_allowed(fb) || mturk_tester(fb)
         @user = User.find_by_provider_and_uid('facebook',fb.me.id)
         unless @user
-          User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
+          @user = User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
           @new_user = true
         end
 

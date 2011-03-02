@@ -1,0 +1,10 @@
+- title "Admin/Mturks"
+
+%table
+  %tr
+    %th Name
+  - for mturks in @mturks
+    %tr
+      %td= mturks.name
+      %td= link_to 'Show', [ :admin, mturks ]
+

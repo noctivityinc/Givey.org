@@ -25,10 +25,6 @@ class SparksController < ApplicationController
     spark.update_winner!(params[:uid])
     @spark = current_user.get_spark
     render :json => get_json_response
-    # rescue Exception => e
-    #   notify_hoptoad(e)
-    #   render :json => {:status => "error", :message => e.message}
-    # end
   end
 
   def selected
@@ -73,7 +69,7 @@ class SparksController < ApplicationController
     end
 
     def load_friends
-      current_user.destroy_and_get_friends if current_user.friends.active.count < 20 || current_user.friends.outdated?
+      current_user.destroy_and_get_friends if current_user.needs_friends? || current_user.friends.outdated?
     end
 
     def check_for_end_of_round
@@ -81,7 +77,7 @@ class SparksController < ApplicationController
     end
 
     def prepare_sparks
-      current_user.prepare_sparks
+      current_user.prepare_sparks unless current_user.needs_friends? 
     end
 
     def sparks_count_display

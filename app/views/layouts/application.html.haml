@@ -9,6 +9,7 @@
     = javascript_include_tag "controllers/#{controller.controller_name}"
     = javascript_include_flash
     = csrf_meta_tag
+    = hoptoad_javascript_notifier
     = yield(:head)
     :javascript
       randomSlide = [{image : '#{get_background}'}]

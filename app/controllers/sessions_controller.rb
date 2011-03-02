@@ -42,7 +42,7 @@ class SessionsController < ApplicationController
         @user.update_with_mini_fb(fb, access_token) # => updates to make sure we have latest session key and profile info
 
         create_profile(fb)
-        UserMailer.welcome(@user).deliver if @new_user
+        UserMailer.welcome(@user).deliver if (@new_user && !@user.mturk?)
 
         set_user_cookie
         session[:referring_id] = nil

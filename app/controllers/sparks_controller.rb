@@ -119,7 +119,7 @@ class SparksController < ApplicationController
     end
 
     def meet_candidate_json
-      {:status => "success", :type => 'overlay', :html => render_to_string(:partial => "meet_a_candidate", :locals  => {:candidate => User.random_with_a_cause} )}
+      {:status => "success", :type => 'overlay', :html => render_to_string(:partial => "meet_a_candidate", :locals  => {:candidate => User.random_with_a_story} )}
     end
 
     def what_do_friends_think_json

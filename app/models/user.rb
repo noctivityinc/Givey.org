@@ -77,6 +77,7 @@ class User < ActiveRecord::Base
     order("profiles.score DESC")
   }
   scope :with_causes, where("npo_id is not null")
+  scope :with_stories, where("npo_id is not null AND char_length(story) > 5")
 
   def admin?
     self.admin
@@ -105,6 +106,10 @@ class User < ActiveRecord::Base
 
   def self.random_with_a_cause
     self.with_causes.sort_by{rand}.first
+  end
+
+  def self.random_with_a_story
+    self.with_stories.sort_by{rand}.first
   end
 
   def friends_scores_unlocked?

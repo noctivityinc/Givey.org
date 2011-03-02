@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
   def admin?
     self.admin
   end
-  
+
   def mturk?
     Mturk.find_by_uid(uid)
   end
@@ -95,7 +95,7 @@ class User < ActiveRecord::Base
     last_initial = self.name.split(/\s/)[1][0]
     return "#{first_name} #{last_initial}."
   end
-  
+
   def score
     profile.score
   end
@@ -137,7 +137,13 @@ class User < ActiveRecord::Base
     0.upto(num-1).each do |i|
       question_ndx = (question_ndx < questions.count ? question_ndx : 0)
       spark_friends += self.friends.pick(40).all if (friend_ndx+2) > spark_friends.count
-      self.sparks.create(:question => questions[question_ndx], :friend_uid_1 => spark_friends[friend_ndx].uid, :friend_uid_2 => spark_friends[friend_ndx+1].uid, :friend_uid_3 => spark_friends[friend_ndx+2].uid)
+      
+      if spark_friends[friend_ndx+2]
+        self.sparks.create(:question => questions[question_ndx], :friend_uid_1 => spark_friends[friend_ndx].uid, :friend_uid_2 => spark_friends[friend_ndx+1].uid, :friend_uid_3 => spark_friends[friend_ndx+2].uid)
+      elsif spark_friends[friend_ndx+1]
+        self.sparks.create(:question => questions[question_ndx], :friend_uid_1 => spark_friends[friend_ndx].uid, :friend_uid_2 => spark_friends[friend_ndx+1].uid, :friend_uid_3 => spark_friends[friend_ndx+2].uid)
+      end
+      
       question_ndx += 1
       friend_ndx += 3
     end

@@ -127,7 +127,7 @@ jQuery(document).ready(function($) {
    }
 
    var overlayDiv = $('#trigger_overlay').overlay({
-    top: 160,
+    top: 100,
     mask: '#000',
     api: true
    })
@@ -136,7 +136,7 @@ jQuery(document).ready(function($) {
    $('#close_overlay').live('click',function(){overlayDiv.close();})
    
    var modalDiv = $('#trigger_modal').overlay({
-   	top: 160,
+   	top: 100,
    	closeOnClick: false,
    	closeOnEsc: false,
      	mask: {

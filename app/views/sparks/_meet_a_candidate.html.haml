@@ -2,7 +2,7 @@
   .sidebar.fleft
     = render :partial => 'shared/candidate', :object => candidate
   .main_panel.fleft
-    %h2 This is what it's all about...
+    %h2 This is what Givey.org is all about...
     
     %h3= "#{candidate.public_display_name} joined the movement to turn their $5 into $5000 for #{candidate.npo.name}.  Here's why..."
     
@@ -18,6 +18,6 @@
     
       #actions.row
         .fleft
-          %b (more on this later :))
+          %b More on this later...
         .fright
           = link_to "Continue >>", '#', :class => "button close", :id => 'close_overlay' 

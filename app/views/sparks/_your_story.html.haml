@@ -6,7 +6,7 @@
       = hidden_field_tag 'to', new_donation_path
       = hidden_field_tag 'other_npo_id', ''
       %h1 What would you do with $5,000?
-      %h2 You could decide what happens
+      %h2 Your favorite cause could end up getting $5,000 from Givey if you are voted as one of the most altruistic people on Facebook.
       .row
         .fleft.label What's your favorite cause?
         .fleft= f.select :npo_id, get_npo_options
@@ -14,11 +14,11 @@
         .fleft.label Charity name:
         .fleft= text_field_tag 'other_name'
       .row
-        .label Why does this cause matters to you (in 255 words or less):
+        .label Why does this cause matter to you (in 255 words or less):
       .row
         = f.text_area :story
       .row
-        .fleft.label Share my story on my wall
+        .fleft.label Share my story on my Facebook wall
         .fleft= f.check_box :post_story_to_wall, 
       #actions.row
         .fright

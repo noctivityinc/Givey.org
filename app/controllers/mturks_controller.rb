@@ -1,5 +1,6 @@
 class MturksController < ApplicationController
   def index
+    redirect_to root_url, :notice => "This HIT is currently complete.  Thank you." if Mturk.count > 150 
     session[:mturk] = true
   end
 

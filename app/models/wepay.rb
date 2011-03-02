@@ -2,7 +2,8 @@ require 'net/http'
 
 class Wepay
   def initialize()
-    @http = Net::HTTP.new(APP_CONFIG[:givey]['api_url'])
+    @http = Net::HTTP.new(APP_CONFIG[:givey]['api_url'],443)
+    @http.use_ssl = true
   end
 
   def get(path)

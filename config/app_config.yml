@@ -8,6 +8,7 @@ development:
     access_token: '579f6c58ee058480358d1a6261386e8d2078472da644b9a7904c3aa180e05c6b'
     donate_url: 'https://stage.wepay.com/donate/givey'
     api_url: 'stage.wepayapi.com'
+    group_id: 89885
 
 test:
   domain: test.host
@@ -22,7 +23,8 @@ staging:
     access_token: '579f6c58ee058480358d1a6261386e8d2078472da644b9a7904c3aa180e05c6b'
     donate_url: 'https://stage.wepay.com/donate/givey'
     api_url: 'stage.wepayapi.com'
-
+    group_id: 89885
+    
 beta:
   domain: givey.org
   facebook:
@@ -32,7 +34,8 @@ beta:
   givey:
     access_token: '40ab94b9b587dd48445c4021a8624d6d2feac601fd0e6be25072bdf363dd7e38'
     donate_url: 'https://www.wepay.com/donate/givey'
-    api_url: 'www.wepayapi.com'
+    api_url: 'wepayapi.com'
+    group_id: 92174
 
 production:
   domain: givey.org
@@ -43,4 +46,5 @@ production:
   givey:
     access_token: '40ab94b9b587dd48445c4021a8624d6d2feac601fd0e6be25072bdf363dd7e38'
     donate_url: 'https://www.wepay.com/donate/givey'
-    api_url: 'www.wepayapi.com'
+    api_url: 'wepayapi.com'
+    group_id: 92174

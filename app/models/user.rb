@@ -77,11 +77,12 @@ class User < ActiveRecord::Base
     order("profiles.score DESC")
   }
   scope :with_causes, where("npo_id is not null")
+  scope :with_stories, where("npo_id is not null AND char_length(story) > 5")
 
   def admin?
     self.admin
   end
-  
+
   def mturk?
     Mturk.find_by_uid(uid)
   end
@@ -94,7 +95,7 @@ class User < ActiveRecord::Base
     last_initial = self.name.split(/\s/)[1][0]
     return "#{first_name} #{last_initial}."
   end
-  
+
   def score
     profile.score
   end
@@ -105,6 +106,10 @@ class User < ActiveRecord::Base
 
   def self.random_with_a_cause
     self.with_causes.sort_by{rand}.first
+  end
+
+  def self.random_with_a_story
+    self.with_stories.sort_by{rand}.first
   end
 
   def friends_scores_unlocked?
@@ -133,6 +138,7 @@ class User < ActiveRecord::Base
       question_ndx = (question_ndx < questions.count ? question_ndx : 0)
       spark_friends += self.friends.pick(40).all if (friend_ndx+2) > spark_friends.count
       self.sparks.create(:question => questions[question_ndx], :friend_uid_1 => spark_friends[friend_ndx].uid, :friend_uid_2 => spark_friends[friend_ndx+1].uid, :friend_uid_3 => spark_friends[friend_ndx+2].uid)
+
       question_ndx += 1
       friend_ndx += 3
     end

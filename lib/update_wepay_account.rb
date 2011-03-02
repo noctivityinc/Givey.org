@@ -4,7 +4,7 @@
 # ====================
 
 wp = Wepay.new
-x = wp.put('/group/modify/89885',{:donate_rd => "http://#{APP_CONFIG[:domain]}/donations/callback"})
+x = wp.put("/group/modify/#{APP_CONFIG[:givey]['group_id']}",{:donate_rd => "http://#{APP_CONFIG[:domain]}/donations/callback"})
 
 begin
   puts "Updated Wepay for Group ID: #{x.result.id}"   

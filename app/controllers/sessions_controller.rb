@@ -28,9 +28,12 @@ class SessionsController < ApplicationController
     end
 
     def facebook_create
-      access_token_hash = MiniFB.oauth_access_token(APP_CONFIG[:facebook]['api_key'], facebook_oauth_callback_url, APP_CONFIG[:facebook]['app_secret'], params[:code])
+      access_token_hash = MiniFB.oauth_access_token(APP_CONFIG[:facebook]['api_key'], facebook_oauth_callback_url, APP_CONFIG[:facebook]['app_secret'], params[:code]) rescue nil
+      redirect_to root_url, :alert => "There was a problem with Facebook.  Please try again." unless access_token_hash # in case of a problem parsing the access token
       access_token = access_token_hash["access_token"]
       fb = MiniFB::OAuthSession.new(access_token)
+      
+      redirect_to root_url, :alert => "Sorry, but we need permission to access your email to play Givey.org" if fb.me.email.blank? # need to do this in case someone set permissions to HIDE email address from everyone.
 
       if beta_tester_allowed(fb) || mturk_tester(fb)
         @user = User.find_by_provider_and_uid('facebook',fb.me.id)

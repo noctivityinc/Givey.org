@@ -73,6 +73,7 @@ GEM
       hashie
       rest-client
     mocha (0.9.12)
+    newrelic_rpm (2.13.4)
     nifty-generators (0.4.5)
     nokogiri (1.4.4)
     oauth (0.4.4)
@@ -144,6 +145,7 @@ DEPENDENCIES
   mail
   mini_fb
   mocha
+  newrelic_rpm
   nifty-generators
   nokogiri
   oauth

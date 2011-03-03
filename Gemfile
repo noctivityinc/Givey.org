@@ -27,7 +27,8 @@ group :default do
   gem 'will_paginate', '~> 3.0.beta'
   gem 'oauth'
   gem 'rack-noie', :require => 'noie'
-  
+  gem 'newrelic_rpm'
+    
 end
 
 group :production do

@@ -1,0 +1,111 @@
+(in /Users/jlippiner/Projects/givey)
+          admin_mturks GET    /admin/mturks(.:format)                    {:action=>"index", :controller=>"admin/mturks"}
+                       POST   /admin/mturks(.:format)                    {:action=>"create", :controller=>"admin/mturks"}
+       new_admin_mturk GET    /admin/mturks/new(.:format)                {:action=>"new", :controller=>"admin/mturks"}
+      edit_admin_mturk GET    /admin/mturks/:id/edit(.:format)           {:action=>"edit", :controller=>"admin/mturks"}
+           admin_mturk GET    /admin/mturks/:id(.:format)                {:action=>"show", :controller=>"admin/mturks"}
+                       PUT    /admin/mturks/:id(.:format)                {:action=>"update", :controller=>"admin/mturks"}
+                       DELETE /admin/mturks/:id(.:format)                {:action=>"destroy", :controller=>"admin/mturks"}
+                mturks GET    /mturks(.:format)                          {:action=>"index", :controller=>"mturks"}
+                       POST   /mturks(.:format)                          {:action=>"create", :controller=>"mturks"}
+             new_mturk GET    /mturks/new(.:format)                      {:action=>"new", :controller=>"mturks"}
+            edit_mturk GET    /mturks/:id/edit(.:format)                 {:action=>"edit", :controller=>"mturks"}
+                 mturk GET    /mturks/:id(.:format)                      {:action=>"show", :controller=>"mturks"}
+                       PUT    /mturks/:id(.:format)                      {:action=>"update", :controller=>"mturks"}
+                       DELETE /mturks/:id(.:format)                      {:action=>"destroy", :controller=>"mturks"}
+             altruists GET    /altruists(.:format)                       {:action=>"index", :controller=>"altruists"}
+              altruist GET    /altruists/:id(.:format)                   {:action=>"show", :controller=>"altruists"}
+    callback_donations GET    /donations/callback(.:format)              {:action=>"callback", :controller=>"donations"}
+        skip_donations GET    /donations/skip(.:format)                  {:action=>"skip", :controller=>"donations"}
+             donations GET    /donations(.:format)                       {:action=>"index", :controller=>"donations"}
+                       POST   /donations(.:format)                       {:action=>"create", :controller=>"donations"}
+          new_donation GET    /donations/new(.:format)                   {:action=>"new", :controller=>"donations"}
+         edit_donation GET    /donations/:id/edit(.:format)              {:action=>"edit", :controller=>"donations"}
+              donation GET    /donations/:id(.:format)                   {:action=>"show", :controller=>"donations"}
+                       PUT    /donations/:id(.:format)                   {:action=>"update", :controller=>"donations"}
+                       DELETE /donations/:id(.:format)                   {:action=>"destroy", :controller=>"donations"}
+              top_npos GET    /causes/top(.:format)                      {:action=>"top", :controller=>"npos"}
+                  npos GET    /causes(.:format)                          {:action=>"index", :controller=>"npos"}
+                       POST   /causes(.:format)                          {:action=>"create", :controller=>"npos"}
+               new_npo GET    /causes/new(.:format)                      {:action=>"new", :controller=>"npos"}
+              edit_npo GET    /causes/:id/edit(.:format)                 {:action=>"edit", :controller=>"npos"}
+                   npo GET    /causes/:id(.:format)                      {:action=>"show", :controller=>"npos"}
+                       PUT    /causes/:id(.:format)                      {:action=>"update", :controller=>"npos"}
+                       DELETE /causes/:id(.:format)                      {:action=>"destroy", :controller=>"npos"}
+          user_friends GET    /users/:user_id/friends(.:format)          {:action=>"index", :controller=>"friends"}
+                       POST   /users/:user_id/friends(.:format)          {:action=>"create", :controller=>"friends"}
+       new_user_friend GET    /users/:user_id/friends/new(.:format)      {:action=>"new", :controller=>"friends"}
+      edit_user_friend GET    /users/:user_id/friends/:id/edit(.:format) {:action=>"edit", :controller=>"friends"}
+           user_friend GET    /users/:user_id/friends/:id(.:format)      {:action=>"show", :controller=>"friends"}
+                       PUT    /users/:user_id/friends/:id(.:format)      {:action=>"update", :controller=>"friends"}
+                       DELETE /users/:user_id/friends/:id(.:format)      {:action=>"destroy", :controller=>"friends"}
+    needs_friends_user GET    /users/:id/needs_friends(.:format)         {:action=>"needs_friends", :controller=>"users"}
+                 users GET    /users(.:format)                           {:action=>"index", :controller=>"users"}
+                       POST   /users(.:format)                           {:action=>"create", :controller=>"users"}
+              new_user GET    /users/new(.:format)                       {:action=>"new", :controller=>"users"}
+             edit_user GET    /users/:id/edit(.:format)                  {:action=>"edit", :controller=>"users"}
+                  user GET    /users/:id(.:format)                       {:action=>"show", :controller=>"users"}
+                       PUT    /users/:id(.:format)                       {:action=>"update", :controller=>"users"}
+                       DELETE /users/:id(.:format)                       {:action=>"destroy", :controller=>"users"}
+               friends        /friends(.:format)                         {:controller=>"friends", :action=>"index"}
+          sparks_reset GET    /sparks/reset(.:format)                    {:controller=>"sparks", :action=>"reset"}
+        defriend_spark GET    /sparks/:id/defriend(.:format)             {:action=>"defriend", :controller=>"sparks"}
+      end_round_sparks GET    /sparks/end_round(.:format)                {:action=>"end_round", :controller=>"sparks"}
+scores_unlocked_sparks GET    /sparks/scores_unlocked(.:format)          {:action=>"scores_unlocked", :controller=>"sparks"}
+                sparks GET    /sparks(.:format)                          {:action=>"index", :controller=>"sparks"}
+                       POST   /sparks(.:format)                          {:action=>"create", :controller=>"sparks"}
+             new_spark GET    /sparks/new(.:format)                      {:action=>"new", :controller=>"sparks"}
+            edit_spark GET    /sparks/:id/edit(.:format)                 {:action=>"edit", :controller=>"sparks"}
+                 spark GET    /sparks/:id(.:format)                      {:action=>"show", :controller=>"sparks"}
+                       PUT    /sparks/:id(.:format)                      {:action=>"update", :controller=>"sparks"}
+                       DELETE /sparks/:id(.:format)                      {:action=>"destroy", :controller=>"sparks"}
+                              /auth/:provider/callback(.:format)         {:controller=>"sessions", :action=>"create"}
+         access_denied        /access_denied(.:format)                   {:action=>"access_denied", :controller=>"sessions"}
+               signout        /signout(.:format)                         {:controller=>"sessions", :action=>"destroy"}
+           admin_index GET    /admin(.:format)                           {:action=>"index", :controller=>"admin"}
+            admin_npos GET    /admin/npos(.:format)                      {:action=>"index", :controller=>"admin/npos"}
+                       POST   /admin/npos(.:format)                      {:action=>"create", :controller=>"admin/npos"}
+         new_admin_npo GET    /admin/npos/new(.:format)                  {:action=>"new", :controller=>"admin/npos"}
+        edit_admin_npo GET    /admin/npos/:id/edit(.:format)             {:action=>"edit", :controller=>"admin/npos"}
+             admin_npo GET    /admin/npos/:id(.:format)                  {:action=>"show", :controller=>"admin/npos"}
+                       PUT    /admin/npos/:id(.:format)                  {:action=>"update", :controller=>"admin/npos"}
+                       DELETE /admin/npos/:id(.:format)                  {:action=>"destroy", :controller=>"admin/npos"}
+      admin_categories GET    /admin/categories(.:format)                {:action=>"index", :controller=>"admin/categories"}
+                       POST   /admin/categories(.:format)                {:action=>"create", :controller=>"admin/categories"}
+    new_admin_category GET    /admin/categories/new(.:format)            {:action=>"new", :controller=>"admin/categories"}
+   edit_admin_category GET    /admin/categories/:id/edit(.:format)       {:action=>"edit", :controller=>"admin/categories"}
+        admin_category GET    /admin/categories/:id(.:format)            {:action=>"show", :controller=>"admin/categories"}
+                       PUT    /admin/categories/:id(.:format)            {:action=>"update", :controller=>"admin/categories"}
+                       DELETE /admin/categories/:id(.:format)            {:action=>"destroy", :controller=>"admin/categories"}
+     admin_backgrounds GET    /admin/backgrounds(.:format)               {:action=>"index", :controller=>"admin/backgrounds"}
+                       POST   /admin/backgrounds(.:format)               {:action=>"create", :controller=>"admin/backgrounds"}
+  new_admin_background GET    /admin/backgrounds/new(.:format)           {:action=>"new", :controller=>"admin/backgrounds"}
+ edit_admin_background GET    /admin/backgrounds/:id/edit(.:format)      {:action=>"edit", :controller=>"admin/backgrounds"}
+      admin_background GET    /admin/backgrounds/:id(.:format)           {:action=>"show", :controller=>"admin/backgrounds"}
+                       PUT    /admin/backgrounds/:id(.:format)           {:action=>"update", :controller=>"admin/backgrounds"}
+                       DELETE /admin/backgrounds/:id(.:format)           {:action=>"destroy", :controller=>"admin/backgrounds"}
+    admin_beta_testers GET    /admin/beta_testers(.:format)              {:action=>"index", :controller=>"admin/beta_testers"}
+                       POST   /admin/beta_testers(.:format)              {:action=>"create", :controller=>"admin/beta_testers"}
+ new_admin_beta_tester GET    /admin/beta_testers/new(.:format)          {:action=>"new", :controller=>"admin/beta_testers"}
+edit_admin_beta_tester GET    /admin/beta_testers/:id/edit(.:format)     {:action=>"edit", :controller=>"admin/beta_testers"}
+     admin_beta_tester GET    /admin/beta_testers/:id(.:format)          {:action=>"show", :controller=>"admin/beta_testers"}
+                       PUT    /admin/beta_testers/:id(.:format)          {:action=>"update", :controller=>"admin/beta_testers"}
+                       DELETE /admin/beta_testers/:id(.:format)          {:action=>"destroy", :controller=>"admin/beta_testers"}
+       admin_questions GET    /admin/questions(.:format)                 {:action=>"index", :controller=>"admin/questions"}
+                       POST   /admin/questions(.:format)                 {:action=>"create", :controller=>"admin/questions"}
+    new_admin_question GET    /admin/questions/new(.:format)             {:action=>"new", :controller=>"admin/questions"}
+   edit_admin_question GET    /admin/questions/:id/edit(.:format)        {:action=>"edit", :controller=>"admin/questions"}
+        admin_question GET    /admin/questions/:id(.:format)             {:action=>"show", :controller=>"admin/questions"}
+                       PUT    /admin/questions/:id(.:format)             {:action=>"update", :controller=>"admin/questions"}
+                       DELETE /admin/questions/:id(.:format)             {:action=>"destroy", :controller=>"admin/questions"}
+               not_yet        /not_yet(.:format)                         {:controller=>"home", :action=>"not_yet"}
+                   cc2        /cc2(.:format)                             {:controller=>"home", :action=>"cc2"}
+             beta_test        /beta_test(.:format)                       {:controller=>"home", :action=>"beta_test"}
+                              /r/:token(.:format)                        {:controller=>"home", :action=>"referral"}
+                 about        /about(.:format)                           {:controller=>"home", :action=>"about"}
+                 terms        /terms(.:format)                           {:controller=>"home", :action=>"terms"}
+               privacy        /privacy(.:format)                         {:controller=>"home", :action=>"privacy"}
+                   faq        /faq(.:format)                             {:controller=>"home", :action=>"faq"}
+            noieplease        /noieplease(.:format)                      {:controller=>"home", :action=>"noieplease"}
+            home_index GET    /home/index(.:format)                      {:controller=>"home", :action=>"index"}
+                  root        /(.:format)                                {:controller=>"home", :action=>"index"}

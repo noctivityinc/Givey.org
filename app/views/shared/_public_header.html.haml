@@ -24,6 +24,8 @@
           #candidate_supporter_msg                
         
       %td.right
+        - if current_user.donations.empty? && !current_user.npo.blank?
+        .nav.cabin.contribute= link_to "Contribute", new_donation_path
         .nav.cabin= link_to "Share", '#', :id => "header_share", :class => "fb_share"
         - if current_user && !hide_login_info?
           .nav.cabin= link_to "Log Out #{current_user.profile.details.first_name}", signout_path, :id => "log_out"

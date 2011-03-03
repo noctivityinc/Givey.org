@@ -1,0 +1,98 @@
+=header
+  table
+    width: 100%
+    margin: 0px
+    height: 30px
+    padding: 5px 0px
+    font-size: .85em
+    +green_trans
+
+    a
+      color: white
+
+    .left
+      width: 150px
+      #processing_spinner
+        margin: 0px
+        +rounded-borders
+        background: white
+        padding: 2px
+        height: 24px
+        width: 24px
+        vertical-align: top
+        display: none
+  
+    .navs
+      overflow: hidden
+      .nav
+        float: left
+        margin-right: 20px
+        text-transform: capitalize
+        font-size: 14px
+  
+        a
+          text-decoration: none
+    
+          &:hover
+            text-decoration: underline
+            color: yellow
+
+        img
+          width: 14px
+          vertical-align: baseline
+    
+        &.classify
+          a
+            color: #FEEDB3
+    
+    #candidate_supporter_msg
+      color: white
+
+      table
+        margin: 0 auto
+  
+        img
+          height: 24px
+          widght: 24px
+          margin: 0px 5px
+          vertical-align: baseline
+          border: 2px solid white
+
+        em
+          font-size: 11px
+          font-style: italic
+    
+        .statement
+          font-weight: bold
+          margin-top: 3px
+    
+          .candidates_cause
+            color: yellow
+            display: inline
+    
+    .right
+      text-align: right
+      padding-right: 10px
+      vertical-align: center
+      .nav
+        display: inline
+        margin-right: 15px
+        a
+          font-size: 13px
+          text-decoration: none
+          white-space: nowrap
+        
+          &:hover
+            text-decoration: underline
+            color: yellow
+
+      .contribute
+        a
+          font-weight: bold
+          color: yellow
+          text-decoration: underline
+          
+          &:hover
+            text-decoration: none
+            color: white
+          

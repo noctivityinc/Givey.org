@@ -112,283 +112,6 @@ a img {
   float: right;
 }
 
-/* line 13, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset.buttons {
-  text-align: center;
-}
-/* line 17, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset.buttons li.commit input[type=submit] {
-  margin: 10pt 10px;
-  padding: 5px;
-  font-size: 1.2em;
-  text-align: right;
-}
-
-/* line 23, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset {
-  text-align: left;
-}
-/* line 25, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset legend {
-  padding: 0.75em 0em;
-  font-weight: bold;
-  font-size: 1.25em;
-}
-
-/* line 30, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol {
-  padding-left: 1.5em;
-}
-/* line 32, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li {
-  padding-bottom: 1.5em;
-  clear: both;
-}
-/* line 36, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li label {
-  display: block;
-  width: 25%;
-  float: left;
-  padding-top: 0.2em;
-  font-weight: bold;
-}
-/* line 43, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.error {
-  background: #ffffcc;
-  padding: 8px 0px 3px 6px;
-  border-top: 1px dashed #ffcc66;
-  border-bottom: 1px dashed #ffcc66;
-}
-/* line 49, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.error .inline-errors {
-  color: #660000;
-}
-/* line 53, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.string fieldset, form.formtastic fieldset ol li.password fieldset, form.formtastic fieldset ol li.numeric fieldset, form.formtastic fieldset ol li.select fieldset {
-  padding: 1.4em;
-  margin: 0 0 1.5em 0;
-}
-/* line 56, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.string legend, form.formtastic fieldset ol li.password legend, form.formtastic fieldset ol li.numeric legend, form.formtastic fieldset ol li.select legend {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-/* line 59, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.string input, form.formtastic fieldset ol li.password input, form.formtastic fieldset ol li.numeric input, form.formtastic fieldset ol li.select input {
-  width: 400px;
-}
-/* line 61, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.string input.text, form.formtastic fieldset ol li.string input.title, form.formtastic fieldset ol li.string input[type=text], form.formtastic fieldset ol li.string input[type=password], form.formtastic fieldset ol li.string input.password, form.formtastic fieldset ol li.password input.text, form.formtastic fieldset ol li.password input.title, form.formtastic fieldset ol li.password input[type=text], form.formtastic fieldset ol li.password input[type=password], form.formtastic fieldset ol li.password input.password, form.formtastic fieldset ol li.numeric input.text, form.formtastic fieldset ol li.numeric input.title, form.formtastic fieldset ol li.numeric input[type=text], form.formtastic fieldset ol li.numeric input[type=password], form.formtastic fieldset ol li.numeric input.password, form.formtastic fieldset ol li.select input.text, form.formtastic fieldset ol li.select input.title, form.formtastic fieldset ol li.select input[type=text], form.formtastic fieldset ol li.select input[type=password], form.formtastic fieldset ol li.select input.password {
-  border: 1px solid gray;
-  margin: 0em 0;
-  background-color: white;
-  padding: 5px;
-  font-size: 1.2em;
-}
-/* line 67, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.string input.title, form.formtastic fieldset ol li.password input.title, form.formtastic fieldset ol li.numeric input.title, form.formtastic fieldset ol li.select input.title {
-  font-size: 1.5em;
-}
-/* line 69, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.string input[type=checkbox], form.formtastic fieldset ol li.string input.checkbox, form.formtastic fieldset ol li.string input[type=radio], form.formtastic fieldset ol li.string input.radio, form.formtastic fieldset ol li.password input[type=checkbox], form.formtastic fieldset ol li.password input.checkbox, form.formtastic fieldset ol li.password input[type=radio], form.formtastic fieldset ol li.password input.radio, form.formtastic fieldset ol li.numeric input[type=checkbox], form.formtastic fieldset ol li.numeric input.checkbox, form.formtastic fieldset ol li.numeric input[type=radio], form.formtastic fieldset ol li.numeric input.radio, form.formtastic fieldset ol li.select input[type=checkbox], form.formtastic fieldset ol li.select input.checkbox, form.formtastic fieldset ol li.select input[type=radio], form.formtastic fieldset ol li.select input.radio {
-  position: relative;
-  top: 0em;
-}
-/* line 73, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.string input[type=submit], form.formtastic fieldset ol li.password input[type=submit], form.formtastic fieldset ol li.numeric input[type=submit], form.formtastic fieldset ol li.select input[type=submit] {
-  margin: 10pt 10px;
-  padding: 5px;
-  font-size: 1.3em;
-  padding: 5px 10px;
-  background: green;
-  color: white;
-}
-/* line 80, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.string select, form.formtastic fieldset ol li.password select, form.formtastic fieldset ol li.numeric select, form.formtastic fieldset ol li.select select {
-  margin: 0em 0;
-  background-color: white;
-  padding: 5px;
-  font-size: 1.2em;
-}
-/* line 86, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.string .inline-hints, form.formtastic fieldset ol li.password .inline-hints, form.formtastic fieldset ol li.numeric .inline-hints, form.formtastic fieldset ol li.select .inline-hints {
-  width: 400px;
-  padding-left: 25%;
-  font-size: 0.8em;
-  color: #666666;
-  margin-top: 0.25em;
-}
-/* line 94, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.text textarea {
-  width: 400px;
-  height: 5em;
-  margin: 0em 0;
-  padding: 5px;
-}
-/* line 100, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.text .inline-hints {
-  width: 400px;
-  padding-left: 25%;
-  font-size: 0.8em;
-  color: #666666;
-  margin-top: 0.25em;
-}
-/* line 109, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.radio fieldset {
-  overflow: hidden;
-  width: 100%;
-  padding-top: 0.2em;
-}
-/* line 114, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.radio fieldset legend {
-  text-align: left;
-  width: 25%;
-  float: left;
-  padding: 0px;
-  margin: 0px;
-  font-size: 1em;
-}
-/* line 122, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.radio fieldset ol {
-  width: 400px;
-  float: left;
-}
-/* line 125, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.radio fieldset ol li {
-  display: inline;
-  padding: 0px;
-  margin: 0px;
-}
-/* line 129, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.radio fieldset ol li label {
-  width: 40px;
-}
-/* line 133, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.boolean label {
-  padding-left: 25%;
-}
-/* line 135, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.boolean p.inline-hints {
-  color: #666666;
-  margin: 0.5em 0 0 25%;
-  clear: both;
-}
-/* line 139, ../../../app/stylesheets/_formtastic_changes.sass */
-form.formtastic fieldset ol li.boolean input {
-  margin-right: 5px;
-}
-
-/* CSS Styles that are needed by jScrollPane for it to operate correctly.
- *
- * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
- * may not operate correctly without them. */
-/* line 7, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspContainer {
-  overflow: hidden;
-  position: relative;
-}
-
-/* line 11, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspPane {
-  position: absolute;
-}
-
-/* line 14, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspVerticalBar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 1px;
-  height: 100%;
-}
-
-/* line 21, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspHorizontalBar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 6px;
-}
-
-/* line 28, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspVerticalBar *, .jspHorizontalBar * {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 32, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspCap {
-  display: none;
-}
-
-/* line 35, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspHorizontalBar .jspCap {
-  float: left;
-}
-
-/* line 38, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspTrack {
-  position: relative;
-}
-
-/* line 41, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspDrag {
-  position: relative;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-/* line 48, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspHorizontalBar .jspTrack, .jspHorizontalBar .jspDrag {
-  float: left;
-  height: 100%;
-}
-
-/* line 52, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspArrow {
-  background: #50506d;
-  text-indent: -20000px;
-  display: block;
-  cursor: pointer;
-}
-/* line 57, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspArrow.jspDisabled {
-  cursor: default;
-  background: #80808d;
-}
-
-/* line 61, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspVerticalBar .jspArrow {
-  height: 16px;
-}
-
-/* line 64, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspHorizontalBar .jspArrow {
-  width: 16px;
-  float: left;
-  height: 100%;
-}
-
-/* line 69, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspVerticalBar .jspArrow:focus {
-  outline: none;
-}
-
-/* line 72, ../../../app/stylesheets/_jquery.scroll.sass */
-.jspCorner {
-  background: #eeeef4;
-  float: left;
-  height: 100%;
-}
-
-/* Yuk! CSS Hack for IE6 3 pixel bug :( */
-/* line 79, ../../../app/stylesheets/_jquery.scroll.sass */
-* html .jspCorner {
-  margin: 0 -3px 0 0;
-}
-
 /* incase an inverted custom gradient isn't specified */
 /* line 177, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class, body #main #container .trans a.button, body #main #container .trans input.button, body #main #container .gray_trans a.button, body #main #container .gray_trans input.button, a.button, .gray-button {
@@ -413,14 +136,291 @@ form.formtastic fieldset ol li.boolean input {
   outline: none;
 }
 
+/* line 13, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset.buttons {
+  text-align: center;
+}
+/* line 17, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset.buttons li.commit input[type=submit] {
+  margin: 10pt 10px;
+  padding: 5px;
+  font-size: 1.2em;
+  text-align: right;
+}
+
+/* line 23, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset {
+  text-align: left;
+}
+/* line 25, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset legend {
+  padding: 0.75em 0em;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+/* line 30, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol {
+  padding-left: 1.5em;
+}
+/* line 32, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li {
+  padding-bottom: 1.5em;
+  clear: both;
+}
+/* line 36, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li label {
+  display: block;
+  width: 25%;
+  float: left;
+  padding-top: 0.2em;
+  font-weight: bold;
+}
+/* line 43, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.error {
+  background: #ffffcc;
+  padding: 8px 0px 3px 6px;
+  border-top: 1px dashed #ffcc66;
+  border-bottom: 1px dashed #ffcc66;
+}
+/* line 49, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.error .inline-errors {
+  color: #660000;
+}
+/* line 53, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string fieldset, form.formtastic fieldset ol li.password fieldset, form.formtastic fieldset ol li.numeric fieldset, form.formtastic fieldset ol li.select fieldset {
+  padding: 1.4em;
+  margin: 0 0 1.5em 0;
+}
+/* line 56, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string legend, form.formtastic fieldset ol li.password legend, form.formtastic fieldset ol li.numeric legend, form.formtastic fieldset ol li.select legend {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* line 59, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string input, form.formtastic fieldset ol li.password input, form.formtastic fieldset ol li.numeric input, form.formtastic fieldset ol li.select input {
+  width: 400px;
+}
+/* line 61, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string input.text, form.formtastic fieldset ol li.string input.title, form.formtastic fieldset ol li.string input[type=text], form.formtastic fieldset ol li.string input[type=password], form.formtastic fieldset ol li.string input.password, form.formtastic fieldset ol li.password input.text, form.formtastic fieldset ol li.password input.title, form.formtastic fieldset ol li.password input[type=text], form.formtastic fieldset ol li.password input[type=password], form.formtastic fieldset ol li.password input.password, form.formtastic fieldset ol li.numeric input.text, form.formtastic fieldset ol li.numeric input.title, form.formtastic fieldset ol li.numeric input[type=text], form.formtastic fieldset ol li.numeric input[type=password], form.formtastic fieldset ol li.numeric input.password, form.formtastic fieldset ol li.select input.text, form.formtastic fieldset ol li.select input.title, form.formtastic fieldset ol li.select input[type=text], form.formtastic fieldset ol li.select input[type=password], form.formtastic fieldset ol li.select input.password {
+  border: 1px solid gray;
+  margin: 0em 0;
+  background-color: white;
+  padding: 5px;
+  font-size: 1.2em;
+}
+/* line 67, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string input.title, form.formtastic fieldset ol li.password input.title, form.formtastic fieldset ol li.numeric input.title, form.formtastic fieldset ol li.select input.title {
+  font-size: 1.5em;
+}
+/* line 69, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string input[type=checkbox], form.formtastic fieldset ol li.string input.checkbox, form.formtastic fieldset ol li.string input[type=radio], form.formtastic fieldset ol li.string input.radio, form.formtastic fieldset ol li.password input[type=checkbox], form.formtastic fieldset ol li.password input.checkbox, form.formtastic fieldset ol li.password input[type=radio], form.formtastic fieldset ol li.password input.radio, form.formtastic fieldset ol li.numeric input[type=checkbox], form.formtastic fieldset ol li.numeric input.checkbox, form.formtastic fieldset ol li.numeric input[type=radio], form.formtastic fieldset ol li.numeric input.radio, form.formtastic fieldset ol li.select input[type=checkbox], form.formtastic fieldset ol li.select input.checkbox, form.formtastic fieldset ol li.select input[type=radio], form.formtastic fieldset ol li.select input.radio {
+  position: relative;
+  top: 0em;
+}
+/* line 73, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string input[type=submit], form.formtastic fieldset ol li.password input[type=submit], form.formtastic fieldset ol li.numeric input[type=submit], form.formtastic fieldset ol li.select input[type=submit] {
+  margin: 10pt 10px;
+  padding: 5px;
+  font-size: 1.3em;
+  padding: 5px 10px;
+  background: green;
+  color: white;
+}
+/* line 80, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string select, form.formtastic fieldset ol li.password select, form.formtastic fieldset ol li.numeric select, form.formtastic fieldset ol li.select select {
+  margin: 0em 0;
+  background-color: white;
+  padding: 5px;
+  font-size: 1.2em;
+}
+/* line 86, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.string .inline-hints, form.formtastic fieldset ol li.password .inline-hints, form.formtastic fieldset ol li.numeric .inline-hints, form.formtastic fieldset ol li.select .inline-hints {
+  width: 400px;
+  padding-left: 25%;
+  font-size: 0.8em;
+  color: #666666;
+  margin-top: 0.25em;
+}
+/* line 94, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.text textarea {
+  width: 400px;
+  height: 5em;
+  margin: 0em 0;
+  padding: 5px;
+}
+/* line 100, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.text .inline-hints {
+  width: 400px;
+  padding-left: 25%;
+  font-size: 0.8em;
+  color: #666666;
+  margin-top: 0.25em;
+}
+/* line 109, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.radio fieldset {
+  overflow: hidden;
+  width: 100%;
+  padding-top: 0.2em;
+}
+/* line 114, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.radio fieldset legend {
+  text-align: left;
+  width: 25%;
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  font-size: 1em;
+}
+/* line 122, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.radio fieldset ol {
+  width: 400px;
+  float: left;
+}
+/* line 125, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.radio fieldset ol li {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 129, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.radio fieldset ol li label {
+  width: 40px;
+}
+/* line 133, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.boolean label {
+  padding-left: 25%;
+}
+/* line 135, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.boolean p.inline-hints {
+  color: #666666;
+  margin: 0.5em 0 0 25%;
+  clear: both;
+}
+/* line 139, ../../../app/stylesheets/partials/_formtastic_changes.sass */
+form.formtastic fieldset ol li.boolean input {
+  margin-right: 5px;
+}
+
+/* CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them. */
+/* line 7, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 11, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspPane {
+  position: absolute;
+}
+
+/* line 14, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+}
+
+/* line 21, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+}
+
+/* line 28, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspVerticalBar *, .jspHorizontalBar * {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 32, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspCap {
+  display: none;
+}
+
+/* line 35, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspHorizontalBar .jspCap {
+  float: left;
+}
+
+/* line 38, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspTrack {
+  position: relative;
+}
+
+/* line 41, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspDrag {
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+/* line 48, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspHorizontalBar .jspTrack, .jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%;
+}
+
+/* line 52, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+}
+/* line 57, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d;
+}
+
+/* line 61, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspVerticalBar .jspArrow {
+  height: 16px;
+}
+
+/* line 64, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+
+/* line 69, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspVerticalBar .jspArrow:focus {
+  outline: none;
+}
+
+/* line 72, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+/* line 79, ../../../app/stylesheets/partials/_jquery.scroll.sass */
+* html .jspCorner {
+  margin: 0 -3px 0 0;
+}
+
 /* Default Facebook CSS */
-/* line 3, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 3, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbbody {
   font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
   font-size: 11px;
   color: #333333;
 }
-/* line 7, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 7, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbbody a {
   color: #3b5998;
   outline-style: none;
@@ -429,18 +429,18 @@ form.formtastic fieldset ol li.boolean input {
   font-weight: bold;
   margin-bottom: 5px;
 }
-/* line 15, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 15, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbbody a:hover {
   text-decoration: underline;
 }
-/* line 18, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 18, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbbody p {
   margin-top: 5px;
 }
 
 /* Default Anchor Style */
 /* Facebook Box Styles */
-/* line 27, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 27, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbUIBlock {
   width: 458px;
   background: white;
@@ -448,27 +448,27 @@ form.formtastic fieldset ol li.boolean input {
   line-height: 0.9em;
   margin-bottom: 20px;
 }
-/* line 35, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 35, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbUIBlock .fbHeader .arrow {
   background: transparent url(/images/facebook/fb_sprite.png) -120px -91px no-repeat;
   display: inline-block;
   height: 9px;
   width: 11px;
 }
-/* line 41, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 41, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbUIBlock .fbProfilePic {
   width: 65px;
 }
-/* line 43, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 43, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbUIBlock .fbProfilePic img {
   width: 50px;
   height: 50px;
 }
-/* line 47, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 47, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbUIBlock .fbbody {
   width: 370px;
 }
-/* line 50, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 50, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbUIBlock .fbMessageBox {
   border-left: 2px solid #cccccc;
   padding-left: 5px;
@@ -476,15 +476,15 @@ form.formtastic fieldset ol li.boolean input {
   margin: 5px 0px;
   padding-left: 10px;
 }
-/* line 57, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 57, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbUIBlock .fbMessageBox.withPic {
   border-left: none;
 }
-/* line 59, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 59, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbUIBlock .fbMessageBox.withPic .fbbody {
   width: 300px;
 }
-/* line 62, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 62, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbUIBlock .fbFooter {
   background: url(/images/facebook/like_sprite.png) no-repeat;
   padding-left: 20px;
@@ -492,7 +492,7 @@ form.formtastic fieldset ol li.boolean input {
   color: gray;
 }
 
-/* line 68, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 68, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbgreybox {
   background-color: #f7f7f7;
   border: 1px solid #cccccc;
@@ -502,7 +502,7 @@ form.formtastic fieldset ol li.boolean input {
   font-weight: bold;
 }
 
-/* line 76, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 76, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbbluebox {
   background-color: #eceff6;
   border: 1px solid #d4dae8;
@@ -512,7 +512,7 @@ form.formtastic fieldset ol li.boolean input {
   font-weight: bold;
 }
 
-/* line 84, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 84, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbinfobox {
   background-color: #fff9d7;
   border: 1px solid #e2c822;
@@ -522,7 +522,7 @@ form.formtastic fieldset ol li.boolean input {
   font-weight: bold;
 }
 
-/* line 92, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 92, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fberrorbox {
   background-color: #ffebe8;
   border: 1px solid #dd3c10;
@@ -533,7 +533,7 @@ form.formtastic fieldset ol li.boolean input {
 }
 
 /* Content Divider on White Background */
-/* line 102, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 102, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbcontentdivider {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -543,7 +543,7 @@ form.formtastic fieldset ol li.boolean input {
 }
 
 /* Facebook Tab Style */
-/* line 111, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 111, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbtab {
   padding: 8px;
   background-color: #d8dfea;
@@ -553,14 +553,14 @@ form.formtastic fieldset ol li.boolean input {
   margin-right: 4px;
   text-decoration: none;
 }
-/* line 119, ../../../app/stylesheets/_facebook_styles.sass */
+/* line 119, ../../../app/stylesheets/partials/_facebook_styles.sass */
 .fbtab:hover {
   background-color: #3b5998;
   color: white;
   cursor: hand;
 }
 
-/* line 1, ../../../app/stylesheets/_flash.sass */
+/* line 1, ../../../app/stylesheets/partials/_flash.sass */
 #flash {
   display: none;
   width: 100%;
@@ -576,7 +576,7 @@ form.formtastic fieldset ol li.boolean input {
   -webkit-box-shadow: 3px 3px 4px black;
   box-shadow: 3px 3px 4px black;
 }
-/* line 16, ../../../app/stylesheets/_flash.sass */
+/* line 16, ../../../app/stylesheets/partials/_flash.sass */
 #flash #flash_close {
   background: url(/images/icons/flash_close.png) no-repeat;
   position: absolute;
@@ -586,27 +586,27 @@ form.formtastic fieldset ol li.boolean input {
   display: block;
   z-index: 3;
 }
-/* line 25, ../../../app/stylesheets/_flash.sass */
+/* line 25, ../../../app/stylesheets/partials/_flash.sass */
 #flash #flash_notice {
   color: white;
 }
-/* line 28, ../../../app/stylesheets/_flash.sass */
+/* line 28, ../../../app/stylesheets/partials/_flash.sass */
 #flash #flash_notice, #flash #flash_alert, #flash #flash_error {
   width: 80%;
   margin: 0 auto;
 }
-/* line 32, ../../../app/stylesheets/_flash.sass */
+/* line 32, ../../../app/stylesheets/partials/_flash.sass */
 #flash.alert, #flash.error {
   background-color: #cc0000;
   color: white;
 }
 
-/* line 37, ../../../app/stylesheets/_flash.sass */
+/* line 37, ../../../app/stylesheets/partials/_flash.sass */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 40, ../../../app/stylesheets/_flash.sass */
+/* line 40, ../../../app/stylesheets/partials/_flash.sass */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -616,7 +616,7 @@ form.formtastic fieldset ol li.boolean input {
   background-color: #f0f0f0;
   font-size: 12px;
 }
-/* line 49, ../../../app/stylesheets/_flash.sass */
+/* line 49, ../../../app/stylesheets/partials/_flash.sass */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -626,33 +626,33 @@ form.formtastic fieldset ol li.boolean input {
   background-color: #cc0000;
   color: white;
 }
-/* line 58, ../../../app/stylesheets/_flash.sass */
+/* line 58, ../../../app/stylesheets/partials/_flash.sass */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 60, ../../../app/stylesheets/_flash.sass */
+/* line 60, ../../../app/stylesheets/partials/_flash.sass */
 .error_messages ul {
   margin: 0;
 }
 
-/* line 9, ../../../app/stylesheets/application.sass */
+/* line 13, ../../../app/stylesheets/application.sass */
 * {
   margin: 0;
 }
 
-/* line 12, ../../../app/stylesheets/application.sass */
+/* line 16, ../../../app/stylesheets/application.sass */
 html, body {
   padding: 0px;
   margin: 0px;
   height: 100%;
 }
 
-/* line 17, ../../../app/stylesheets/application.sass */
+/* line 21, ../../../app/stylesheets/application.sass */
 body {
   background-color: #f1f1f1;
   font-family: "Myriad Pro", Arial, Helvetica, Tahoma, sans-serif;
 }
-/* line 21, ../../../app/stylesheets/application.sass */
+/* line 25, ../../../app/stylesheets/application.sass */
 body .wrapper {
   min-height: 100%;
   height: auto !important;
@@ -660,35 +660,35 @@ body .wrapper {
   margin: 0 auto -50px;
   /* the bottom margin is the negative value of the footer's height */
 }
-/* line 28, ../../../app/stylesheets/application.sass */
+/* line 8, ../../../app/stylesheets/partials/_wrapper.sass */
 body .wrapper .push {
   height: 50px;
   clear: both;
   /* .push must be the same height as .footer */
 }
-/* line 33, ../../../app/stylesheets/application.sass */
+/* line 28, ../../../app/stylesheets/application.sass */
 body #main {
   z-index: 50;
 }
-/* line 36, ../../../app/stylesheets/application.sass */
+/* line 31, ../../../app/stylesheets/application.sass */
 body #main a {
   color: blue;
 }
-/* line 39, ../../../app/stylesheets/application.sass */
+/* line 34, ../../../app/stylesheets/application.sass */
 body #main a img {
   border: none;
 }
-/* line 42, ../../../app/stylesheets/application.sass */
+/* line 37, ../../../app/stylesheets/application.sass */
 body #main .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
-/* line 47, ../../../app/stylesheets/application.sass */
+/* line 42, ../../../app/stylesheets/application.sass */
 body #main .qtip {
   cursor: pointer;
 }
-/* line 51, ../../../app/stylesheets/application.sass */
+/* line 2, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table {
   width: 100%;
   margin: 0px;
@@ -702,15 +702,15 @@ body #main #header table {
   background: #336600;
   color: white;
 }
-/* line 59, ../../../app/stylesheets/application.sass */
+/* line 10, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table a {
   color: white;
 }
-/* line 62, ../../../app/stylesheets/application.sass */
+/* line 13, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .left {
   width: 150px;
 }
-/* line 64, ../../../app/stylesheets/application.sass */
+/* line 15, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .left #processing_spinner {
   margin: 0px;
   -moz-border-radius: 5px;
@@ -722,44 +722,44 @@ body #main #header table .left #processing_spinner {
   vertical-align: top;
   display: none;
 }
-/* line 74, ../../../app/stylesheets/application.sass */
+/* line 25, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .navs {
   overflow: hidden;
 }
-/* line 76, ../../../app/stylesheets/application.sass */
+/* line 27, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .navs .nav {
   float: left;
   margin-right: 20px;
   text-transform: capitalize;
   font-size: 14px;
 }
-/* line 82, ../../../app/stylesheets/application.sass */
+/* line 33, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .navs .nav a {
   text-decoration: none;
 }
-/* line 85, ../../../app/stylesheets/application.sass */
+/* line 36, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .navs .nav a:hover {
   text-decoration: underline;
   color: yellow;
 }
-/* line 89, ../../../app/stylesheets/application.sass */
+/* line 40, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .navs .nav img {
   width: 14px;
   vertical-align: baseline;
 }
-/* line 94, ../../../app/stylesheets/application.sass */
+/* line 45, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .navs .nav.classify a {
   color: #feedb3;
 }
-/* line 98, ../../../app/stylesheets/application.sass */
+/* line 48, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table #candidate_supporter_msg {
   color: white;
 }
-/* line 101, ../../../app/stylesheets/application.sass */
+/* line 51, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table #candidate_supporter_msg table {
   margin: 0 auto;
 }
-/* line 104, ../../../app/stylesheets/application.sass */
+/* line 54, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table #candidate_supporter_msg table img {
   height: 24px;
   widght: 24px;
@@ -767,59 +767,70 @@ body #main #header table #candidate_supporter_msg table img {
   vertical-align: baseline;
   border: 2px solid white;
 }
-/* line 111, ../../../app/stylesheets/application.sass */
+/* line 61, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table #candidate_supporter_msg table em {
   font-size: 11px;
   font-style: italic;
 }
-/* line 115, ../../../app/stylesheets/application.sass */
+/* line 65, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table #candidate_supporter_msg table .statement {
   font-weight: bold;
   margin-top: 3px;
 }
-/* line 119, ../../../app/stylesheets/application.sass */
+/* line 69, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table #candidate_supporter_msg table .statement .candidates_cause {
   color: yellow;
   display: inline;
 }
-/* line 123, ../../../app/stylesheets/application.sass */
+/* line 73, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .right {
   text-align: right;
   padding-right: 10px;
   vertical-align: center;
 }
-/* line 127, ../../../app/stylesheets/application.sass */
+/* line 77, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .right .nav {
   display: inline;
   margin-right: 15px;
 }
-/* line 130, ../../../app/stylesheets/application.sass */
+/* line 80, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .right .nav a {
   font-size: 13px;
   text-decoration: none;
   white-space: nowrap;
 }
-/* line 135, ../../../app/stylesheets/application.sass */
+/* line 85, ../../../app/stylesheets/partials/_header.sass */
 body #main #header table .right .nav a:hover {
   text-decoration: underline;
   color: yellow;
 }
-/* line 141, ../../../app/stylesheets/application.sass */
+/* line 90, ../../../app/stylesheets/partials/_header.sass */
+body #main #header table .right .contribute a {
+  font-weight: bold;
+  color: yellow;
+  text-decoration: underline;
+}
+/* line 95, ../../../app/stylesheets/partials/_header.sass */
+body #main #header table .right .contribute a:hover {
+  text-decoration: none;
+  color: white;
+}
+/* line 48, ../../../app/stylesheets/application.sass */
 body #main #container {
   width: 960px;
   margin: 0 auto;
   padding: 10px;
   padding-bottom: 150px;
 }
-/* line 147, ../../../app/stylesheets/application.sass */
+/* line 7, ../../../app/stylesheets/partials/_container.sass */
 body #main #container h1, body #main #container h2, body #main #container h3, body #main #container h4, body #main #container p {
   margin-bottom: 0.75em;
 }
-/* line 150, ../../../app/stylesheets/application.sass */
+/* line 10, ../../../app/stylesheets/partials/_container.sass */
 body #main #container h1.beta, body #main #container h2.beta, body #main #container h3.beta, body #main #container h4.beta, body #main #container p.beta {
   color: red;
 }
-/* line 153, ../../../app/stylesheets/application.sass */
+/* line 13, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .trans {
   padding: 10px;
   margin-bottom: 10px;
@@ -827,7 +838,7 @@ body #main #container .trans {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 159, ../../../app/stylesheets/application.sass */
+/* line 19, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .trans a.button, body #main #container .trans input.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -892,7 +903,7 @@ body #main #container .trans a.button:active, body #main #container .trans input
 body #main #container .trans a.button:active, body #main #container .trans a.button:active:visited, body #main #container .trans input.button:active, body #main #container .trans input.button:active:visited {
   color: white;
 }
-/* line 164, ../../../app/stylesheets/application.sass */
+/* line 24, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .gray_trans {
   padding: 10px;
   margin-bottom: 10px;
@@ -900,7 +911,7 @@ body #main #container .gray_trans {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 170, ../../../app/stylesheets/application.sass */
+/* line 30, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .gray_trans a.button, body #main #container .gray_trans input.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -965,30 +976,30 @@ body #main #container .gray_trans a.button:active, body #main #container .gray_t
 body #main #container .gray_trans a.button:active, body #main #container .gray_trans a.button:active:visited, body #main #container .gray_trans input.button:active, body #main #container .gray_trans input.button:active:visited {
   color: white;
 }
-/* line 175, ../../../app/stylesheets/application.sass */
+/* line 35, ../../../app/stylesheets/partials/_container.sass */
 body #main #container #copy {
   margin: 0.25em auto;
 }
-/* line 178, ../../../app/stylesheets/application.sass */
+/* line 38, ../../../app/stylesheets/partials/_container.sass */
 body #main #container #copy.boxit {
   padding: 15px;
   background: white;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 184, ../../../app/stylesheets/application.sass */
+/* line 44, ../../../app/stylesheets/partials/_container.sass */
 body #main #container #copy h1 {
   text-align: center;
 }
-/* line 187, ../../../app/stylesheets/application.sass */
+/* line 47, ../../../app/stylesheets/partials/_container.sass */
 body #main #container #copy h2 {
   text-align: center;
 }
-/* line 190, ../../../app/stylesheets/application.sass */
+/* line 50, ../../../app/stylesheets/partials/_container.sass */
 body #main #container #copy h3 {
   text-align: center;
 }
-/* line 193, ../../../app/stylesheets/application.sass */
+/* line 53, ../../../app/stylesheets/partials/_container.sass */
 body #main #container #copy p, body #main #container #copy ul, body #main #container #copy ol {
   font-size: 12pt;
   width: 650px;
@@ -996,48 +1007,48 @@ body #main #container #copy p, body #main #container #copy ul, body #main #conta
   line-height: 1.3em;
   display: block;
 }
-/* line 200, ../../../app/stylesheets/application.sass */
+/* line 60, ../../../app/stylesheets/partials/_container.sass */
 body #main #container #copy.justify {
   text-align: left;
 }
-/* line 203, ../../../app/stylesheets/application.sass */
+/* line 63, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .spark_history {
   width: 95%;
   font-size: 12px;
 }
-/* line 206, ../../../app/stylesheets/application.sass */
+/* line 66, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .spark_history .pic {
   width: 30px;
   margin-right: 10px;
 }
-/* line 208, ../../../app/stylesheets/application.sass */
+/* line 68, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .spark_history .pic img {
   width: 24px;
   height: 24px;
   vertical-align: middle;
 }
-/* line 214, ../../../app/stylesheets/application.sass */
+/* line 74, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .spark_history .text {
   display: block;
   width: 90%;
   text-align: left;
   line-height: 1.25em;
 }
-/* line 220, ../../../app/stylesheets/application.sass */
+/* line 80, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .spark_history .text .name a {
   color: #1a8922;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 225, ../../../app/stylesheets/application.sass */
+/* line 85, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .spark_history .text .name a:hover {
   text-decoration: underline;
 }
-/* line 227, ../../../app/stylesheets/application.sass */
+/* line 87, ../../../app/stylesheets/partials/_container.sass */
 body #main #container .spark_history .text .not_selected_name {
   color: #990000;
 }
-/* line 230, ../../../app/stylesheets/application.sass */
+/* line 51, ../../../app/stylesheets/application.sass */
 body #footer {
   clear: both;
   height: 50px;
@@ -1048,23 +1059,23 @@ body #footer {
   font: normal 12px/20px helvetica, arial, sans-serif;
   border-top: 2px solid white;
 }
-/* line 240, ../../../app/stylesheets/application.sass */
+/* line 11, ../../../app/stylesheets/partials/_footer.sass */
 body #footer a {
   color: #c8cbb3;
   text-transform: uppercase;
   font-size: 0.9em;
   text-decoration: none;
 }
-/* line 246, ../../../app/stylesheets/application.sass */
+/* line 17, ../../../app/stylesheets/partials/_footer.sass */
 body #footer a:hover {
   color: red;
 }
-/* line 250, ../../../app/stylesheets/application.sass */
+/* line 21, ../../../app/stylesheets/partials/_footer.sass */
 body #footer #navs .nav {
   display: inline;
   padding-right: 15px;
 }
-/* line 254, ../../../app/stylesheets/application.sass */
+/* line 25, ../../../app/stylesheets/partials/_footer.sass */
 body #footer #copyright {
   clear: both;
   padding-top: 0.75em;
@@ -1073,12 +1084,12 @@ body #footer #copyright {
   text-transform: uppercase;
 }
 
-/* line 261, ../../../app/stylesheets/application.sass */
+/* line 54, ../../../app/stylesheets/application.sass */
 .trigger {
   display: none;
 }
 
-/* line 264, ../../../app/stylesheets/application.sass */
+/* line 57, ../../../app/stylesheets/application.sass */
 a.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -1144,7 +1155,7 @@ a.button:active, a.button:active:visited {
   color: white;
 }
 
-/* line 269, ../../../app/stylesheets/application.sass */
+/* line 62, ../../../app/stylesheets/application.sass */
 .gray-button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;

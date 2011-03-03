@@ -43,7 +43,7 @@ jQuery(document).ready(function($) {
   
   function timedResponse(resp) {
     if(resp.status == 'success')
-      window.setTimeout(function(){handleSelectedResponse(resp)},750)
+      window.setTimeout(function(){handleSelectedResponse(resp)},500)
     else if(resp.status == 'error')
       location.reload(true)
   }
@@ -101,7 +101,7 @@ jQuery(document).ready(function($) {
      changeStats(resp);
      reloadSparkHistory(resp)
      loadBackground(resp)
-     window.setTimeout(function() {showFieldAndBoard(resp)},2000);
+     window.setTimeout(function() {showFieldAndBoard(resp)},1000);
    }
    
    function changeQuestion(resp) {
@@ -161,6 +161,11 @@ function activate_modal () {
   $('#trigger_modal').click();
 }
 
+function try_later() {
+  $('#please_wait').hide();
+  $('#try_later').show();
+}
+
 function exec_new() {
   var ready = false
   var p = 1;
@@ -190,6 +195,9 @@ function exec_new() {
       $('.wait').hide();
       $('#next_btn').attr('rel',data_url).fadeIn();
       $('.title').text("We're Ready For You!").css('color','red')
+    } else if (p>=20 && !ready) {
+      window.clearInterval(int);
+      try_later();
     }
   },3000)
 }

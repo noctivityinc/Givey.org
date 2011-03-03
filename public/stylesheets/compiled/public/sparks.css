@@ -499,7 +499,7 @@
 }
 /* line 12, ../../../../app/stylesheets/public/sparks.sass */
 #spark #new #please_wait #actions {
-  margin-top: 2em;
+  margin: 2em auto;
 }
 /* line 14, ../../../../app/stylesheets/public/sparks.sass */
 #spark #new #please_wait #actions #wait_btn {

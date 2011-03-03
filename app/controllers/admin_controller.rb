@@ -4,4 +4,8 @@ class AdminController < ApplicationController
   def index
   end
   
+  def dashboard
+    render :partial => "dashboard"
+  end
+  
 end

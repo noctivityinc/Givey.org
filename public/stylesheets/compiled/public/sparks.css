@@ -818,63 +818,68 @@
   float: right;
 }
 /* line 110, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round p {
+#sparks #end_round p, #sparks #scores_unlocked p {
   text-align: left;
 }
 /* line 113, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round h2 {
+#sparks #end_round h2, #sparks #scores_unlocked h2 {
   width: 700px;
   margin: 0 auto;
 }
 /* line 117, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round .share_actions {
+#sparks #end_round .share_actions, #sparks #scores_unlocked .share_actions {
   width: 450px;
   margin: 15px auto;
 }
 /* line 122, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round .share_actions .share_facebook a {
+#sparks #end_round .share_actions .share_facebook a, #sparks #scores_unlocked .share_actions .share_facebook a {
   background: url("/images/buttons/share_facebook.png") no-repeat 0 0;
   width: 224px;
   height: 81px;
   display: block;
 }
 /* line 128, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round .share_actions .share_facebook a:hover {
+#sparks #end_round .share_actions .share_facebook a:hover, #sparks #scores_unlocked .share_actions .share_facebook a:hover {
   background: url("/images/buttons/share_facebook.png") no-repeat -81 0;
 }
 /* line 132, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round .share_actions .share_twitter a {
+#sparks #end_round .share_actions .share_twitter a, #sparks #scores_unlocked .share_actions .share_twitter a {
   background: url("/images/buttons/share_twitter.png") no-repeat 0 0;
   width: 224px;
   height: 81px;
   display: block;
 }
 /* line 138, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round .share_actions .share_twitter a:hover {
+#sparks #end_round .share_actions .share_twitter a:hover, #sparks #scores_unlocked .share_actions .share_twitter a:hover {
   background: url("/images/buttons/share_twitter.png") no-repeat -81 0;
 }
 /* line 141, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round .share_email {
+#sparks #end_round .share_email, #sparks #scores_unlocked .share_email {
   margin-top: 25px;
 }
 /* line 143, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round .share_email h4 {
+#sparks #end_round .share_email h4, #sparks #scores_unlocked .share_email h4 {
   width: 650px;
   margin: 0 auto;
   text-align: left;
   font-size: 24px;
 }
 /* line 149, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round input {
+#sparks #end_round input, #sparks #scores_unlocked input {
   font-size: 18px;
   padding: 5px;
   width: 350px;
 }
 /* line 154, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round #mturks {
+#sparks #end_round #mturks, #sparks #scores_unlocked #mturks {
   border: 3px solid red;
 }
 /* line 156, ../../../../app/stylesheets/public/sparks.sass */
-#sparks #end_round #mturks h1, #sparks #end_round #mturks p {
+#sparks #end_round #mturks h1, #sparks #end_round #mturks p, #sparks #scores_unlocked #mturks h1, #sparks #scores_unlocked #mturks p {
   text-align: center;
+}
+/* line 159, ../../../../app/stylesheets/public/sparks.sass */
+#sparks #end_round #actions, #sparks #scores_unlocked #actions {
+  margin-top: 2em;
+  text-align: right;
 }

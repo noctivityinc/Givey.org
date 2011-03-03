@@ -1,7 +1,11 @@
+-title "Givey Admin System", false
+
 #admin
   #index
-    #copy
-      %h1
+    #copy.trans
+      #dashboard= render :partial => 'dashboard'
+
+      %h2
         So what we doing here?
         
       %p
@@ -19,3 +23,28 @@
       %p
         = link_to "Manage Backgrounds", admin_backgrounds_path
 
+
+:javascript
+  var i = 1;
+
+  function refresh() {
+    window.setTimeout('handle_refresh()',1000)
+  }
+
+  function handle_refresh() {
+    $('.next_update').text(30-i);
+    i++;
+
+    if(i>30) {
+      i = 0;
+      $('.next_update').text('NOW');
+      $('#dashboard').load('admin/dashboard','',refresh());
+    } else {
+      refresh();
+    }
+  }
+
+  $(document).ready(function() {
+    refresh();
+  });
+  

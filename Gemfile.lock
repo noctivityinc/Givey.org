@@ -73,6 +73,7 @@ GEM
       hashie
       rest-client
     mocha (0.9.12)
+    newrelic_rpm (2.13.4)
     nifty-generators (0.4.5)
     nokogiri (1.4.4)
     oauth (0.4.4)
@@ -84,6 +85,7 @@ GEM
     rack (1.2.1)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
+    rack-noie (1.0)
     rack-test (0.5.7)
       rack (>= 1.0)
     rails (3.0.3)
@@ -143,11 +145,13 @@ DEPENDENCIES
   mail
   mini_fb
   mocha
+  newrelic_rpm
   nifty-generators
   nokogiri
   oauth
   paperclip
   pg (= 0.8.0)
+  rack-noie
   rails (= 3.0.3)
   ruby-debug19
   shoulda

@@ -4,14 +4,14 @@
     %title
       = yield(:title) || "Givey.org Admin"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
-    = stylesheet_link_tag 'compiled/application', 'compiled/admin/admin', "compiled/admin/#{controller.controller_name}", 'supersized.core'
+    = stylesheet_link_tag 'compiled/application', 'compiled/admin/admin', "compiled/admin/#{controller.controller_name}"
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'
-    = javascript_include_tag :defaults, 'supersized.3.1.core.min'
+    = javascript_include_tag 'jquery.min', 'rails', 'admin'
     = csrf_meta_tag
     = yield(:head)
 
   %body.admin
-    #main
+    #main.wrapper
       #flash
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
@@ -31,17 +31,6 @@
       
         = yield
 
-      #footer
-        #navs
-          .nav
-            = link_to "About Givey.org", '#'
-          .nav
-            = link_to "Terms & Conditions", '#'
-          .nav
-            = link_to "Privacy Policy", '#'
-          .nav
-            = link_to "Non Profits", npos_path
-      
-        #copyright
-          (c) Givey.org 2011
-      
+      .push
+
+    #footer= render :partial => 'shared/public_footer'

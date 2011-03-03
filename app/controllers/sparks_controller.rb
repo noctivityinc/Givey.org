@@ -58,10 +58,6 @@ class SparksController < ApplicationController
     end
   end
   
-  def end_round
-    current_user.update_attribute(:completed_round_one_at, Time.now) unless current_user.completed_round_one_at
-  end
-
   private
 
     def require_user
@@ -73,7 +69,7 @@ class SparksController < ApplicationController
     end
 
     def check_for_end_of_round
-      redirect_to end_round_sparks_path if current_user.waiting?
+      redirect_to end_round_sparks_path unless current_user.scores_unlocked? if current_user.finished_round_one?
     end
 
     def prepare_sparks
@@ -106,11 +102,12 @@ class SparksController < ApplicationController
       when 16..19
         current_user.npo.blank? ? your_story_json : spark_json
       when 21 then
-        end_round_json
+        current_user.update_attribute(:completed_round_one_at, Time.now) unless current_user.completed_round_one_at
+        current_user.scores_unlocked? ? scores_unlocked_json : end_round_json
       when 22..1001
         current_user.scores_unlocked? ? spark_json : end_round_json
       else
-        current_user.waiting? ? end_round_json : spark_json
+        spark_json
       end
     end
 
@@ -138,6 +135,10 @@ class SparksController < ApplicationController
 
     def end_round_json
       {:status => "success", :type => "end_round", :url => end_round_sparks_path}
+    end
+
+    def scores_unlocked_json
+      {:status => "success", :type => "scores_unlocked", :url => scores_unlocked_sparks_path}
     end
 
 end

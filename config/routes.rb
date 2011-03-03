@@ -33,6 +33,7 @@ Givey::Application.routes.draw do
 
     collection do
       get :end_round
+      get :scores_unlocked
     end
   end
 
@@ -40,7 +41,11 @@ Givey::Application.routes.draw do
   match 'access_denied', :to => "sessions#access_denied", :as => "access_denied"
   match "/signout" => "sessions#destroy", :as => :signout
 
-  resources :admin, :only => :index
+  resources :admin, :only => :index do
+    collection do
+      get :dashboard
+    end
+  end
   namespace :admin do
     resources :npos
     resources :categories
@@ -58,6 +63,7 @@ Givey::Application.routes.draw do
   match '/terms'  => "home#terms", :as => "terms" 
   match '/privacy'  => "home#privacy", :as => "privacy" 
   match '/faq'  => "home#faq", :as => "faq" 
+  match '/noieplease' => "home#noieplease", :as => "noieplease" 
   get "home/index"
   root :to => "home#index"
 end

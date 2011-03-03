@@ -6,7 +6,7 @@
     - if current_user
       %td.navs
         - if show_top_navs? 
-          - unless current_user.scores_unlocked? || current_user.waiting? || current_user.needs_friends?
+          - unless current_user.scores_unlocked? || current_user.needs_friends?
             .nav.cabin.classify= link_to "More Questions", sparks_path
           .nav.cabin= link_to "Highest Rated Altruists", altruists_path
           .nav.cabin= link_to "Top Causes", top_npos_path

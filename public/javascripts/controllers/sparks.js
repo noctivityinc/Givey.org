@@ -67,6 +67,8 @@ jQuery(document).ready(function($) {
         break;
       case 'end_round':
         document.location.href = resp.url
+      case 'scores_unlocked':
+        document.location.href = resp.url
       default:
         break;
       }

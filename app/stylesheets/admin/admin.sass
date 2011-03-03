@@ -11,6 +11,25 @@ body, html
   #main
     text-align: left
     
+    #header
+      width: 100%
+      margin: 0px
+      height: 30px
+      padding: 5px 0px
+      font-size: 12px
+      +green_trans
+      color: white
+      
+      .profile_pic
+        width: 24px
+
+      a
+        color: white
+        
+      .fright
+        padding-right: 10px
+    
+    
     table
       +formatted_table
   
@@ -31,6 +50,32 @@ body, html
         
     #admin
       margin-bottom: 3em
+      
+      #dashboard
+        overflow: hidden
+        margin-bottom: 3em
+        
+        .update_time
+          font-size: 12px
+          color: gray
+          
+        .label
+          font-size: 13px
+          margin-bottom: 5px
+          
+        .item
+          float: left
+          border: 1px dotted gray
+          width: 225px
+          margin: 10px 10px 20px 10px
+          padding: 10px
+          
+          .value
+            font-size: 24pt
+            font-weight: bold
+          
+            &.smaller
+              font-size: 14pt
 
   #actions
     margin-top: 3em

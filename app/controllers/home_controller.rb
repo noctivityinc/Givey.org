@@ -21,12 +21,8 @@ class HomeController < ApplicationController
     end
   end
   
-  def cc
-    render :layout => false 
-  end
-
-  def cc2
-    render :layout => false 
+  def noieplease
+    render :action => "noieplease", :layout => false
   end
 
   private

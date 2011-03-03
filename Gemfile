@@ -26,6 +26,7 @@ group :default do
   gem 'hoptoad_notifier'
   gem 'will_paginate', '~> 3.0.beta'
   gem 'oauth'
+  gem 'rack-noie', :require => 'noie'
   
 end
 

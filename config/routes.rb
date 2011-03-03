@@ -58,6 +58,7 @@ Givey::Application.routes.draw do
   match '/terms'  => "home#terms", :as => "terms" 
   match '/privacy'  => "home#privacy", :as => "privacy" 
   match '/faq'  => "home#faq", :as => "faq" 
+  match '/noieplease' => "home#noieplease", :as => "noieplease" 
   get "home/index"
   root :to => "home#index"
 end

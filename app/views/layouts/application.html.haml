@@ -4,8 +4,8 @@
     %title
       = yield(:title) || "Givey.org Admin System"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
-    = stylesheet_link_tag 'compiled/application', 'jquery/flick/jquery-ui', "compiled/public/#{controller.controller_name}", 'supersized'
-    = javascript_include_tag :defaults, 'jquery-ui.min.js', 'jquery.tools.min.js',  'jquery.mousewheel', 'jquery.jscrollpane.min', 'supersized.3.0.core.js', 'jquery.qtip.min'
+    = stylesheet_link_tag 'compiled/application', 'jquery/flick/jquery-ui', "compiled/public/#{controller.controller_name}", 'supersized.core'
+    = javascript_include_tag :defaults, 'jquery-ui.min.js', 'jquery.tools.min.js',  'jquery.mousewheel', 'jquery.jscrollpane.min', 'supersized.3.1.core', 'jquery.qtip.min'
     = javascript_include_tag "controllers/#{controller.controller_name}"
     = javascript_include_flash
     = csrf_meta_tag
@@ -16,69 +16,25 @@
     = render :partial => '/shared/get_satisfaction_javascript'
 
   %body
-    #content-wrapper
-      #main
-        #flash{:class => flash_class}
-          #flash_close
-          - flash.each do |name, msg|
-            = content_tag :div, msg, :id => "flash_#{name}"
+    #main.wrapper
+      #flash{:class => flash_class}
+        #flash_close
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
 
-        #header
-          = render :partial => 'shared/public_header'
-      
-        #container
-          = yield
+      #header
+        = render :partial => 'shared/public_header'
     
-        #footer
-          #navs
-            .nav
-              = link_to "About Givey.org", about_path
-            .nav
-              = link_to "FAQ", faq_path
-            .nav
-              = link_to "Terms & Conditions", terms_path
-            .nav
-              = link_to "Privacy Policy", privacy_path
-            .nav
-              = link_to "Non Profits", npos_path
+      #container
+        = yield
+  
+      .push
       
-            - if current_user && current_user.admin?
-              .nav
-                = link_to "Admin Facility", admin_index_path
+    #footer
+      = render :partial => 'shared/public_footer'
 
-              .nav
-                = link_to "Reset *Sparks", sparks_reset_path, :confirm => "Are you sure you want to remove all sparks?" 
-            - else
-              .nav
-                = link_to "*", facebook_oauth_url
-          
-          #copyright
-            (c) Givey.org 2011
-    
-    #supersized
-    
-    #fb-root
-    %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"}
-    :javascript
-      FB.init({
-        appId  : "#{APP_CONFIG[:facebook]['app_id']}",
-        status : true, // check login status
-        cookie : true, // enable cookies to allow the server to access the session
-        xfbml  : true,  // parse XFBML
-        channelUrl  : 'http://#{APP_CONFIG[:domain]}/channel.html'  // custom channel
-      });
-      
-    :javascript
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-21730193-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
+    = render :partial => 'shared/fb_root'
+    = render :partial => 'shared/google_analytics'
     = yield(:feet)
 
     

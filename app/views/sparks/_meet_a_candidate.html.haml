@@ -1,6 +1,6 @@
 #meet_a_candidate.row
   .sidebar.fleft
-    = render :partial => 'shared/candidate', :object => candidate
+    = render :partial => 'shared/candidate', :object => candidate if candidate.profile
   .main_panel.fleft
     %h2 This is what Givey.org is all about...
     

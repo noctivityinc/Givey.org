@@ -35,15 +35,13 @@ $(document).ready(function() {
     return true;
   });
   
-  $.fn.supersized.options = {  
-		startwidth: 640,  
-		startheight: 480,
-		vertical_center: 1,
-		slides: randomSlide
-	};
-	
 	if(randomSlide!=''){
-    $('#supersized').supersized();
+    	$.supersized({
+    		startwidth: 640,  
+    		startheight: 480,
+    		vertical_center: 1,
+    		slides: randomSlide
+			});
   } 
   
   if (!isIE) $('.sc_menu_wrapper').jScrollPane();
@@ -64,6 +62,23 @@ $(document).ready(function() {
 
       return false;
   });
+  
+  positionFooter(); 
+	function positionFooter(){
+		var padding_top = $("#footer").css("padding-top").replace("px", "");
+		var page_height = $(document.body).height() - padding_top;
+		var window_height = $(window).height();
+		var difference = window_height - page_height;
+		if (difference < 0) 
+			difference = 0;
+ 
+		$("#footer").css({
+			padding: difference + "px 0 0 0"
+		})
+	}
+ 
+	$(window)
+		.resize(positionFooter)
 });
 
 function _ajax_request(url, data, callback, type, method) {

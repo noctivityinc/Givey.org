@@ -1,0 +1,24 @@
+#navs
+  .nav
+    = link_to "About Givey.org", about_path
+  .nav
+    = link_to "FAQ", faq_path
+  .nav
+    = link_to "Terms & Conditions", terms_path
+  .nav
+    = link_to "Privacy Policy", privacy_path
+  .nav
+    = link_to "Non Profits", npos_path
+  
+  - if current_user && current_user.admin?
+    .nav
+      = link_to "Admin Facility", admin_index_path
+
+    .nav
+      = link_to "Reset *Sparks", sparks_reset_path, :confirm => "Are you sure you want to remove all sparks?" 
+  - else
+    .nav
+      = link_to "*", facebook_oauth_url
+
+#copyright
+  (c) Givey.org 2011

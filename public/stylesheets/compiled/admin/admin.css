@@ -52,23 +52,23 @@
   float: right;
 }
 
-/* line 2, ../../../../app/stylesheets/_showtastic.sass */
+/* line 2, ../../../../app/stylesheets/partials/_showtastic.sass */
 fieldset.showtastic legend {
   padding: 0.75em 0em;
   font-weight: bold;
   font-size: 1.25em;
 }
 
-/* line 7, ../../../../app/stylesheets/_showtastic.sass */
+/* line 7, ../../../../app/stylesheets/partials/_showtastic.sass */
 fieldset.showtastic ol {
   padding-left: 1.5em;
 }
-/* line 9, ../../../../app/stylesheets/_showtastic.sass */
+/* line 9, ../../../../app/stylesheets/partials/_showtastic.sass */
 fieldset.showtastic ol li {
   margin-bottom: 0.5em;
   clear: both;
 }
-/* line 13, ../../../../app/stylesheets/_showtastic.sass */
+/* line 13, ../../../../app/stylesheets/partials/_showtastic.sass */
 fieldset.showtastic ol li label {
   display: block;
   width: 25%;
@@ -76,7 +76,7 @@ fieldset.showtastic ol li label {
   padding-top: 0.2em;
   font-weight: bold;
 }
-/* line 21, ../../../../app/stylesheets/_showtastic.sass */
+/* line 21, ../../../../app/stylesheets/partials/_showtastic.sass */
 fieldset.showtastic ol li .value {
   display: block;
   margin-left: 25%;
@@ -88,7 +88,7 @@ fieldset.showtastic ol li .value {
   padding-right: 0.5em;
 }
 
-/* line 1, ../../../../app/stylesheets/_flash.sass */
+/* line 1, ../../../../app/stylesheets/partials/_flash.sass */
 #flash {
   display: none;
   width: 100%;
@@ -104,7 +104,7 @@ fieldset.showtastic ol li .value {
   -webkit-box-shadow: 3px 3px 4px black;
   box-shadow: 3px 3px 4px black;
 }
-/* line 16, ../../../../app/stylesheets/_flash.sass */
+/* line 16, ../../../../app/stylesheets/partials/_flash.sass */
 #flash #flash_close {
   background: url(/images/icons/flash_close.png) no-repeat;
   position: absolute;
@@ -114,27 +114,27 @@ fieldset.showtastic ol li .value {
   display: block;
   z-index: 3;
 }
-/* line 25, ../../../../app/stylesheets/_flash.sass */
+/* line 25, ../../../../app/stylesheets/partials/_flash.sass */
 #flash #flash_notice {
   color: white;
 }
-/* line 28, ../../../../app/stylesheets/_flash.sass */
+/* line 28, ../../../../app/stylesheets/partials/_flash.sass */
 #flash #flash_notice, #flash #flash_alert, #flash #flash_error {
   width: 80%;
   margin: 0 auto;
 }
-/* line 32, ../../../../app/stylesheets/_flash.sass */
+/* line 32, ../../../../app/stylesheets/partials/_flash.sass */
 #flash.alert, #flash.error {
   background-color: #cc0000;
   color: white;
 }
 
-/* line 37, ../../../../app/stylesheets/_flash.sass */
+/* line 37, ../../../../app/stylesheets/partials/_flash.sass */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 40, ../../../../app/stylesheets/_flash.sass */
+/* line 40, ../../../../app/stylesheets/partials/_flash.sass */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -144,7 +144,7 @@ fieldset.showtastic ol li .value {
   background-color: #f0f0f0;
   font-size: 12px;
 }
-/* line 49, ../../../../app/stylesheets/_flash.sass */
+/* line 49, ../../../../app/stylesheets/partials/_flash.sass */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -154,11 +154,11 @@ fieldset.showtastic ol li .value {
   background-color: #cc0000;
   color: white;
 }
-/* line 58, ../../../../app/stylesheets/_flash.sass */
+/* line 58, ../../../../app/stylesheets/partials/_flash.sass */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 60, ../../../../app/stylesheets/_flash.sass */
+/* line 60, ../../../../app/stylesheets/partials/_flash.sass */
 .error_messages ul {
   margin: 0;
 }
@@ -166,28 +166,24 @@ fieldset.showtastic ol li .value {
 /* line 7, ../../../../app/stylesheets/admin/admin.sass */
 body, html {
   background: white;
-}
-
-/* line 10, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper {
   text-align: left;
 }
-/* line 13, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #main {
+/* line 11, ../../../../app/stylesheets/admin/admin.sass */
+body #main, html #main {
   text-align: left;
 }
-/* line 16, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #main table {
+/* line 14, ../../../../app/stylesheets/admin/admin.sass */
+body #main table, html #main table {
   border: solid 1px gray;
   background-color: white;
   width: 750px;
 }
 /* line 65, ../../../../app/stylesheets/_base.sass */
-#content-wrapper #main table tr {
+body #main table tr, html #main table tr {
   background-color: white;
 }
 /* line 67, ../../../../app/stylesheets/_base.sass */
-#content-wrapper #main table tr th {
+body #main table tr th, html #main table tr th {
   background-color: #cccccc;
   color: black;
   font-weight: bolder;
@@ -197,17 +193,17 @@ body, html {
   font-size: 1.15em;
 }
 /* line 70, ../../../../app/stylesheets/_base.sass */
-#content-wrapper #main table tr th, #content-wrapper #main table tr td {
+body #main table tr th, body #main table tr td, html #main table tr th, html #main table tr td {
   text-align: left;
   vertical-align: top;
   padding: 0.25em;
 }
 /* line 75, ../../../../app/stylesheets/_base.sass */
-#content-wrapper #main table tr td {
+body #main table tr td, html #main table tr td {
   border-bottom: solid 1px #cccccc;
 }
-/* line 19, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #main .trans {
+/* line 17, ../../../../app/stylesheets/admin/admin.sass */
+body #main .trans, html #main .trans {
   padding: 10px;
   background: white;
   -moz-border-radius: 5px;
@@ -218,16 +214,16 @@ body, html {
   opacity: 0.8;
   margin-bottom: 10px;
 }
-/* line 30, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #main .trans a {
+/* line 28, ../../../../app/stylesheets/admin/admin.sass */
+body #main .trans a, html #main .trans a {
   color: #000066;
   text-decoration: underline;
 }
-/* line 34, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #main #admin {
+/* line 32, ../../../../app/stylesheets/admin/admin.sass */
+body #main #admin, html #main #admin {
   margin-bottom: 3em;
 }
-/* line 37, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #actions {
+/* line 35, ../../../../app/stylesheets/admin/admin.sass */
+body #actions, html #actions {
   margin-top: 3em;
 }

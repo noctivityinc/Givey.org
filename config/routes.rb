@@ -33,6 +33,7 @@ Givey::Application.routes.draw do
 
     collection do
       get :end_round
+      get :scores_unlocked
     end
   end
 

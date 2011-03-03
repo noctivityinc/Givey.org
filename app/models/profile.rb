@@ -27,7 +27,7 @@ class Profile < ActiveRecord::Base
   has_many :friend_lists, :class_name => 'User', :finder_sql => 'SELECT u.* FROM users u INNER JOIN friends f ON u.id = f.user_id WHERE f.uid = \'#{uid}\''
   belongs_to :user, :class_name => "User", :foreign_key => "uid", :primary_key => "uid"
 
-  scope :scorable, where("score > 0").where("friend_list_count >= #{MIN_FRIEND_LISTS_REQUIRED}")
+  scope :scorable, where("friend_list_count >= #{MIN_FRIEND_LISTS_REQUIRED}")
   scope :by_score, order("score DESC")
 
   validates_uniqueness_of :uid

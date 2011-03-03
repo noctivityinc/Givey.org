@@ -120,12 +120,12 @@ class User < ActiveRecord::Base
     self.friends.active.count < 40
   end
 
-  def waiting?
+  def finished_round_one?
     self.sparks.decided.count+1 > 20
   end
 
   def scores_unlocked?
-    self.waiting? && self.profile.scorable?
+    self.finished_round_one? && self.profile.scorable?
   end
 
   def prepare_sparks(num=25)

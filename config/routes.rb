@@ -41,7 +41,11 @@ Givey::Application.routes.draw do
   match 'access_denied', :to => "sessions#access_denied", :as => "access_denied"
   match "/signout" => "sessions#destroy", :as => :signout
 
-  resources :admin, :only => :index
+  resources :admin, :only => :index do
+    collection do
+      get :dashboard
+    end
+  end
   namespace :admin do
     resources :npos
     resources :categories

@@ -1,0 +1,32 @@
+%h1 Dashboard
+.update_time
+  = "Last update: #{Time.now}.  Next update in "
+  %span.next_update 30
+  seconds
+
+
+.item
+  .label Total Users
+  .value= User.count
+.item
+  .label Completed Rounds (20 sparks)
+  .value= User.select {|x| x.finished_round_one?}.count
+.item
+  .label Total Donations
+  .value= number_to_currency(Donation.total)
+  .value.smaller= "from #{Donation.count} people"
+.item
+  .label Total Profiles In System
+  .value= Profile.count
+.item
+  .label Total Stories Told
+  .value= User.with_stories.count
+.item
+  .label Total Scorable Users
+  .value= User.scorable .count  
+.item
+  .label Last User Signup
+  .value.smaller= User.order('created_at DESC').limit(1).first.created_at
+.item
+  .label Total MTurks
+  .value.smaller= Mturk.count

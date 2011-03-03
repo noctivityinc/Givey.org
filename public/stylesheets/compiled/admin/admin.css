@@ -173,6 +173,33 @@ body #main, html #main {
   text-align: left;
 }
 /* line 14, ../../../../app/stylesheets/admin/admin.sass */
+body #main #header, html #main #header {
+  width: 100%;
+  margin: 0px;
+  height: 30px;
+  padding: 5px 0px;
+  font-size: 12px;
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  background: #336600;
+  color: white;
+  color: white;
+}
+/* line 23, ../../../../app/stylesheets/admin/admin.sass */
+body #main #header .profile_pic, html #main #header .profile_pic {
+  width: 24px;
+}
+/* line 26, ../../../../app/stylesheets/admin/admin.sass */
+body #main #header a, html #main #header a {
+  color: white;
+}
+/* line 29, ../../../../app/stylesheets/admin/admin.sass */
+body #main #header .fright, html #main #header .fright {
+  padding-right: 10px;
+}
+/* line 33, ../../../../app/stylesheets/admin/admin.sass */
 body #main table, html #main table {
   border: solid 1px gray;
   background-color: white;
@@ -202,7 +229,7 @@ body #main table tr th, body #main table tr td, html #main table tr th, html #ma
 body #main table tr td, html #main table tr td {
   border-bottom: solid 1px #cccccc;
 }
-/* line 17, ../../../../app/stylesheets/admin/admin.sass */
+/* line 36, ../../../../app/stylesheets/admin/admin.sass */
 body #main .trans, html #main .trans {
   padding: 10px;
   background: white;
@@ -214,16 +241,48 @@ body #main .trans, html #main .trans {
   opacity: 0.8;
   margin-bottom: 10px;
 }
-/* line 28, ../../../../app/stylesheets/admin/admin.sass */
+/* line 47, ../../../../app/stylesheets/admin/admin.sass */
 body #main .trans a, html #main .trans a {
   color: #000066;
   text-decoration: underline;
 }
-/* line 32, ../../../../app/stylesheets/admin/admin.sass */
+/* line 51, ../../../../app/stylesheets/admin/admin.sass */
 body #main #admin, html #main #admin {
   margin-bottom: 3em;
 }
-/* line 35, ../../../../app/stylesheets/admin/admin.sass */
+/* line 54, ../../../../app/stylesheets/admin/admin.sass */
+body #main #admin #dashboard, html #main #admin #dashboard {
+  overflow: hidden;
+  margin-bottom: 3em;
+}
+/* line 58, ../../../../app/stylesheets/admin/admin.sass */
+body #main #admin #dashboard .update_time, html #main #admin #dashboard .update_time {
+  font-size: 12px;
+  color: gray;
+}
+/* line 62, ../../../../app/stylesheets/admin/admin.sass */
+body #main #admin #dashboard .label, html #main #admin #dashboard .label {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+/* line 66, ../../../../app/stylesheets/admin/admin.sass */
+body #main #admin #dashboard .item, html #main #admin #dashboard .item {
+  float: left;
+  border: 1px dotted gray;
+  width: 225px;
+  margin: 10px 10px 20px 10px;
+  padding: 10px;
+}
+/* line 73, ../../../../app/stylesheets/admin/admin.sass */
+body #main #admin #dashboard .item .value, html #main #admin #dashboard .item .value {
+  font-size: 24pt;
+  font-weight: bold;
+}
+/* line 77, ../../../../app/stylesheets/admin/admin.sass */
+body #main #admin #dashboard .item .value.smaller, html #main #admin #dashboard .item .value.smaller {
+  font-size: 14pt;
+}
+/* line 80, ../../../../app/stylesheets/admin/admin.sass */
 body #actions, html #actions {
   margin-top: 3em;
 }

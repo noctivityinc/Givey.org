@@ -18,10 +18,10 @@
 
       #wall.row
         - if Donation.count > 10
-          - Donation.random(300).each do |donation|
+          - Donation.random(100).each do |donation|
             .pic= image_tag donation.user.profile.details.pic_square, :title => donation.user.name
         - else
-          - current_user.friends.random(200).each do |friend|
+          - current_user.friends.random(100).each do |friend|
             .pic.fleft= image_tag friend.profile.details.pic_square, :title => friend.profile.details.name 
 
   #wall

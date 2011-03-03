@@ -113,10 +113,11 @@ jQuery(document).ready(function($) {
    }
    
    function loadBackground (resp) {
-     $("#supersized img").remove();
-		 $("<img/>").attr("src", resp.background).appendTo("#supersized");
-     $('#supersized').resizenow(); 
-   }
+   	 $.supersized({
+   	    reload: 1,
+     		slides: [{image : resp.background}]
+			});   
+		}
    
    function reloadSparkHistory(resp) {
      $('.spark_history').html(resp.spark_history)

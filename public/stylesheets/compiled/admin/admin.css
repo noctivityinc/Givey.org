@@ -166,28 +166,24 @@ fieldset.showtastic ol li .value {
 /* line 7, ../../../../app/stylesheets/admin/admin.sass */
 body, html {
   background: white;
-}
-
-/* line 10, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper {
   text-align: left;
 }
-/* line 13, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #main {
+/* line 11, ../../../../app/stylesheets/admin/admin.sass */
+body #main, html #main {
   text-align: left;
 }
-/* line 16, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #main table {
+/* line 14, ../../../../app/stylesheets/admin/admin.sass */
+body #main table, html #main table {
   border: solid 1px gray;
   background-color: white;
   width: 750px;
 }
 /* line 65, ../../../../app/stylesheets/_base.sass */
-#content-wrapper #main table tr {
+body #main table tr, html #main table tr {
   background-color: white;
 }
 /* line 67, ../../../../app/stylesheets/_base.sass */
-#content-wrapper #main table tr th {
+body #main table tr th, html #main table tr th {
   background-color: #cccccc;
   color: black;
   font-weight: bolder;
@@ -197,17 +193,17 @@ body, html {
   font-size: 1.15em;
 }
 /* line 70, ../../../../app/stylesheets/_base.sass */
-#content-wrapper #main table tr th, #content-wrapper #main table tr td {
+body #main table tr th, body #main table tr td, html #main table tr th, html #main table tr td {
   text-align: left;
   vertical-align: top;
   padding: 0.25em;
 }
 /* line 75, ../../../../app/stylesheets/_base.sass */
-#content-wrapper #main table tr td {
+body #main table tr td, html #main table tr td {
   border-bottom: solid 1px #cccccc;
 }
-/* line 19, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #main .trans {
+/* line 17, ../../../../app/stylesheets/admin/admin.sass */
+body #main .trans, html #main .trans {
   padding: 10px;
   background: white;
   -moz-border-radius: 5px;
@@ -218,16 +214,16 @@ body, html {
   opacity: 0.8;
   margin-bottom: 10px;
 }
-/* line 30, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #main .trans a {
+/* line 28, ../../../../app/stylesheets/admin/admin.sass */
+body #main .trans a, html #main .trans a {
   color: #000066;
   text-decoration: underline;
 }
-/* line 34, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #main #admin {
+/* line 32, ../../../../app/stylesheets/admin/admin.sass */
+body #main #admin, html #main #admin {
   margin-bottom: 3em;
 }
-/* line 37, ../../../../app/stylesheets/admin/admin.sass */
-#content-wrapper #actions {
+/* line 35, ../../../../app/stylesheets/admin/admin.sass */
+body #actions, html #actions {
   margin-top: 3em;
 }

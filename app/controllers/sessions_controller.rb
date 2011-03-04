@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
         @user = User.find_by_provider_and_uid('facebook',fb.me.id)
         
         if @user && @user.mturk?
-          redirect_to root_url, :alert => "Sorry, you can only participate in one Givey HIT." 
+          return redirect_to root_url, :alert => "Sorry, you can only participate in one Givey HIT." 
         end
         
         unless @user

@@ -122,6 +122,16 @@ a img {
   src: url("/stylesheets/fonts/Museo300-Regular.otf") format("opentype");
 }
 
+@font-face {
+  font-family: YanoneKaffeesatz-Regular;
+  src: "/stylesheets/fonts/YanoneKaffeesatz-Regular.ttf";
+}
+
+@font-face {
+  font-family: Cabin-Bold;
+  src: "/stylesheets/fonts/Cabin-Bold.ttf";
+}
+
 /* incase an inverted custom gradient isn't specified */
 /* line 177, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class, body #main #container .trans a.button, body #main #container .trans input.button, body #main #container .gray_trans a.button, body #main #container .gray_trans input.button, a.button, .gray-button {

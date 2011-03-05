@@ -28,47 +28,59 @@ class SessionsController < ApplicationController
     end
 
     def facebook_create
-      access_token_hash = MiniFB.oauth_access_token(APP_CONFIG[:facebook]['api_key'], facebook_oauth_callback_url, APP_CONFIG[:facebook]['app_secret'], params[:code]) rescue nil
-      redirect_to root_url, :alert => "There was a problem with Facebook.  Please try again." unless access_token_hash # in case of a problem parsing the access token
-      access_token = access_token_hash["access_token"]
-      fb = MiniFB::OAuthSession.new(access_token)
-      
-      redirect_to root_url, :alert => "Sorry, but we need permission to access your email to play Givey.org" if fb.me.email.blank? # need to do this in case someone set permissions to HIDE email address from everyone.
+      begin
+        access_token_hash = MiniFB.oauth_access_token(APP_CONFIG[:facebook]['api_key'], facebook_oauth_callback_url, APP_CONFIG[:facebook]['app_secret'], params[:code]) 
+        access_token = access_token_hash["access_token"]
+        fb = MiniFB::OAuthSession.new(access_token)
 
-      if beta_tester_allowed(fb) || mturk_tester(fb)
-        @user = User.find_by_provider_and_uid('facebook',fb.me.id)
-        
-        if @user && @user.mturk?
-          return redirect_to root_url, :alert => "Sorry, you can only participate in one Givey HIT." 
+        redirect_to root_url, :alert => "Sorry, but we need permission to access your email to play Givey.org" if fb.me.email.blank? # need to do this in case someone set permissions to HIDE email address from everyone.
+
+        if launched? || beta_tester_allowed(fb) || mturk_tester(fb)
+          @user = User.find_by_provider_and_uid('facebook',fb.me.id)
+
+          if @user && @user.mturk?
+            return redirect_to root_url, :alert => "Sorry, you can only participate in one Givey HIT."
+          end
+
+          unless @user
+            @user = User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
+            @new_user = true
+          end
+
+          @user.update_with_mini_fb(fb, access_token) # => updates to make sure we have latest session key and profile info
+
+          if create_profile(fb)
+            UserMailer.welcome(@user).deliver if (@new_user && !@user.mturk?)
+
+            set_user_cookie
+            session[:referring_id] = nil
+          end
+        else
+          redirect_to '/not_yet'
         end
-        
-        unless @user
-          @user = User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
-          @new_user = true
-        end
-
-        @user.update_with_mini_fb(fb, access_token) # => updates to make sure we have latest session key and profile info
-
-        create_profile(fb)
-        UserMailer.welcome(@user).deliver if (@new_user && !@user.mturk?)
-
-        set_user_cookie
-        session[:referring_id] = nil
-      else
-        redirect_to '/not_yet'
+      rescue MiniFB::FaceBookError => ex
+        FbError.record(ex,'sessions#facebook_create',request.user_agent, @user)
+        return redirect_to root_url, :alert => "Sorry, Facebook is having issues right now.  Try in a few minutes."
       end
     end
 
     def create_profile(fb)
-      res = fb.multifql({:bio => bio_fql, :photos => photos_fql})
-      profile = combine_bio_and_photos(res)
-      Profile.create_or_update({:uid => profile.uid.to_s, :details => profile.details, :photos => profile.photos})
+      begin
+        res = fb.multifql({:bio => bio_fql, :photos => photos_fql})
+        profile = combine_bio_and_photos(res)
+        Profile.create_or_update({:uid => profile.uid.to_s, :details => profile.details, :photos => profile.photos})
+        return true
+      rescue MiniFB::FaceBookError => ex
+        FbError.record(ex,'sessions#create_profile',request.user_agent, @user)
+        redirect_to root_url, :alert => "Sorry, Facebook is having issues right now.  Try in a few minutes."
+        return false
+      end
     end
 
     def bio_fql
       return "SELECT uid, name, first_name, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
-              current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
-              FROM user WHERE uid = me()"
+          current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb
+        FROM user WHERE uid = me()"
     end
 
     def photos_fql
@@ -87,7 +99,7 @@ class SessionsController < ApplicationController
     end
 
     def mturk_tester(fb)
-      if session[:mturk] 
+      if session[:mturk]
         session[:mturk] = false
         Mturk.find_or_create_by_uid({:uid => fb.me.id})
         return true

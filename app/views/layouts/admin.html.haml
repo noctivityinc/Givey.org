@@ -7,6 +7,7 @@
     = stylesheet_link_tag 'compiled/application', 'compiled/admin/admin', "compiled/admin/#{controller.controller_name}"
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'
     = javascript_include_tag 'jquery.min', 'rails', 'admin'
+    = javascript_include_flash
     = csrf_meta_tag
     = yield(:head)
 

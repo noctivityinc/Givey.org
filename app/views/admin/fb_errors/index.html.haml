@@ -1,0 +1,12 @@
+- title "Facebook Errors Categories"
+
+#admin
+  #categories
+    #index
+      #copy.trans
+        = table_for @fb_errors do |t|
+          = t.data :actions => [:show, :destroy], :action_prefix => :admin  do
+            = t.cell(:created_at)
+            = t.cell(:code)
+            = t.cell(:message)
+        

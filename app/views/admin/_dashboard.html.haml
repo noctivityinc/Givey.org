@@ -30,3 +30,8 @@
 .item
   .label Total MTurks
   .value.smaller= Mturk.count
+.item
+  .label Facebook Errors
+  .value.smaller= FbError.count
+  .label= link_to "last @ #{FbError.maximum(:created_at)}", admin_fb_errors_path
+

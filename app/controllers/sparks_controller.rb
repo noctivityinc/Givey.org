@@ -32,7 +32,7 @@ class SparksController < ApplicationController
   end
 
   def reset
-    if (!production? || current_user.admin?) && current_user.sparks.destroy_all
+    if (launched? || current_user.admin?) && current_user.sparks.destroy_all
       redirect_to sparks_path, :notice => "Sparks reset.  Enjoy."
     else
       redirect_to sparks_path, :notice => "Sorry, resetting sparks failed."

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user, :require_admin, :facebook_oauth_callback_url, :unfinished_games?, :production?
+  helper_method :current_user, :require_admin, :facebook_oauth_callback_url, :launched?
 
   def facebook_oauth_callback_url()
     return "http://#{request.host_with_port}/auth/facebook/callback"
@@ -13,14 +13,12 @@ class ApplicationController < ActionController::Base
     redirect_to (session_page || default_url)
   end
 
-  # def redirect_forward_or_to(default_url=nil)
-  #   session_page = session[:next_page]
-  #   session[:next_page] = nil
-  #   redirect_to (session_page || default_url)
-  # end
-
   def production?
     Rails.env == 'production'
+  end
+  
+  def launched?
+    return (Date.today >= Date.parse('2011-03-07') || !production?)
   end
 
   def require_user
@@ -42,10 +40,6 @@ class ApplicationController < ActionController::Base
 
     def record_previous_page
       session[:previous_page] = request.url
-    end
-
-    def unfinished_games?
-      !current_user.games.incomplete.empty?
     end
 
     def help

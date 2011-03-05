@@ -1,0 +1,14 @@
+- title "Facebook Error: #{@fb_error.code}"
+
+#admin
+  #category
+    #show
+      = fieldset_for @fb_error, 'Details', :code, :message, :created_at
+      = fieldset_for @fb_error, 'Source', :source, :user_agent
+      - if @fb_error.user
+        = fieldset_for @fb_error, 'User Details', ['ID', @fb_error.user.id], ['Name', @fb_error.user.name], ['UID', @fb_error.user.uid]
+
+      #actions
+        = link_to "<< Back to Index", admin_fb_errors_path
+        |
+        = link_to "Destroy", admin_fb_error_path(@fb_error), :confirm => 'Are you sure?', :method => :delete

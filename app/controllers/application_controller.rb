@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user, :require_admin, :facebook_oauth_callback_url, :launched?
+  helper_method :current_user, :require_admin, :facebook_oauth_callback_url, :production?, :launched?
 
   def facebook_oauth_callback_url()
     return "http://#{request.host_with_port}/auth/facebook/callback"

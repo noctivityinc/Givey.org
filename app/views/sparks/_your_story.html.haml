@@ -1,6 +1,15 @@
 #your_story.row
   .sidebar.fleft
-    = render :partial => 'shared/profile', :object => current_user.profile
+    %h4 Learn More About These Amazing Non-Profits...
+    #npos
+      - @npos.each do |npo|
+        .npo.row
+          .fleft
+            .logo
+              = link_to image_tag(npo.logo.url(:thumb)), npo.website, :target => "_blank", :title => "Click to learn more about #{npo.name}"
+          .fleft.details
+            .name= npo.name
+            .summary= npo.summary
   .main_panel.fleft
     = form_for current_user, :html => {:id => 'user_story_form'} do |f|
       = hidden_field_tag 'to', new_donation_path
@@ -18,6 +27,7 @@
       .row
         = f.text_area :story
       .row
+        %br
         .fleft.label Share my story on my Facebook wall
         .fleft= f.check_box :post_story_to_wall, 
       #actions.row

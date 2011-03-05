@@ -54,6 +54,7 @@ jQuery(document).ready(function($) {
       case 'spark':
         $('.card').fadeOut();
         $('.question').text('next question!').css('color','black')
+        loadBackground(resp)
         window.setTimeout(function() {moveQuestion(resp)},750);
         break;
       case 'modal':
@@ -102,7 +103,6 @@ jQuery(document).ready(function($) {
    function showSpark (resp) {
      changeStats(resp);
      reloadSparkHistory(resp)
-     loadBackground(resp)
      window.setTimeout(function() {showFieldAndBoard(resp)},1000);
    }
    

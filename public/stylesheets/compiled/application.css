@@ -677,12 +677,12 @@ body .wrapper {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -50px;
+  margin: 0 auto -140px;
   /* the bottom margin is the negative value of the footer's height */
 }
 /* line 8, ../../../app/stylesheets/partials/_wrapper.sass */
 body .wrapper .push {
-  height: 50px;
+  height: 140px;
   clear: both;
   /* .push must be the same height as .footer */
 }
@@ -1071,7 +1071,7 @@ body #main #container .spark_history .text .not_selected_name {
 /* line 52, ../../../app/stylesheets/application.sass */
 body #footer {
   clear: both;
-  height: 50px;
+  height: 140px;
   padding-top: 25px;
   width: 100%;
   background: #333333;
@@ -1102,6 +1102,18 @@ body #footer #copyright {
   color: #b3cbb3;
   font-size: 0.8em;
   text-transform: uppercase;
+}
+/* line 32, ../../../app/stylesheets/partials/_footer.sass */
+body #footer #bbg {
+  clear: both;
+  padding-top: 0.75em;
+  color: white;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+/* line 38, ../../../app/stylesheets/partials/_footer.sass */
+body #footer #bbg img {
+  height: 50px;
 }
 
 /* line 55, ../../../app/stylesheets/application.sass */

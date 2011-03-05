@@ -1,4 +1,5 @@
 @import 'base'
+@import 'fonts'
 @import 'card'
 
 #home
@@ -47,17 +48,34 @@
         #screen_shot
           position: relative
           width: 650px
-          height: 300px
+          height: 250px
           background: url(/images/ss_sample.png) no-repeat
           
           .question
-            margin-top: 30px
+            padding-top: 30px
             font-size: 1.10em
             
         .footnote
+          padding-top: 20px
           clear: both
           font-size: 10px
           text-align: left
+
+      #profile_count
+        margin-top: 10px
+        text-align: center
+        .digits
+          display: inline
+          .digit
+            font-family: "League-Gothic", Courier
+            border: 1px solid gray
+            +rounded_borders
+            padding: 0px 3px
+            font-size: 26px
+            
+        .copy
+          display: inline
+          +vintage(26px)
         
       #npos
         text-align: center

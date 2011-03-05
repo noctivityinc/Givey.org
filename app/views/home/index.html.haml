@@ -60,13 +60,22 @@
                 %p.fleft
                   %b It's Darn Fun
                   Try it.  You might learn a thing or two about your friends.
-                
-          #screen_shot.fleft
-            %h3.question= Question.active.sort_by{rand}.first.name
-                
+
+          .fleft                
+            #screen_shot
+              %h3.question= Question.active.sort_by{rand}.first.name
+            
           - if !production?
             .footnote= "* $5,000 will be contributed by Givey.org members and given to the top non-profit selected by the 10 most altruistic people as voted on my Givey members."
+
+      #profile_count.trans
+        .digits
+          - number_with_delimiter(Profile.count).scan(/./).each do |d|
+            %span.digit= d
+        .copy Altruistic Facebook Friends Judged Thus Far
+
       #npos.trans.scrollable
+        %h3 Featured Causes (They're Amazing!)
         .items
           - Npo.active.featured.in_groups_of(8) do |group| 
             %div

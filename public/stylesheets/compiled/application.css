@@ -112,6 +112,26 @@ a img {
   float: right;
 }
 
+@font-face {
+  font-family: League-Gothic;
+  src: url("/stylesheets/fonts/League-Gothic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Museo;
+  src: url("/stylesheets/fonts/Museo300-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: YanoneKaffeesatz-Regular;
+  src: "/stylesheets/fonts/YanoneKaffeesatz-Regular.ttf";
+}
+
+@font-face {
+  font-family: Cabin-Bold;
+  src: "/stylesheets/fonts/Cabin-Bold.ttf";
+}
+
 /* incase an inverted custom gradient isn't specified */
 /* line 177, ../../../../../.rvm/gems/ruby-1.9.2-p136@givey/gems/fancy-buttons-1.0.6/lib/stylesheets/_fancy-buttons.sass */
 .fancy-button-reset-base-class, body #main #container .trans a.button, body #main #container .trans input.button, body #main #container .gray_trans a.button, body #main #container .gray_trans input.button, a.button, .gray-button {
@@ -635,24 +655,24 @@ form.formtastic fieldset ol li.boolean input {
   margin: 0;
 }
 
-/* line 13, ../../../app/stylesheets/application.sass */
+/* line 14, ../../../app/stylesheets/application.sass */
 * {
   margin: 0;
 }
 
-/* line 16, ../../../app/stylesheets/application.sass */
+/* line 17, ../../../app/stylesheets/application.sass */
 html, body {
   padding: 0px;
   margin: 0px;
   height: 100%;
 }
 
-/* line 21, ../../../app/stylesheets/application.sass */
+/* line 22, ../../../app/stylesheets/application.sass */
 body {
   background-color: #f1f1f1;
   font-family: "Myriad Pro", Arial, Helvetica, Tahoma, sans-serif;
 }
-/* line 25, ../../../app/stylesheets/application.sass */
+/* line 26, ../../../app/stylesheets/application.sass */
 body .wrapper {
   min-height: 100%;
   height: auto !important;
@@ -666,25 +686,25 @@ body .wrapper .push {
   clear: both;
   /* .push must be the same height as .footer */
 }
-/* line 28, ../../../app/stylesheets/application.sass */
+/* line 29, ../../../app/stylesheets/application.sass */
 body #main {
   z-index: 50;
 }
-/* line 31, ../../../app/stylesheets/application.sass */
+/* line 32, ../../../app/stylesheets/application.sass */
 body #main a {
   color: blue;
 }
-/* line 34, ../../../app/stylesheets/application.sass */
+/* line 35, ../../../app/stylesheets/application.sass */
 body #main a img {
   border: none;
 }
-/* line 37, ../../../app/stylesheets/application.sass */
+/* line 38, ../../../app/stylesheets/application.sass */
 body #main .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
-/* line 42, ../../../app/stylesheets/application.sass */
+/* line 43, ../../../app/stylesheets/application.sass */
 body #main .qtip {
   cursor: pointer;
 }
@@ -815,7 +835,7 @@ body #main #header table .right .contribute a:hover {
   text-decoration: none;
   color: white;
 }
-/* line 48, ../../../app/stylesheets/application.sass */
+/* line 49, ../../../app/stylesheets/application.sass */
 body #main #container {
   width: 960px;
   margin: 0 auto;
@@ -1048,7 +1068,7 @@ body #main #container .spark_history .text .name a:hover {
 body #main #container .spark_history .text .not_selected_name {
   color: #990000;
 }
-/* line 51, ../../../app/stylesheets/application.sass */
+/* line 52, ../../../app/stylesheets/application.sass */
 body #footer {
   clear: both;
   height: 50px;
@@ -1084,12 +1104,12 @@ body #footer #copyright {
   text-transform: uppercase;
 }
 
-/* line 54, ../../../app/stylesheets/application.sass */
+/* line 55, ../../../app/stylesheets/application.sass */
 .trigger {
   display: none;
 }
 
-/* line 57, ../../../app/stylesheets/application.sass */
+/* line 58, ../../../app/stylesheets/application.sass */
 a.button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -1155,7 +1175,7 @@ a.button:active, a.button:active:visited {
   color: white;
 }
 
-/* line 62, ../../../app/stylesheets/application.sass */
+/* line 63, ../../../app/stylesheets/application.sass */
 .gray-button {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;

@@ -37,6 +37,11 @@ class SessionsController < ApplicationController
 
       if beta_tester_allowed(fb) || mturk_tester(fb)
         @user = User.find_by_provider_and_uid('facebook',fb.me.id)
+        
+        if @user && @user.mturk?
+          return redirect_to root_url, :alert => "Sorry, you can only participate in one Givey HIT." 
+        end
+        
         unless @user
           @user = User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])
           @new_user = true

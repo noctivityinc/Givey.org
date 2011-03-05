@@ -74,16 +74,10 @@
             %span.digit= d
         .copy Altruistic Facebook Friends Judged Thus Far
 
-      #npos.trans.scrollable
+      #npos.trans
         %h3 Featured Causes (They're Amazing!)
-        .items
-          - Npo.active.featured.in_groups_of(7) do |group| 
-            %div
-              %table
-                %tr
-                  - group.each do |npo|
-                    %td{:valign => "middle", :align => "center"}
-                      .npo= link_to image_tag(npo.logo(:thumb)), npo.website, :target => "_blank" if npo
+        - Npo.active.featured.each do |npo| 
+          .npo= link_to image_tag(npo.logo(:thumb)), npo.website, :target => "_blank" if npo
         
       #how_it_works.trans
         %h3 How Does Givey.org Work?

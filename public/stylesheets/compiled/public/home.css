@@ -178,35 +178,36 @@
   border-radius: 5px;
   padding: 3px;
   background: white;
-  margin-right: 10px;
+  margin: 10px;
+  display: inline-block;
 }
-/* line 88, ../../../../app/stylesheets/public/home.sass */
+/* line 89, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #how_it_works {
   text-align: left;
 }
-/* line 91, ../../../../app/stylesheets/public/home.sass */
+/* line 92, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #how_it_works ol {
   list-style-type: decimal;
   margin-left: 20px;
   width: 100%;
 }
-/* line 96, ../../../../app/stylesheets/public/home.sass */
+/* line 97, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #how_it_works ol li {
   margin-bottom: 2em;
   font-size: 18px;
   font-weight: bold;
 }
-/* line 101, ../../../../app/stylesheets/public/home.sass */
+/* line 102, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #how_it_works ol li b, #home #index #copy #how_it_works ol li p {
   font-size: 13px;
   margin: 0;
   padding: 0;
 }
-/* line 106, ../../../../app/stylesheets/public/home.sass */
+/* line 107, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #how_it_works ol li b {
   color: #336600;
 }
-/* line 109, ../../../../app/stylesheets/public/home.sass */
+/* line 110, ../../../../app/stylesheets/public/home.sass */
 #home #index #copy #how_it_works ol li p {
   font-weight: normal;
   width: 100%;
@@ -403,87 +404,87 @@
 #home #show .card.candidate > .frame > .box > .sc_menu_wrapper > .header {
   background: #2e133f;
 }
-/* line 117, ../../../../app/stylesheets/public/home.sass */
+/* line 118, ../../../../app/stylesheets/public/home.sass */
 #home #show h1, #home #show h2, #home #show h3 {
   width: 700px;
   margin: 0.75em auto;
 }
-/* line 121, ../../../../app/stylesheets/public/home.sass */
+/* line 122, ../../../../app/stylesheets/public/home.sass */
 #home #show #cards {
   width: 750px;
   margin: 0 auto;
 }
-/* line 125, ../../../../app/stylesheets/public/home.sass */
+/* line 126, ../../../../app/stylesheets/public/home.sass */
 #home #show #cards .heart {
   padding: 100px 20px;
 }
-/* line 127, ../../../../app/stylesheets/public/home.sass */
+/* line 128, ../../../../app/stylesheets/public/home.sass */
 #home #show #cards .heart img {
   width: 100px;
 }
-/* line 130, ../../../../app/stylesheets/public/home.sass */
+/* line 131, ../../../../app/stylesheets/public/home.sass */
 #home #show #cards .card {
   margin-bottom: 40px;
 }
-/* line 134, ../../../../app/stylesheets/public/home.sass */
+/* line 135, ../../../../app/stylesheets/public/home.sass */
 #home #index #facebook, #home #show #facebook {
   width: 300px;
   margin: 1em auto;
   text-align: center;
 }
-/* line 139, ../../../../app/stylesheets/public/home.sass */
+/* line 140, ../../../../app/stylesheets/public/home.sass */
 #home #index #not_user, #home #show #not_user {
   font-size: 12px;
   margin-top: 5px;
 }
-/* line 143, ../../../../app/stylesheets/public/home.sass */
+/* line 144, ../../../../app/stylesheets/public/home.sass */
 #home #index #friends, #home #show #friends {
   width: 500px;
   margin: 20px auto;
 }
-/* line 147, ../../../../app/stylesheets/public/home.sass */
+/* line 148, ../../../../app/stylesheets/public/home.sass */
 #home #index #logo, #home #show #logo {
   width: 400px;
   margin: 0 auto;
   padding-top: 5em;
 }
-/* line 152, ../../../../app/stylesheets/public/home.sass */
+/* line 153, ../../../../app/stylesheets/public/home.sass */
 #home #index #logo img, #home #show #logo img {
   width: 350px;
 }
-/* line 157, ../../../../app/stylesheets/public/home.sass */
+/* line 158, ../../../../app/stylesheets/public/home.sass */
 #home #not_yet #npos .npo {
   margin: 10px;
 }
-/* line 161, ../../../../app/stylesheets/public/home.sass */
+/* line 162, ../../../../app/stylesheets/public/home.sass */
 #home #beta_test ul {
   margin: 2em 0em;
   text-align: left;
   margin-left: 200px;
   width: 500px;
 }
-/* line 167, ../../../../app/stylesheets/public/home.sass */
+/* line 168, ../../../../app/stylesheets/public/home.sass */
 #home #beta_test ul li {
   list-style: disc;
   text-align: left;
   margin: 1.25em 0em;
   line-height: 1.5em;
 }
-/* line 173, ../../../../app/stylesheets/public/home.sass */
+/* line 174, ../../../../app/stylesheets/public/home.sass */
 #home #beta_test #actions {
   margin-top: 2em;
   text-align: center;
 }
-/* line 178, ../../../../app/stylesheets/public/home.sass */
+/* line 179, ../../../../app/stylesheets/public/home.sass */
 #home #terms h4, #home #privacy h4, #home #about h4, #home #faq h4 {
   font-size: 1.25em;
 }
-/* line 182, ../../../../app/stylesheets/public/home.sass */
+/* line 183, ../../../../app/stylesheets/public/home.sass */
 #home #faq .question {
   font-weight: bold;
   margin-bottom: 10px;
 }
-/* line 186, ../../../../app/stylesheets/public/home.sass */
+/* line 187, ../../../../app/stylesheets/public/home.sass */
 #home #faq .answer {
   width: 650px;
   margin: 0 auto;
@@ -491,7 +492,7 @@
   line-height: 1.3em;
 }
 
-/* line 192, ../../../../app/stylesheets/public/home.sass */
+/* line 193, ../../../../app/stylesheets/public/home.sass */
 .left {
   text-align: left;
 }

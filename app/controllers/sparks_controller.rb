@@ -120,7 +120,8 @@ class SparksController < ApplicationController
     end
 
     def your_story_json
-      {:status => "success", :type => 'modal', :post_url => user_friends_path(current_user), :html => render_to_string(:partial => "your_story")}
+      @npos = Npo.active.featured.sort_by{rand}
+      {:status => "success", :type => 'modal', :html => render_to_string(:partial => "your_story")}
     end
 
     def spark_json

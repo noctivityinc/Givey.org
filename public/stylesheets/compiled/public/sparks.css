@@ -427,25 +427,58 @@
 #overlay #what_do_friends_think #actions, #overlay #donation_complete #actions, #modal #what_do_friends_think #actions, #modal #donation_complete #actions {
   margin-top: 20px;
 }
-/* line 91, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 92, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story .sidebar #npos, #modal #your_story .sidebar #npos {
+  margin-top: 4px;
+  font-size: 12px;
+  width: 95%;
+  height: 400px;
+  overflow: auto;
+}
+/* line 99, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story .sidebar #npos .npo, #modal #your_story .sidebar #npos .npo {
+  background: #dedede;
+  margin: 5px 0px;
+  padding: 5px;
+  width: 95%;
+}
+/* line 104, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story .sidebar #npos .npo .logo, #modal #your_story .sidebar #npos .npo .logo {
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 3px;
+  background: white;
+  margin-right: 10px;
+  width: 100px;
+}
+/* line 111, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story .sidebar #npos .npo .name, #modal #your_story .sidebar #npos .npo .name {
+  font-weight: bold;
+  font-size: 1.15em;
+}
+/* line 115, ../../../../app/stylesheets/public/_overlays.sass */
+#overlay #your_story .sidebar #npos .npo .name, #overlay #your_story .sidebar #npos .npo .summary, #modal #your_story .sidebar #npos .npo .name, #modal #your_story .sidebar #npos .npo .summary {
+  width: 150px;
+}
+/* line 119, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #your_story h2, #modal #your_story h2 {
   margin: 1em 0em;
 }
-/* line 94, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 122, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #your_story .row, #modal #your_story .row {
   margin-bottom: 0.75em;
 }
-/* line 97, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 125, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #your_story .label, #modal #your_story .label {
   font-weight: bold;
   padding-right: 10px;
 }
-/* line 102, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 130, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #your_story form textarea, #modal #your_story form textarea {
   width: 400px;
   height: 100px;
 }
-/* line 106, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 134, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #your_story .other, #modal #your_story .other {
   display: none;
   padding: 5px;
@@ -453,40 +486,40 @@
   color: red;
   vertical-align: baseline;
 }
-/* line 113, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 141, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #your_story .other input, #modal #your_story .other input {
   font-size: 16px;
   padding: 3px;
   width: 250px;
 }
-/* line 121, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 149, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #meet_a_candidate .candidate .cause, #modal #meet_a_candidate .candidate .cause {
   text-align: center;
   margin-top: 1em;
 }
-/* line 125, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 153, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #meet_a_candidate .candidate .fb_like, #modal #meet_a_candidate .candidate .fb_like {
   width: 260px;
   text-align: center;
   padding: 15px;
 }
-/* line 130, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 158, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #meet_a_candidate h2, #modal #meet_a_candidate h2 {
   margin-bottom: 1.5em;
 }
-/* line 133, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 161, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #meet_a_candidate .story, #modal #meet_a_candidate .story {
   margin: 1em auto;
   font-size: 1.25em;
   line-height: 1.25em;
   color: #330099;
 }
-/* line 139, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 167, ../../../../app/stylesheets/public/_overlays.sass */
 #overlay #meet_a_candidate .story .middle, #modal #meet_a_candidate .story .middle {
   padding: 0 5px;
 }
 
-/* line 142, ../../../../app/stylesheets/public/_overlays.sass */
+/* line 170, ../../../../app/stylesheets/public/_overlays.sass */
 .ui-autocomplete {
   max-height: 100px;
   overflow-y: auto;

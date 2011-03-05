@@ -10,17 +10,15 @@ class HomeController < ApplicationController
     if @user
       session[:referring_id] = @user.id
 
-      if production?
-        # signout existing user in case someone is signed in.
-        current_user.log_out! if current_user
-        cookies[:user_id] = {:value => nil}
-      end
+      # signout existing user in case someone is signed in.
+      current_user.log_out! if current_user
+      cookies[:user_id] = {:value => nil}
       redirect_to root_url, :notice => "Your friend #{@user.first_name} joined the Givey movement.  How about you?"
     else
       redirect_to root_url
     end
   end
-  
+
   def noieplease
     render :action => "noieplease", :layout => false
   end

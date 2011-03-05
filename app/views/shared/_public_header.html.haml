@@ -8,7 +8,7 @@
         - if show_top_navs? 
           - unless current_user.scores_unlocked? || current_user.needs_friends?
             .nav.cabin.classify= link_to "More Questions", sparks_path
-          .nav.cabin= link_to "Highest Rated Altruists", altruists_path
+          .nav.cabin= link_to "Top Altruists", altruists_path
           .nav.cabin= link_to "Top Causes", top_npos_path
           .nav.cabin
             = link_to_if current_user.scores_unlocked?, "Your Scores", altruist_path(current_user.profile.givey_token) do
@@ -16,10 +16,10 @@
                 = image_tag "icons/lock32.png", :title => "Your Scores Are Locked.  Share with friends to unlock", :class => "qtip" 
                 Your Scores
           .nav.cabin
-            = link_to_if current_user.friends_scores_unlocked?, "Your Friends Declassified", user_friends_path(current_user) do
+            = link_to_if current_user.friends_scores_unlocked?, "Your Friends", user_friends_path(current_user) do
               .locked{:title => "Your Friends Are Locked.  Answer More Questions", :class => "qtip"}
                 = image_tag "icons/lock32.png"
-                Your Friends Declassified
+                Your Friends
         - else
           #candidate_supporter_msg                
         

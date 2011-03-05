@@ -33,6 +33,7 @@ class User < ActiveRecord::Base
   belongs_to :referring_friend, :class_name => "User", :foreign_key => "referring_id"
   has_one :profile, :class_name => "Profile", :foreign_key => "uid", :primary_key => "uid", :dependent => :destroy
   has_many :donations
+  has_many :fb_errors
   belongs_to :npo
 
   has_many :friends, :dependent => :destroy  do
@@ -186,11 +187,16 @@ class User < ActiveRecord::Base
   end
 
   def get_friends
-    fb ||= MiniFB::OAuthSession.new(self.token)
-    res = fb.multifql({:all_friends => all_friends_fql, :photos => photos_fql})
-    friends = combine_friends_and_photos(res)
-    save_friends(friends)
-    return true
+    begin
+      fb ||= MiniFB::OAuthSession.new(self.token)
+      res = fb.multifql({:all_friends => all_friends_fql, :photos => photos_fql})
+      friends = combine_friends_and_photos(res)
+      save_friends(friends)
+      return true
+    rescue MiniFB::FaceBookError => ex
+      FbError.record(ex,'user-model#get_friends',nil,self)
+      return false
+    end
   end
 
   def destroy_and_get_friends

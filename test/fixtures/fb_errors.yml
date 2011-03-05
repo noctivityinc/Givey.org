@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: fb_errors
+#
+#  id         :integer         not null, primary key
+#  code       :string(255)
+#  message    :string(255)
+#  user_id    :integer
+#  user_agent :text
+#  source     :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+one:
+  code: MyString
+  message: MyString
+  user_id: 1
+  user_agent: MyText
+  source: MyString
+
+two:
+  code: MyString
+  message: MyString
+  user_id: 1
+  user_agent: MyText
+  source: MyString

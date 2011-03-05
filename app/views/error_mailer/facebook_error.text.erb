@@ -1,0 +1,20 @@
+========================================================================
+GIVEY FACEBOOK ERROR @ <%= Time.now %>
+------------------------------------------------------------------------
+
+Code: <%= @result.code%>
+Message: <%= @result.message%>
+
+Source: <%= @result.source%>
+User-agent: <%= @result.user_agent%>
+
+<% if @result.user %>
+User ID: <%= @result.user.id %>
+User: <%= @result.user.name %>
+UID: <%= @result.user.uid %>
+<% end %>
+
+
+---
+EOF
+---

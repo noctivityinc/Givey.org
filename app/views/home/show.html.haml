@@ -21,7 +21,7 @@
           
         #friends.row
 
-        - unless production?
+        - if launched?
           #facebook
             = link_to image_tag('buttons/facebook_login.png'), facebook_oauth_url
             #not_user

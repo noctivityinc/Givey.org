@@ -3,7 +3,7 @@
 #admin
   #category
     #show
-      = fieldset_for @category, :name, :active
+      = fieldset_for @category, 'Details', :name, :active
 
       #actions
         = link_to "Edit", edit_admin_category_path(@category)

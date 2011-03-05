@@ -1,9 +1,6 @@
 Givey::Application.routes.draw do
 
-  namespace(:admin){ resources :mturks }
-
   resources :mturks
-
   resources :altruists, :only => [:show, :index]
   resources :donations do
     collection do
@@ -52,6 +49,8 @@ Givey::Application.routes.draw do
     resources :backgrounds
     resources :beta_testers
     resources :questions
+    resources :mturks 
+    resources :fb_errors
   end
 
   match "/not_yet" => "home#not_yet"

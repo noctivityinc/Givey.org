@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110228190603) do
+ActiveRecord::Schema.define(:version => 20110305182912) do
 
   create_table "backgrounds", :force => true do |t|
     t.boolean  "active",             :default => true
@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(:version => 20110228190603) do
     t.decimal  "fee",            :precision => 8, :scale => 2
   end
 
+  create_table "fb_errors", :force => true do |t|
+    t.string   "code"
+    t.string   "message"
+    t.integer  "user_id"
+    t.text     "user_agent"
+    t.string   "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "friends", :force => true do |t|
     t.integer  "user_id"
     t.string   "uid"
@@ -111,6 +121,9 @@ ActiveRecord::Schema.define(:version => 20110228190603) do
     t.string   "tax_id"
     t.text     "story"
   end
+
+  add_index "npos", ["id", "name"], :name => "index_id_name"
+  add_index "npos", ["name"], :name => "index_npos_on_name"
 
   create_table "profiles", :force => true do |t|
     t.string   "uid"

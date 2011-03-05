@@ -24,7 +24,7 @@
     #copy
       .trans
         #heading
-          - if production?
+          - unless launched?
             %h2 Starting March 8th we plan on giving $5,000* to the most altruistic people on Facebook.
           - else
             %h2= "#{Donation.count+20} people have given #{number_to_currency(Donation.total)} to find (and give) to the most altruistic people on Facebook."
@@ -34,7 +34,7 @@
         #top_copy.row
           #login_and_points.fleft
             #facebook
-              - unless production?
+              - if launched?
                 - if current_user
                   = link_to "More Questions >>", sparks_path, :class => "button"
                 - else
@@ -65,7 +65,7 @@
             #screen_shot
               %h3.question= Question.active.sort_by{rand}.first.name
             
-          - if !production?
+          - if launched?
             .footnote= "* $5,000 will be contributed by Givey.org members and given to the top non-profit selected by the 10 most altruistic people as voted on my Givey members."
 
       #profile_count.trans
@@ -74,16 +74,10 @@
             %span.digit= d
         .copy Altruistic Facebook Friends Judged Thus Far
 
-      #npos.trans.scrollable
+      #npos.trans
         %h3 Featured Causes (They're Amazing!)
-        .items
-          - Npo.active.featured.in_groups_of(8) do |group| 
-            %div
-              %table
-                %tr
-                  - group.each do |npo|
-                    %td{:valign => "middle", :align => "center"}
-                      .npo= link_to image_tag(npo.logo(:thumb)), npo.website, :target => "_blank" if npo
+        - Npo.active.featured.each do |npo| 
+          .npo= link_to image_tag(npo.logo(:thumb)), npo.website, :target => "_blank" if npo
         
       #how_it_works.trans
         %h3 How Does Givey.org Work?

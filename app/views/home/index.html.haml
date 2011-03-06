@@ -25,7 +25,7 @@
       .trans
         #heading
           - unless launched?
-            %h2 Starting March 8th we plan on giving $5,000* to the most altruistic people on Facebook.
+            %h2 Starting Tomorrow (March 7th) we plan on giving $5,000* to the most altruistic people on Facebook.
           - else
             %h2= "#{Donation.count+20} people have given #{number_to_currency(Donation.total)} to find (and give) to the most altruistic people on Facebook."
         

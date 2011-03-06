@@ -1,6 +1,6 @@
 
 def get_send_invite_friend_reminder_emails_users
-  User.not_scorable.where(["completed_round_one_at <= ?",7.days.ago]).where(:emailed_invite_friends_at => nil).uniq
+  User.not_scorable.where(["created_at >= '2011-03-07' AND completed_round_one_at <= ?",7.days.ago]).where(:emailed_invite_friends_at => nil).uniq
 end
 
 def send_invite_friend_reminder_emails
@@ -15,7 +15,7 @@ def send_invite_friend_reminder_emails
 end
 
 def get_users_with_unlocked_scores
-  User.scorable.where(:emailed_scores_unlocked_at => nil).uniq
+  User.scorable.where("created_at >= '2011-03-07'").where(:emailed_scores_unlocked_at => nil).uniq
 end
 
 def send_scores_unlocked_emails

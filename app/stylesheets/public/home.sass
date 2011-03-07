@@ -1,6 +1,7 @@
 @import 'base'
 @import 'fonts'
 @import 'card'
+@import 'fancy-buttons'
 
 #home
   #index
@@ -14,6 +15,16 @@
           margin: 0em auto
           margin-bottom: .75em
           color: #C60
+          
+        .login_button
+          margin: 40px 
+          text-align: center
+          a
+            +fancy-button(#3B5998,18px)
+            line-height: 1.5em
+            img
+              width: 24px
+              vertical-align: middle
       
       #top_copy
         width: 960px
@@ -24,11 +35,9 @@
           #facebook
             width: 250px
             margin-bottom: 30px
-            .login_button
-              margin-top: 10px
+
             b
               font-size: 13px
-
           
           #main_points
             .secure, .user, .heart

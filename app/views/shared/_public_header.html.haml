@@ -35,7 +35,10 @@
         .nav.cabin= link_to "Top Altruist Causes", top_npos_path
       %td.right
         .nav.cabin= link_to "Share", '#', :id => "header_share", :class => "fb_share"
-        %fb:like{:href => "http://www.givey.org", :show_faces => "false", :width => "100", :layout => "button_count" }
+        .nav.cabin
+          = link_to 'Tweet', "http://twitter.com/share?text=#{CGI.escape('Check out Givey.org.  $5K given to the most altruistic people on the web.  Fun little game too. #givey')}&url=#{CGI.escape('http://givey.org')}", :rel => "tweetlink"
+        .nav
+          %fb:like{:href => "http://www.givey.org", :show_faces => "false", :width => "100", :layout => "button_count" }
       
         
         

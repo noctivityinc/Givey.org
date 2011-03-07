@@ -131,15 +131,16 @@ class User < ActiveRecord::Base
 
   def prepare_sparks(num=25)
     questions = Question.pick(num-1)
-    spark_friends = self.friends.pick(40).all
+    spark_friends = self.friends.pick(60).all
 
     question_ndx = 0
     friend_ndx = 0
     0.upto(num-1).each do |i|
       question_ndx = (question_ndx < questions.count ? question_ndx : 0)
-      spark_friends += self.friends.pick(40).all if (friend_ndx+2) > spark_friends.count
-      self.sparks.create(:question => questions[question_ndx], :friend_uid_1 => spark_friends[friend_ndx].uid, :friend_uid_2 => spark_friends[friend_ndx+1].uid, :friend_uid_3 => spark_friends[friend_ndx+2].uid)
+      spark_friends += self.friends.pick(60).all if (friend_ndx+2) > spark_friends.count
 
+      friend_1, friend_2, friend_3 = pick_spark_friends(spark_friends,friend_ndx)
+      self.sparks.create(:question => questions[question_ndx], :friend_uid_1 => friend_1, :friend_uid_2 => friend_2, :friend_uid_3 => friend_3)
       question_ndx += 1
       friend_ndx += 3
     end
@@ -230,7 +231,7 @@ class User < ActiveRecord::Base
       exclude_sql = exclude_list.empty? ? '' : "AND uid2 <> #{exclude_list.join(' AND uid2 <> ')}"
       return "SELECT uid, name, first_name, last_name, pic, pic_square, pic_big, religion, birthday, sex, relationship_status,
             current_location, significant_other_id, political, activities, interests, movies, books, about_me, quotes, profile_blurb 
-            FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() #{exclude_sql}) ORDER BY rand() LIMIT 60"
+            FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() #{exclude_sql}) ORDER BY rand() LIMIT 80"
     end
 
     def photos_fql
@@ -258,5 +259,19 @@ class User < ActiveRecord::Base
         end
       end
     end
+
+    def pick_spark_friends(spark_friends,friend_ndx)
+      friend_1 = spark_friends[friend_ndx].uid
+      friend_2 = spark_friends[friend_ndx+1].uid
+      friend_3 = spark_friends[friend_ndx+2].uid
+      if (friend_1 != friend_2 && friend_2 != friend_3 && friend_1 != friend_3)
+        return friend_1, friend_2, friend_3
+      else
+        # if, for some reason, 2 of the same people appear then we randomize the friends and pick 3 new ones
+        # until they aren't the same
+        pick_spark_friends(spark_friends.sort_by{rand},1)
+      end
+    end
+
 
 end

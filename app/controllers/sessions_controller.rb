@@ -35,12 +35,8 @@ class SessionsController < ApplicationController
 
         redirect_to root_url, :alert => "Sorry, but we need permission to access your email to play Givey.org" if fb.me.email.blank? # need to do this in case someone set permissions to HIDE email address from everyone.
 
-        if launched? || beta_tester_allowed(fb) || mturk_tester(fb)
+        if launched? 
           @user = User.find_by_provider_and_uid('facebook',fb.me.id)
-
-          if @user && @user.mturk?
-            return redirect_to root_url, :alert => "Sorry, you can only participate in one Givey HIT."
-          end
 
           unless @user
             @user = User.create_with_mini_fb(fb.me, GeoLocation.find(request.ip), session[:referring_id])

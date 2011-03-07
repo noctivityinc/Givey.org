@@ -4,6 +4,7 @@
     %title
       = yield(:title) || "Givey.org Admin System"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
+    = javascript_include_tag 'jquery.min', 'rails', 'jquery-ui.min'
 
     %style
       :sass
@@ -143,7 +144,7 @@
         #donations.row
           .donation.left.refund
             .donated
-              $16.78
+              .text $16.78
             will be refunded to you 
             %br
             from last week's purchases
@@ -229,3 +230,13 @@
         To stop receiving these offers in the future, please 
         = link_to "click here"
         to unsubscribe.
+        
+:javascript
+  $(document).ready(function() {
+    $('.refund').click(function() {
+      console.log('here');
+      $(this).find('.text').effect('explode',{height: '2000px'},500);
+    });
+  });
+  
+  

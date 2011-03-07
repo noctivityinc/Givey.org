@@ -24,11 +24,7 @@
     #copy
       .trans
         #heading
-          - unless launched?
-            %h2 Starting Tomorrow (March 7th) we plan on giving $5,000* to the most altruistic people on Facebook.
-          - else
-            %h2= "#{Donation.count+20} of us believe that an altruistic soul can change the world if given $5,000."
-        
+          %h2= "#{User.count} of us believe that an altruistic soul can change the world if given $5,000."
           %h1 Maybe it's one of your friends? (Maybe it's you).
           
           - unless current_user

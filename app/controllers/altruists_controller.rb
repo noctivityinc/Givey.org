@@ -10,7 +10,7 @@ class AltruistsController < ApplicationController
     redirect_to root_url, :alert  => "That altruist cannot be found.  Sorry :)" unless @altruist
 
     if (@altruist.uid == current_user.uid) && !current_user.scores_unlocked?
-      redirect_to sparks_path, :alert => "You need to answer 20 questions before you can see what others think of you." 
+      redirect_to sparks_path, :alert => "Sorry.  Your scores aren't unlocked yet." 
     end
   end
 end

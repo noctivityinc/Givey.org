@@ -32,7 +32,7 @@
           %h1 Maybe it's one of your friends? (Maybe it's you).
           
           - unless current_user
-            .login_button
+            #fb_login_button
               %a{:href => facebook_oauth_url}
                 = image_tag("icons/facebook_64.png")
                 Connect with Facebook. Play The Game. Change The World.

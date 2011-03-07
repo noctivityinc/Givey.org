@@ -9,7 +9,9 @@ class NposController < ApplicationController
   def top
     users = User.scorable.with_causes.limit(10)
     @npo_ids = {}
-    users.each {|x| @npo_ids[x.npo_id] += x.score }
+    users.each {|x| 
+      @npo_ids[x.npo_id] += x.score if x.score
+    }
   end
   
   private

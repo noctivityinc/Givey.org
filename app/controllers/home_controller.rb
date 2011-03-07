@@ -22,6 +22,10 @@ class HomeController < ApplicationController
   def noieplease
     render :action => "noieplease", :layout => false
   end
+  
+  def cc2
+    render 'cc2', :layout => false 
+  end
 
   private
 

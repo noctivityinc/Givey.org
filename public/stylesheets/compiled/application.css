@@ -677,12 +677,12 @@ body .wrapper {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -140px;
+  margin: 0 auto -175px;
   /* the bottom margin is the negative value of the footer's height */
 }
 /* line 8, ../../../app/stylesheets/partials/_wrapper.sass */
 body .wrapper .push {
-  height: 140px;
+  height: 175px;
   clear: both;
   /* .push must be the same height as .footer */
 }
@@ -1071,7 +1071,7 @@ body #main #container .spark_history .text .not_selected_name {
 /* line 52, ../../../app/stylesheets/application.sass */
 body #footer {
   clear: both;
-  height: 140px;
+  height: 175px;
   padding-top: 25px;
   width: 100%;
   background: #333333;
@@ -1091,11 +1091,34 @@ body #footer a:hover {
   color: red;
 }
 /* line 21, ../../../app/stylesheets/partials/_footer.sass */
+body #footer #follow_fb .item {
+  display: inline;
+  padding-right: 15px;
+}
+/* line 24, ../../../app/stylesheets/partials/_footer.sass */
+body #footer #follow_fb .item img {
+  width: 24px;
+  vertical-align: middle;
+}
+/* line 28, ../../../app/stylesheets/partials/_footer.sass */
+body #footer #follow_fb .item a {
+  color: #879987;
+}
+/* line 30, ../../../app/stylesheets/partials/_footer.sass */
+body #footer #follow_fb .item a:hover {
+  color: red;
+  text-decoration: underline;
+}
+/* line 35, ../../../app/stylesheets/partials/_footer.sass */
+body #footer #navs {
+  padding-top: 1.5em;
+}
+/* line 37, ../../../app/stylesheets/partials/_footer.sass */
 body #footer #navs .nav {
   display: inline;
   padding-right: 15px;
 }
-/* line 25, ../../../app/stylesheets/partials/_footer.sass */
+/* line 41, ../../../app/stylesheets/partials/_footer.sass */
 body #footer #copyright {
   clear: both;
   padding-top: 0.75em;
@@ -1103,7 +1126,7 @@ body #footer #copyright {
   font-size: 0.8em;
   text-transform: uppercase;
 }
-/* line 32, ../../../app/stylesheets/partials/_footer.sass */
+/* line 48, ../../../app/stylesheets/partials/_footer.sass */
 body #footer #bbg {
   clear: both;
   padding-top: 0.75em;
@@ -1111,7 +1134,7 @@ body #footer #bbg {
   font-size: 0.8em;
   text-transform: uppercase;
 }
-/* line 38, ../../../app/stylesheets/partials/_footer.sass */
+/* line 54, ../../../app/stylesheets/partials/_footer.sass */
 body #footer #bbg img {
   height: 50px;
 }

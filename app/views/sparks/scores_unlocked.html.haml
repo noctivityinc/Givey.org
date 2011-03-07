@@ -28,7 +28,7 @@
   
       .share_actions.row
         .share_facebook.fleft= link_to '', "#", :class => "fb_share", :rel => current_user.referral_link  
-        .share_twitter.fleft= link_to '', "http://twitter.com/share?text=#{CGI.escape(Question.active.sort_by{rand}.first.name+' Let me know on Givey.org')}&url=#{CGI.escape(current_user.referral_link)}", :target => "_blank"
+        .share_twitter.fleft= link_to '', "http://twitter.com/share?text=#{CGI.escape(Question.active.sort_by{rand}.first.name+' Let me know on Givey.org')}&url=#{CGI.escape(current_user.referral_link)}", :rel => 'tweetlink'
       
       .share_email
         %h4 Or share with friends by email.

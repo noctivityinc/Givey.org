@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   def require_user
     unless current_user
       record_previous_page
-      redirect_to root_url, :notice => "Please log in to continue."
+      redirect_to root_url, :notice => "Please click the button below to continue..."
     end
   end
 

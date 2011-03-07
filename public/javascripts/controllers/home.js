@@ -4,7 +4,7 @@ function showMe() {
       FB.api('/me', function(r) {
         $(document.createElement("a"))
             .attr({ href: '#', title: r.name })
-            .text('Not '+r.name+'? Click here')
+            .text('Not '+r.name+'? Click here.')
             .appendTo('#not_user')
             .click(function(){
               window.clearInterval(intId);

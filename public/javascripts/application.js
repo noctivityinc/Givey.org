@@ -63,7 +63,7 @@ $(document).ready(function() {
       return false;
   });
   
-  $('a[rel=tweetlink]').click(function() {
+  $('a[rel=tweetlink]').live('click',function() {
     url = $(this).attr('href');
     window.open (url,"tweet_window","menubar=0,resizable=0,location=0,toolbar=0,width=550,height=450");
     return false;
